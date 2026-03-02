@@ -11,8 +11,8 @@ A Go workspace containing tools for working with GraphQL schemas.
 
 ## Requirements
 
-- Go 1.21+
-- [Task](https://taskfile.dev) (optional, for task runner)
+* Go 1.21+
+* [Task](https://taskfile.dev) (optional, for task runner)
 
 ## Quick Start
 
@@ -51,4 +51,32 @@ task upgrade         # Update all dependencies
 │   └── schema/
 └── gqlsdk/          # SDK module
     └── go.mod
+```
+
+## Graphql Types
+
+* Types
+* Scalars
+* Enum
+* Input Types
+* Field Selector
+* Query Builder
+* Mutation Builder
+
+## SDK EXAMPLE
+
+This is the example module to test the sdk
+
+Generate the sdk in `sdkexample/sdk`
+
+```sh
+cd sdkexample
+go run ./cmd/generate
+```
+
+Run Test Queries
+
+```sh
+cd sdkexample
+go run ./cmd/samples
 ```

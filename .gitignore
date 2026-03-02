@@ -23,8 +23,8 @@ gin-bin
 go.sum
 
 # Other
-/uploads/
 trash
+ignore
 
 # fm
 logs/*
@@ -39,8 +39,5 @@ saas/cmd/test
 .github/.secrets
 .github/.secrets.prod
 
-## ignore symlink directories for claude ai
-thewildai_chat_node
-thewildai_chat_rr
 
 shell

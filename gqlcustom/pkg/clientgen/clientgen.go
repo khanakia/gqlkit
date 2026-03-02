@@ -105,10 +105,10 @@ func (g *Generator) Generate() error {
 	fmt.Println("Generated: enums.go")
 
 	// Generate types
-	// if err := g.generateTypes(); err != nil {
-	// 	return fmt.Errorf("failed to generate types: %w", err)
-	// }
-	// fmt.Println("Generated: types.go")
+	if err := g.generateTypes(); err != nil {
+		return fmt.Errorf("failed to generate types: %w", err)
+	}
+	fmt.Println("Generated: types.go")
 
 	// Generate inputs
 	if err := g.generateInputTypes(); err != nil {
@@ -122,24 +122,36 @@ func (g *Generator) Generate() error {
 	}
 	fmt.Println("Generated: builder.go")
 
+	// Generate field selection files (one per type in fields/)
+	if err := g.generateFieldSelectionFiles(); err != nil {
+		return fmt.Errorf("failed to generate field selection files: %w", err)
+	}
+	fmt.Println("Generated: fields/field_*.go")
+
+	// Generate query and mutation builders (queries/, mutations/)
+	if err := g.generateOperationFiles(); err != nil {
+		return fmt.Errorf("failed to generate operation files: %w", err)
+	}
+	fmt.Println("Generated: queries/ and mutations/")
+
 	// // Generate inputs
 	// if err := g.generateInputs(); err != nil {
 	// 	return fmt.Errorf("failed to generate inputs: %w", err)
 	// }
 	// fmt.Println("  Generated: inputs.go")
 
-	// // Generate client
+	// Generate client
 	// if err := g.generateClient(); err != nil {
 	// 	return fmt.Errorf("failed to generate client: %w", err)
 	// }
 	// fmt.Println("  Generated: client.go")
 
-	// // Generate builder files (separate files for each query/mutation)
+	// Generate builder files (separate files for each query/mutation)
 	// if err := g.generateBuilderFiles(); err != nil {
 	// 	return fmt.Errorf("failed to generate builder files: %w", err)
 	// }
 
-	// fmt.Printf("SDK generated successfully in %s\n", g.config.OutputDir)
+	fmt.Printf("SDK generated successfully in %s\n", g.config.OutputDir)
 	return nil
 }
 

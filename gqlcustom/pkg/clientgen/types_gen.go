@@ -3,6 +3,7 @@ package clientgen
 import (
 	"bytes"
 	"fmt"
+	"gqlcustom/pkg/util"
 	"sort"
 	"strings"
 
@@ -116,70 +117,6 @@ func (g *Generator) namedTypeToGo(name string) string {
 	// return name
 }
 
-// toPascalCase converts a string to PascalCase (for field names)
-func toPascalCase(s string) string {
-	if s == "" {
-		return s
-	}
-
-	acronyms := map[string]string{
-		"id":   "ID",
-		"url":  "URL",
-		"api":  "API",
-		"http": "HTTP",
-		"json": "JSON",
-		"xml":  "XML",
-		"sql":  "SQL",
-		"html": "HTML",
-		"css":  "CSS",
-		"uri":  "URI",
-		"uuid": "UUID",
-	}
-
-	words := strings.FieldsFunc(s, func(r rune) bool {
-		return r == '_' || r == '-' || r == ' '
-	})
-
-	var result strings.Builder
-	for _, word := range words {
-		lower := strings.ToLower(word)
-		if acronym, ok := acronyms[lower]; ok {
-			result.WriteString(acronym)
-		} else {
-			if len(word) > 0 {
-				result.WriteString(strings.ToUpper(string(word[0])))
-				if len(word) > 1 {
-					result.WriteString(strings.ToLower(word[1:]))
-				}
-			}
-		}
-	}
-
-	return result.String()
-}
-
-// toCamelCase converts a string to camelCase (for JSON tags)
-func toCamelCase(s string) string {
-	pascal := toPascalCase(s)
-	if pascal == "" {
-		return pascal
-	}
-
-	for i, r := range pascal {
-		if r >= 'a' && r <= 'z' {
-			if i == 0 {
-				return pascal
-			}
-			if i == 1 {
-				return strings.ToLower(string(pascal[0])) + pascal[1:]
-			}
-			return strings.ToLower(pascal[:i-1]) + pascal[i-1:]
-		}
-	}
-
-	return strings.ToLower(pascal)
-}
-
 func (g *Generator) generateTypes() error {
 	typeDefMap := make(map[string]TypeDef)
 
@@ -209,7 +146,7 @@ func (g *Generator) generateTypes() error {
 			for _, field := range def.Fields {
 				goType := g.graphQLToGoType(field.Type)
 				omitempty := !field.Type.NonNull
-				jsonName := toCamelCase(field.Name)
+				jsonName := util.ToCamelCase(field.Name)
 
 				var jsonTag string
 				if omitempty {
@@ -219,7 +156,7 @@ func (g *Generator) generateTypes() error {
 				}
 
 				fieldDef := FieldDef{
-					Name:        toPascalCase(field.Name),
+					Name:        util.ToPascalCase(field.Name),
 					Description: field.Description,
 					GoType:      goType,
 					JSONTag:     jsonTag,

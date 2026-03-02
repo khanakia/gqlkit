@@ -161,15 +161,13 @@ func (b *BaseBuilder) ExecuteRaw(ctx context.Context) (map[string]interface{}, e
 	query := b.BuildQuery()
 	variables := b.GetVariables()
 
-	var response struct {
-		Data map[string]interface{} `json:"data"`
-	}
-
+	var response map[string]interface{}
 	if err := b.client.Execute(ctx, query, variables, &response); err != nil {
 		return nil, err
 	}
 
-	return response.Data, nil
+	return response, nil
 }
+
 
 {{ end }}

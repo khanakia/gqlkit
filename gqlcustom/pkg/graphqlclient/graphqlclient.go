@@ -1,0 +1,184 @@
+package graphqlclient
+
+import (
+	"bytes"
+	"context"
+	"encoding/json"
+	"fmt"
+	"io"
+	"net/http"
+)
+
+// Client is a GraphQL client
+type Client struct {
+	endpoint   string
+	httpClient *http.Client
+	headers    map[string]string
+}
+
+// ClientOption is a function that configures a Client
+type ClientOption func(*Client)
+
+// NewClient creates a new GraphQL client
+func NewClient(endpoint string, opts ...ClientOption) *Client {
+	c := &Client{
+		endpoint:   endpoint,
+		httpClient: http.DefaultClient,
+		headers:    make(map[string]string),
+	}
+
+	for _, opt := range opts {
+		opt(c)
+	}
+
+	return c
+}
+
+// WithHTTPClient sets the HTTP client
+func WithHTTPClient(httpClient *http.Client) ClientOption {
+	return func(c *Client) {
+		c.httpClient = httpClient
+	}
+}
+
+// WithHeader adds a header to all requests
+func WithHeader(key, value string) ClientOption {
+	return func(c *Client) {
+		c.headers[key] = value
+	}
+}
+
+// WithHeaders adds multiple headers to all requests
+func WithHeaders(headers map[string]string) ClientOption {
+	return func(c *Client) {
+		for key, value := range headers {
+			c.headers[key] = value
+		}
+	}
+}
+
+// WithAuthToken adds an authorization bearer token
+func WithAuthToken(token string) ClientOption {
+	return func(c *Client) {
+		c.headers["Authorization"] = "Bearer " + token
+	}
+}
+
+// graphQLRequest represents a GraphQL request
+type graphQLRequest struct {
+	Query     string                 `json:"query"`
+	Variables map[string]interface{} `json:"variables,omitempty"`
+}
+
+// graphQLError represents a GraphQL error
+type GraphQLError struct {
+	Message    string                 `json:"message"`
+	Locations  []GraphQLErrorLocation `json:"locations,omitempty"`
+	Path       []interface{}          `json:"path,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+}
+
+// GraphQLErrorLocation represents the location of a GraphQL error
+type GraphQLErrorLocation struct {
+	Line   int `json:"line"`
+	Column int `json:"column"`
+}
+
+// Error implements the error interface
+func (e GraphQLError) Error() string {
+	return e.Message
+}
+
+// graphQLResponse represents a GraphQL response
+type graphQLResponse struct {
+	Data   json.RawMessage `json:"data"`
+	Errors []GraphQLError  `json:"errors,omitempty"`
+}
+
+// GraphQLErrors represents multiple GraphQL errors
+type GraphQLErrors []GraphQLError
+
+// Error implements the error interface
+func (e GraphQLErrors) Error() string {
+	if len(e) == 0 {
+		return ""
+	}
+	if len(e) == 1 {
+		return e[0].Message
+	}
+	var msgs []string
+	for _, err := range e {
+		msgs = append(msgs, err.Message)
+	}
+	return fmt.Sprintf("multiple errors: %v", msgs)
+}
+
+// Execute executes a GraphQL query or mutation
+func (c *Client) Execute(ctx context.Context, query string, variables map[string]interface{}, result interface{}) error {
+	reqBody := graphQLRequest{
+		Query:     query,
+		Variables: variables,
+	}
+
+	body, err := json.Marshal(reqBody)
+	if err != nil {
+		return fmt.Errorf("failed to marshal request: %w", err)
+	}
+
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, c.endpoint, bytes.NewReader(body))
+	if err != nil {
+		return fmt.Errorf("failed to create request: %w", err)
+	}
+
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Accept", "application/json")
+
+	for key, value := range c.headers {
+		req.Header.Set(key, value)
+	}
+
+	resp, err := c.httpClient.Do(req)
+	if err != nil {
+		return fmt.Errorf("failed to execute request: %w", err)
+	}
+	defer resp.Body.Close()
+
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return fmt.Errorf("failed to read response body: %w", err)
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("unexpected status code: %d, body: %s", resp.StatusCode, string(respBody))
+	}
+
+	var gqlResp graphQLResponse
+	if err := json.Unmarshal(respBody, &gqlResp); err != nil {
+		return fmt.Errorf("failed to unmarshal response: %w", err)
+	}
+
+	if len(gqlResp.Errors) > 0 {
+		return GraphQLErrors(gqlResp.Errors)
+	}
+
+	if result != nil && gqlResp.Data != nil {
+		if err := json.Unmarshal(gqlResp.Data, result); err != nil {
+			return fmt.Errorf("failed to unmarshal data: %w", err)
+		}
+	}
+
+	return nil
+}
+
+// RawQuery executes a raw GraphQL query and returns the raw JSON response
+func (c *Client) RawQuery(ctx context.Context, query string, variables map[string]interface{}) (json.RawMessage, error) {
+	var result struct {
+		Data json.RawMessage `json:"data"`
+	}
+
+	if err := c.Execute(ctx, query, variables, &result); err != nil {
+		return nil, err
+	}
+
+	return result.Data, nil
+}

@@ -3,6 +3,7 @@ package clientgen
 import (
 	"bytes"
 	"fmt"
+	"gqlcustom/pkg/util"
 	"sort"
 	"strings"
 
@@ -60,7 +61,7 @@ func (g *Generator) generateInputTypes() error {
 			for _, field := range def.Fields {
 				goType := g.graphQLToGoType(field.Type)
 				omitempty := !field.Type.NonNull
-				jsonName := toCamelCase(field.Name)
+				jsonName := util.ToCamelCase(field.Name)
 
 				var jsonTag string
 				if omitempty {
@@ -70,7 +71,7 @@ func (g *Generator) generateInputTypes() error {
 				}
 
 				fieldDef := FieldDef{
-					Name:        toPascalCase(field.Name),
+					Name:        util.ToPascalCase(field.Name),
 					Description: field.Description,
 					GoType:      goType,
 					JSONTag:     jsonTag,

@@ -1,0 +1,41 @@
+{{- define "operation_builder" -}}
+{{- /* Operation Builder template for queries/mutations using builder.BaseBuilder and fields selectors */ -}}
+
+// {{ .BuilderName }} builds a {{ .OpType }} for {{ .FieldName }}
+type {{ .BuilderName }} struct {
+    *builder.BaseBuilder
+}
+
+{{- range .Arguments }}
+// {{ .MethodName }} sets the {{ .ArgName }} argument
+func (b *{{ $.BuilderName }}) {{ .MethodName }}(v {{ .GoType }}) *{{ $.BuilderName }} {
+    b.SetArg("{{ .ArgName }}", v, "{{ .GraphQLType }}")
+    return b
+}
+{{- end }}
+
+{{- if .HasSelect }}
+// Select configures which fields to return
+func (b *{{ .BuilderName }}) Select(selector func(*fields.{{ .SelectorName }})) *{{ .BuilderName }} {
+    selector(fields.New{{ .SelectorName }}(b.GetSelection()))
+    return b
+}
+{{- end }}
+
+// Execute runs the {{ .OpType }} and returns the result
+func (b *{{ .BuilderName }}) Execute(ctx context.Context) ({{ .ReturnType }}, error) {
+    query := b.BuildQuery()
+    variables := b.GetVariables()
+
+    var response struct {
+        Result {{ .ReturnType }} `json:"{{ .FieldName }}"`
+    }
+
+    if err := b.GetClient().Execute(ctx, query, variables, &response); err != nil {
+        return {{ .ZeroValue }}, err
+    }
+
+    return response.Result, nil
+}
+{{- end }}
+

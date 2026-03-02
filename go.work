@@ -2,6 +2,6 @@ go 1.25.5
 
 use (
 	./gqlcustom
-	./gqlsdk
 	./gqlsdl
+	./sdkexample
 )

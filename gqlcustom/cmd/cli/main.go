@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"gqlcustom/cmd/customgen"
+	"gqlcustom/pkg/clientgen"
 
 	"github.com/spf13/cobra"
 )
@@ -23,14 +23,14 @@ var generateCmd = &cobra.Command{
 			return fmt.Errorf("--schema flag is required")
 		}
 
-		config := &customgen.Config{
+		config := &clientgen.Config{
 			SchemaPath:  schemaPath,
 			OutputDir:   outputDir,
 			PackageName: packageName,
 			ModulePath:  modulePath,
 		}
 
-		gen, err := customgen.New(config)
+		gen, err := clientgen.New(config)
 		if err != nil {
 			return fmt.Errorf("failed to create generator: %w", err)
 		}
