@@ -1,7 +1,4 @@
-// Package cmd implements the CLI commands for the gqlkit code generator.
-// It uses cobra for command parsing and delegates to the clientgen package
-// for actual SDK generation.
-package cmd
+package main
 
 import (
 	"fmt"

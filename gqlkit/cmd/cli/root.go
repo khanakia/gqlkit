@@ -1,27 +1,33 @@
-package cmd
+package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
 )
 
-// rootCmd is the top-level cobra command for the gqlsdk CLI tool. Subcommands
-// (like "generate") are registered in init().
+var version = "dev"
+
 var rootCmd = &cobra.Command{
-	Use:   "gqlsdk",
+	Use:   "gqlkit",
 	Short: "GraphQL SDK Generator",
-	Long:  `A CLI tool that generates type-safe Go client SDKs from GraphQL SDL files.`,
+	Long:  `A CLI tool that generates type-safe Go and TypeScript client SDKs from GraphQL SDL files.`,
 }
 
-// Execute runs the root command. Called from main.main().
-func Execute() {
-	err := rootCmd.Execute()
-	if err != nil {
+func main() {
+	if err := rootCmd.Execute(); err != nil {
 		os.Exit(1)
 	}
 }
 
 func init() {
 	rootCmd.AddCommand(generateCmd)
+	rootCmd.AddCommand(&cobra.Command{
+		Use:   "version",
+		Short: "Print version and exit",
+		Run: func(cmd *cobra.Command, args []string) {
+			fmt.Println("gqlkit", version)
+		},
+	})
 }
