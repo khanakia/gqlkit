@@ -2,6 +2,15 @@ version: 2
 
 project_name: gqlkit
 
+git:
+  tag_sort: -version:refname
+  prerelease_suffix: "-"
+  ignore_tags:
+    - "gqlkit-sdl/v*"
+
+monorepo:
+  tag_prefix: gqlkit/
+
 builds:
   - id: gqlkit
     main: ./cmd/cli
