@@ -17,6 +17,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Create semver tag
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/gqlkit-sdl/}"
+          git tag "$VERSION"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
@@ -30,3 +36,4 @@ jobs:
           workdir: gqlkit-sdl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GORELEASER_CURRENT_TAG: ${{ env.VERSION }}
