@@ -1,44 +1,111 @@
-# gqlkit-ts — TypeScript GraphQL Client Runtime
+# gqlkit-ts
 
-The TypeScript runtime library that generated TypeScript SDKs depend on. Published as an npm package that provides the base classes and HTTP client used by all generated code.
+A lightweight, zero-dependency TypeScript runtime library for executing GraphQL queries. Provides a typed HTTP client, error handling, and builder primitives for generated GraphQL SDKs.
 
-## Exports
+## Installation
 
-```typescript
-import {
-  GraphQLClient,    // HTTP client for executing GraphQL queries
-  GraphQLErrors,    // Error class wrapping GraphQL error responses
-  ClientOptions,    // Configuration type for GraphQLClient
-  FieldSelection,   // Tracks selected fields for query building
-  BaseBuilder,      // Base class for generated operation builders
-} from "gqlkit-ts";
+```bash
+npm install gqlkit-ts
 ```
 
-## Components
+## Quick Start
+
+```typescript
+import { GraphQLClient } from "gqlkit-ts";
+
+const client = new GraphQLClient("https://api.example.com/graphql");
+
+const data = await client.execute<{ users: { id: string; name: string }[] }>(
+  `query { users { id name } }`
+);
+
+console.log(data.users);
+```
+
+## Usage
+
+### Creating a Client
+
+```typescript
+import { GraphQLClient } from "gqlkit-ts";
+
+const client = new GraphQLClient("https://api.example.com/graphql", {
+  authToken: "your-token",             // Sets Authorization: Bearer header
+  headers: { "X-Custom": "value" },    // Additional headers
+  fetch: customFetch,                  // Custom fetch implementation (optional)
+});
+```
+
+### Typed Queries
+
+```typescript
+interface UsersResponse {
+  users: { id: string; name: string; email: string }[];
+}
+
+const data = await client.execute<UsersResponse>(
+  `query GetUsers($limit: Int!) { users(limit: $limit) { id name email } }`,
+  { limit: 10 }
+);
+
+// data.users is fully typed
+```
+
+### Raw Queries
+
+```typescript
+const data = await client.rawQuery(
+  `query { users { id name } }`
+);
+// Returns unknown — useful for ad-hoc/untyped queries
+```
+
+### Error Handling
+
+```typescript
+import { GraphQLClient, GraphQLErrors } from "gqlkit-ts";
+
+try {
+  const data = await client.execute(query);
+} catch (err) {
+  if (err instanceof GraphQLErrors) {
+    // Access structured GraphQL errors
+    for (const e of err.errors) {
+      console.error(e.message);       // Error description
+      console.error(e.locations);     // Source locations in the query
+      console.error(e.path);          // Response field path
+      console.error(e.extensions);    // Vendor-specific metadata
+    }
+  }
+}
+```
+
+## API Reference
 
 ### `GraphQLClient`
 
-Lightweight HTTP client for GraphQL endpoints.
+HTTP client for executing GraphQL operations.
 
-```typescript
-const client = new GraphQLClient("http://localhost:8081/query", {
-  authToken: "Bearer <token>",    // Sets Authorization header
-  headers: { "X-Custom": "val" }, // Additional headers
-  fetch: customFetch,             // Custom fetch implementation (optional)
-});
+| Method | Description |
+|---|---|
+| `execute<T>(query, variables?)` | Execute a query and return typed `data` |
+| `rawQuery(query, variables?)` | Execute a query and return untyped `data` |
 
-// Typed query execution
-const data = await client.execute<{ user: User }>(query, variables);
+### `ClientOptions`
 
-// Raw query (returns unknown)
-const raw = await client.rawQuery(query, variables);
-```
+| Option | Type | Description |
+|---|---|---|
+| `headers` | `Record<string, string>` | Additional HTTP headers for every request |
+| `authToken` | `string` | Bearer token for the `Authorization` header |
+| `fetch` | `typeof fetch` | Custom fetch implementation (SSR, testing) |
 
-**Error handling:** Throws `GraphQLErrors` when the response contains a non-empty `errors` array. Each error includes `message`, `locations`, `path`, and `extensions`.
+### `GraphQLErrors`
+
+Error class thrown when the server returns GraphQL errors. Extends `Error` with an `errors` property containing the raw error objects.
 
 ### `FieldSelection`
 
-Tracks which fields to include in a GraphQL selection set. Used internally by generated field selector classes.
+Tracks selected fields in a GraphQL selection set. Used internally by generated SDK builders.
 
 ```typescript
 const sel = new FieldSelection();
@@ -46,50 +113,37 @@ sel.addField("id");
 sel.addField("name");
 
 const nested = new FieldSelection();
-nested.addField("id");
-sel.addChild("user", nested);
+nested.addField("city");
+sel.addChild("address", nested);
 
-sel.build(0);
-// → "id\nname\nuser {\n  id\n}"
+sel.build();
+// id
+// name
+// address {
+//   city
+// }
 ```
 
 ### `BaseBuilder`
 
-Base class that all generated query/mutation builders extend. Handles:
-- Argument storage with GraphQL type annotations
-- Field selection management
-- Query string assembly (operation name, variable declarations, argument passing, field selection)
-- Execution via the provided `GraphQLClient`
+Base class for generated query/mutation builders. Handles argument storage, field selection, query assembly, and execution.
 
 ```typescript
-// Generated code extends BaseBuilder:
-class TodosBuilder extends BaseBuilder {
-  filter(v: TodoFilter) { this.setArg("filter", v, "TodoFilter"); return this; }
-  select(fn: (f: TodoFields) => void) { fn(new TodoFields(this.getSelection())); return this; }
-  async execute() { return this.executeRaw(); }
+// Generated SDK code extends BaseBuilder:
+class GetUserBuilder extends BaseBuilder {
+  constructor(client: GraphQLClient) {
+    super(client, "query", "GetUser", "user");
+  }
+  id(value: string) { this.setArg("id", value, "ID!"); return this; }
+  async exec() { return (await this.executeRaw()).user; }
 }
 ```
 
-## Build
+## Requirements
 
-```bash
-npm install
-npm run build    # Compiles to dist/
-```
+- Node.js 18+ (uses native `fetch`)
+- TypeScript 5.4+ (for development)
 
-## Package Structure
+## License
 
-```
-src/
-  index.ts           Public API re-exports
-  graphqlclient.ts   GraphQLClient, GraphQLErrors, ClientOptions
-  builder.ts         FieldSelection, BaseBuilder
-dist/                Compiled JS + type declarations
-```
-
-## Configuration
-
-- **Target:** ES2020
-- **Module:** CommonJS
-- **TypeScript:** 5.4.0+
-- **No runtime dependencies** (uses native `fetch`)
+MIT

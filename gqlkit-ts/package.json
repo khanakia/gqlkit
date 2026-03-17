@@ -1,11 +1,44 @@
 {
   "name": "gqlkit-ts",
   "version": "0.1.0",
-  "description": "TypeScript GraphQL client runtime library",
+  "description": "TypeScript GraphQL client runtime library — lightweight, typed, zero dependencies",
+  "author": "khanakia",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanakia/gqlkit.git",
+    "directory": "gqlkit-ts"
+  },
+  "homepage": "https://github.com/khanakia/gqlkit/tree/main/gqlkit-ts",
+  "bugs": {
+    "url": "https://github.com/khanakia/gqlkit/issues"
+  },
+  "keywords": [
+    "graphql",
+    "graphql-client",
+    "typescript",
+    "codegen",
+    "sdk"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build",
+    "pack:preview": "npm pack --dry-run",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "publish:major": "npm version major && npm publish",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
