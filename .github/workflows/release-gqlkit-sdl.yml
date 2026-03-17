@@ -22,11 +22,12 @@ jobs:
         with:
           go-version-file: gqlkit-sdl/go.mod
 
-      - name: Extract version
+      - name: Extract version and create local semver tag
         id: version
         run: |
           FULL_TAG="${GITHUB_REF#refs/tags/}"
           VERSION="${FULL_TAG#gqlkit-sdl/}"
+          git tag -f "$VERSION"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "full_tag=$FULL_TAG" >> "$GITHUB_OUTPUT"
 
