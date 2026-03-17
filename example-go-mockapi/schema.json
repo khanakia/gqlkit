@@ -283,6 +283,20 @@
       },
       {
         "Description": "",
+        "Name": "serverInfo",
+        "Arguments": null,
+        "DefaultValue": null,
+        "Type": {
+          "NamedType": "JSON",
+          "Elem": null,
+          "NonNull": true
+        },
+        "Directives": null,
+        "BeforeDescriptionComment": null,
+        "AfterDescriptionComment": null
+      },
+      {
+        "Description": "",
         "Name": "__schema",
         "Arguments": null,
         "DefaultValue": null,
@@ -550,6 +564,34 @@
       "AfterDescriptionComment": null,
       "EndOfDefinitionComment": null
     },
+    "Cursor": {
+      "Kind": "SCALAR",
+      "Description": "Define a Relay Cursor type:\nhttps://relay.dev/graphql/connections.htm#sec-Cursor",
+      "Name": "Cursor",
+      "Directives": null,
+      "Interfaces": null,
+      "Fields": null,
+      "Types": null,
+      "EnumValues": null,
+      "BuiltIn": false,
+      "BeforeDescriptionComment": null,
+      "AfterDescriptionComment": null,
+      "EndOfDefinitionComment": null
+    },
+    "DateTime": {
+      "Kind": "SCALAR",
+      "Description": "ISO-8601 date-time string (e.g. \"2025-01-15T09:30:00Z\").",
+      "Name": "DateTime",
+      "Directives": null,
+      "Interfaces": null,
+      "Fields": null,
+      "Types": null,
+      "EnumValues": null,
+      "BuiltIn": false,
+      "BeforeDescriptionComment": null,
+      "AfterDescriptionComment": null,
+      "EndOfDefinitionComment": null
+    },
     "Float": {
       "Kind": "SCALAR",
       "Description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).",
@@ -606,6 +648,34 @@
           }
         ]
       },
+      "AfterDescriptionComment": null,
+      "EndOfDefinitionComment": null
+    },
+    "JSON": {
+      "Kind": "SCALAR",
+      "Description": "Arbitrary JSON blob — useful for dynamic/unstructured data.",
+      "Name": "JSON",
+      "Directives": null,
+      "Interfaces": null,
+      "Fields": null,
+      "Types": null,
+      "EnumValues": null,
+      "BuiltIn": false,
+      "BeforeDescriptionComment": null,
+      "AfterDescriptionComment": null,
+      "EndOfDefinitionComment": null
+    },
+    "Metadata": {
+      "Kind": "SCALAR",
+      "Description": "Free-form key/value metadata attached to an entity.",
+      "Name": "Metadata",
+      "Directives": null,
+      "Interfaces": null,
+      "Fields": null,
+      "Types": null,
+      "EnumValues": null,
+      "BuiltIn": false,
+      "BeforeDescriptionComment": null,
       "AfterDescriptionComment": null,
       "EndOfDefinitionComment": null
     },
@@ -956,7 +1026,7 @@
           "Arguments": null,
           "DefaultValue": null,
           "Type": {
-            "NamedType": "String",
+            "NamedType": "Cursor",
             "Elem": null,
             "NonNull": false
           },
@@ -970,7 +1040,7 @@
           "Arguments": null,
           "DefaultValue": null,
           "Type": {
-            "NamedType": "String",
+            "NamedType": "Cursor",
             "Elem": null,
             "NonNull": false
           },
@@ -1331,6 +1401,20 @@
         },
         {
           "Description": "",
+          "Name": "serverInfo",
+          "Arguments": null,
+          "DefaultValue": null,
+          "Type": {
+            "NamedType": "JSON",
+            "Elem": null,
+            "NonNull": true
+          },
+          "Directives": null,
+          "BeforeDescriptionComment": null,
+          "AfterDescriptionComment": null
+        },
+        {
+          "Description": "",
           "Name": "__schema",
           "Arguments": null,
           "DefaultValue": null,
@@ -1540,6 +1624,34 @@
           "Directives": null,
           "BeforeDescriptionComment": null,
           "AfterDescriptionComment": null
+        },
+        {
+          "Description": "",
+          "Name": "createdAt",
+          "Arguments": null,
+          "DefaultValue": null,
+          "Type": {
+            "NamedType": "DateTime",
+            "Elem": null,
+            "NonNull": true
+          },
+          "Directives": null,
+          "BeforeDescriptionComment": null,
+          "AfterDescriptionComment": null
+        },
+        {
+          "Description": "",
+          "Name": "metadata",
+          "Arguments": null,
+          "DefaultValue": null,
+          "Type": {
+            "NamedType": "Metadata",
+            "Elem": null,
+            "NonNull": false
+          },
+          "Directives": null,
+          "BeforeDescriptionComment": null,
+          "AfterDescriptionComment": null
         }
       ],
       "Types": null,
@@ -1623,7 +1735,7 @@
           "Arguments": null,
           "DefaultValue": null,
           "Type": {
-            "NamedType": "String",
+            "NamedType": "Cursor",
             "Elem": null,
             "NonNull": true
           },
@@ -3368,7 +3480,7 @@
             "Arguments": null,
             "DefaultValue": null,
             "Type": {
-              "NamedType": "String",
+              "NamedType": "Cursor",
               "Elem": null,
               "NonNull": false
             },
@@ -3382,7 +3494,7 @@
             "Arguments": null,
             "DefaultValue": null,
             "Type": {
-              "NamedType": "String",
+              "NamedType": "Cursor",
               "Elem": null,
               "NonNull": false
             },
@@ -3747,6 +3859,20 @@
           },
           {
             "Description": "",
+            "Name": "serverInfo",
+            "Arguments": null,
+            "DefaultValue": null,
+            "Type": {
+              "NamedType": "JSON",
+              "Elem": null,
+              "NonNull": true
+            },
+            "Directives": null,
+            "BeforeDescriptionComment": null,
+            "AfterDescriptionComment": null
+          },
+          {
+            "Description": "",
             "Name": "__schema",
             "Arguments": null,
             "DefaultValue": null,
@@ -3887,6 +4013,34 @@
               "NamedType": "User",
               "Elem": null,
               "NonNull": true
+            },
+            "Directives": null,
+            "BeforeDescriptionComment": null,
+            "AfterDescriptionComment": null
+          },
+          {
+            "Description": "",
+            "Name": "createdAt",
+            "Arguments": null,
+            "DefaultValue": null,
+            "Type": {
+              "NamedType": "DateTime",
+              "Elem": null,
+              "NonNull": true
+            },
+            "Directives": null,
+            "BeforeDescriptionComment": null,
+            "AfterDescriptionComment": null
+          },
+          {
+            "Description": "",
+            "Name": "metadata",
+            "Arguments": null,
+            "DefaultValue": null,
+            "Type": {
+              "NamedType": "Metadata",
+              "Elem": null,
+              "NonNull": false
             },
             "Directives": null,
             "BeforeDescriptionComment": null,
@@ -4067,6 +4221,34 @@
             "Directives": null,
             "BeforeDescriptionComment": null,
             "AfterDescriptionComment": null
+          },
+          {
+            "Description": "",
+            "Name": "createdAt",
+            "Arguments": null,
+            "DefaultValue": null,
+            "Type": {
+              "NamedType": "DateTime",
+              "Elem": null,
+              "NonNull": true
+            },
+            "Directives": null,
+            "BeforeDescriptionComment": null,
+            "AfterDescriptionComment": null
+          },
+          {
+            "Description": "",
+            "Name": "metadata",
+            "Arguments": null,
+            "DefaultValue": null,
+            "Type": {
+              "NamedType": "Metadata",
+              "Elem": null,
+              "NonNull": false
+            },
+            "Directives": null,
+            "BeforeDescriptionComment": null,
+            "AfterDescriptionComment": null
           }
         ],
         "Types": null,
@@ -4154,7 +4336,7 @@
             "Arguments": null,
             "DefaultValue": null,
             "Type": {
-              "NamedType": "String",
+              "NamedType": "Cursor",
               "Elem": null,
               "NonNull": true
             },

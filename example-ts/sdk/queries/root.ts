@@ -10,6 +10,7 @@ import { UsersBuilder } from "./users";
 import { SearchBuilder } from "./search";
 import { EchoBuilder } from "./echo";
 import { SumBuilder } from "./sum";
+import { ServerInfoBuilder } from "./server-info";
 
 /** QueryRoot is the entry point for querys */
 export class QueryRoot {
@@ -53,5 +54,9 @@ export class QueryRoot {
 
   sum(): SumBuilder {
     return new SumBuilder(this.client);
+  }
+
+  serverInfo(): ServerInfoBuilder {
+    return new ServerInfoBuilder(this.client);
   }
 }

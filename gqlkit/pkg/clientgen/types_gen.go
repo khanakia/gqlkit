@@ -222,6 +222,11 @@ func (g *Generator) collectTypeImports() []string {
 			continue
 		}
 
+		// Skip root types — they are not rendered in types.go
+		if def.Kind == ast.Object && (def.Name == "Query" || def.Name == "Mutation" || def.Name == "Subscription") {
+			continue
+		}
+
 		if def.Kind == ast.Object || def.Kind == ast.Interface {
 			for _, field := range def.Fields {
 				g.checkTypeForImports(field.Type, imports)

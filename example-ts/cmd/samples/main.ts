@@ -47,6 +47,18 @@ async function main() {
     debugPrintError(err);
   }
 
+  try {
+    await runServerInfo(qr);
+  } catch (err) {
+    debugPrintError(err);
+  }
+
+  try {
+    await runTodoWithScalars(qr);
+  } catch (err) {
+    debugPrintError(err);
+  }
+
   // Uncomment to run additional examples:
   // await runTodos(qr);
   // await runTodo(qr);
@@ -130,6 +142,23 @@ async function runCreateTodo(mr: MutationRoot) {
     .execute();
 
   console.log("Created todo:", JSON.stringify(result, null, 2));
+}
+
+async function runServerInfo(qr: QueryRoot) {
+  console.log("== ServerInfo (JSON scalar) ==");
+  const result = await qr.serverInfo().execute();
+  console.log("Server info:", JSON.stringify(result, null, 2));
+}
+
+async function runTodoWithScalars(qr: QueryRoot) {
+  console.log("== Todo with custom scalars (DateTime, Metadata) ==");
+  const result = await qr
+    .todo()
+    .id("1")
+    .select((t) => t.id().text().createdAt().metadata())
+    .execute();
+
+  console.log("Todo with scalars:", JSON.stringify(result, null, 2));
 }
 
 async function runTodos(qr: QueryRoot) {

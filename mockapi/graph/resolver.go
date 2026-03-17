@@ -30,18 +30,21 @@ func (r *Resolver) seedData() {
 	if r.todos == nil {
 		r.todos = []*model.Todo{
 			{
-				ID:   "1",
-				Text: "Try the ping query",
-				Done: false,
-				Tags: []string{"demo", "ping"},
-				User: r.users[0],
+				ID:        "1",
+				Text:      "Try the ping query",
+				Done:      false,
+				Tags:      []string{"demo", "ping"},
+				User:      r.users[0],
+				CreatedAt: "2025-01-15T09:30:00Z",
+				Metadata:  map[string]any{"source": "seed", "priority_label": "low"},
 			},
 			{
-				ID:   "2",
-				Text: "Create your first todo",
-				Done: false,
-				Tags: []string{"demo"},
-				User: r.users[1],
+				ID:        "2",
+				Text:      "Create your first todo",
+				Done:      false,
+				Tags:      []string{"demo"},
+				User:      r.users[1],
+				CreatedAt: "2025-01-16T14:00:00Z",
 			},
 		}
 	}

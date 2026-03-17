@@ -2,14 +2,28 @@
 
 package scalars
 
+import (
+	"time"
+
+	"encoding/json"
+)
+
 type (
 	Boolean = bool
+
+	Cursor = string
+
+	DateTime = time.Time
 
 	Float = float64
 
 	ID = string
 
 	Int = int
+
+	JSON = json.RawMessage
+
+	Metadata = any
 
 	String = string
 )

@@ -2,6 +2,12 @@
   // Custom scalar → TypeScript type overrides
   // Built-in scalars (String, Int, Float, Boolean, ID) are mapped automatically
   "bindings": {
-    "Time": "string"
+    "Time": "string",
+    // Relay cursor — just an opaque string
+    "Cursor": "string",
+    // ISO-8601 date-time string
+    "DateTime": "string"
+    // JSON and Metadata are intentionally NOT mapped here.
+    // They will fall back to `any` in the generated TypeScript SDK.
   }
 }

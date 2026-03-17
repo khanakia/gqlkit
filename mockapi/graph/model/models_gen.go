@@ -23,7 +23,7 @@ type Mutation struct {
 
 type NewTodo struct {
 	Text     string   `json:"text"`
-	UserID   string   `json:"userID"`
+	UserID   string   `json:"userId"`
 	Priority *int32   `json:"priority,omitempty"`
 	Tags     []string `json:"tags,omitempty"`
 }
@@ -44,12 +44,14 @@ type Query struct {
 }
 
 type Todo struct {
-	ID       string   `json:"id"`
-	Text     string   `json:"text"`
-	Done     bool     `json:"done"`
-	Priority *int32   `json:"priority,omitempty"`
-	Tags     []string `json:"tags"`
-	User     *User    `json:"user"`
+	ID        string         `json:"id"`
+	Text      string         `json:"text"`
+	Done      bool           `json:"done"`
+	Priority  *int32         `json:"priority,omitempty"`
+	Tags      []string       `json:"tags"`
+	User      *User          `json:"user"`
+	CreatedAt string         `json:"createdAt"`
+	Metadata  map[string]any `json:"metadata,omitempty"`
 }
 
 func (Todo) IsSearchResult() {}

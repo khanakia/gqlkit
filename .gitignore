@@ -41,3 +41,5 @@ saas/cmd/test
 
 gqlkit-sdl/dist
 .claude
+
+mockapi/tmp

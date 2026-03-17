@@ -55,3 +55,15 @@ func (f *TodoFields) User(selector func(*UserFields)) *TodoFields {
 	f.selection.AddChild("user", child)
 	return f
 }
+
+// CreatedAt selects the createdAt field
+func (f *TodoFields) CreatedAt() *TodoFields {
+	f.selection.AddField("createdAt")
+	return f
+}
+
+// Metadata selects the metadata field
+func (f *TodoFields) Metadata() *TodoFields {
+	f.selection.AddField("metadata")
+	return f
+}

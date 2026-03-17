@@ -2,6 +2,16 @@
   "bindings": {
     "Time": {
       "model": "time.Time"
+    },
+    // Relay cursor — just an opaque string
+    "Cursor": {
+      "model": "string"
+    },
+    // ISO-8601 date-time — mapped to time.Time for rich handling
+    "DateTime": {
+      "model": "time.Time"
     }
+    // JSON and Metadata are intentionally NOT mapped here.
+    // They will fall back to `any` (interface{}) in the generated Go SDK.
   }
 }

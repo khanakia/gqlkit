@@ -2,6 +2,27 @@
 #
 # https://gqlgen.com/getting-started/
 
+"""
+Define a Relay Cursor type:
+https://relay.dev/graphql/connections.htm#sec-Cursor
+"""
+scalar Cursor
+
+"""
+ISO-8601 date-time string (e.g. "2025-01-15T09:30:00Z").
+"""
+scalar DateTime
+
+"""
+Arbitrary JSON blob — useful for dynamic/unstructured data.
+"""
+scalar JSON
+
+"""
+Free-form key/value metadata attached to an entity.
+"""
+scalar Metadata
+
 type Todo {
   id: ID!
   text: String!
@@ -9,6 +30,8 @@ type Todo {
   priority: Int
   tags: [String!]!
   user: User!
+  createdAt: DateTime!
+  metadata: Metadata
 }
 
 type User {
@@ -53,12 +76,12 @@ input PaginationInput {
 type PageInfo {
   hasNextPage: Boolean!
   hasPreviousPage: Boolean!
-  startCursor: String
-  endCursor: String
+  startCursor: Cursor
+  endCursor: Cursor
 }
 
 type TodoEdge {
-  cursor: String!
+  cursor: Cursor!
   node: Todo!
 }
 
@@ -99,6 +122,9 @@ type Query {
   # Simple scalar examples.
   echo(message: String!): String!
   sum(a: Int!, b: Int!): Int!
+
+  # Returns arbitrary JSON with server runtime info.
+  serverInfo: JSON!
 }
 
 type Mutation {

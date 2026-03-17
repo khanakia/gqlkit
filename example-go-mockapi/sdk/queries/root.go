@@ -76,3 +76,10 @@ func (q *QueryRoot) Sum() *SumBuilder {
 		BaseBuilder: builder.NewBaseBuilder(q.client, "query", "Sum", "sum"),
 	}
 }
+
+// ServerInfo creates a new ServerInfoBuilder
+func (q *QueryRoot) ServerInfo() *ServerInfoBuilder {
+	return &ServerInfoBuilder{
+		BaseBuilder: builder.NewBaseBuilder(q.client, "query", "ServerInfo", "serverInfo"),
+	}
+}

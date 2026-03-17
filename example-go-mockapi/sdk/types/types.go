@@ -4,6 +4,8 @@ package types
 
 import (
 	"example-go-mockapi/sdk/enums"
+	"example-go-mockapi/sdk/scalars"
+	"time"
 )
 
 // Node is a GraphQL interface type
@@ -21,12 +23,14 @@ type PageInfo struct {
 
 // Todo represents the GraphQL type Todo
 type Todo struct {
-	ID       string   `json:"id"`
-	Text     string   `json:"text"`
-	Done     bool     `json:"done"`
-	Priority *int     `json:"priority,omitempty"`
-	Tags     []string `json:"tags"`
-	User     User     `json:"user"`
+	ID        string            `json:"id"`
+	Text      string            `json:"text"`
+	Done      bool              `json:"done"`
+	Priority  *int              `json:"priority,omitempty"`
+	Tags      []string          `json:"tags"`
+	User      User              `json:"user"`
+	CreatedAt time.Time         `json:"createdAt"`
+	Metadata  *scalars.Metadata `json:"metadata,omitempty"`
 }
 
 // TodoConnection represents the GraphQL type TodoConnection

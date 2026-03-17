@@ -59,7 +59,7 @@ tasks:
     desc: Fetch schema from mockapi via gqlkit-sdl
     dir: .
     cmds:
-      - go run ./gqlkit-sdl -url http://localhost:8081/query -output example-go-mockapi/cmd/generate/schema.graphql
+      - go run ./gqlkit-sdl fetch --url http://localhost:8081/query --output example-go-mockapi/cmd/generate/schema.graphql
 
   example-go-mockapi:generate:
     desc: Generate Go SDK for mockapi schema

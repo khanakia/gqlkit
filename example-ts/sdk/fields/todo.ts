@@ -2,6 +2,7 @@
 
 import { FieldSelection } from "../builder";
 import { UserFields } from "./user";
+import type { Metadata } from "../scalars";
 
 /** TodoFields provides type-safe field selection for Todo */
 export class TodoFields<T extends object = {}> {
@@ -40,6 +41,16 @@ export class TodoFields<T extends object = {}> {
     const child = new FieldSelection();
     selector(new UserFields(child));
     this.selection.addChild("user", child);
+    return this as any;
+  }
+
+  createdAt(): TodoFields<T & { createdAt: string }> {
+    this.selection.addField("createdAt");
+    return this as any;
+  }
+
+  metadata(): TodoFields<T & { metadata?: Metadata }> {
+    this.selection.addField("metadata");
     return this as any;
   }
 }

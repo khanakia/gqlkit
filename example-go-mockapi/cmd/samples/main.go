@@ -57,6 +57,16 @@ func main() {
 		log.Fatal(err)
 	}
 
+	if err := runServerInfo(ctx, qr); err != nil {
+		debugPrintError(err)
+		log.Fatal(err)
+	}
+
+	if err := runTodoWithScalars(ctx, qr); err != nil {
+		debugPrintError(err)
+		log.Fatal(err)
+	}
+
 	if err := runTodoMutations(ctx, qr, mr); err != nil {
 		debugPrintError(err)
 		log.Fatal(err)
@@ -218,6 +228,37 @@ func runSearch(ctx context.Context, qr *queries.QueryRoot) error {
 
 	b, _ := json.MarshalIndent(results, "", "  ")
 	fmt.Printf("Search results:\n%s\n", b)
+	return nil
+}
+
+func runServerInfo(ctx context.Context, qr *queries.QueryRoot) error {
+	fmt.Println("== ServerInfo (JSON scalar) ==")
+
+	info, err := qr.ServerInfo().Execute(ctx)
+	if err != nil {
+		return err
+	}
+
+	b, _ := json.MarshalIndent(json.RawMessage(info), "", "  ")
+	fmt.Printf("Server info:\n%s\n", b)
+	return nil
+}
+
+func runTodoWithScalars(ctx context.Context, qr *queries.QueryRoot) error {
+	fmt.Println("== Todo with custom scalars (DateTime, Metadata) ==")
+
+	todo, err := qr.Todo().
+		ID("1").
+		Select(func(f *fields.TodoFields) {
+			f.ID().Text().CreatedAt().Metadata()
+		}).
+		Execute(ctx)
+	if err != nil {
+		return err
+	}
+
+	b, _ := json.MarshalIndent(todo, "", "  ")
+	fmt.Printf("Todo with scalars:\n%s\n", b)
 	return nil
 }
 

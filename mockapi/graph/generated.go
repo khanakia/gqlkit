@@ -55,6 +55,7 @@ type ComplexityRoot struct {
 		Echo            func(childComplexity int, message string) int
 		Ping            func(childComplexity int) int
 		Search          func(childComplexity int, term string) int
+		ServerInfo      func(childComplexity int) int
 		Sum             func(childComplexity int, a int32, b int32) int
 		Todo            func(childComplexity int, id string) int
 		Todos           func(childComplexity int, filter *model.TodoFilter, pagination *model.PaginationInput) int
@@ -64,12 +65,14 @@ type ComplexityRoot struct {
 	}
 
 	Todo struct {
-		Done     func(childComplexity int) int
-		ID       func(childComplexity int) int
-		Priority func(childComplexity int) int
-		Tags     func(childComplexity int) int
-		Text     func(childComplexity int) int
-		User     func(childComplexity int) int
+		CreatedAt func(childComplexity int) int
+		Done      func(childComplexity int) int
+		ID        func(childComplexity int) int
+		Metadata  func(childComplexity int) int
+		Priority  func(childComplexity int) int
+		Tags      func(childComplexity int) int
+		Text      func(childComplexity int) int
+		User      func(childComplexity int) int
 	}
 
 	TodoConnection struct {
@@ -108,6 +111,7 @@ type QueryResolver interface {
 	Search(ctx context.Context, term string) ([]model.SearchResult, error)
 	Echo(ctx context.Context, message string) (string, error)
 	Sum(ctx context.Context, a int32, b int32) (int32, error)
+	ServerInfo(ctx context.Context) (map[string]any, error)
 }
 
 type executableSchema graphql.ExecutableSchemaState[ResolverRoot, DirectiveRoot, ComplexityRoot]
@@ -229,6 +233,12 @@ func (e *executableSchema) Complexity(ctx context.Context, typeName, field strin
 		}
 
 		return e.ComplexityRoot.Query.Search(childComplexity, args["term"].(string)), true
+	case "Query.serverInfo":
+		if e.ComplexityRoot.Query.ServerInfo == nil {
+			break
+		}
+
+		return e.ComplexityRoot.Query.ServerInfo(childComplexity), true
 	case "Query.sum":
 		if e.ComplexityRoot.Query.Sum == nil {
 			break
@@ -291,6 +301,12 @@ func (e *executableSchema) Complexity(ctx context.Context, typeName, field strin
 
 		return e.ComplexityRoot.Query.Users(childComplexity), true
 
+	case "Todo.createdAt":
+		if e.ComplexityRoot.Todo.CreatedAt == nil {
+			break
+		}
+
+		return e.ComplexityRoot.Todo.CreatedAt(childComplexity), true
 	case "Todo.done":
 		if e.ComplexityRoot.Todo.Done == nil {
 			break
@@ -303,6 +319,12 @@ func (e *executableSchema) Complexity(ctx context.Context, typeName, field strin
 		}
 
 		return e.ComplexityRoot.Todo.ID(childComplexity), true
+	case "Todo.metadata":
+		if e.ComplexityRoot.Todo.Metadata == nil {
+			break
+		}
+
+		return e.ComplexityRoot.Todo.Metadata(childComplexity), true
 	case "Todo.priority":
 		if e.ComplexityRoot.Todo.Priority == nil {
 			break
@@ -494,7 +516,7 @@ var parsedSchema = gqlparser.MustLoadSchema(sources...)
 func (ec *executionContext) field_Mutation_createTodo_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
 	var err error
 	args := map[string]any{}
-	arg0, err := graphql.ProcessArgField(ctx, rawArgs, "input", ec.unmarshalNNewTodo2gqlgenapiᚋgraphᚋmodelᚐNewTodo)
+	arg0, err := graphql.ProcessArgField(ctx, rawArgs, "input", ec.unmarshalNNewTodo2mockapiᚋgraphᚋmodelᚐNewTodo)
 	if err != nil {
 		return nil, err
 	}
@@ -521,7 +543,7 @@ func (ec *executionContext) field_Mutation_updateTodo_args(ctx context.Context, 
 		return nil, err
 	}
 	args["id"] = arg0
-	arg1, err := graphql.ProcessArgField(ctx, rawArgs, "input", ec.unmarshalNUpdateTodoInput2gqlgenapiᚋgraphᚋmodelᚐUpdateTodoInput)
+	arg1, err := graphql.ProcessArgField(ctx, rawArgs, "input", ec.unmarshalNUpdateTodoInput2mockapiᚋgraphᚋmodelᚐUpdateTodoInput)
 	if err != nil {
 		return nil, err
 	}
@@ -547,7 +569,7 @@ func (ec *executionContext) field_Mutation_upsertUser_args(ctx context.Context, 
 		return nil, err
 	}
 	args["email"] = arg2
-	arg3, err := graphql.ProcessArgField(ctx, rawArgs, "role", ec.unmarshalORole2ᚖgqlgenapiᚋgraphᚋmodelᚐRole)
+	arg3, err := graphql.ProcessArgField(ctx, rawArgs, "role", ec.unmarshalORole2ᚖmockapiᚋgraphᚋmodelᚐRole)
 	if err != nil {
 		return nil, err
 	}
@@ -618,12 +640,12 @@ func (ec *executionContext) field_Query_todo_args(ctx context.Context, rawArgs m
 func (ec *executionContext) field_Query_todosConnection_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
 	var err error
 	args := map[string]any{}
-	arg0, err := graphql.ProcessArgField(ctx, rawArgs, "filter", ec.unmarshalOTodoFilter2ᚖgqlgenapiᚋgraphᚋmodelᚐTodoFilter)
+	arg0, err := graphql.ProcessArgField(ctx, rawArgs, "filter", ec.unmarshalOTodoFilter2ᚖmockapiᚋgraphᚋmodelᚐTodoFilter)
 	if err != nil {
 		return nil, err
 	}
 	args["filter"] = arg0
-	arg1, err := graphql.ProcessArgField(ctx, rawArgs, "pagination", ec.unmarshalOPaginationInput2ᚖgqlgenapiᚋgraphᚋmodelᚐPaginationInput)
+	arg1, err := graphql.ProcessArgField(ctx, rawArgs, "pagination", ec.unmarshalOPaginationInput2ᚖmockapiᚋgraphᚋmodelᚐPaginationInput)
 	if err != nil {
 		return nil, err
 	}
@@ -634,12 +656,12 @@ func (ec *executionContext) field_Query_todosConnection_args(ctx context.Context
 func (ec *executionContext) field_Query_todos_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
 	var err error
 	args := map[string]any{}
-	arg0, err := graphql.ProcessArgField(ctx, rawArgs, "filter", ec.unmarshalOTodoFilter2ᚖgqlgenapiᚋgraphᚋmodelᚐTodoFilter)
+	arg0, err := graphql.ProcessArgField(ctx, rawArgs, "filter", ec.unmarshalOTodoFilter2ᚖmockapiᚋgraphᚋmodelᚐTodoFilter)
 	if err != nil {
 		return nil, err
 	}
 	args["filter"] = arg0
-	arg1, err := graphql.ProcessArgField(ctx, rawArgs, "pagination", ec.unmarshalOPaginationInput2ᚖgqlgenapiᚋgraphᚋmodelᚐPaginationInput)
+	arg1, err := graphql.ProcessArgField(ctx, rawArgs, "pagination", ec.unmarshalOPaginationInput2ᚖmockapiᚋgraphᚋmodelᚐPaginationInput)
 	if err != nil {
 		return nil, err
 	}
@@ -721,7 +743,7 @@ func (ec *executionContext) _Mutation_createTodo(ctx context.Context, field grap
 			return ec.Resolvers.Mutation().CreateTodo(ctx, fc.Args["input"].(model.NewTodo))
 		},
 		nil,
-		ec.marshalNTodo2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo,
+		ec.marshalNTodo2ᚖmockapiᚋgraphᚋmodelᚐTodo,
 		true,
 		true,
 	)
@@ -747,6 +769,10 @@ func (ec *executionContext) fieldContext_Mutation_createTodo(ctx context.Context
 				return ec.fieldContext_Todo_tags(ctx, field)
 			case "user":
 				return ec.fieldContext_Todo_user(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_Todo_createdAt(ctx, field)
+			case "metadata":
+				return ec.fieldContext_Todo_metadata(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Todo", field.Name)
 		},
@@ -776,7 +802,7 @@ func (ec *executionContext) _Mutation_updateTodo(ctx context.Context, field grap
 			return ec.Resolvers.Mutation().UpdateTodo(ctx, fc.Args["id"].(string), fc.Args["input"].(model.UpdateTodoInput))
 		},
 		nil,
-		ec.marshalOTodo2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo,
+		ec.marshalOTodo2ᚖmockapiᚋgraphᚋmodelᚐTodo,
 		true,
 		false,
 	)
@@ -802,6 +828,10 @@ func (ec *executionContext) fieldContext_Mutation_updateTodo(ctx context.Context
 				return ec.fieldContext_Todo_tags(ctx, field)
 			case "user":
 				return ec.fieldContext_Todo_user(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_Todo_createdAt(ctx, field)
+			case "metadata":
+				return ec.fieldContext_Todo_metadata(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Todo", field.Name)
 		},
@@ -872,7 +902,7 @@ func (ec *executionContext) _Mutation_upsertUser(ctx context.Context, field grap
 			return ec.Resolvers.Mutation().UpsertUser(ctx, fc.Args["id"].(*string), fc.Args["name"].(string), fc.Args["email"].(*string), fc.Args["role"].(*model.Role))
 		},
 		nil,
-		ec.marshalNUser2ᚖgqlgenapiᚋgraphᚋmodelᚐUser,
+		ec.marshalNUser2ᚖmockapiᚋgraphᚋmodelᚐUser,
 		true,
 		true,
 	)
@@ -1009,7 +1039,7 @@ func (ec *executionContext) _PageInfo_startCursor(ctx context.Context, field gra
 			return obj.StartCursor, nil
 		},
 		nil,
-		ec.marshalOString2ᚖstring,
+		ec.marshalOCursor2ᚖstring,
 		true,
 		false,
 	)
@@ -1022,7 +1052,7 @@ func (ec *executionContext) fieldContext_PageInfo_startCursor(_ context.Context,
 		IsMethod:   false,
 		IsResolver: false,
 		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
-			return nil, errors.New("field of type String does not have child fields")
+			return nil, errors.New("field of type Cursor does not have child fields")
 		},
 	}
 	return fc, nil
@@ -1038,7 +1068,7 @@ func (ec *executionContext) _PageInfo_endCursor(ctx context.Context, field graph
 			return obj.EndCursor, nil
 		},
 		nil,
-		ec.marshalOString2ᚖstring,
+		ec.marshalOCursor2ᚖstring,
 		true,
 		false,
 	)
@@ -1051,7 +1081,7 @@ func (ec *executionContext) fieldContext_PageInfo_endCursor(_ context.Context, f
 		IsMethod:   false,
 		IsResolver: false,
 		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
-			return nil, errors.New("field of type String does not have child fields")
+			return nil, errors.New("field of type Cursor does not have child fields")
 		},
 	}
 	return fc, nil
@@ -1097,7 +1127,7 @@ func (ec *executionContext) _Query_todo(ctx context.Context, field graphql.Colle
 			return ec.Resolvers.Query().Todo(ctx, fc.Args["id"].(string))
 		},
 		nil,
-		ec.marshalOTodo2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo,
+		ec.marshalOTodo2ᚖmockapiᚋgraphᚋmodelᚐTodo,
 		true,
 		false,
 	)
@@ -1123,6 +1153,10 @@ func (ec *executionContext) fieldContext_Query_todo(ctx context.Context, field g
 				return ec.fieldContext_Todo_tags(ctx, field)
 			case "user":
 				return ec.fieldContext_Todo_user(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_Todo_createdAt(ctx, field)
+			case "metadata":
+				return ec.fieldContext_Todo_metadata(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Todo", field.Name)
 		},
@@ -1152,7 +1186,7 @@ func (ec *executionContext) _Query_todos(ctx context.Context, field graphql.Coll
 			return ec.Resolvers.Query().Todos(ctx, fc.Args["filter"].(*model.TodoFilter), fc.Args["pagination"].(*model.PaginationInput))
 		},
 		nil,
-		ec.marshalNTodo2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐTodoᚄ,
+		ec.marshalNTodo2ᚕᚖmockapiᚋgraphᚋmodelᚐTodoᚄ,
 		true,
 		true,
 	)
@@ -1178,6 +1212,10 @@ func (ec *executionContext) fieldContext_Query_todos(ctx context.Context, field 
 				return ec.fieldContext_Todo_tags(ctx, field)
 			case "user":
 				return ec.fieldContext_Todo_user(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_Todo_createdAt(ctx, field)
+			case "metadata":
+				return ec.fieldContext_Todo_metadata(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Todo", field.Name)
 		},
@@ -1207,7 +1245,7 @@ func (ec *executionContext) _Query_todosConnection(ctx context.Context, field gr
 			return ec.Resolvers.Query().TodosConnection(ctx, fc.Args["filter"].(*model.TodoFilter), fc.Args["pagination"].(*model.PaginationInput))
 		},
 		nil,
-		ec.marshalNTodoConnection2ᚖgqlgenapiᚋgraphᚋmodelᚐTodoConnection,
+		ec.marshalNTodoConnection2ᚖmockapiᚋgraphᚋmodelᚐTodoConnection,
 		true,
 		true,
 	)
@@ -1256,7 +1294,7 @@ func (ec *executionContext) _Query_user(ctx context.Context, field graphql.Colle
 			return ec.Resolvers.Query().User(ctx, fc.Args["id"].(string))
 		},
 		nil,
-		ec.marshalOUser2ᚖgqlgenapiᚋgraphᚋmodelᚐUser,
+		ec.marshalOUser2ᚖmockapiᚋgraphᚋmodelᚐUser,
 		true,
 		false,
 	)
@@ -1306,7 +1344,7 @@ func (ec *executionContext) _Query_users(ctx context.Context, field graphql.Coll
 			return ec.Resolvers.Query().Users(ctx)
 		},
 		nil,
-		ec.marshalNUser2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐUserᚄ,
+		ec.marshalNUser2ᚕᚖmockapiᚋgraphᚋmodelᚐUserᚄ,
 		true,
 		true,
 	)
@@ -1346,7 +1384,7 @@ func (ec *executionContext) _Query_search(ctx context.Context, field graphql.Col
 			return ec.Resolvers.Query().Search(ctx, fc.Args["term"].(string))
 		},
 		nil,
-		ec.marshalNSearchResult2ᚕgqlgenapiᚋgraphᚋmodelᚐSearchResultᚄ,
+		ec.marshalNSearchResult2ᚕmockapiᚋgraphᚋmodelᚐSearchResultᚄ,
 		true,
 		true,
 	)
@@ -1454,6 +1492,35 @@ func (ec *executionContext) fieldContext_Query_sum(ctx context.Context, field gr
 	if fc.Args, err = ec.field_Query_sum_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
 		ec.Error(ctx, err)
 		return fc, err
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Query_serverInfo(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
+	return graphql.ResolveField(
+		ctx,
+		ec.OperationContext,
+		field,
+		ec.fieldContext_Query_serverInfo,
+		func(ctx context.Context) (any, error) {
+			return ec.Resolvers.Query().ServerInfo(ctx)
+		},
+		nil,
+		ec.marshalNJSON2map,
+		true,
+		true,
+	)
+}
+
+func (ec *executionContext) fieldContext_Query_serverInfo(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Query",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: true,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type JSON does not have child fields")
+		},
 	}
 	return fc, nil
 }
@@ -1721,7 +1788,7 @@ func (ec *executionContext) _Todo_user(ctx context.Context, field graphql.Collec
 			return obj.User, nil
 		},
 		nil,
-		ec.marshalNUser2ᚖgqlgenapiᚋgraphᚋmodelᚐUser,
+		ec.marshalNUser2ᚖmockapiᚋgraphᚋmodelᚐUser,
 		true,
 		true,
 	)
@@ -1750,6 +1817,64 @@ func (ec *executionContext) fieldContext_Todo_user(_ context.Context, field grap
 	return fc, nil
 }
 
+func (ec *executionContext) _Todo_createdAt(ctx context.Context, field graphql.CollectedField, obj *model.Todo) (ret graphql.Marshaler) {
+	return graphql.ResolveField(
+		ctx,
+		ec.OperationContext,
+		field,
+		ec.fieldContext_Todo_createdAt,
+		func(ctx context.Context) (any, error) {
+			return obj.CreatedAt, nil
+		},
+		nil,
+		ec.marshalNDateTime2string,
+		true,
+		true,
+	)
+}
+
+func (ec *executionContext) fieldContext_Todo_createdAt(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Todo",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type DateTime does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Todo_metadata(ctx context.Context, field graphql.CollectedField, obj *model.Todo) (ret graphql.Marshaler) {
+	return graphql.ResolveField(
+		ctx,
+		ec.OperationContext,
+		field,
+		ec.fieldContext_Todo_metadata,
+		func(ctx context.Context) (any, error) {
+			return obj.Metadata, nil
+		},
+		nil,
+		ec.marshalOMetadata2map,
+		true,
+		false,
+	)
+}
+
+func (ec *executionContext) fieldContext_Todo_metadata(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Todo",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Metadata does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _TodoConnection_edges(ctx context.Context, field graphql.CollectedField, obj *model.TodoConnection) (ret graphql.Marshaler) {
 	return graphql.ResolveField(
 		ctx,
@@ -1760,7 +1885,7 @@ func (ec *executionContext) _TodoConnection_edges(ctx context.Context, field gra
 			return obj.Edges, nil
 		},
 		nil,
-		ec.marshalNTodoEdge2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐTodoEdgeᚄ,
+		ec.marshalNTodoEdge2ᚕᚖmockapiᚋgraphᚋmodelᚐTodoEdgeᚄ,
 		true,
 		true,
 	)
@@ -1795,7 +1920,7 @@ func (ec *executionContext) _TodoConnection_pageInfo(ctx context.Context, field 
 			return obj.PageInfo, nil
 		},
 		nil,
-		ec.marshalNPageInfo2ᚖgqlgenapiᚋgraphᚋmodelᚐPageInfo,
+		ec.marshalNPageInfo2ᚖmockapiᚋgraphᚋmodelᚐPageInfo,
 		true,
 		true,
 	)
@@ -1863,7 +1988,7 @@ func (ec *executionContext) _TodoEdge_cursor(ctx context.Context, field graphql.
 			return obj.Cursor, nil
 		},
 		nil,
-		ec.marshalNString2string,
+		ec.marshalNCursor2string,
 		true,
 		true,
 	)
@@ -1876,7 +2001,7 @@ func (ec *executionContext) fieldContext_TodoEdge_cursor(_ context.Context, fiel
 		IsMethod:   false,
 		IsResolver: false,
 		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
-			return nil, errors.New("field of type String does not have child fields")
+			return nil, errors.New("field of type Cursor does not have child fields")
 		},
 	}
 	return fc, nil
@@ -1892,7 +2017,7 @@ func (ec *executionContext) _TodoEdge_node(ctx context.Context, field graphql.Co
 			return obj.Node, nil
 		},
 		nil,
-		ec.marshalNTodo2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo,
+		ec.marshalNTodo2ᚖmockapiᚋgraphᚋmodelᚐTodo,
 		true,
 		true,
 	)
@@ -1918,6 +2043,10 @@ func (ec *executionContext) fieldContext_TodoEdge_node(_ context.Context, field 
 				return ec.fieldContext_Todo_tags(ctx, field)
 			case "user":
 				return ec.fieldContext_Todo_user(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_Todo_createdAt(ctx, field)
+			case "metadata":
+				return ec.fieldContext_Todo_metadata(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Todo", field.Name)
 		},
@@ -2022,7 +2151,7 @@ func (ec *executionContext) _User_role(ctx context.Context, field graphql.Collec
 			return obj.Role, nil
 		},
 		nil,
-		ec.marshalNRole2gqlgenapiᚋgraphᚋmodelᚐRole,
+		ec.marshalNRole2mockapiᚋgraphᚋmodelᚐRole,
 		true,
 		true,
 	)
@@ -3494,7 +3623,7 @@ func (ec *executionContext) unmarshalInputNewTodo(ctx context.Context, obj any) 
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"text", "userID", "priority", "tags"}
+	fieldsInOrder := [...]string{"text", "userId", "priority", "tags"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -3508,8 +3637,8 @@ func (ec *executionContext) unmarshalInputNewTodo(ctx context.Context, obj any) 
 				return it, err
 			}
 			it.Text = data
-		case "userID":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("userID"))
+		case "userId":
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("userId"))
 			data, err := ec.unmarshalNID2string(ctx, v)
 			if err != nil {
 				return it, err
@@ -4049,6 +4178,28 @@ func (ec *executionContext) _Query(ctx context.Context, sel ast.SelectionSet) gr
 			}
 
 			out.Concurrently(i, func(ctx context.Context) graphql.Marshaler { return rrm(innerCtx) })
+		case "serverInfo":
+			field := field
+
+			innerFunc := func(ctx context.Context, fs *graphql.FieldSet) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._Query_serverInfo(ctx, field)
+				if res == graphql.Null {
+					atomic.AddUint32(&fs.Invalids, 1)
+				}
+				return res
+			}
+
+			rrm := func(ctx context.Context) graphql.Marshaler {
+				return ec.OperationContext.RootResolverMiddleware(ctx,
+					func(ctx context.Context) graphql.Marshaler { return innerFunc(ctx, out) })
+			}
+
+			out.Concurrently(i, func(ctx context.Context) graphql.Marshaler { return rrm(innerCtx) })
 		case "__type":
 			out.Values[i] = ec.OperationContext.RootResolverMiddleware(innerCtx, func(ctx context.Context) (res graphql.Marshaler) {
 				return ec._Query___type(ctx, field)
@@ -4118,6 +4269,13 @@ func (ec *executionContext) _Todo(ctx context.Context, sel ast.SelectionSet, obj
 			if out.Values[i] == graphql.Null {
 				out.Invalids++
 			}
+		case "createdAt":
+			out.Values[i] = ec._Todo_createdAt(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "metadata":
+			out.Values[i] = ec._Todo_metadata(ctx, field, obj)
 		default:
 			panic("unknown field " + strconv.Quote(field.Name))
 		}
@@ -4636,6 +4794,38 @@ func (ec *executionContext) marshalNBoolean2bool(ctx context.Context, sel ast.Se
 	return res
 }
 
+func (ec *executionContext) unmarshalNCursor2string(ctx context.Context, v any) (string, error) {
+	res, err := graphql.UnmarshalString(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNCursor2string(ctx context.Context, sel ast.SelectionSet, v string) graphql.Marshaler {
+	_ = sel
+	res := graphql.MarshalString(v)
+	if res == graphql.Null {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
+		}
+	}
+	return res
+}
+
+func (ec *executionContext) unmarshalNDateTime2string(ctx context.Context, v any) (string, error) {
+	res, err := graphql.UnmarshalString(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNDateTime2string(ctx context.Context, sel ast.SelectionSet, v string) graphql.Marshaler {
+	_ = sel
+	res := graphql.MarshalString(v)
+	if res == graphql.Null {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
+		}
+	}
+	return res
+}
+
 func (ec *executionContext) unmarshalNID2string(ctx context.Context, v any) (string, error) {
 	res, err := graphql.UnmarshalID(v)
 	return res, graphql.ErrorOnPath(ctx, err)
@@ -4668,12 +4858,34 @@ func (ec *executionContext) marshalNInt2int32(ctx context.Context, sel ast.Selec
 	return res
 }
 
-func (ec *executionContext) unmarshalNNewTodo2gqlgenapiᚋgraphᚋmodelᚐNewTodo(ctx context.Context, v any) (model.NewTodo, error) {
+func (ec *executionContext) unmarshalNJSON2map(ctx context.Context, v any) (map[string]any, error) {
+	res, err := graphql.UnmarshalMap(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNJSON2map(ctx context.Context, sel ast.SelectionSet, v map[string]any) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	_ = sel
+	res := graphql.MarshalMap(v)
+	if res == graphql.Null {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
+		}
+	}
+	return res
+}
+
+func (ec *executionContext) unmarshalNNewTodo2mockapiᚋgraphᚋmodelᚐNewTodo(ctx context.Context, v any) (model.NewTodo, error) {
 	res, err := ec.unmarshalInputNewTodo(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNPageInfo2ᚖgqlgenapiᚋgraphᚋmodelᚐPageInfo(ctx context.Context, sel ast.SelectionSet, v *model.PageInfo) graphql.Marshaler {
+func (ec *executionContext) marshalNPageInfo2ᚖmockapiᚋgraphᚋmodelᚐPageInfo(ctx context.Context, sel ast.SelectionSet, v *model.PageInfo) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
@@ -4683,17 +4895,17 @@ func (ec *executionContext) marshalNPageInfo2ᚖgqlgenapiᚋgraphᚋmodelᚐPage
 	return ec._PageInfo(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNRole2gqlgenapiᚋgraphᚋmodelᚐRole(ctx context.Context, v any) (model.Role, error) {
+func (ec *executionContext) unmarshalNRole2mockapiᚋgraphᚋmodelᚐRole(ctx context.Context, v any) (model.Role, error) {
 	var res model.Role
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNRole2gqlgenapiᚋgraphᚋmodelᚐRole(ctx context.Context, sel ast.SelectionSet, v model.Role) graphql.Marshaler {
+func (ec *executionContext) marshalNRole2mockapiᚋgraphᚋmodelᚐRole(ctx context.Context, sel ast.SelectionSet, v model.Role) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) marshalNSearchResult2gqlgenapiᚋgraphᚋmodelᚐSearchResult(ctx context.Context, sel ast.SelectionSet, v model.SearchResult) graphql.Marshaler {
+func (ec *executionContext) marshalNSearchResult2mockapiᚋgraphᚋmodelᚐSearchResult(ctx context.Context, sel ast.SelectionSet, v model.SearchResult) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
@@ -4703,11 +4915,11 @@ func (ec *executionContext) marshalNSearchResult2gqlgenapiᚋgraphᚋmodelᚐSea
 	return ec._SearchResult(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNSearchResult2ᚕgqlgenapiᚋgraphᚋmodelᚐSearchResultᚄ(ctx context.Context, sel ast.SelectionSet, v []model.SearchResult) graphql.Marshaler {
+func (ec *executionContext) marshalNSearchResult2ᚕmockapiᚋgraphᚋmodelᚐSearchResultᚄ(ctx context.Context, sel ast.SelectionSet, v []model.SearchResult) graphql.Marshaler {
 	ret := graphql.MarshalSliceConcurrently(ctx, len(v), 0, false, func(ctx context.Context, i int) graphql.Marshaler {
 		fc := graphql.GetFieldContext(ctx)
 		fc.Result = &v[i]
-		return ec.marshalNSearchResult2gqlgenapiᚋgraphᚋmodelᚐSearchResult(ctx, sel, v[i])
+		return ec.marshalNSearchResult2mockapiᚋgraphᚋmodelᚐSearchResult(ctx, sel, v[i])
 	})
 
 	for _, e := range ret {
@@ -4765,15 +4977,15 @@ func (ec *executionContext) marshalNString2ᚕstringᚄ(ctx context.Context, sel
 	return ret
 }
 
-func (ec *executionContext) marshalNTodo2gqlgenapiᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2mockapiᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v model.Todo) graphql.Marshaler {
 	return ec._Todo(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNTodo2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐTodoᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2ᚕᚖmockapiᚋgraphᚋmodelᚐTodoᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Todo) graphql.Marshaler {
 	ret := graphql.MarshalSliceConcurrently(ctx, len(v), 0, false, func(ctx context.Context, i int) graphql.Marshaler {
 		fc := graphql.GetFieldContext(ctx)
 		fc.Result = &v[i]
-		return ec.marshalNTodo2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo(ctx, sel, v[i])
+		return ec.marshalNTodo2ᚖmockapiᚋgraphᚋmodelᚐTodo(ctx, sel, v[i])
 	})
 
 	for _, e := range ret {
@@ -4785,7 +4997,7 @@ func (ec *executionContext) marshalNTodo2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐTodo�
 	return ret
 }
 
-func (ec *executionContext) marshalNTodo2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v *model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2ᚖmockapiᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v *model.Todo) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
@@ -4795,11 +5007,11 @@ func (ec *executionContext) marshalNTodo2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo(ctx
 	return ec._Todo(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNTodoConnection2gqlgenapiᚋgraphᚋmodelᚐTodoConnection(ctx context.Context, sel ast.SelectionSet, v model.TodoConnection) graphql.Marshaler {
+func (ec *executionContext) marshalNTodoConnection2mockapiᚋgraphᚋmodelᚐTodoConnection(ctx context.Context, sel ast.SelectionSet, v model.TodoConnection) graphql.Marshaler {
 	return ec._TodoConnection(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNTodoConnection2ᚖgqlgenapiᚋgraphᚋmodelᚐTodoConnection(ctx context.Context, sel ast.SelectionSet, v *model.TodoConnection) graphql.Marshaler {
+func (ec *executionContext) marshalNTodoConnection2ᚖmockapiᚋgraphᚋmodelᚐTodoConnection(ctx context.Context, sel ast.SelectionSet, v *model.TodoConnection) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
@@ -4809,11 +5021,11 @@ func (ec *executionContext) marshalNTodoConnection2ᚖgqlgenapiᚋgraphᚋmodel�
 	return ec._TodoConnection(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNTodoEdge2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐTodoEdgeᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.TodoEdge) graphql.Marshaler {
+func (ec *executionContext) marshalNTodoEdge2ᚕᚖmockapiᚋgraphᚋmodelᚐTodoEdgeᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.TodoEdge) graphql.Marshaler {
 	ret := graphql.MarshalSliceConcurrently(ctx, len(v), 0, false, func(ctx context.Context, i int) graphql.Marshaler {
 		fc := graphql.GetFieldContext(ctx)
 		fc.Result = &v[i]
-		return ec.marshalNTodoEdge2ᚖgqlgenapiᚋgraphᚋmodelᚐTodoEdge(ctx, sel, v[i])
+		return ec.marshalNTodoEdge2ᚖmockapiᚋgraphᚋmodelᚐTodoEdge(ctx, sel, v[i])
 	})
 
 	for _, e := range ret {
@@ -4825,7 +5037,7 @@ func (ec *executionContext) marshalNTodoEdge2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐT
 	return ret
 }
 
-func (ec *executionContext) marshalNTodoEdge2ᚖgqlgenapiᚋgraphᚋmodelᚐTodoEdge(ctx context.Context, sel ast.SelectionSet, v *model.TodoEdge) graphql.Marshaler {
+func (ec *executionContext) marshalNTodoEdge2ᚖmockapiᚋgraphᚋmodelᚐTodoEdge(ctx context.Context, sel ast.SelectionSet, v *model.TodoEdge) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
@@ -4835,20 +5047,20 @@ func (ec *executionContext) marshalNTodoEdge2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo
 	return ec._TodoEdge(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNUpdateTodoInput2gqlgenapiᚋgraphᚋmodelᚐUpdateTodoInput(ctx context.Context, v any) (model.UpdateTodoInput, error) {
+func (ec *executionContext) unmarshalNUpdateTodoInput2mockapiᚋgraphᚋmodelᚐUpdateTodoInput(ctx context.Context, v any) (model.UpdateTodoInput, error) {
 	res, err := ec.unmarshalInputUpdateTodoInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNUser2gqlgenapiᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2mockapiᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v model.User) graphql.Marshaler {
 	return ec._User(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNUser2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐUserᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚕᚖmockapiᚋgraphᚋmodelᚐUserᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.User) graphql.Marshaler {
 	ret := graphql.MarshalSliceConcurrently(ctx, len(v), 0, false, func(ctx context.Context, i int) graphql.Marshaler {
 		fc := graphql.GetFieldContext(ctx)
 		fc.Result = &v[i]
-		return ec.marshalNUser2ᚖgqlgenapiᚋgraphᚋmodelᚐUser(ctx, sel, v[i])
+		return ec.marshalNUser2ᚖmockapiᚋgraphᚋmodelᚐUser(ctx, sel, v[i])
 	})
 
 	for _, e := range ret {
@@ -4860,7 +5072,7 @@ func (ec *executionContext) marshalNUser2ᚕᚖgqlgenapiᚋgraphᚋmodelᚐUser�
 	return ret
 }
 
-func (ec *executionContext) marshalNUser2ᚖgqlgenapiᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚖmockapiᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
@@ -5041,6 +5253,24 @@ func (ec *executionContext) marshalOBoolean2ᚖbool(ctx context.Context, sel ast
 	return res
 }
 
+func (ec *executionContext) unmarshalOCursor2ᚖstring(ctx context.Context, v any) (*string, error) {
+	if v == nil {
+		return nil, nil
+	}
+	res, err := graphql.UnmarshalString(v)
+	return &res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalOCursor2ᚖstring(ctx context.Context, sel ast.SelectionSet, v *string) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	_ = sel
+	_ = ctx
+	res := graphql.MarshalString(*v)
+	return res
+}
+
 func (ec *executionContext) unmarshalOID2ᚖstring(ctx context.Context, v any) (*string, error) {
 	if v == nil {
 		return nil, nil
@@ -5077,7 +5307,25 @@ func (ec *executionContext) marshalOInt2ᚖint32(ctx context.Context, sel ast.Se
 	return res
 }
 
-func (ec *executionContext) unmarshalOPaginationInput2ᚖgqlgenapiᚋgraphᚋmodelᚐPaginationInput(ctx context.Context, v any) (*model.PaginationInput, error) {
+func (ec *executionContext) unmarshalOMetadata2map(ctx context.Context, v any) (map[string]any, error) {
+	if v == nil {
+		return nil, nil
+	}
+	res, err := graphql.UnmarshalMap(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalOMetadata2map(ctx context.Context, sel ast.SelectionSet, v map[string]any) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	_ = sel
+	_ = ctx
+	res := graphql.MarshalMap(v)
+	return res
+}
+
+func (ec *executionContext) unmarshalOPaginationInput2ᚖmockapiᚋgraphᚋmodelᚐPaginationInput(ctx context.Context, v any) (*model.PaginationInput, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -5085,7 +5333,7 @@ func (ec *executionContext) unmarshalOPaginationInput2ᚖgqlgenapiᚋgraphᚋmod
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalORole2ᚖgqlgenapiᚋgraphᚋmodelᚐRole(ctx context.Context, v any) (*model.Role, error) {
+func (ec *executionContext) unmarshalORole2ᚖmockapiᚋgraphᚋmodelᚐRole(ctx context.Context, v any) (*model.Role, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -5094,7 +5342,7 @@ func (ec *executionContext) unmarshalORole2ᚖgqlgenapiᚋgraphᚋmodelᚐRole(c
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalORole2ᚖgqlgenapiᚋgraphᚋmodelᚐRole(ctx context.Context, sel ast.SelectionSet, v *model.Role) graphql.Marshaler {
+func (ec *executionContext) marshalORole2ᚖmockapiᚋgraphᚋmodelᚐRole(ctx context.Context, sel ast.SelectionSet, v *model.Role) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -5155,14 +5403,14 @@ func (ec *executionContext) marshalOString2ᚖstring(ctx context.Context, sel as
 	return res
 }
 
-func (ec *executionContext) marshalOTodo2ᚖgqlgenapiᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v *model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalOTodo2ᚖmockapiᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v *model.Todo) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._Todo(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalOTodoFilter2ᚖgqlgenapiᚋgraphᚋmodelᚐTodoFilter(ctx context.Context, v any) (*model.TodoFilter, error) {
+func (ec *executionContext) unmarshalOTodoFilter2ᚖmockapiᚋgraphᚋmodelᚐTodoFilter(ctx context.Context, v any) (*model.TodoFilter, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -5170,7 +5418,7 @@ func (ec *executionContext) unmarshalOTodoFilter2ᚖgqlgenapiᚋgraphᚋmodelᚐ
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalOUser2ᚖgqlgenapiᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
+func (ec *executionContext) marshalOUser2ᚖmockapiᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}

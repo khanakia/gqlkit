@@ -1,3 +1,18 @@
+"""
+Define a Relay Cursor type:
+https://relay.dev/graphql/connections.htm#sec-Cursor
+"""
+scalar Cursor
+
+"ISO-8601 date-time string (e.g. \"2025-01-15T09:30:00Z\")."
+scalar DateTime
+
+"Arbitrary JSON blob — useful for dynamic/unstructured data."
+scalar JSON
+
+"Free-form key/value metadata attached to an entity."
+scalar Metadata
+
 type Mutation {
   createTodo(input: NewTodo!): Todo!
   updateTodo(id: ID!, input: UpdateTodoInput!): Todo
@@ -25,8 +40,8 @@ interface Node {
 type PageInfo {
   hasNextPage: Boolean!
   hasPreviousPage: Boolean!
-  startCursor: String
-  endCursor: String
+  startCursor: Cursor
+  endCursor: Cursor
 }
 
 input PaginationInput {
@@ -44,6 +59,7 @@ type Query {
   search(term: String!): [SearchResult!]!
   echo(message: String!): String!
   sum(a: Int!, b: Int!): Int!
+  serverInfo: JSON!
 }
 
 enum Role {
@@ -61,6 +77,8 @@ type Todo {
   priority: Int
   tags: [String!]!
   user: User!
+  createdAt: DateTime!
+  metadata: Metadata
 }
 
 type TodoConnection {
@@ -70,7 +88,7 @@ type TodoConnection {
 }
 
 type TodoEdge {
-  cursor: String!
+  cursor: Cursor!
   node: Todo!
 }
 

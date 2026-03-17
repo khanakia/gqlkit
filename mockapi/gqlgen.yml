@@ -153,6 +153,18 @@ models:
   Int:
     model:
       - github.com/99designs/gqlgen/graphql.Int32
+  Cursor:
+    model:
+      - github.com/99designs/gqlgen/graphql.String
+  DateTime:
+    model:
+      - github.com/99designs/gqlgen/graphql.String
+  JSON:
+    model:
+      - github.com/99designs/gqlgen/graphql.Map
+  Metadata:
+    model:
+      - github.com/99designs/gqlgen/graphql.Map
   Int64:
     model:
       - github.com/99designs/gqlgen/graphql.Int

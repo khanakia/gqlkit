@@ -10,3 +10,4 @@ export { UsersBuilder } from "./users";
 export { SearchBuilder } from "./search";
 export { EchoBuilder } from "./echo";
 export { SumBuilder } from "./sum";
+export { ServerInfoBuilder } from "./server-info";
