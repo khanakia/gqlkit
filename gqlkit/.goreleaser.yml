@@ -29,7 +29,7 @@ archives:
         format: zip
 
 checksum:
-  name_template: "checksums.txt"
+  name_template: "gqlkit_checksums.txt"
 
 changelog:
   sort: asc
@@ -42,3 +42,4 @@ release:
   github:
     owner: khanakia
     name: gqlkit
+  name_template: "gqlkit {{ .Version }}"

@@ -17,23 +17,36 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create semver tag
-        run: |
-          VERSION="${GITHUB_REF#refs/tags/gqlkit/}"
-          git tag -f "$VERSION"
-          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
-
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version-file: gqlkit/go.mod
 
-      - name: Run GoReleaser
+      - name: Extract version
+        id: version
+        run: |
+          FULL_TAG="${GITHUB_REF#refs/tags/}"
+          VERSION="${FULL_TAG#gqlkit/}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "full_tag=$FULL_TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Build with GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
           version: latest
-          args: release --clean
+          args: release --clean --skip=publish
           workdir: gqlkit
         env:
+          GORELEASER_CURRENT_TAG: ${{ steps.version.outputs.version }}
+
+      - name: Create GitHub Release
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GORELEASER_CURRENT_TAG: ${{ env.VERSION }}
+        run: |
+          TAG="${{ steps.version.outputs.full_tag }}"
+          VERSION="${{ steps.version.outputs.version }}"
+          gh release create "$TAG" \
+            --repo khanakia/gqlkit \
+            --title "gqlkit $VERSION" \
+            --generate-notes \
+            gqlkit/dist/*.tar.gz gqlkit/dist/*.zip gqlkit/dist/gqlkit_checksums.txt
