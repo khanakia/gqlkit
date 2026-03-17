@@ -7,6 +7,8 @@ import (
 	"io"
 	"net/http"
 	"strings"
+
+	http2curl "moul.io/http2curl/v2"
 )
 
 // IntrospectionQuery is the standard GraphQL introspection query that retrieves
@@ -109,6 +111,7 @@ fragment TypeRef on __Type {
 // primarily custom HTTP headers (e.g., Authorization, Referer, Origin).
 type FetchOptions struct {
 	Headers map[string]string
+	Debug   bool
 }
 
 // FetchSchema sends the introspection query to the given GraphQL endpoint URL
@@ -142,7 +145,12 @@ func FetchSchema(url string, opts *FetchOptions) (*IntrospectionSchema, error) {
 		}
 	}
 
-	// Execute the HTTP request.
+	if opts != nil && opts.Debug {
+		curlCmd, _ := http2curl.GetCurlCommand(req)
+		fmt.Println(curlCmd)
+		return nil, nil
+	}
+
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {

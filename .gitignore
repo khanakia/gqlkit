@@ -38,3 +38,6 @@ saas/cmd/test
 
 .github/.secrets
 .github/.secrets.prod
+
+gqlkit-sdl/dist
+.claude
