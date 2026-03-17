@@ -23,6 +23,7 @@ func main() {
 
 func init() {
 	rootCmd.AddCommand(generateCmd)
+	rootCmd.AddCommand(generateTSCmd)
 	rootCmd.AddCommand(&cobra.Command{
 		Use:   "version",
 		Short: "Print version and exit",
