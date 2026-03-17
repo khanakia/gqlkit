@@ -4,23 +4,15 @@ A CLI tool that fetches a GraphQL schema from a live endpoint via introspection 
 
 ## Installation
 
-### Download binary
-
-Download the latest release for your platform from [GitHub Releases](https://github.com/khanakia/gqlkit/releases).
+### Quick install (macOS / Linux)
 
 ```bash
-# macOS (Apple Silicon)
-curl -sL https://github.com/khanakia/gqlkit/releases/latest/download/gqlkit-sdl_darwin_arm64.tar.gz | tar xz
-
-# macOS (Intel)
-curl -sL https://github.com/khanakia/gqlkit/releases/latest/download/gqlkit-sdl_darwin_amd64.tar.gz | tar xz
-
-# Linux (amd64)
-curl -sL https://github.com/khanakia/gqlkit/releases/latest/download/gqlkit-sdl_linux_amd64.tar.gz | tar xz
-
-# Linux (arm64)
-curl -sL https://github.com/khanakia/gqlkit/releases/latest/download/gqlkit-sdl_linux_arm64.tar.gz | tar xz
+curl -sL https://raw.githubusercontent.com/khanakia/gqlkit/main/gqlkit-sdl/install.sh | sh
 ```
+
+### Manual download
+
+Download the latest release for your platform from [GitHub Releases](https://github.com/khanakia/gqlkit/releases).
 
 ### From source
 
@@ -56,13 +48,13 @@ gqlkit-sdl <command> [flags]
 gqlkit-sdl version
 
 # Basic usage
-gqlkit-sdl fetch --url "https://api.example.com/graphql"
+gqlkit-sdl fetch --url "https://graphql.anilist.co"
 
 # With custom output file
-gqlkit-sdl fetch --url "https://api.example.com/graphql" --output my-schema.graphql
+gqlkit-sdl fetch --url "https://graphql.anilist.co" --output my-schema.graphql
 
 # With authentication
-gqlkit-sdl fetch --url "https://api.example.com/graphql" \
+gqlkit-sdl fetch --url "https://graphql.anilist.co" \
   -H "Authorization: Bearer your-token"
 
 # With multiple headers
@@ -85,7 +77,7 @@ opts := &schema.FetchOptions{
     },
 }
 
-introspectionSchema, err := schema.FetchSchema("https://api.example.com/graphql", opts)
+introspectionSchema, err := schema.FetchSchema("https://graphql.anilist.co", opts)
 if err != nil {
     log.Fatal(err)
 }

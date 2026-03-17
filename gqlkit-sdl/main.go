@@ -47,6 +47,14 @@ func fetchCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "fetch",
 		Short: "Fetch GraphQL schema and save as SDL",
+		Long: `Fetch a GraphQL schema via introspection and save it as SDL.
+
+Examples:
+  gqlkit-sdl fetch --url https://graphql.anilist.co
+  gqlkit-sdl fetch --url https://graphql.anilist.co --output my-schema.graphql
+  gqlkit-sdl fetch --url https://graphql.anilist.co -H "Authorization: Bearer token"
+  gqlkit-sdl fetch --url https://graphql.anilist.co -H "Authorization: Bearer token" -H "Origin: https://example.com"
+  gqlkit-sdl fetch --url https://graphql.anilist.co --debug`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			opts := &schema.FetchOptions{
 				Headers: make(map[string]string),
