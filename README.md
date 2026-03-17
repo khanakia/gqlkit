@@ -171,6 +171,22 @@ const full  = await qr.todos().select((t) => t.id().text().done().user((u) => u.
 - **genqlient / GraphQL Code Generator**: You write queries as static strings → codegen produces types for each one → types proliferate → changing fields means re-running codegen.
 - **GQLKit**: You generate builders once from the schema → compose queries in code with dynamic field selection → one type per GraphQL type → no codegen loop for day-to-day work.
 
+### AI-friendly by design
+
+GQLKit's builder pattern works naturally with AI coding assistants (Copilot, Cursor, Claude). With query-first tools, the AI has to write raw GraphQL strings in a separate file, then you manually run codegen before the types exist — breaking the AI's flow. With GQLKit, the AI just writes code:
+
+```
+"fetch todos with user names" →
+
+qr.Todos().Select(func(f *fields.TodoFields) {
+    f.ID().Text().User(func(u *fields.UserFields) { u.ID().Name() })
+}).Execute(ctx)
+```
+
+No `.graphql` files to create, no codegen to run, no types that don't exist yet. The builder API is fully discoverable from method signatures — the AI sees `.ID()`, `.Text()`, `.Done()`, `.User()` and chains them directly.
+
+Deep dive: [docs/ai-friendly.md](./docs/ai-friendly.md)
+
 ## Key Features
 
 - **Type-safe field selection** — only selected fields exist on the return type; unselected fields are compile-time errors
