@@ -1,0 +1,40 @@
+vendor
+
+# ignore all files starting with . or ~
+##.*
+~*
+_*
+.env*
+
+# ignore OS generated files
+.sass-cache
+.DS_Store
+ehthumbs.db
+Thumbs.db
+*.idea
+*.TMP
+*.tmp
+.vscode-upload.json
+node_modules/
+yarn.lock
+
+# ignore Golang related files
+gin-bin
+go.sum
+
+# Other
+trash
+ignore
+
+# fm
+logs/*
+!logs/.gitkeep
+tmp/*
+!tmp/.gitkeep
+!tmp/bin/.gitkeep
+
+ignore.md
+saas/cmd/test
+
+.github/.secrets
+.github/.secrets.prod

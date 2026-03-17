@@ -1,0 +1,159 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  # gqlkit-sdl tasks (schema introspection fetcher)
+  gqlkit-sdl:run:
+    desc: Run gqlkit-sdl module
+    dir: ./gqlkit-sdl
+    cmds:
+      - go run .
+
+  gqlkit-sdl:build:
+    desc: Build gqlkit-sdl module
+    dir: ./gqlkit-sdl
+    cmds:
+      - go build -o ../bin/gqlkit-sdl .
+
+  # mockapi tasks (gqlgen-based test GraphQL API)
+  mockapi:run:
+    desc: Run mockapi GraphQL server
+    dir: ./mockapi
+    cmds:
+      - go run ./server.go
+
+  mockapi:build:
+    desc: Build mockapi server binary
+    dir: ./mockapi
+    cmds:
+      - go build -o ../bin/mockapi ./server.go
+
+  mockapi:generate:
+    desc: Regenerate gqlgen code for mockapi (uses GOWORK=off)
+    dir: ./mockapi
+    cmds:
+      - GOWORK=off go run github.com/99designs/gqlgen@v0.17.87 generate
+
+  # gqlkit-ts tasks (TypeScript runtime library)
+  gqlkit-ts:install:
+    desc: Install gqlkit-ts npm dependencies
+    dir: ./gqlkit-ts
+    cmds:
+      - npm install
+
+  gqlkit-ts:build:
+    desc: Build gqlkit-ts TypeScript runtime library
+    dir: ./gqlkit-ts
+    cmds:
+      - npm run build
+
+  gqlkit-ts:setup:
+    desc: Install and build gqlkit-ts
+    cmds:
+      - task: gqlkit-ts:install
+      - task: gqlkit-ts:build
+
+  # example-go-mockapi tasks (Go SDK from test API)
+  example-go-mockapi:fetch-schema:
+    desc: Fetch schema from mockapi via gqlkit-sdl
+    dir: .
+    cmds:
+      - go run ./gqlkit-sdl -url http://localhost:8081/query -output example-go-mockapi/cmd/generate/schema.graphql
+
+  example-go-mockapi:generate:
+    desc: Generate Go SDK for mockapi schema
+    dir: ./example-go-mockapi
+    cmds:
+      - go run ./cmd/generate
+
+  example-go-mockapi:run:
+    desc: Run Go sample queries against mockapi
+    dir: ./example-go-mockapi
+    cmds:
+      - go run ./cmd/samples
+
+  # example-ts tasks (TypeScript SDK generator)
+  example-ts:install:
+    desc: Install example-ts npm dependencies
+    dir: ./example-ts
+    cmds:
+      - npm install
+
+  example-ts:generate:
+    desc: Generate TypeScript SDK from schema
+    dir: ./example-ts
+    cmds:
+      - go run ./cmd/generate
+
+  example-ts:generate:clean:
+    desc: Clean and regenerate TypeScript SDK
+    dir: ./example-ts
+    cmds:
+      - rm -rf sdk
+      - go run ./cmd/generate
+
+  example-ts:typecheck:
+    desc: TypeScript type-check the generated SDK and samples
+    dir: ./example-ts
+    cmds:
+      - npx tsc --noEmit
+
+  example-ts:build:
+    desc: Build the Go TS generator binary
+    dir: ./example-ts
+    cmds:
+      - go build ./cmd/generate/
+
+  example-ts:run:
+    desc: Run TypeScript sample queries (requires mockapi running)
+    dir: ./example-ts
+    cmds:
+      - npm run samples
+
+  example-ts:test:
+    desc: Full test — build generator, clean generate SDK, type-check
+    dir: ./example-ts
+    cmds:
+      - go build ./cmd/generate/
+      - go vet ./cmd/generate/
+      - rm -rf sdk
+      - go run ./cmd/generate
+      - npx tsc --noEmit
+      - echo "All checks passed."
+
+  example-ts:setup:
+    desc: First-time setup — build runtime, install deps, generate, type-check
+    cmds:
+      - task: gqlkit-ts:setup
+      - task: example-ts:install
+      - task: example-ts:generate
+      - task: example-ts:typecheck
+
+  # Workspace tasks
+  build:
+    desc: Build all modules
+    cmds:
+      - mkdir -p bin
+      - task: gqlkit-sdl:build
+      - task: mockapi:build
+
+  tidy:
+    desc: Run go mod tidy on all modules
+    cmds:
+      - |
+        set -ex
+        for d in $(sed -n '/^use *(/,/^)/p' go.work | tail -n +2 | sed '$d' | sed 's/^[ \t]*//; s/[ \t]*$//'); do
+          echo ">> Tidying '$d'"
+          (cd "$d" && go mod tidy)
+        done
+
+  upgrade:
+    desc: Update all go modules in go.work
+    cmds:
+      - |
+        set -ex
+        for d in $(sed -n '/^use *(/,/^)/p' go.work | tail -n +2 | sed '$d' | sed 's/^[ \t]*//; s/[ \t]*$//'); do
+          echo ">> Updating '$d'"
+          (cd "$d" && go get -u ./... && go mod tidy)
+        done

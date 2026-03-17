@@ -1,0 +1,33 @@
+{{- define "field_selector" -}}
+{{- /* Field selector: type-safe field selection based on builder.FieldSelection */ -}}
+// {{ .SelectorName }} provides type-safe field selection for {{ .TypeName }}
+type {{ .SelectorName }} struct {
+	selection *{{ .BuilderPkgName }}.FieldSelection
+}
+
+// New{{ .SelectorName }} creates a new {{ .SelectorName }} selector
+func New{{ .SelectorName }}(selection *{{ .BuilderPkgName }}.FieldSelection) *{{ .SelectorName }} {
+	return &{{ .SelectorName }}{selection: selection}
+}
+
+{{- range .Fields }}
+
+{{- if .IsObject }}
+// {{ .MethodName }} selects the {{ .FieldName }} field with nested selection
+func (f *{{ $.SelectorName }}) {{ .MethodName }}(selector func(*{{ .NestedSelector }})) *{{ $.SelectorName }} {
+	child := {{ $.BuilderPkgName }}.NewFieldSelection()
+	if selector != nil {
+		selector(New{{ .NestedSelector }}(child))
+	}
+	f.selection.AddChild("{{ .FieldName }}", child)
+	return f
+}
+{{- else }}
+// {{ .MethodName }} selects the {{ .FieldName }} field
+func (f *{{ $.SelectorName }}) {{ .MethodName }}() *{{ $.SelectorName }} {
+	f.selection.AddField("{{ .FieldName }}")
+	return f
+}
+{{- end }}
+{{- end }}
+{{- end }}

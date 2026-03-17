@@ -1,0 +1,7 @@
+{
+  // Custom scalar → TypeScript type overrides
+  // Built-in scalars (String, Int, Float, Boolean, ID) are mapped automatically
+  "bindings": {
+    "Time": "string"
+  }
+}

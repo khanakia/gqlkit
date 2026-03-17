@@ -1,0 +1,10 @@
+go 1.25.5
+
+use (
+	./example-go-chat
+	./example-go-mockapi
+	./example-ts
+	./gqlkit
+	./gqlkit-sdl
+	./mockapi
+)

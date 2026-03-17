@@ -1,0 +1,14 @@
+{
+  "name": "gqlkit-ts",
+  "version": "0.1.0",
+  "description": "TypeScript GraphQL client runtime library",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

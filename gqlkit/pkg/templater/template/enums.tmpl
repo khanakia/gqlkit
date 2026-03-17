@@ -1,0 +1,29 @@
+{{ define "enums" }}
+{{ template "header" . }}
+
+{{ range .Enums }}
+{{- $enumName := .Name }}
+{{- if .Description }}
+{{ formatDesc .Name .Description }}{{ else }}
+// {{ .Name }} is a GraphQL enum type
+{{- end }}
+type {{ .Name }} string
+
+// {{ .Name }} enum values
+const (
+{{- range .EnumValues }}
+	{{- if .Description }}
+	{{- $lines := splitLines .Description }}
+	{{- range $lines }}
+	{{- $line := trimSpace . }}
+	{{- if $line }}
+	// {{ $line }}
+	{{- end }}
+	{{- end }}
+	{{- end }}
+	{{ $enumName }}{{ pascalCase .Name }} {{ $enumName }} = "{{ .Name }}"
+{{- end }}
+)
+
+{{ end }}
+{{ end }}

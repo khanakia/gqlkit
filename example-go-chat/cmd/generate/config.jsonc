@@ -1,0 +1,17 @@
+{
+  // bindings is a map of type names to their corresponding Go types
+  "bindings": {
+    "Int64": {
+      "model": "int64"
+    },
+    "Time": {
+      "model": "time.Time"
+    },
+    // "JSON": {
+    //   "model": "lace/jsontype.JSON"
+    // },
+    "Custom": {
+      "model": "int64"
+    }
+  }
+}

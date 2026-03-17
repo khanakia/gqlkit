@@ -1,0 +1,108 @@
+type Mutation {
+  createTodo(input: NewTodo!): Todo!
+  updateTodo(id: ID!, input: UpdateTodoInput!): Todo
+  deleteTodo(id: ID!): Boolean!
+  upsertUser(
+    id: ID
+    name: String!
+    email: String
+    role: Role = USER
+  ): User!
+  completeAllTodos: Int!
+}
+
+input NewTodo {
+  text: String!
+  userId: ID!
+  priority: Int
+  tags: [String!]
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+input PaginationInput {
+  limit: Int! = 10
+  offset: Int! = 0
+}
+
+type Query {
+  ping: String!
+  todo(id: ID!): Todo
+  todos(filter: TodoFilter, pagination: PaginationInput): [Todo!]!
+  todosConnection(filter: TodoFilter, pagination: PaginationInput): TodoConnection!
+  user(id: ID!): User
+  users: [User!]!
+  search(term: String!): [SearchResult!]!
+  echo(message: String!): String!
+  sum(a: Int!, b: Int!): Int!
+}
+
+enum Role {
+  ADMIN
+  USER
+  GUEST
+}
+
+union SearchResult = Todo | User
+
+type Todo {
+  id: ID!
+  text: String!
+  done: Boolean!
+  priority: Int
+  tags: [String!]!
+  user: User!
+}
+
+type TodoConnection {
+  edges: [TodoEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type TodoEdge {
+  cursor: String!
+  node: Todo!
+}
+
+input TodoFilter {
+  textContains: String
+  done: Boolean
+  minPriority: Int
+  hasTag: String
+}
+
+input UpdateTodoInput {
+  text: String
+  done: Boolean
+  priority: Int
+  tags: [String!]
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String
+  role: Role!
+}
+
+"Directs the executor to defer this fragment when the `if` argument is true or undefined."
+directive @defer(
+    "Deferred when true or undefined."
+    if: Boolean = true
+    "Unique name"
+    label: String
+  ) on FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Indicates exactly one field must be supplied and this field must not be `null`."
+directive @oneOf on INPUT_OBJECT
+

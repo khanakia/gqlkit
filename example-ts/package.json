@@ -1,0 +1,19 @@
+{
+  "name": "example-ts",
+  "version": "0.1.0",
+  "description": "TypeScript SDK example using gqlkit-ts query builder",
+  "main": "dist/cmd/samples/main.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx cmd/samples/main.ts",
+    "samples": "tsx cmd/samples/main.ts"
+  },
+  "dependencies": {
+    "gqlkit-ts": "file:../gqlkit-ts"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  }
+}

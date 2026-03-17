@@ -1,0 +1,17 @@
+{{ define "scalar" }}
+{{ template "header" . }}
+
+{{ if .Imports }}
+import (
+  {{ range .Imports }}
+    "{{ . }}"
+  {{ end }}
+)
+{{ end }}
+
+type (
+  {{ range .Scalars }}
+    {{ .Name }} = {{ .GoType }}
+  {{ end }}
+)
+{{ end }}

@@ -1,0 +1,119 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Todo {
+  id: ID!
+  text: String!
+  done: Boolean!
+  priority: Int
+  tags: [String!]!
+  user: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String
+  role: Role!
+}
+
+enum Role {
+  ADMIN
+  USER
+  GUEST
+}
+
+input NewTodo {
+  text: String!
+  userId: ID!
+  priority: Int
+  tags: [String!]
+}
+
+input UpdateTodoInput {
+  text: String
+  done: Boolean
+  priority: Int
+  tags: [String!]
+}
+
+input TodoFilter {
+  textContains: String
+  done: Boolean
+  minPriority: Int
+  hasTag: String
+}
+
+input PaginationInput {
+  limit: Int! = 10
+  offset: Int! = 0
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type TodoEdge {
+  cursor: String!
+  node: Todo!
+}
+
+type TodoConnection {
+  edges: [TodoEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+interface Node {
+  id: ID!
+}
+
+union SearchResult = Todo | User
+
+type Query {
+  # Simple healthcheck-style query used by the SDK example.
+  ping: String!
+
+  # Fetch a single todo by id.
+  todo(id: ID!): Todo
+
+  # List todos with optional filtering and simple offset pagination.
+  todos(filter: TodoFilter, pagination: PaginationInput): [Todo!]!
+
+  # Relay-style connection example for todos.
+  todosConnection(filter: TodoFilter, pagination: PaginationInput): TodoConnection!
+
+  # Fetch a single user.
+  user(id: ID!): User
+
+  # List all users.
+  users: [User!]!
+
+  # Simple full-text style search across todos and users.
+  search(term: String!): [SearchResult!]!
+
+  # Simple scalar examples.
+  echo(message: String!): String!
+  sum(a: Int!, b: Int!): Int!
+}
+
+type Mutation {
+  # Basic create mutation with nested input.
+  createTodo(input: NewTodo!): Todo!
+
+  # Update a todo with a partial input object.
+  updateTodo(id: ID!, input: UpdateTodoInput!): Todo
+
+  # Delete a todo and return success flag.
+  deleteTodo(id: ID!): Boolean!
+
+  # Upsert user shows default argument values and optional id.
+  upsertUser(id: ID, name: String!, email: String, role: Role = USER): User!
+
+  # Bulk-style mutation returning a scalar count.
+  completeAllTodos: Int!
+}

@@ -1,0 +1,43 @@
+{{ define "inputs" }}
+{{ template "header" . }}
+
+{{ if .Imports }}
+import (
+{{- range .Imports }}
+	"{{ . }}"
+{{- end }}
+)
+{{ end }}
+
+{{ range .Types }}
+{{- if .Description }}
+{{ formatDesc .Name .Description }}{{ else }}
+{{- if .IsInterface }}
+// {{ .Name }} is a GraphQL interface type
+{{- else }}
+// {{ .Name }} represents the GraphQL type {{ .Name }}
+{{- end }}
+{{- end }}
+{{- if .IsInterface }}
+type {{ .Name }} interface {
+	Is{{ .Name }}()
+}
+{{- else }}
+type {{ .Name }} struct {
+{{- range .Fields }}
+	{{- if .Description }}
+	{{- $lines := splitLines .Description }}
+	{{- range $lines }}
+	{{- $line := trimSpace . }}
+	{{- if $line }}
+	// {{ $line }}
+	{{- end }}
+	{{- end }}
+	{{- end }}
+	{{ .Name }} {{ .GoType }} {{ .JSONTag }}
+{{- end }}
+}
+{{- end }}
+
+{{ end }}
+{{ end }}
