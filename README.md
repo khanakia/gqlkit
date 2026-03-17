@@ -1,155 +1,193 @@
 # GQLKit — GraphQL SDK Generator
 
-A Go workspace that generates fully typed GraphQL client SDKs (Go and TypeScript) from a GraphQL schema. The generated SDKs use a **builder pattern** with type-safe field selection — only selected fields appear in the return type.
+Generate fully typed GraphQL client SDKs for **Go** and **TypeScript** from any GraphQL schema. Built on a **builder pattern** with type-safe field selection — only the fields you select appear in the return type.
 
-## Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        gqlkit (core)                         │
-│                                                              │
-│  GraphQL SDL ──→ schemagql ──→ typegql ──→ clientgen (Go)    │
-│                                       └──→ clientgents (TS)  │
-│                                                              │
-│  Runtime: builder + graphqlclient (Go), gqlkit-ts (TS)       │
-└─────────────────────────────────────────────────────────────┘
-
-┌──────────────┐   introspection   ┌──────────────┐
-│  gqlkit-sdl  │ ────────────────→ │ .graphql SDL  │
-│  (CLI tool)  │   fetch + convert │   (schema)    │
-└──────────────┘                   └──────┬───────┘
-                                          │
-                              ┌───────────┴───────────┐
-                              ▼                       ▼
-                    Go SDK (example-go-*)    TS SDK (example-ts)
-```
-
-## Modules
-
-| Module | Description |
-|--------|-------------|
-| [gqlkit](./gqlkit) | Core SDK generator — parses schema, generates Go and TypeScript client code |
-| [gqlkit-ts](./gqlkit-ts) | TypeScript runtime library (npm) — `GraphQLClient`, `BaseBuilder`, `FieldSelection` |
-| [gqlkit-sdl](./gqlkit-sdl) | CLI tool — fetches GraphQL schema via introspection, outputs SDL |
-| [mockapi](./mockapi) | Test GraphQL API (gqlgen) — todo/user CRUD with filtering and pagination |
-| [example-go-chat](./example-go-chat) | Example: Go SDK from a production chatbot schema (~50 queries, ~57 mutations) |
-| [example-go-mockapi](./example-go-mockapi) | Example: Go SDK from the test API |
-| [example-ts](./example-ts) | Example: TypeScript SDK from the test API |
-
-## Requirements
-
-* Go 1.21+
-* Node.js 18+ (for TypeScript SDK)
-* [Task](https://taskfile.dev) (optional, for task runner)
-
-***
-
-## TypeScript SDK Generator
-
-Generates a fully typed TypeScript SDK from a GraphQL schema. Returns **only the selected fields** — unselected fields are compile-time errors.
-
-Full technical docs: [example-ts/DOCS.md](./example-ts/DOCS.md)
-
-### 1. Start the GraphQL server
+## Install
 
 ```bash
-cd mockapi
-go run server.go
-# → running on http://localhost:8081/query
+# macOS / Linux
+curl -sL https://raw.githubusercontent.com/khanakia/gqlkit/main/gqlkit/install.sh | sh
+curl -sL https://raw.githubusercontent.com/khanakia/gqlkit/main/gqlkit-sdl/install.sh | sh
 ```
 
-### 2. Build the TypeScript runtime library
+Or download binaries from [Releases](https://github.com/khanakia/gqlkit/releases).
+
+## Quick Start — Go
+
+**1. Fetch your schema** (skip if you already have a `.graphql` file):
 
 ```bash
-cd gqlkit-ts
-npm install
-npm run build
+gqlkit-sdl fetch --url https://your-api.example.com/graphql -o schema.graphql
 ```
 
-### 3. Install TypeScript dependencies
+**2. Generate the SDK:**
 
 ```bash
-cd example-ts
-npm install
+gqlkit generate --schema schema.graphql --output ./sdk --package sdk
 ```
 
-### 4. Build the Go generator
+**3. Use it:**
+
+```go
+import (
+    "gqlkit/pkg/graphqlclient"
+    "yourmodule/sdk/queries"
+    "yourmodule/sdk/fields"
+)
+
+client := graphqlclient.NewClient("https://your-api.example.com/graphql",
+    graphqlclient.WithAuthToken("YOUR_TOKEN"),
+)
+
+qr := queries.NewQueryRoot(client)
+
+todos, err := qr.Todos().
+    Filter(&inputs.TodoFilter{Done: boolPtr(false)}).
+    Select(func(f *fields.TodoFields) {
+        f.ID().Text().Done().User(func(u *fields.UserFields) {
+            u.ID().Name()
+        })
+    }).
+    Execute(ctx)
+```
+
+Full guide: [docs/getting-started-go.md](./docs/getting-started-go.md)
+
+## Quick Start — TypeScript
+
+**1. Fetch your schema** (skip if you already have a `.graphql` file):
 
 ```bash
-cd example-ts
-go build ./cmd/generate/
+gqlkit-sdl fetch --url https://your-api.example.com/graphql -o schema.graphql
 ```
 
-### 5. Generate the TypeScript SDK
+**2. Install the runtime:**
 
 ```bash
-cd example-ts
-go run cmd/generate/main.go
+npm install gqlkit-ts
 ```
 
-Output goes to `example-ts/sdk/` (~30 `.ts` files).
-
-### 6. Type-check the generated SDK
+**3. Generate the SDK:**
 
 ```bash
-cd example-ts
-npx tsc --noEmit
-# no output = no errors
+gqlkit generate-ts --schema schema.graphql --output ./sdk --config config.jsonc
 ```
 
-### 7. Run sample queries against the live server
+**4. Use it:**
 
-```bash
-cd example-ts
-npm run samples
+```typescript
+import { GraphQLClient } from "gqlkit-ts";
+import { QueryRoot } from "./sdk/queries";
+
+const client = new GraphQLClient("https://your-api.example.com/graphql", {
+  authToken: "YOUR_TOKEN",
+});
+
+const qr = new QueryRoot(client);
+
+const todos = await qr
+  .todos()
+  .filter({ done: false })
+  .select((t) =>
+    t.id().text().done().user((u) => u.id().name())
+  )
+  .execute();
 ```
 
-### Quick re-test (after changing generator code)
+Full guide: [docs/getting-started-typescript.md](./docs/getting-started-typescript.md)
 
-```bash
-cd example-ts
-task example-ts:test
-# or manually:
-go build ./cmd/generate/ && rm -rf sdk && go run cmd/generate/main.go && npx tsc --noEmit
+## Why GQLKit?
+
+Existing GraphQL code generators like [genqlient](https://github.com/Khan/genqlient) (Go) and [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) (TypeScript) take a **query-first** approach: you write every query as a static string upfront, then run codegen to produce types for each one. This creates real problems as your project grows.
+
+### The duplicate types problem
+
+In genqlient, every query generates its own unique types — even when they return the same GraphQL type. Two queries that both fetch a `User` produce two completely separate Go structs:
+
+```graphql
+# Two queries, same underlying User type
+query GetUser($id: ID!)   { user(id: $id)   { id name email } }
+query GetViewer            { viewer           { id name email } }
 ```
 
-### Tasks
-
-```bash
-task example-ts:setup           # Steps 2-6 in one command (first-time)
-task example-ts:test            # Build + vet + clean generate + typecheck
-task example-ts:generate        # Generate SDK
-task example-ts:generate:clean  # rm -rf sdk + generate
-task example-ts:typecheck       # tsc --noEmit
-task example-ts:run             # Run samples
-task gqlkit-ts:setup            # Install + build runtime library
+```go
+// genqlient generates two unrelated structs — you can't pass one where the other is expected
+type GetUserUser struct { Id string; Name string; Email string }
+type GetViewerViewerUser struct { Id string; Name string; Email string }
 ```
 
-***
+With GQLKit, `User` is just `User`. One shared type across all queries:
 
-## Go SDK Generator
-
-### Generate the Go SDK
-
-```bash
-cd example-go-chat
-go run ./cmd/generate
+```go
+// GQLKit — one type, used everywhere
+users, _ := qr.Users().Select(func(u *fields.UserFields) { u.ID().Name().Email() }).Execute(ctx)
+user, _  := qr.User().ID("1").Select(func(u *fields.UserFields) { u.ID().Name().Email() }).Execute(ctx)
+// Both return types.User
 ```
 
-### End-to-end with test API
+### Static queries vs. dynamic field selection
 
-```bash
-# 1) Start API (in one terminal)
-task mockapi:run
+With genqlient and GraphQL Code Generator, field selection is locked at build time. Want the same query with different fields? Write another query, run codegen again, get another set of types.
 
-# 2) Fetch schema from test API
-task example-go-mockapi:fetch-schema
+GQLKit lets you choose fields at call time with full type safety:
 
-# 3) Generate SDK
-task example-go-mockapi:generate
+```go
+// Lightweight list view — only fetch what you need
+qr.Todos().Select(func(f *fields.TodoFields) { f.ID().Text() }).Execute(ctx)
 
-# 4) Run sample queries
-task example-go-mockapi:run
+// Detail view — same query, more fields, no codegen step
+qr.Todos().Select(func(f *fields.TodoFields) {
+    f.ID().Text().Done().Priority().Tags().User(func(u *fields.UserFields) {
+        u.ID().Name().Email().Role()
+    })
+}).Execute(ctx)
 ```
 
-***
+```typescript
+// TypeScript — same flexibility, compile-time narrowed return types
+const light = await qr.todos().select((t) => t.id().text()).execute();
+const full  = await qr.todos().select((t) => t.id().text().done().user((u) => u.id().name())).execute();
+// light.done → compile error (not selected)
+// full.done  → boolean (selected)
+```
+
+### Comparison
+
+| | GQLKit | [genqlient](https://github.com/Khan/genqlient) (Go) | [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) (TS) |
+|---|---|---|---|
+| **Approach** | Schema-first — generates builders from the schema | Query-first — generates types from predefined `.graphql` operations | Query-first — generates types from predefined operations |
+| **Field selection** | Dynamic at call time, type-safe | Static, locked at codegen time | Static, locked at codegen time |
+| **Type per GraphQL type** | One shared type (e.g., `User`) | One per query path (e.g., `GetUserUser`, `GetViewerViewerUser`) | One per operation (e.g., `GetUserQuery`, `GetViewerQuery`) |
+| **Adding a new query** | Just call the builder — no codegen step | Write `.graphql` file, re-run codegen | Write query string, re-run codegen |
+| **Changing field selection** | Change the `.Select()` call | Write a new query variant, re-run codegen | Write a new query variant, re-run codegen |
+| **Config complexity** | One `config.jsonc` for scalar mappings | `genqlient.yaml` + `@genqlient` directives per field | 60+ plugins; typical project needs 2–5 configured together |
+| **Output structure** | Organized packages (`queries/`, `fields/`, `types/`, etc.) | Single `generated.go` file | Varies by plugin; often one large file |
+| **Schema introspection** | Built-in (`gqlkit-sdl fetch`) | Not supported — must provide local SDL files | Supported via config |
+| **Runtime overhead** | Minimal — lightweight HTTP client | Minimal | Generated code includes duplicate query strings; needs Babel/SWC plugin to optimize |
+| **Languages** | Go + TypeScript from same schema | Go only | TypeScript/JavaScript only |
+
+### TL;DR
+
+- **genqlient / GraphQL Code Generator**: You write queries as static strings → codegen produces types for each one → types proliferate → changing fields means re-running codegen.
+- **GQLKit**: You generate builders once from the schema → compose queries in code with dynamic field selection → one type per GraphQL type → no codegen loop for day-to-day work.
+
+## Key Features
+
+- **Type-safe field selection** — only selected fields exist on the return type; unselected fields are compile-time errors
+- **Builder pattern** — fluent API for queries, mutations, arguments, and nested field selection
+- **Go + TypeScript** — generate SDKs for both languages from the same schema
+- **Schema introspection** — fetch schemas from any GraphQL endpoint with `gqlkit-sdl`
+- **Custom scalar mappings** — configure how GraphQL scalars map to language types via `config.jsonc`
+- **Zero runtime overhead** — generated code with minimal dependencies
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `gqlkit` | CLI — generates Go and TypeScript SDKs from GraphQL schemas |
+| `gqlkit-sdl` | CLI — fetches GraphQL schemas via introspection |
+| [`gqlkit-ts`](https://www.npmjs.com/package/gqlkit-ts) | npm package — lightweight TypeScript runtime for generated SDKs |
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup, architecture, and how to run the examples.
