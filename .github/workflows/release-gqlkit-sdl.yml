@@ -48,6 +48,6 @@ jobs:
           VERSION="${{ steps.version.outputs.version }}"
           gh release create "$TAG" \
             --repo khanakia/gqlkit \
-            --title "gqlkit-sdl $VERSION" \
+            --title "gqlkit-sdl@$VERSION" \
             --generate-notes \
             gqlkit-sdl/dist/*.tar.gz gqlkit-sdl/dist/*.zip gqlkit-sdl/dist/gqlkit-sdl_checksums.txt
