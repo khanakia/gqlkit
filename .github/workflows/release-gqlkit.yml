@@ -20,7 +20,7 @@ jobs:
       - name: Create semver tag
         run: |
           VERSION="${GITHUB_REF#refs/tags/gqlkit/}"
-          git tag "$VERSION"
+          git tag -f "$VERSION"
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
 
       - name: Set up Go
