@@ -3,7 +3,7 @@ name: Release gqlkit
 on:
   push:
     tags:
-      - "gqlkit/v*"
+      - "gqlkit@v*"
 
 permissions:
   contents: write
@@ -26,7 +26,7 @@ jobs:
         id: version
         run: |
           FULL_TAG="${GITHUB_REF#refs/tags/}"
-          VERSION="${FULL_TAG#gqlkit/}"
+          VERSION="${FULL_TAG#gqlkit@}"
           git tag -f "$VERSION"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "full_tag=$FULL_TAG" >> "$GITHUB_OUTPUT"

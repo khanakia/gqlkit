@@ -3,6 +3,7 @@ set -e
 
 REPO="khanakia/gqlkit"
 BINARY="gqlkit"
+TAG_PREFIX="gqlkit@"
 INSTALL_DIR="/usr/local/bin"
 
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
@@ -19,9 +20,21 @@ case "$OS" in
   *) echo "Unsupported OS: $OS" && exit 1 ;;
 esac
 
-URL="https://github.com/${REPO}/releases/latest/download/${BINARY}_${OS}_${ARCH}.tar.gz"
+# Find the latest release matching this tool's tag prefix
+TAG=$(curl -sL "https://api.github.com/repos/${REPO}/releases" \
+  | grep -o "\"tag_name\": *\"${TAG_PREFIX}v[^\"]*\"" \
+  | head -1 \
+  | cut -d'"' -f4)
 
-echo "Downloading ${BINARY} for ${OS}/${ARCH}..."
+if [ -z "$TAG" ]; then
+  echo "Error: No release found for ${BINARY}" && exit 1
+fi
+
+ENCODED_TAG="$TAG"
+ASSET="${BINARY}_${OS}_${ARCH}.tar.gz"
+URL="https://github.com/${REPO}/releases/download/${ENCODED_TAG}/${ASSET}"
+
+echo "Downloading ${BINARY} (${TAG})..."
 tmpdir=$(mktemp -d)
 curl -sL "$URL" | tar xz -C "$tmpdir"
 
