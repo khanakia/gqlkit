@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gqlkit/pkg/clientgen"
+
+	"github.com/khanakia/gqlkit/gqlkit/pkg/clientgen"
 )
 
 func main() {

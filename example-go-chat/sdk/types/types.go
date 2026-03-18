@@ -10,14 +10,14 @@ import (
 
 // AiModel represents the GraphQL type AiModel
 type AiModel struct {
-	ID              string            `json:"iD"`
+	ID              string            `json:"id"`
 	CreatedAt       *time.Time        `json:"createdAt,omitempty"`
 	UpdatedAt       *time.Time        `json:"updatedAt,omitempty"`
 	Name            *string           `json:"name,omitempty"`
 	ProviderName    string            `json:"providerName"`
 	ModelID         string            `json:"modelID"`
 	BaseURL         *string           `json:"baseURL,omitempty"`
-	APIKey          *scalars.Password `json:"aPIKey,omitempty"`
+	APIKey          *scalars.Password `json:"apiKey,omitempty"`
 	OrgID           *string           `json:"orgID,omitempty"`
 	Descr           *string           `json:"descr,omitempty"`
 	Status          *bool             `json:"status,omitempty"`
@@ -27,7 +27,7 @@ type AiModel struct {
 	IsWildai        *bool             `json:"isWildai,omitempty"`
 	IntProviderName *string           `json:"intProviderName,omitempty"`
 	IntBaseURL      *string           `json:"intBaseURL,omitempty"`
-	IntApikey       *scalars.Password `json:"intApikey,omitempty"`
+	IntApikey       *scalars.Password `json:"intAPIKey,omitempty"`
 	IntOrgID        *string           `json:"intOrgID,omitempty"`
 	IntModelID      *string           `json:"intModelID,omitempty"`
 	MaxDims         *int              `json:"maxDims,omitempty"`
@@ -60,29 +60,29 @@ type AiModelEdge struct {
 // AppSessionResponse represents the GraphQL type AppSessionResponse
 type AppSessionResponse struct {
 	SessionToken string    `json:"sessionToken"`
-	LaunchURL    string    `json:"launchURL"`
+	LaunchURL    string    `json:"launchUrl"`
 	ExpiresAt    time.Time `json:"expiresAt"`
 }
 
 // AppStoreApp represents the GraphQL type AppStoreApp
 type AppStoreApp struct {
-	ID          string          `json:"iD"`
+	ID          string          `json:"id"`
 	Name        string          `json:"name"`
 	Description *string         `json:"description,omitempty"`
-	IconURL     *string         `json:"iconURL,omitempty"`
+	IconURL     *string         `json:"iconUrl,omitempty"`
 	Partner     AppStorePartner `json:"partner"`
 }
 
 // AppStorePartner represents the GraphQL type AppStorePartner
 type AppStorePartner struct {
-	ID          string  `json:"iD"`
+	ID          string  `json:"id"`
 	Name        string  `json:"name"`
 	CompanyName *string `json:"companyName,omitempty"`
 }
 
 // BillingFeature represents the GraphQL type BillingFeature
 type BillingFeature struct {
-	ID                      string                   `json:"iD"`
+	ID                      string                   `json:"id"`
 	CreatedAt               *time.Time               `json:"createdAt,omitempty"`
 	UpdatedAt               *time.Time               `json:"updatedAt,omitempty"`
 	Name                    string                   `json:"name"`
@@ -119,7 +119,7 @@ type BillingFeatureEdge struct {
 
 // BillingPlan represents the GraphQL type BillingPlan
 type BillingPlan struct {
-	ID                  string               `json:"iD"`
+	ID                  string               `json:"id"`
 	CreatedAt           *time.Time           `json:"createdAt,omitempty"`
 	UpdatedAt           *time.Time           `json:"updatedAt,omitempty"`
 	Name                string               `json:"name"`
@@ -134,7 +134,7 @@ type BillingPlan struct {
 	PlanType            *string              `json:"planType,omitempty"`
 	HasAnnual           bool                 `json:"hasAnnual"`
 	StripePriceID       *string              `json:"stripePriceID,omitempty"`
-	StripePriceIdannual *string              `json:"stripePriceIdannual,omitempty"`
+	StripePriceIdannual *string              `json:"stripePriceIDAnnual,omitempty"`
 	Amount              *float64             `json:"amount,omitempty"`
 	AmountAnnual        *float64             `json:"amountAnnual,omitempty"`
 	Features            *json.RawMessage     `json:"features,omitempty"`
@@ -164,7 +164,7 @@ type BillingPlanEdge struct {
 
 // BillingPlanFeature represents the GraphQL type BillingPlanFeature
 type BillingPlanFeature struct {
-	ID             string          `json:"iD"`
+	ID             string          `json:"id"`
 	CreatedAt      *time.Time      `json:"createdAt,omitempty"`
 	UpdatedAt      *time.Time      `json:"updatedAt,omitempty"`
 	FeatureID      *string         `json:"featureID,omitempty"`
@@ -196,7 +196,7 @@ type BillingPlanFeatureEdge struct {
 
 // BillingPlanWspace represents the GraphQL type BillingPlanWspace
 type BillingPlanWspace struct {
-	ID            string       `json:"iD"`
+	ID            string       `json:"id"`
 	CreatedAt     *time.Time   `json:"createdAt,omitempty"`
 	UpdatedAt     *time.Time   `json:"updatedAt,omitempty"`
 	BillingPlanID *string      `json:"billingPlanID,omitempty"`
@@ -226,7 +226,7 @@ type BillingPlanWspaceEdge struct {
 
 // CWorkspaceFeatureLimit represents the GraphQL type CWorkspaceFeatureLimit
 type CWorkspaceFeatureLimit struct {
-	ID               string             `json:"iD"`
+	ID               string             `json:"id"`
 	CreatedAt        *time.Time         `json:"createdAt,omitempty"`
 	UpdatedAt        *time.Time         `json:"updatedAt,omitempty"`
 	WorkspaceID      string             `json:"workspaceID"`
@@ -261,7 +261,7 @@ type CWorkspaceFeatureLimitEdge struct {
 
 // CWorkspaceSub represents the GraphQL type CWorkspaceSub
 type CWorkspaceSub struct {
-	ID                  string       `json:"iD"`
+	ID                  string       `json:"id"`
 	CreatedAt           *time.Time   `json:"createdAt,omitempty"`
 	UpdatedAt           *time.Time   `json:"updatedAt,omitempty"`
 	WorkspaceID         *string      `json:"workspaceID,omitempty"`
@@ -316,7 +316,7 @@ type CWorkspaceSubEdge struct {
 
 // Channel represents the GraphQL type Channel
 type Channel struct {
-	ID           string                `json:"iD"`
+	ID           string                `json:"id"`
 	CreatedAt    *time.Time            `json:"createdAt,omitempty"`
 	UpdatedAt    *time.Time            `json:"updatedAt,omitempty"`
 	Name         *string               `json:"name,omitempty"`
@@ -356,7 +356,7 @@ type ChannelEdge struct {
 
 // ChannelUser represents the GraphQL type ChannelUser
 type ChannelUser struct {
-	ID          string     `json:"iD"`
+	ID          string     `json:"id"`
 	CreatedAt   *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt   *time.Time `json:"updatedAt,omitempty"`
 	UserID      string     `json:"userID"`
@@ -389,7 +389,7 @@ type ChannelUserEdge struct {
 
 // Chatbot represents the GraphQL type Chatbot
 type Chatbot struct {
-	ID                 string                `json:"iD"`
+	ID                 string                `json:"id"`
 	CreatedAt          *time.Time            `json:"createdAt,omitempty"`
 	UpdatedAt          *time.Time            `json:"updatedAt,omitempty"`
 	Name               *string               `json:"name,omitempty"`
@@ -454,7 +454,7 @@ type ChatbotEdge struct {
 
 // ChatbotTool represents the GraphQL type ChatbotTool
 type ChatbotTool struct {
-	ID          string     `json:"iD"`
+	ID          string     `json:"id"`
 	CreatedAt   *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt   *time.Time `json:"updatedAt,omitempty"`
 	FuncToolID  string     `json:"funcToolID"`
@@ -486,7 +486,7 @@ type ChatbotToolEdge struct {
 
 // ChatbotUser represents the GraphQL type ChatbotUser
 type ChatbotUser struct {
-	ID          string     `json:"iD"`
+	ID          string     `json:"id"`
 	CreatedAt   *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt   *time.Time `json:"updatedAt,omitempty"`
 	UserID      string     `json:"userID"`
@@ -518,14 +518,14 @@ type ChatbotUserEdge struct {
 
 // CheckoutSession represents the GraphQL type CheckoutSession
 type CheckoutSession struct {
-	ID    *string `json:"iD,omitempty"`
+	ID    *string `json:"id,omitempty"`
 	Value *string `json:"value,omitempty"`
 	Type  *string `json:"type,omitempty"`
 }
 
 // CheckoutSessionVerify represents the GraphQL type CheckoutSessionVerify
 type CheckoutSessionVerify struct {
-	WorkspaceID     *string `json:"workspaceID,omitempty"`
+	WorkspaceID     *string `json:"workspaceId,omitempty"`
 	AlreadyVerified *bool   `json:"alreadyVerified,omitempty"`
 }
 
@@ -537,7 +537,7 @@ type CreateChatbotResponse struct {
 
 // Credential represents the GraphQL type Credential
 type Credential struct {
-	ID             string            `json:"iD"`
+	ID             string            `json:"id"`
 	CreatedAt      *time.Time        `json:"createdAt,omitempty"`
 	UpdatedAt      *time.Time        `json:"updatedAt,omitempty"`
 	Name           *string           `json:"name,omitempty"`
@@ -550,7 +550,7 @@ type Credential struct {
 	Username       *string           `json:"username,omitempty"`
 	Password       *scalars.Password `json:"password,omitempty"`
 	Secret         *scalars.Password `json:"secret,omitempty"`
-	APIKey         *scalars.Password `json:"aPIKey,omitempty"`
+	APIKey         *scalars.Password `json:"apiKey,omitempty"`
 	WorkspaceID    *string           `json:"workspaceID,omitempty"`
 	FuncTools      []FuncTool        `json:"funcTools,omitempty"`
 }
@@ -577,7 +577,7 @@ type CredentialEdge struct {
 
 // Folder represents the GraphQL type Folder
 type Folder struct {
-	ID           string     `json:"iD"`
+	ID           string     `json:"id"`
 	CreatedAt    *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt    *time.Time `json:"updatedAt,omitempty"`
 	Name         string     `json:"name"`
@@ -612,7 +612,7 @@ type FolderEdge struct {
 
 // FuncTool represents the GraphQL type FuncTool
 type FuncTool struct {
-	ID           string           `json:"iD"`
+	ID           string           `json:"id"`
 	CreatedAt    *time.Time       `json:"createdAt,omitempty"`
 	UpdatedAt    *time.Time       `json:"updatedAt,omitempty"`
 	Name         *string          `json:"name,omitempty"`
@@ -658,7 +658,7 @@ type FuncToolEdge struct {
 
 // FuncToolLog represents the GraphQL type FuncToolLog
 type FuncToolLog struct {
-	ID          string           `json:"iD"`
+	ID          string           `json:"id"`
 	CreatedAt   *time.Time       `json:"createdAt,omitempty"`
 	UpdatedAt   *time.Time       `json:"updatedAt,omitempty"`
 	ToolCallID  *string          `json:"toolCallID,omitempty"`
@@ -695,14 +695,14 @@ type FuncToolLogEdge struct {
 
 // Guest represents the GraphQL type Guest
 type Guest struct {
-	ID          string     `json:"iD"`
+	ID          string     `json:"id"`
 	CreatedAt   *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt   *time.Time `json:"updatedAt,omitempty"`
 	ExtUserID   *string    `json:"extUserID,omitempty"`
 	FirstName   *string    `json:"firstName,omitempty"`
 	LastName    *string    `json:"lastName,omitempty"`
 	Email       *string    `json:"email,omitempty"`
-	IP          *string    `json:"iP,omitempty"`
+	IP          *string    `json:"ip,omitempty"`
 	ChatbotID   *string    `json:"chatbotID,omitempty"`
 	WorkspaceID *string    `json:"workspaceID,omitempty"`
 }
@@ -734,7 +734,7 @@ type HtmlToMarkdownResponse struct {
 
 // Item represents the GraphQL type Item
 type Item struct {
-	ID                string                       `json:"iD"`
+	ID                string                       `json:"id"`
 	CreatedAt         *time.Time                   `json:"createdAt,omitempty"`
 	UpdatedAt         *time.Time                   `json:"updatedAt,omitempty"`
 	Name              *string                      `json:"name,omitempty"`
@@ -778,7 +778,7 @@ type ItemEdge struct {
 
 // ItemGroup represents the GraphQL type ItemGroup
 type ItemGroup struct {
-	ID               string                    `json:"iD"`
+	ID               string                    `json:"id"`
 	CreatedAt        *time.Time                `json:"createdAt,omitempty"`
 	UpdatedAt        *time.Time                `json:"updatedAt,omitempty"`
 	Name             *string                   `json:"name,omitempty"`
@@ -815,13 +815,13 @@ type ItemGroupEdge struct {
 
 // ItemGroupSource represents the GraphQL type ItemGroupSource
 type ItemGroupSource struct {
-	ID                  string                                 `json:"iD"`
+	ID                  string                                 `json:"id"`
 	CreatedAt           *time.Time                             `json:"createdAt,omitempty"`
 	UpdatedAt           *time.Time                             `json:"updatedAt,omitempty"`
 	ItemGroupID         *string                                `json:"itemGroupID,omitempty"`
 	Name                *string                                `json:"name,omitempty"`
 	Type                *scalars.ItemGroupSourceType           `json:"type,omitempty"`
-	URL                 *string                                `json:"uRL,omitempty"`
+	URL                 *string                                `json:"url,omitempty"`
 	FileID              *string                                `json:"fileID,omitempty"`
 	OriginalFileName    *string                                `json:"originalFileName,omitempty"`
 	FileName            *string                                `json:"fileName,omitempty"`
@@ -874,7 +874,7 @@ type ItemGroupSourceSummary struct {
 
 // ItemInfo represents the GraphQL type ItemInfo
 type ItemInfo struct {
-	ID          string           `json:"iD"`
+	ID          string           `json:"id"`
 	CreatedAt   string           `json:"createdAt"`
 	Name        string           `json:"name"`
 	FileName    string           `json:"fileName"`
@@ -887,14 +887,14 @@ type ItemInfo struct {
 
 // Lead represents the GraphQL type Lead
 type Lead struct {
-	ID          string     `json:"iD"`
+	ID          string     `json:"id"`
 	CreatedAt   *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt   *time.Time `json:"updatedAt,omitempty"`
 	Name        *string    `json:"name,omitempty"`
 	Email       *string    `json:"email,omitempty"`
 	Phone       *string    `json:"phone,omitempty"`
 	Company     *string    `json:"company,omitempty"`
-	IP          *string    `json:"iP,omitempty"`
+	IP          *string    `json:"ip,omitempty"`
 	GuestUserID *string    `json:"guestUserID,omitempty"`
 	ChatbotID   *string    `json:"chatbotID,omitempty"`
 	WorkspaceID *string    `json:"workspaceID,omitempty"`
@@ -922,7 +922,7 @@ type LeadEdge struct {
 
 // Message represents the GraphQL type Message
 type Message struct {
-	ID               string             `json:"iD"`
+	ID               string             `json:"id"`
 	CreatedAt        *time.Time         `json:"createdAt,omitempty"`
 	UpdatedAt        *time.Time         `json:"updatedAt,omitempty"`
 	Role             *string            `json:"role,omitempty"`
@@ -988,7 +988,7 @@ type Student struct {
 
 // TmpItem represents the GraphQL type TmpItem
 type TmpItem struct {
-	ID                string                       `json:"iD"`
+	ID                string                       `json:"id"`
 	CreatedAt         *time.Time                   `json:"createdAt,omitempty"`
 	UpdatedAt         *time.Time                   `json:"updatedAt,omitempty"`
 	ItemID            *string                      `json:"itemID,omitempty"`
@@ -1008,7 +1008,7 @@ type UrlToHtmlResponse struct {
 
 // User represents the GraphQL type User
 type User struct {
-	ID           string            `json:"iD"`
+	ID           string            `json:"id"`
 	CreatedAt    *time.Time        `json:"createdAt,omitempty"`
 	UpdatedAt    *time.Time        `json:"updatedAt,omitempty"`
 	Type         *scalars.UserType `json:"type,omitempty"`
@@ -1016,7 +1016,7 @@ type User struct {
 	FirstName    *string           `json:"firstName,omitempty"`
 	LastName     *string           `json:"lastName,omitempty"`
 	Email        *string           `json:"email,omitempty"`
-	IP           *string           `json:"iP,omitempty"`
+	IP           *string           `json:"ip,omitempty"`
 	WorkspaceID  *string           `json:"workspaceID,omitempty"`
 	MyChannels   []Channel         `json:"myChannels,omitempty"`
 	Channels     []Channel         `json:"channels,omitempty"`
@@ -1049,16 +1049,16 @@ type UserEdge struct {
 
 // WorkspaceAppInstallation represents the GraphQL type WorkspaceAppInstallation
 type WorkspaceAppInstallation struct {
-	ID          string      `json:"iD"`
+	ID          string      `json:"id"`
 	App         AppStoreApp `json:"app"`
-	WorkspaceID string      `json:"workspaceID"`
+	WorkspaceID string      `json:"workspaceId"`
 	Status      string      `json:"status"`
 	InstalledAt time.Time   `json:"installedAt"`
 }
 
 // WorkspaceDetail represents the GraphQL type WorkspaceDetail
 type WorkspaceDetail struct {
-	ID            string  `json:"iD"`
+	ID            string  `json:"id"`
 	Name          *string `json:"name,omitempty"`
 	TotalAgents   int     `json:"totalAgents"`
 	TotalDatasets int     `json:"totalDatasets"`

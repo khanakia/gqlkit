@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"example-go-chat/sdk/graphqlclient"
 	"fmt"
-	"gqlkit/pkg/graphqlclient"
 	"log"
 
 	"example-go-chat/sdk/fields"

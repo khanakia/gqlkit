@@ -26,47 +26,47 @@ type AiModelWhereInput struct {
 	And []AiModelWhereInput `json:"and,omitempty"`
 	Or  []AiModelWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -76,13 +76,13 @@ type AiModelWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// provider_name field predicates
 	ProviderName             *string  `json:"providerName,omitempty"`
-	ProviderNameNeq          *string  `json:"providerNameNeq,omitempty"`
+	ProviderNameNeq          *string  `json:"providerNameNEQ,omitempty"`
 	ProviderNameIn           []string `json:"providerNameIn,omitempty"`
 	ProviderNameNotIn        []string `json:"providerNameNotIn,omitempty"`
-	ProviderNameGt           *string  `json:"providerNameGt,omitempty"`
-	ProviderNameGte          *string  `json:"providerNameGte,omitempty"`
-	ProviderNameLt           *string  `json:"providerNameLt,omitempty"`
-	ProviderNameLte          *string  `json:"providerNameLte,omitempty"`
+	ProviderNameGt           *string  `json:"providerNameGT,omitempty"`
+	ProviderNameGte          *string  `json:"providerNameGTE,omitempty"`
+	ProviderNameLt           *string  `json:"providerNameLT,omitempty"`
+	ProviderNameLte          *string  `json:"providerNameLTE,omitempty"`
 	ProviderNameContains     *string  `json:"providerNameContains,omitempty"`
 	ProviderNameHasPrefix    *string  `json:"providerNameHasPrefix,omitempty"`
 	ProviderNameHasSuffix    *string  `json:"providerNameHasSuffix,omitempty"`
@@ -90,59 +90,59 @@ type AiModelWhereInput struct {
 	ProviderNameContainsFold *string  `json:"providerNameContainsFold,omitempty"`
 	// model_id field predicates
 	ModelID             *string  `json:"modelID,omitempty"`
-	ModelIdneq          *string  `json:"modelIdneq,omitempty"`
-	ModelIdin           []string `json:"modelIdin,omitempty"`
-	ModelIdnotIn        []string `json:"modelIdnotIn,omitempty"`
-	ModelIdgt           *string  `json:"modelIdgt,omitempty"`
-	ModelIdgte          *string  `json:"modelIdgte,omitempty"`
-	ModelIdlt           *string  `json:"modelIdlt,omitempty"`
-	ModelIdlte          *string  `json:"modelIdlte,omitempty"`
-	ModelIdcontains     *string  `json:"modelIdcontains,omitempty"`
-	ModelIdhasPrefix    *string  `json:"modelIdhasPrefix,omitempty"`
-	ModelIdhasSuffix    *string  `json:"modelIdhasSuffix,omitempty"`
-	ModelIdequalFold    *string  `json:"modelIdequalFold,omitempty"`
-	ModelIdcontainsFold *string  `json:"modelIdcontainsFold,omitempty"`
+	ModelIdneq          *string  `json:"modelIDNEQ,omitempty"`
+	ModelIdin           []string `json:"modelIDIn,omitempty"`
+	ModelIdnotIn        []string `json:"modelIDNotIn,omitempty"`
+	ModelIdgt           *string  `json:"modelIDGT,omitempty"`
+	ModelIdgte          *string  `json:"modelIDGTE,omitempty"`
+	ModelIdlt           *string  `json:"modelIDLT,omitempty"`
+	ModelIdlte          *string  `json:"modelIDLTE,omitempty"`
+	ModelIdcontains     *string  `json:"modelIDContains,omitempty"`
+	ModelIdhasPrefix    *string  `json:"modelIDHasPrefix,omitempty"`
+	ModelIdhasSuffix    *string  `json:"modelIDHasSuffix,omitempty"`
+	ModelIdequalFold    *string  `json:"modelIDEqualFold,omitempty"`
+	ModelIdcontainsFold *string  `json:"modelIDContainsFold,omitempty"`
 	// base_url field predicates
 	BaseURL             *string  `json:"baseURL,omitempty"`
-	BaseUrlneq          *string  `json:"baseUrlneq,omitempty"`
-	BaseUrlin           []string `json:"baseUrlin,omitempty"`
-	BaseUrlnotIn        []string `json:"baseUrlnotIn,omitempty"`
-	BaseUrlgt           *string  `json:"baseUrlgt,omitempty"`
-	BaseUrlgte          *string  `json:"baseUrlgte,omitempty"`
-	BaseUrllt           *string  `json:"baseUrllt,omitempty"`
-	BaseUrllte          *string  `json:"baseUrllte,omitempty"`
-	BaseUrlcontains     *string  `json:"baseUrlcontains,omitempty"`
-	BaseUrlhasPrefix    *string  `json:"baseUrlhasPrefix,omitempty"`
-	BaseUrlhasSuffix    *string  `json:"baseUrlhasSuffix,omitempty"`
-	BaseUrlisNil        *bool    `json:"baseUrlisNil,omitempty"`
-	BaseUrlnotNil       *bool    `json:"baseUrlnotNil,omitempty"`
-	BaseUrlequalFold    *string  `json:"baseUrlequalFold,omitempty"`
-	BaseUrlcontainsFold *string  `json:"baseUrlcontainsFold,omitempty"`
+	BaseUrlneq          *string  `json:"baseURLNEQ,omitempty"`
+	BaseUrlin           []string `json:"baseURLIn,omitempty"`
+	BaseUrlnotIn        []string `json:"baseURLNotIn,omitempty"`
+	BaseUrlgt           *string  `json:"baseURLGT,omitempty"`
+	BaseUrlgte          *string  `json:"baseURLGTE,omitempty"`
+	BaseUrllt           *string  `json:"baseURLLT,omitempty"`
+	BaseUrllte          *string  `json:"baseURLLTE,omitempty"`
+	BaseUrlcontains     *string  `json:"baseURLContains,omitempty"`
+	BaseUrlhasPrefix    *string  `json:"baseURLHasPrefix,omitempty"`
+	BaseUrlhasSuffix    *string  `json:"baseURLHasSuffix,omitempty"`
+	BaseUrlisNil        *bool    `json:"baseURLIsNil,omitempty"`
+	BaseUrlnotNil       *bool    `json:"baseURLNotNil,omitempty"`
+	BaseUrlequalFold    *string  `json:"baseURLEqualFold,omitempty"`
+	BaseUrlcontainsFold *string  `json:"baseURLContainsFold,omitempty"`
 	// org_id field predicates
 	OrgID             *string  `json:"orgID,omitempty"`
-	OrgIdneq          *string  `json:"orgIdneq,omitempty"`
-	OrgIdin           []string `json:"orgIdin,omitempty"`
-	OrgIdnotIn        []string `json:"orgIdnotIn,omitempty"`
-	OrgIdgt           *string  `json:"orgIdgt,omitempty"`
-	OrgIdgte          *string  `json:"orgIdgte,omitempty"`
-	OrgIdlt           *string  `json:"orgIdlt,omitempty"`
-	OrgIdlte          *string  `json:"orgIdlte,omitempty"`
-	OrgIdcontains     *string  `json:"orgIdcontains,omitempty"`
-	OrgIdhasPrefix    *string  `json:"orgIdhasPrefix,omitempty"`
-	OrgIdhasSuffix    *string  `json:"orgIdhasSuffix,omitempty"`
-	OrgIdisNil        *bool    `json:"orgIdisNil,omitempty"`
-	OrgIdnotNil       *bool    `json:"orgIdnotNil,omitempty"`
-	OrgIdequalFold    *string  `json:"orgIdequalFold,omitempty"`
-	OrgIdcontainsFold *string  `json:"orgIdcontainsFold,omitempty"`
+	OrgIdneq          *string  `json:"orgIDNEQ,omitempty"`
+	OrgIdin           []string `json:"orgIDIn,omitempty"`
+	OrgIdnotIn        []string `json:"orgIDNotIn,omitempty"`
+	OrgIdgt           *string  `json:"orgIDGT,omitempty"`
+	OrgIdgte          *string  `json:"orgIDGTE,omitempty"`
+	OrgIdlt           *string  `json:"orgIDLT,omitempty"`
+	OrgIdlte          *string  `json:"orgIDLTE,omitempty"`
+	OrgIdcontains     *string  `json:"orgIDContains,omitempty"`
+	OrgIdhasPrefix    *string  `json:"orgIDHasPrefix,omitempty"`
+	OrgIdhasSuffix    *string  `json:"orgIDHasSuffix,omitempty"`
+	OrgIdisNil        *bool    `json:"orgIDIsNil,omitempty"`
+	OrgIdnotNil       *bool    `json:"orgIDNotNil,omitempty"`
+	OrgIdequalFold    *string  `json:"orgIDEqualFold,omitempty"`
+	OrgIdcontainsFold *string  `json:"orgIDContainsFold,omitempty"`
 	// descr field predicates
 	Descr             *string  `json:"descr,omitempty"`
-	DescrNeq          *string  `json:"descrNeq,omitempty"`
+	DescrNeq          *string  `json:"descrNEQ,omitempty"`
 	DescrIn           []string `json:"descrIn,omitempty"`
 	DescrNotIn        []string `json:"descrNotIn,omitempty"`
-	DescrGt           *string  `json:"descrGt,omitempty"`
-	DescrGte          *string  `json:"descrGte,omitempty"`
-	DescrLt           *string  `json:"descrLt,omitempty"`
-	DescrLte          *string  `json:"descrLte,omitempty"`
+	DescrGt           *string  `json:"descrGT,omitempty"`
+	DescrGte          *string  `json:"descrGTE,omitempty"`
+	DescrLt           *string  `json:"descrLT,omitempty"`
+	DescrLte          *string  `json:"descrLTE,omitempty"`
 	DescrContains     *string  `json:"descrContains,omitempty"`
 	DescrHasPrefix    *string  `json:"descrHasPrefix,omitempty"`
 	DescrHasSuffix    *string  `json:"descrHasSuffix,omitempty"`
@@ -152,44 +152,44 @@ type AiModelWhereInput struct {
 	DescrContainsFold *string  `json:"descrContainsFold,omitempty"`
 	// status field predicates
 	Status       *bool `json:"status,omitempty"`
-	StatusNeq    *bool `json:"statusNeq,omitempty"`
+	StatusNeq    *bool `json:"statusNEQ,omitempty"`
 	StatusIsNil  *bool `json:"statusIsNil,omitempty"`
 	StatusNotNil *bool `json:"statusNotNil,omitempty"`
 	// has_chat field predicates
 	HasChat       *bool `json:"hasChat,omitempty"`
-	HasChatNeq    *bool `json:"hasChatNeq,omitempty"`
+	HasChatNeq    *bool `json:"hasChatNEQ,omitempty"`
 	HasChatIsNil  *bool `json:"hasChatIsNil,omitempty"`
 	HasChatNotNil *bool `json:"hasChatNotNil,omitempty"`
 	// has_embeddings field predicates
 	HasEmbeddings       *bool `json:"hasEmbeddings,omitempty"`
-	HasEmbeddingsNeq    *bool `json:"hasEmbeddingsNeq,omitempty"`
+	HasEmbeddingsNeq    *bool `json:"hasEmbeddingsNEQ,omitempty"`
 	HasEmbeddingsIsNil  *bool `json:"hasEmbeddingsIsNil,omitempty"`
 	HasEmbeddingsNotNil *bool `json:"hasEmbeddingsNotNil,omitempty"`
 	// is_wildai field predicates
 	IsWildai       *bool `json:"isWildai,omitempty"`
-	IsWildaiNeq    *bool `json:"isWildaiNeq,omitempty"`
+	IsWildaiNeq    *bool `json:"isWildaiNEQ,omitempty"`
 	IsWildaiIsNil  *bool `json:"isWildaiIsNil,omitempty"`
 	IsWildaiNotNil *bool `json:"isWildaiNotNil,omitempty"`
 	// max_dims field predicates
 	MaxDims       *int  `json:"maxDims,omitempty"`
-	MaxDimsNeq    *int  `json:"maxDimsNeq,omitempty"`
+	MaxDimsNeq    *int  `json:"maxDimsNEQ,omitempty"`
 	MaxDimsIn     []int `json:"maxDimsIn,omitempty"`
 	MaxDimsNotIn  []int `json:"maxDimsNotIn,omitempty"`
-	MaxDimsGt     *int  `json:"maxDimsGt,omitempty"`
-	MaxDimsGte    *int  `json:"maxDimsGte,omitempty"`
-	MaxDimsLt     *int  `json:"maxDimsLt,omitempty"`
-	MaxDimsLte    *int  `json:"maxDimsLte,omitempty"`
+	MaxDimsGt     *int  `json:"maxDimsGT,omitempty"`
+	MaxDimsGte    *int  `json:"maxDimsGTE,omitempty"`
+	MaxDimsLt     *int  `json:"maxDimsLT,omitempty"`
+	MaxDimsLte    *int  `json:"maxDimsLTE,omitempty"`
 	MaxDimsIsNil  *bool `json:"maxDimsIsNil,omitempty"`
 	MaxDimsNotNil *bool `json:"maxDimsNotNil,omitempty"`
 	// max_tokens field predicates
 	MaxTokens       *int  `json:"maxTokens,omitempty"`
-	MaxTokensNeq    *int  `json:"maxTokensNeq,omitempty"`
+	MaxTokensNeq    *int  `json:"maxTokensNEQ,omitempty"`
 	MaxTokensIn     []int `json:"maxTokensIn,omitempty"`
 	MaxTokensNotIn  []int `json:"maxTokensNotIn,omitempty"`
-	MaxTokensGt     *int  `json:"maxTokensGt,omitempty"`
-	MaxTokensGte    *int  `json:"maxTokensGte,omitempty"`
-	MaxTokensLt     *int  `json:"maxTokensLt,omitempty"`
-	MaxTokensLte    *int  `json:"maxTokensLte,omitempty"`
+	MaxTokensGt     *int  `json:"maxTokensGT,omitempty"`
+	MaxTokensGte    *int  `json:"maxTokensGTE,omitempty"`
+	MaxTokensLt     *int  `json:"maxTokensLT,omitempty"`
+	MaxTokensLte    *int  `json:"maxTokensLTE,omitempty"`
 	MaxTokensIsNil  *bool `json:"maxTokensIsNil,omitempty"`
 	MaxTokensNotNil *bool `json:"maxTokensNotNil,omitempty"`
 	// chatbots edge predicates
@@ -211,63 +211,63 @@ type CWorkspaceSubWhereInput struct {
 	And []CWorkspaceSubWhereInput `json:"and,omitempty"`
 	Or  []CWorkspaceSubWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// status field predicates
 	Status             *string  `json:"status,omitempty"`
-	StatusNeq          *string  `json:"statusNeq,omitempty"`
+	StatusNeq          *string  `json:"statusNEQ,omitempty"`
 	StatusIn           []string `json:"statusIn,omitempty"`
 	StatusNotIn        []string `json:"statusNotIn,omitempty"`
-	StatusGt           *string  `json:"statusGt,omitempty"`
-	StatusGte          *string  `json:"statusGte,omitempty"`
-	StatusLt           *string  `json:"statusLt,omitempty"`
-	StatusLte          *string  `json:"statusLte,omitempty"`
+	StatusGt           *string  `json:"statusGT,omitempty"`
+	StatusGte          *string  `json:"statusGTE,omitempty"`
+	StatusLt           *string  `json:"statusLT,omitempty"`
+	StatusLte          *string  `json:"statusLTE,omitempty"`
 	StatusContains     *string  `json:"statusContains,omitempty"`
 	StatusHasPrefix    *string  `json:"statusHasPrefix,omitempty"`
 	StatusHasSuffix    *string  `json:"statusHasSuffix,omitempty"`
@@ -279,8 +279,8 @@ type CWorkspaceSubWhereInput struct {
 
 // ChannelMoveToFolderInput represents the GraphQL type ChannelMoveToFolderInput
 type ChannelMoveToFolderInput struct {
-	ChannelID string  `json:"channelID"`
-	FolderID  *string `json:"folderID,omitempty"`
+	ChannelID string  `json:"channelId"`
+	FolderID  *string `json:"folderId,omitempty"`
 }
 
 // ChannelOrder Ordering options for Channel connections
@@ -322,71 +322,71 @@ type ChannelUserWhereInput struct {
 	And []ChannelUserWhereInput `json:"and,omitempty"`
 	Or  []ChannelUserWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// chatbot_id field predicates
 	ChatbotID             *string  `json:"chatbotID,omitempty"`
-	ChatbotIdneq          *string  `json:"chatbotIdneq,omitempty"`
-	ChatbotIdin           []string `json:"chatbotIdin,omitempty"`
-	ChatbotIdnotIn        []string `json:"chatbotIdnotIn,omitempty"`
-	ChatbotIdgt           *string  `json:"chatbotIdgt,omitempty"`
-	ChatbotIdgte          *string  `json:"chatbotIdgte,omitempty"`
-	ChatbotIdlt           *string  `json:"chatbotIdlt,omitempty"`
-	ChatbotIdlte          *string  `json:"chatbotIdlte,omitempty"`
-	ChatbotIdcontains     *string  `json:"chatbotIdcontains,omitempty"`
-	ChatbotIdhasPrefix    *string  `json:"chatbotIdhasPrefix,omitempty"`
-	ChatbotIdhasSuffix    *string  `json:"chatbotIdhasSuffix,omitempty"`
-	ChatbotIdisNil        *bool    `json:"chatbotIdisNil,omitempty"`
-	ChatbotIdnotNil       *bool    `json:"chatbotIdnotNil,omitempty"`
-	ChatbotIdequalFold    *string  `json:"chatbotIdequalFold,omitempty"`
-	ChatbotIdcontainsFold *string  `json:"chatbotIdcontainsFold,omitempty"`
-	UserIdin              []string `json:"userIdin,omitempty"`
+	ChatbotIdneq          *string  `json:"chatbotIDNEQ,omitempty"`
+	ChatbotIdin           []string `json:"chatbotIDIn,omitempty"`
+	ChatbotIdnotIn        []string `json:"chatbotIDNotIn,omitempty"`
+	ChatbotIdgt           *string  `json:"chatbotIDGT,omitempty"`
+	ChatbotIdgte          *string  `json:"chatbotIDGTE,omitempty"`
+	ChatbotIdlt           *string  `json:"chatbotIDLT,omitempty"`
+	ChatbotIdlte          *string  `json:"chatbotIDLTE,omitempty"`
+	ChatbotIdcontains     *string  `json:"chatbotIDContains,omitempty"`
+	ChatbotIdhasPrefix    *string  `json:"chatbotIDHasPrefix,omitempty"`
+	ChatbotIdhasSuffix    *string  `json:"chatbotIDHasSuffix,omitempty"`
+	ChatbotIdisNil        *bool    `json:"chatbotIDIsNil,omitempty"`
+	ChatbotIdnotNil       *bool    `json:"chatbotIDNotNil,omitempty"`
+	ChatbotIdequalFold    *string  `json:"chatbotIDEqualFold,omitempty"`
+	ChatbotIdcontainsFold *string  `json:"chatbotIDContainsFold,omitempty"`
+	UserIdin              []string `json:"userIDIn,omitempty"`
 }
 
 // ChannelWhereInput ChannelWhereInput is used for filtering Channel objects.
@@ -397,47 +397,47 @@ type ChannelWhereInput struct {
 	And []ChannelWhereInput `json:"and,omitempty"`
 	Or  []ChannelWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -447,89 +447,89 @@ type ChannelWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// is_public field predicates
 	IsPublic       *bool `json:"isPublic,omitempty"`
-	IsPublicNeq    *bool `json:"isPublicNeq,omitempty"`
+	IsPublicNeq    *bool `json:"isPublicNEQ,omitempty"`
 	IsPublicIsNil  *bool `json:"isPublicIsNil,omitempty"`
 	IsPublicNotNil *bool `json:"isPublicNotNil,omitempty"`
 	// guest_id field predicates
 	GuestID             *string  `json:"guestID,omitempty"`
-	GuestIdneq          *string  `json:"guestIdneq,omitempty"`
-	GuestIdin           []string `json:"guestIdin,omitempty"`
-	GuestIdnotIn        []string `json:"guestIdnotIn,omitempty"`
-	GuestIdgt           *string  `json:"guestIdgt,omitempty"`
-	GuestIdgte          *string  `json:"guestIdgte,omitempty"`
-	GuestIdlt           *string  `json:"guestIdlt,omitempty"`
-	GuestIdlte          *string  `json:"guestIdlte,omitempty"`
-	GuestIdcontains     *string  `json:"guestIdcontains,omitempty"`
-	GuestIdhasPrefix    *string  `json:"guestIdhasPrefix,omitempty"`
-	GuestIdhasSuffix    *string  `json:"guestIdhasSuffix,omitempty"`
-	GuestIdisNil        *bool    `json:"guestIdisNil,omitempty"`
-	GuestIdnotNil       *bool    `json:"guestIdnotNil,omitempty"`
-	GuestIdequalFold    *string  `json:"guestIdequalFold,omitempty"`
-	GuestIdcontainsFold *string  `json:"guestIdcontainsFold,omitempty"`
+	GuestIdneq          *string  `json:"guestIDNEQ,omitempty"`
+	GuestIdin           []string `json:"guestIDIn,omitempty"`
+	GuestIdnotIn        []string `json:"guestIDNotIn,omitempty"`
+	GuestIdgt           *string  `json:"guestIDGT,omitempty"`
+	GuestIdgte          *string  `json:"guestIDGTE,omitempty"`
+	GuestIdlt           *string  `json:"guestIDLT,omitempty"`
+	GuestIdlte          *string  `json:"guestIDLTE,omitempty"`
+	GuestIdcontains     *string  `json:"guestIDContains,omitempty"`
+	GuestIdhasPrefix    *string  `json:"guestIDHasPrefix,omitempty"`
+	GuestIdhasSuffix    *string  `json:"guestIDHasSuffix,omitempty"`
+	GuestIdisNil        *bool    `json:"guestIDIsNil,omitempty"`
+	GuestIdnotNil       *bool    `json:"guestIDNotNil,omitempty"`
+	GuestIdequalFold    *string  `json:"guestIDEqualFold,omitempty"`
+	GuestIdcontainsFold *string  `json:"guestIDContainsFold,omitempty"`
 	// owner_id field predicates
 	OwnerID             *string  `json:"ownerID,omitempty"`
-	OwnerIdneq          *string  `json:"ownerIdneq,omitempty"`
-	OwnerIdin           []string `json:"ownerIdin,omitempty"`
-	OwnerIdnotIn        []string `json:"ownerIdnotIn,omitempty"`
-	OwnerIdgt           *string  `json:"ownerIdgt,omitempty"`
-	OwnerIdgte          *string  `json:"ownerIdgte,omitempty"`
-	OwnerIdlt           *string  `json:"ownerIdlt,omitempty"`
-	OwnerIdlte          *string  `json:"ownerIdlte,omitempty"`
-	OwnerIdcontains     *string  `json:"ownerIdcontains,omitempty"`
-	OwnerIdhasPrefix    *string  `json:"ownerIdhasPrefix,omitempty"`
-	OwnerIdhasSuffix    *string  `json:"ownerIdhasSuffix,omitempty"`
-	OwnerIdisNil        *bool    `json:"ownerIdisNil,omitempty"`
-	OwnerIdnotNil       *bool    `json:"ownerIdnotNil,omitempty"`
-	OwnerIdequalFold    *string  `json:"ownerIdequalFold,omitempty"`
-	OwnerIdcontainsFold *string  `json:"ownerIdcontainsFold,omitempty"`
+	OwnerIdneq          *string  `json:"ownerIDNEQ,omitempty"`
+	OwnerIdin           []string `json:"ownerIDIn,omitempty"`
+	OwnerIdnotIn        []string `json:"ownerIDNotIn,omitempty"`
+	OwnerIdgt           *string  `json:"ownerIDGT,omitempty"`
+	OwnerIdgte          *string  `json:"ownerIDGTE,omitempty"`
+	OwnerIdlt           *string  `json:"ownerIDLT,omitempty"`
+	OwnerIdlte          *string  `json:"ownerIDLTE,omitempty"`
+	OwnerIdcontains     *string  `json:"ownerIDContains,omitempty"`
+	OwnerIdhasPrefix    *string  `json:"ownerIDHasPrefix,omitempty"`
+	OwnerIdhasSuffix    *string  `json:"ownerIDHasSuffix,omitempty"`
+	OwnerIdisNil        *bool    `json:"ownerIDIsNil,omitempty"`
+	OwnerIdnotNil       *bool    `json:"ownerIDNotNil,omitempty"`
+	OwnerIdequalFold    *string  `json:"ownerIDEqualFold,omitempty"`
+	OwnerIdcontainsFold *string  `json:"ownerIDContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// chatbot_id field predicates
 	ChatbotID             *string  `json:"chatbotID,omitempty"`
-	ChatbotIdneq          *string  `json:"chatbotIdneq,omitempty"`
-	ChatbotIdin           []string `json:"chatbotIdin,omitempty"`
-	ChatbotIdnotIn        []string `json:"chatbotIdnotIn,omitempty"`
-	ChatbotIdgt           *string  `json:"chatbotIdgt,omitempty"`
-	ChatbotIdgte          *string  `json:"chatbotIdgte,omitempty"`
-	ChatbotIdlt           *string  `json:"chatbotIdlt,omitempty"`
-	ChatbotIdlte          *string  `json:"chatbotIdlte,omitempty"`
-	ChatbotIdcontains     *string  `json:"chatbotIdcontains,omitempty"`
-	ChatbotIdhasPrefix    *string  `json:"chatbotIdhasPrefix,omitempty"`
-	ChatbotIdhasSuffix    *string  `json:"chatbotIdhasSuffix,omitempty"`
-	ChatbotIdisNil        *bool    `json:"chatbotIdisNil,omitempty"`
-	ChatbotIdnotNil       *bool    `json:"chatbotIdnotNil,omitempty"`
-	ChatbotIdequalFold    *string  `json:"chatbotIdequalFold,omitempty"`
-	ChatbotIdcontainsFold *string  `json:"chatbotIdcontainsFold,omitempty"`
+	ChatbotIdneq          *string  `json:"chatbotIDNEQ,omitempty"`
+	ChatbotIdin           []string `json:"chatbotIDIn,omitempty"`
+	ChatbotIdnotIn        []string `json:"chatbotIDNotIn,omitempty"`
+	ChatbotIdgt           *string  `json:"chatbotIDGT,omitempty"`
+	ChatbotIdgte          *string  `json:"chatbotIDGTE,omitempty"`
+	ChatbotIdlt           *string  `json:"chatbotIDLT,omitempty"`
+	ChatbotIdlte          *string  `json:"chatbotIDLTE,omitempty"`
+	ChatbotIdcontains     *string  `json:"chatbotIDContains,omitempty"`
+	ChatbotIdhasPrefix    *string  `json:"chatbotIDHasPrefix,omitempty"`
+	ChatbotIdhasSuffix    *string  `json:"chatbotIDHasSuffix,omitempty"`
+	ChatbotIdisNil        *bool    `json:"chatbotIDIsNil,omitempty"`
+	ChatbotIdnotNil       *bool    `json:"chatbotIDNotNil,omitempty"`
+	ChatbotIdequalFold    *string  `json:"chatbotIDEqualFold,omitempty"`
+	ChatbotIdcontainsFold *string  `json:"chatbotIDContainsFold,omitempty"`
 	// folder_id field predicates
 	FolderID             *string  `json:"folderID,omitempty"`
-	FolderIdneq          *string  `json:"folderIdneq,omitempty"`
-	FolderIdin           []string `json:"folderIdin,omitempty"`
-	FolderIdnotIn        []string `json:"folderIdnotIn,omitempty"`
-	FolderIdgt           *string  `json:"folderIdgt,omitempty"`
-	FolderIdgte          *string  `json:"folderIdgte,omitempty"`
-	FolderIdlt           *string  `json:"folderIdlt,omitempty"`
-	FolderIdlte          *string  `json:"folderIdlte,omitempty"`
-	FolderIdcontains     *string  `json:"folderIdcontains,omitempty"`
-	FolderIdhasPrefix    *string  `json:"folderIdhasPrefix,omitempty"`
-	FolderIdhasSuffix    *string  `json:"folderIdhasSuffix,omitempty"`
-	FolderIdisNil        *bool    `json:"folderIdisNil,omitempty"`
-	FolderIdnotNil       *bool    `json:"folderIdnotNil,omitempty"`
-	FolderIdequalFold    *string  `json:"folderIdequalFold,omitempty"`
-	FolderIdcontainsFold *string  `json:"folderIdcontainsFold,omitempty"`
+	FolderIdneq          *string  `json:"folderIDNEQ,omitempty"`
+	FolderIdin           []string `json:"folderIDIn,omitempty"`
+	FolderIdnotIn        []string `json:"folderIDNotIn,omitempty"`
+	FolderIdgt           *string  `json:"folderIDGT,omitempty"`
+	FolderIdgte          *string  `json:"folderIDGTE,omitempty"`
+	FolderIdlt           *string  `json:"folderIDLT,omitempty"`
+	FolderIdlte          *string  `json:"folderIDLTE,omitempty"`
+	FolderIdcontains     *string  `json:"folderIDContains,omitempty"`
+	FolderIdhasPrefix    *string  `json:"folderIDHasPrefix,omitempty"`
+	FolderIdhasSuffix    *string  `json:"folderIDHasSuffix,omitempty"`
+	FolderIdisNil        *bool    `json:"folderIDIsNil,omitempty"`
+	FolderIdnotNil       *bool    `json:"folderIDNotNil,omitempty"`
+	FolderIdequalFold    *string  `json:"folderIDEqualFold,omitempty"`
+	FolderIdcontainsFold *string  `json:"folderIDContainsFold,omitempty"`
 	// messages edge predicates
 	HasMessages     *bool               `json:"hasMessages,omitempty"`
 	HasMessagesWith []MessageWhereInput `json:"hasMessagesWith,omitempty"`
@@ -574,7 +574,7 @@ type ChatbotAppearanceInput struct {
 
 // ChatbotCreateInput represents the GraphQL type ChatbotCreateInput
 type ChatbotCreateInput struct {
-	ID         string `json:"iD"`
+	ID         string `json:"id"`
 	Name       string `json:"name"`
 	ShortDescr string `json:"shortDescr"`
 }
@@ -605,54 +605,54 @@ type ChatbotToolWhereInput struct {
 	And []ChatbotToolWhereInput `json:"and,omitempty"`
 	Or  []ChatbotToolWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 }
 
 // ChatbotUpdateInput represents the GraphQL type ChatbotUpdateInput
@@ -662,8 +662,8 @@ type ChatbotUpdateInput struct {
 	OverviewDescr *string  `json:"overviewDescr,omitempty"`
 	Active        *bool    `json:"active,omitempty"`
 	IsPublic      *bool    `json:"isPublic,omitempty"`
-	ItemGroupIds  []string `json:"itemGroupIds,omitempty"`
-	FuncToolIds   []string `json:"funcToolIds,omitempty"`
+	ItemGroupIds  []string `json:"itemGroupIDs,omitempty"`
+	FuncToolIds   []string `json:"funcToolIDs,omitempty"`
 	IsDebug       *bool    `json:"isDebug,omitempty"`
 	CacheDisabled *bool    `json:"cacheDisabled,omitempty"`
 	AiModelID     *string  `json:"aiModelID,omitempty"`
@@ -686,55 +686,55 @@ type ChatbotUserWhereInput struct {
 	And []ChatbotUserWhereInput `json:"and,omitempty"`
 	Or  []ChatbotUserWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
-	ChatbotIdin             []string `json:"chatbotIdin,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
+	ChatbotIdin             []string `json:"chatbotIDIn,omitempty"`
 }
 
 // ChatbotWhereInput ChatbotWhereInput is used for filtering Chatbot objects.
@@ -745,47 +745,47 @@ type ChatbotWhereInput struct {
 	And []ChatbotWhereInput `json:"and,omitempty"`
 	Or  []ChatbotWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -795,13 +795,13 @@ type ChatbotWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// short_descr field predicates
 	ShortDescr             *string  `json:"shortDescr,omitempty"`
-	ShortDescrNeq          *string  `json:"shortDescrNeq,omitempty"`
+	ShortDescrNeq          *string  `json:"shortDescrNEQ,omitempty"`
 	ShortDescrIn           []string `json:"shortDescrIn,omitempty"`
 	ShortDescrNotIn        []string `json:"shortDescrNotIn,omitempty"`
-	ShortDescrGt           *string  `json:"shortDescrGt,omitempty"`
-	ShortDescrGte          *string  `json:"shortDescrGte,omitempty"`
-	ShortDescrLt           *string  `json:"shortDescrLt,omitempty"`
-	ShortDescrLte          *string  `json:"shortDescrLte,omitempty"`
+	ShortDescrGt           *string  `json:"shortDescrGT,omitempty"`
+	ShortDescrGte          *string  `json:"shortDescrGTE,omitempty"`
+	ShortDescrLt           *string  `json:"shortDescrLT,omitempty"`
+	ShortDescrLte          *string  `json:"shortDescrLTE,omitempty"`
 	ShortDescrContains     *string  `json:"shortDescrContains,omitempty"`
 	ShortDescrHasPrefix    *string  `json:"shortDescrHasPrefix,omitempty"`
 	ShortDescrHasSuffix    *string  `json:"shortDescrHasSuffix,omitempty"`
@@ -811,23 +811,23 @@ type ChatbotWhereInput struct {
 	ShortDescrContainsFold *string  `json:"shortDescrContainsFold,omitempty"`
 	// active field predicates
 	Active       *bool `json:"active,omitempty"`
-	ActiveNeq    *bool `json:"activeNeq,omitempty"`
+	ActiveNeq    *bool `json:"activeNEQ,omitempty"`
 	ActiveIsNil  *bool `json:"activeIsNil,omitempty"`
 	ActiveNotNil *bool `json:"activeNotNil,omitempty"`
 	// is_public field predicates
 	IsPublic       *bool `json:"isPublic,omitempty"`
-	IsPublicNeq    *bool `json:"isPublicNeq,omitempty"`
+	IsPublicNeq    *bool `json:"isPublicNEQ,omitempty"`
 	IsPublicIsNil  *bool `json:"isPublicIsNil,omitempty"`
 	IsPublicNotNil *bool `json:"isPublicNotNil,omitempty"`
 	// instruction field predicates
 	Instruction             *string  `json:"instruction,omitempty"`
-	InstructionNeq          *string  `json:"instructionNeq,omitempty"`
+	InstructionNeq          *string  `json:"instructionNEQ,omitempty"`
 	InstructionIn           []string `json:"instructionIn,omitempty"`
 	InstructionNotIn        []string `json:"instructionNotIn,omitempty"`
-	InstructionGt           *string  `json:"instructionGt,omitempty"`
-	InstructionGte          *string  `json:"instructionGte,omitempty"`
-	InstructionLt           *string  `json:"instructionLt,omitempty"`
-	InstructionLte          *string  `json:"instructionLte,omitempty"`
+	InstructionGt           *string  `json:"instructionGT,omitempty"`
+	InstructionGte          *string  `json:"instructionGTE,omitempty"`
+	InstructionLt           *string  `json:"instructionLT,omitempty"`
+	InstructionLte          *string  `json:"instructionLTE,omitempty"`
 	InstructionContains     *string  `json:"instructionContains,omitempty"`
 	InstructionHasPrefix    *string  `json:"instructionHasPrefix,omitempty"`
 	InstructionHasSuffix    *string  `json:"instructionHasSuffix,omitempty"`
@@ -837,24 +837,24 @@ type ChatbotWhereInput struct {
 	InstructionContainsFold *string  `json:"instructionContainsFold,omitempty"`
 	// temperature field predicates
 	Temperature       *float64  `json:"temperature,omitempty"`
-	TemperatureNeq    *float64  `json:"temperatureNeq,omitempty"`
+	TemperatureNeq    *float64  `json:"temperatureNEQ,omitempty"`
 	TemperatureIn     []float64 `json:"temperatureIn,omitempty"`
 	TemperatureNotIn  []float64 `json:"temperatureNotIn,omitempty"`
-	TemperatureGt     *float64  `json:"temperatureGt,omitempty"`
-	TemperatureGte    *float64  `json:"temperatureGte,omitempty"`
-	TemperatureLt     *float64  `json:"temperatureLt,omitempty"`
-	TemperatureLte    *float64  `json:"temperatureLte,omitempty"`
+	TemperatureGt     *float64  `json:"temperatureGT,omitempty"`
+	TemperatureGte    *float64  `json:"temperatureGTE,omitempty"`
+	TemperatureLt     *float64  `json:"temperatureLT,omitempty"`
+	TemperatureLte    *float64  `json:"temperatureLTE,omitempty"`
 	TemperatureIsNil  *bool     `json:"temperatureIsNil,omitempty"`
 	TemperatureNotNil *bool     `json:"temperatureNotNil,omitempty"`
 	// overview_descr field predicates
 	OverviewDescr             *string  `json:"overviewDescr,omitempty"`
-	OverviewDescrNeq          *string  `json:"overviewDescrNeq,omitempty"`
+	OverviewDescrNeq          *string  `json:"overviewDescrNEQ,omitempty"`
 	OverviewDescrIn           []string `json:"overviewDescrIn,omitempty"`
 	OverviewDescrNotIn        []string `json:"overviewDescrNotIn,omitempty"`
-	OverviewDescrGt           *string  `json:"overviewDescrGt,omitempty"`
-	OverviewDescrGte          *string  `json:"overviewDescrGte,omitempty"`
-	OverviewDescrLt           *string  `json:"overviewDescrLt,omitempty"`
-	OverviewDescrLte          *string  `json:"overviewDescrLte,omitempty"`
+	OverviewDescrGt           *string  `json:"overviewDescrGT,omitempty"`
+	OverviewDescrGte          *string  `json:"overviewDescrGTE,omitempty"`
+	OverviewDescrLt           *string  `json:"overviewDescrLT,omitempty"`
+	OverviewDescrLte          *string  `json:"overviewDescrLTE,omitempty"`
 	OverviewDescrContains     *string  `json:"overviewDescrContains,omitempty"`
 	OverviewDescrHasPrefix    *string  `json:"overviewDescrHasPrefix,omitempty"`
 	OverviewDescrHasSuffix    *string  `json:"overviewDescrHasSuffix,omitempty"`
@@ -864,24 +864,24 @@ type ChatbotWhereInput struct {
 	OverviewDescrContainsFold *string  `json:"overviewDescrContainsFold,omitempty"`
 	// total_chars field predicates
 	TotalChars       *int  `json:"totalChars,omitempty"`
-	TotalCharsNeq    *int  `json:"totalCharsNeq,omitempty"`
+	TotalCharsNeq    *int  `json:"totalCharsNEQ,omitempty"`
 	TotalCharsIn     []int `json:"totalCharsIn,omitempty"`
 	TotalCharsNotIn  []int `json:"totalCharsNotIn,omitempty"`
-	TotalCharsGt     *int  `json:"totalCharsGt,omitempty"`
-	TotalCharsGte    *int  `json:"totalCharsGte,omitempty"`
-	TotalCharsLt     *int  `json:"totalCharsLt,omitempty"`
-	TotalCharsLte    *int  `json:"totalCharsLte,omitempty"`
+	TotalCharsGt     *int  `json:"totalCharsGT,omitempty"`
+	TotalCharsGte    *int  `json:"totalCharsGTE,omitempty"`
+	TotalCharsLt     *int  `json:"totalCharsLT,omitempty"`
+	TotalCharsLte    *int  `json:"totalCharsLTE,omitempty"`
 	TotalCharsIsNil  *bool `json:"totalCharsIsNil,omitempty"`
 	TotalCharsNotNil *bool `json:"totalCharsNotNil,omitempty"`
 	// text field predicates
 	Text             *string  `json:"text,omitempty"`
-	TextNeq          *string  `json:"textNeq,omitempty"`
+	TextNeq          *string  `json:"textNEQ,omitempty"`
 	TextIn           []string `json:"textIn,omitempty"`
 	TextNotIn        []string `json:"textNotIn,omitempty"`
-	TextGt           *string  `json:"textGt,omitempty"`
-	TextGte          *string  `json:"textGte,omitempty"`
-	TextLt           *string  `json:"textLt,omitempty"`
-	TextLte          *string  `json:"textLte,omitempty"`
+	TextGt           *string  `json:"textGT,omitempty"`
+	TextGte          *string  `json:"textGTE,omitempty"`
+	TextLt           *string  `json:"textLT,omitempty"`
+	TextLte          *string  `json:"textLTE,omitempty"`
 	TextContains     *string  `json:"textContains,omitempty"`
 	TextHasPrefix    *string  `json:"textHasPrefix,omitempty"`
 	TextHasSuffix    *string  `json:"textHasSuffix,omitempty"`
@@ -891,13 +891,13 @@ type ChatbotWhereInput struct {
 	TextContainsFold *string  `json:"textContainsFold,omitempty"`
 	// color_user_message field predicates
 	ColorUserMessage             *string  `json:"colorUserMessage,omitempty"`
-	ColorUserMessageNeq          *string  `json:"colorUserMessageNeq,omitempty"`
+	ColorUserMessageNeq          *string  `json:"colorUserMessageNEQ,omitempty"`
 	ColorUserMessageIn           []string `json:"colorUserMessageIn,omitempty"`
 	ColorUserMessageNotIn        []string `json:"colorUserMessageNotIn,omitempty"`
-	ColorUserMessageGt           *string  `json:"colorUserMessageGt,omitempty"`
-	ColorUserMessageGte          *string  `json:"colorUserMessageGte,omitempty"`
-	ColorUserMessageLt           *string  `json:"colorUserMessageLt,omitempty"`
-	ColorUserMessageLte          *string  `json:"colorUserMessageLte,omitempty"`
+	ColorUserMessageGt           *string  `json:"colorUserMessageGT,omitempty"`
+	ColorUserMessageGte          *string  `json:"colorUserMessageGTE,omitempty"`
+	ColorUserMessageLt           *string  `json:"colorUserMessageLT,omitempty"`
+	ColorUserMessageLte          *string  `json:"colorUserMessageLTE,omitempty"`
 	ColorUserMessageContains     *string  `json:"colorUserMessageContains,omitempty"`
 	ColorUserMessageHasPrefix    *string  `json:"colorUserMessageHasPrefix,omitempty"`
 	ColorUserMessageHasSuffix    *string  `json:"colorUserMessageHasSuffix,omitempty"`
@@ -907,45 +907,45 @@ type ChatbotWhereInput struct {
 	ColorUserMessageContainsFold *string  `json:"colorUserMessageContainsFold,omitempty"`
 	// initial_message_1 field predicates
 	InitialMessage1             *string  `json:"initialMessage1,omitempty"`
-	InitialMessage1neq          *string  `json:"initialMessage1neq,omitempty"`
-	InitialMessage1in           []string `json:"initialMessage1in,omitempty"`
-	InitialMessage1notIn        []string `json:"initialMessage1notIn,omitempty"`
-	InitialMessage1gt           *string  `json:"initialMessage1gt,omitempty"`
-	InitialMessage1gte          *string  `json:"initialMessage1gte,omitempty"`
-	InitialMessage1lt           *string  `json:"initialMessage1lt,omitempty"`
-	InitialMessage1lte          *string  `json:"initialMessage1lte,omitempty"`
-	InitialMessage1contains     *string  `json:"initialMessage1contains,omitempty"`
-	InitialMessage1hasPrefix    *string  `json:"initialMessage1hasPrefix,omitempty"`
-	InitialMessage1hasSuffix    *string  `json:"initialMessage1hasSuffix,omitempty"`
-	InitialMessage1isNil        *bool    `json:"initialMessage1isNil,omitempty"`
-	InitialMessage1notNil       *bool    `json:"initialMessage1notNil,omitempty"`
-	InitialMessage1equalFold    *string  `json:"initialMessage1equalFold,omitempty"`
-	InitialMessage1containsFold *string  `json:"initialMessage1containsFold,omitempty"`
+	InitialMessage1neq          *string  `json:"initialMessage1NEQ,omitempty"`
+	InitialMessage1in           []string `json:"initialMessage1In,omitempty"`
+	InitialMessage1notIn        []string `json:"initialMessage1NotIn,omitempty"`
+	InitialMessage1gt           *string  `json:"initialMessage1GT,omitempty"`
+	InitialMessage1gte          *string  `json:"initialMessage1GTE,omitempty"`
+	InitialMessage1lt           *string  `json:"initialMessage1LT,omitempty"`
+	InitialMessage1lte          *string  `json:"initialMessage1LTE,omitempty"`
+	InitialMessage1contains     *string  `json:"initialMessage1Contains,omitempty"`
+	InitialMessage1hasPrefix    *string  `json:"initialMessage1HasPrefix,omitempty"`
+	InitialMessage1hasSuffix    *string  `json:"initialMessage1HasSuffix,omitempty"`
+	InitialMessage1isNil        *bool    `json:"initialMessage1IsNil,omitempty"`
+	InitialMessage1notNil       *bool    `json:"initialMessage1NotNil,omitempty"`
+	InitialMessage1equalFold    *string  `json:"initialMessage1EqualFold,omitempty"`
+	InitialMessage1containsFold *string  `json:"initialMessage1ContainsFold,omitempty"`
 	// initial_message_2 field predicates
 	InitialMessage2             *string  `json:"initialMessage2,omitempty"`
-	InitialMessage2neq          *string  `json:"initialMessage2neq,omitempty"`
-	InitialMessage2in           []string `json:"initialMessage2in,omitempty"`
-	InitialMessage2notIn        []string `json:"initialMessage2notIn,omitempty"`
-	InitialMessage2gt           *string  `json:"initialMessage2gt,omitempty"`
-	InitialMessage2gte          *string  `json:"initialMessage2gte,omitempty"`
-	InitialMessage2lt           *string  `json:"initialMessage2lt,omitempty"`
-	InitialMessage2lte          *string  `json:"initialMessage2lte,omitempty"`
-	InitialMessage2contains     *string  `json:"initialMessage2contains,omitempty"`
-	InitialMessage2hasPrefix    *string  `json:"initialMessage2hasPrefix,omitempty"`
-	InitialMessage2hasSuffix    *string  `json:"initialMessage2hasSuffix,omitempty"`
-	InitialMessage2isNil        *bool    `json:"initialMessage2isNil,omitempty"`
-	InitialMessage2notNil       *bool    `json:"initialMessage2notNil,omitempty"`
-	InitialMessage2equalFold    *string  `json:"initialMessage2equalFold,omitempty"`
-	InitialMessage2containsFold *string  `json:"initialMessage2containsFold,omitempty"`
+	InitialMessage2neq          *string  `json:"initialMessage2NEQ,omitempty"`
+	InitialMessage2in           []string `json:"initialMessage2In,omitempty"`
+	InitialMessage2notIn        []string `json:"initialMessage2NotIn,omitempty"`
+	InitialMessage2gt           *string  `json:"initialMessage2GT,omitempty"`
+	InitialMessage2gte          *string  `json:"initialMessage2GTE,omitempty"`
+	InitialMessage2lt           *string  `json:"initialMessage2LT,omitempty"`
+	InitialMessage2lte          *string  `json:"initialMessage2LTE,omitempty"`
+	InitialMessage2contains     *string  `json:"initialMessage2Contains,omitempty"`
+	InitialMessage2hasPrefix    *string  `json:"initialMessage2HasPrefix,omitempty"`
+	InitialMessage2hasSuffix    *string  `json:"initialMessage2HasSuffix,omitempty"`
+	InitialMessage2isNil        *bool    `json:"initialMessage2IsNil,omitempty"`
+	InitialMessage2notNil       *bool    `json:"initialMessage2NotNil,omitempty"`
+	InitialMessage2equalFold    *string  `json:"initialMessage2EqualFold,omitempty"`
+	InitialMessage2containsFold *string  `json:"initialMessage2ContainsFold,omitempty"`
 	// color_bubble field predicates
 	ColorBubble             *string  `json:"colorBubble,omitempty"`
-	ColorBubbleNeq          *string  `json:"colorBubbleNeq,omitempty"`
+	ColorBubbleNeq          *string  `json:"colorBubbleNEQ,omitempty"`
 	ColorBubbleIn           []string `json:"colorBubbleIn,omitempty"`
 	ColorBubbleNotIn        []string `json:"colorBubbleNotIn,omitempty"`
-	ColorBubbleGt           *string  `json:"colorBubbleGt,omitempty"`
-	ColorBubbleGte          *string  `json:"colorBubbleGte,omitempty"`
-	ColorBubbleLt           *string  `json:"colorBubbleLt,omitempty"`
-	ColorBubbleLte          *string  `json:"colorBubbleLte,omitempty"`
+	ColorBubbleGt           *string  `json:"colorBubbleGT,omitempty"`
+	ColorBubbleGte          *string  `json:"colorBubbleGTE,omitempty"`
+	ColorBubbleLt           *string  `json:"colorBubbleLT,omitempty"`
+	ColorBubbleLte          *string  `json:"colorBubbleLTE,omitempty"`
 	ColorBubbleContains     *string  `json:"colorBubbleContains,omitempty"`
 	ColorBubbleHasPrefix    *string  `json:"colorBubbleHasPrefix,omitempty"`
 	ColorBubbleHasSuffix    *string  `json:"colorBubbleHasSuffix,omitempty"`
@@ -955,13 +955,13 @@ type ChatbotWhereInput struct {
 	ColorBubbleContainsFold *string  `json:"colorBubbleContainsFold,omitempty"`
 	// chat_button_align field predicates
 	ChatButtonAlign             *string  `json:"chatButtonAlign,omitempty"`
-	ChatButtonAlignNeq          *string  `json:"chatButtonAlignNeq,omitempty"`
+	ChatButtonAlignNeq          *string  `json:"chatButtonAlignNEQ,omitempty"`
 	ChatButtonAlignIn           []string `json:"chatButtonAlignIn,omitempty"`
 	ChatButtonAlignNotIn        []string `json:"chatButtonAlignNotIn,omitempty"`
-	ChatButtonAlignGt           *string  `json:"chatButtonAlignGt,omitempty"`
-	ChatButtonAlignGte          *string  `json:"chatButtonAlignGte,omitempty"`
-	ChatButtonAlignLt           *string  `json:"chatButtonAlignLt,omitempty"`
-	ChatButtonAlignLte          *string  `json:"chatButtonAlignLte,omitempty"`
+	ChatButtonAlignGt           *string  `json:"chatButtonAlignGT,omitempty"`
+	ChatButtonAlignGte          *string  `json:"chatButtonAlignGTE,omitempty"`
+	ChatButtonAlignLt           *string  `json:"chatButtonAlignLT,omitempty"`
+	ChatButtonAlignLte          *string  `json:"chatButtonAlignLTE,omitempty"`
 	ChatButtonAlignContains     *string  `json:"chatButtonAlignContains,omitempty"`
 	ChatButtonAlignHasPrefix    *string  `json:"chatButtonAlignHasPrefix,omitempty"`
 	ChatButtonAlignHasSuffix    *string  `json:"chatButtonAlignHasSuffix,omitempty"`
@@ -971,13 +971,13 @@ type ChatbotWhereInput struct {
 	ChatButtonAlignContainsFold *string  `json:"chatButtonAlignContainsFold,omitempty"`
 	// display_name field predicates
 	DisplayName             *string  `json:"displayName,omitempty"`
-	DisplayNameNeq          *string  `json:"displayNameNeq,omitempty"`
+	DisplayNameNeq          *string  `json:"displayNameNEQ,omitempty"`
 	DisplayNameIn           []string `json:"displayNameIn,omitempty"`
 	DisplayNameNotIn        []string `json:"displayNameNotIn,omitempty"`
-	DisplayNameGt           *string  `json:"displayNameGt,omitempty"`
-	DisplayNameGte          *string  `json:"displayNameGte,omitempty"`
-	DisplayNameLt           *string  `json:"displayNameLt,omitempty"`
-	DisplayNameLte          *string  `json:"displayNameLte,omitempty"`
+	DisplayNameGt           *string  `json:"displayNameGT,omitempty"`
+	DisplayNameGte          *string  `json:"displayNameGTE,omitempty"`
+	DisplayNameLt           *string  `json:"displayNameLT,omitempty"`
+	DisplayNameLte          *string  `json:"displayNameLTE,omitempty"`
 	DisplayNameContains     *string  `json:"displayNameContains,omitempty"`
 	DisplayNameHasPrefix    *string  `json:"displayNameHasPrefix,omitempty"`
 	DisplayNameHasSuffix    *string  `json:"displayNameHasSuffix,omitempty"`
@@ -987,45 +987,45 @@ type ChatbotWhereInput struct {
 	DisplayNameContainsFold *string  `json:"displayNameContainsFold,omitempty"`
 	// chat_icon_url field predicates
 	ChatIconURL             *string  `json:"chatIconURL,omitempty"`
-	ChatIconUrlneq          *string  `json:"chatIconUrlneq,omitempty"`
-	ChatIconUrlin           []string `json:"chatIconUrlin,omitempty"`
-	ChatIconUrlnotIn        []string `json:"chatIconUrlnotIn,omitempty"`
-	ChatIconUrlgt           *string  `json:"chatIconUrlgt,omitempty"`
-	ChatIconUrlgte          *string  `json:"chatIconUrlgte,omitempty"`
-	ChatIconUrllt           *string  `json:"chatIconUrllt,omitempty"`
-	ChatIconUrllte          *string  `json:"chatIconUrllte,omitempty"`
-	ChatIconUrlcontains     *string  `json:"chatIconUrlcontains,omitempty"`
-	ChatIconUrlhasPrefix    *string  `json:"chatIconUrlhasPrefix,omitempty"`
-	ChatIconUrlhasSuffix    *string  `json:"chatIconUrlhasSuffix,omitempty"`
-	ChatIconUrlisNil        *bool    `json:"chatIconUrlisNil,omitempty"`
-	ChatIconUrlnotNil       *bool    `json:"chatIconUrlnotNil,omitempty"`
-	ChatIconUrlequalFold    *string  `json:"chatIconUrlequalFold,omitempty"`
-	ChatIconUrlcontainsFold *string  `json:"chatIconUrlcontainsFold,omitempty"`
+	ChatIconUrlneq          *string  `json:"chatIconURLNEQ,omitempty"`
+	ChatIconUrlin           []string `json:"chatIconURLIn,omitempty"`
+	ChatIconUrlnotIn        []string `json:"chatIconURLNotIn,omitempty"`
+	ChatIconUrlgt           *string  `json:"chatIconURLGT,omitempty"`
+	ChatIconUrlgte          *string  `json:"chatIconURLGTE,omitempty"`
+	ChatIconUrllt           *string  `json:"chatIconURLLT,omitempty"`
+	ChatIconUrllte          *string  `json:"chatIconURLLTE,omitempty"`
+	ChatIconUrlcontains     *string  `json:"chatIconURLContains,omitempty"`
+	ChatIconUrlhasPrefix    *string  `json:"chatIconURLHasPrefix,omitempty"`
+	ChatIconUrlhasSuffix    *string  `json:"chatIconURLHasSuffix,omitempty"`
+	ChatIconUrlisNil        *bool    `json:"chatIconURLIsNil,omitempty"`
+	ChatIconUrlnotNil       *bool    `json:"chatIconURLNotNil,omitempty"`
+	ChatIconUrlequalFold    *string  `json:"chatIconURLEqualFold,omitempty"`
+	ChatIconUrlcontainsFold *string  `json:"chatIconURLContainsFold,omitempty"`
 	// bot_icon_url field predicates
 	BotIconURL             *string  `json:"botIconURL,omitempty"`
-	BotIconUrlneq          *string  `json:"botIconUrlneq,omitempty"`
-	BotIconUrlin           []string `json:"botIconUrlin,omitempty"`
-	BotIconUrlnotIn        []string `json:"botIconUrlnotIn,omitempty"`
-	BotIconUrlgt           *string  `json:"botIconUrlgt,omitempty"`
-	BotIconUrlgte          *string  `json:"botIconUrlgte,omitempty"`
-	BotIconUrllt           *string  `json:"botIconUrllt,omitempty"`
-	BotIconUrllte          *string  `json:"botIconUrllte,omitempty"`
-	BotIconUrlcontains     *string  `json:"botIconUrlcontains,omitempty"`
-	BotIconUrlhasPrefix    *string  `json:"botIconUrlhasPrefix,omitempty"`
-	BotIconUrlhasSuffix    *string  `json:"botIconUrlhasSuffix,omitempty"`
-	BotIconUrlisNil        *bool    `json:"botIconUrlisNil,omitempty"`
-	BotIconUrlnotNil       *bool    `json:"botIconUrlnotNil,omitempty"`
-	BotIconUrlequalFold    *string  `json:"botIconUrlequalFold,omitempty"`
-	BotIconUrlcontainsFold *string  `json:"botIconUrlcontainsFold,omitempty"`
+	BotIconUrlneq          *string  `json:"botIconURLNEQ,omitempty"`
+	BotIconUrlin           []string `json:"botIconURLIn,omitempty"`
+	BotIconUrlnotIn        []string `json:"botIconURLNotIn,omitempty"`
+	BotIconUrlgt           *string  `json:"botIconURLGT,omitempty"`
+	BotIconUrlgte          *string  `json:"botIconURLGTE,omitempty"`
+	BotIconUrllt           *string  `json:"botIconURLLT,omitempty"`
+	BotIconUrllte          *string  `json:"botIconURLLTE,omitempty"`
+	BotIconUrlcontains     *string  `json:"botIconURLContains,omitempty"`
+	BotIconUrlhasPrefix    *string  `json:"botIconURLHasPrefix,omitempty"`
+	BotIconUrlhasSuffix    *string  `json:"botIconURLHasSuffix,omitempty"`
+	BotIconUrlisNil        *bool    `json:"botIconURLIsNil,omitempty"`
+	BotIconUrlnotNil       *bool    `json:"botIconURLNotNil,omitempty"`
+	BotIconUrlequalFold    *string  `json:"botIconURLEqualFold,omitempty"`
+	BotIconUrlcontainsFold *string  `json:"botIconURLContainsFold,omitempty"`
 	// message_placeholder field predicates
 	MessagePlaceholder             *string  `json:"messagePlaceholder,omitempty"`
-	MessagePlaceholderNeq          *string  `json:"messagePlaceholderNeq,omitempty"`
+	MessagePlaceholderNeq          *string  `json:"messagePlaceholderNEQ,omitempty"`
 	MessagePlaceholderIn           []string `json:"messagePlaceholderIn,omitempty"`
 	MessagePlaceholderNotIn        []string `json:"messagePlaceholderNotIn,omitempty"`
-	MessagePlaceholderGt           *string  `json:"messagePlaceholderGt,omitempty"`
-	MessagePlaceholderGte          *string  `json:"messagePlaceholderGte,omitempty"`
-	MessagePlaceholderLt           *string  `json:"messagePlaceholderLt,omitempty"`
-	MessagePlaceholderLte          *string  `json:"messagePlaceholderLte,omitempty"`
+	MessagePlaceholderGt           *string  `json:"messagePlaceholderGT,omitempty"`
+	MessagePlaceholderGte          *string  `json:"messagePlaceholderGTE,omitempty"`
+	MessagePlaceholderLt           *string  `json:"messagePlaceholderLT,omitempty"`
+	MessagePlaceholderLte          *string  `json:"messagePlaceholderLTE,omitempty"`
 	MessagePlaceholderContains     *string  `json:"messagePlaceholderContains,omitempty"`
 	MessagePlaceholderHasPrefix    *string  `json:"messagePlaceholderHasPrefix,omitempty"`
 	MessagePlaceholderHasSuffix    *string  `json:"messagePlaceholderHasSuffix,omitempty"`
@@ -1035,13 +1035,13 @@ type ChatbotWhereInput struct {
 	MessagePlaceholderContainsFold *string  `json:"messagePlaceholderContainsFold,omitempty"`
 	// footer field predicates
 	Footer             *string  `json:"footer,omitempty"`
-	FooterNeq          *string  `json:"footerNeq,omitempty"`
+	FooterNeq          *string  `json:"footerNEQ,omitempty"`
 	FooterIn           []string `json:"footerIn,omitempty"`
 	FooterNotIn        []string `json:"footerNotIn,omitempty"`
-	FooterGt           *string  `json:"footerGt,omitempty"`
-	FooterGte          *string  `json:"footerGte,omitempty"`
-	FooterLt           *string  `json:"footerLt,omitempty"`
-	FooterLte          *string  `json:"footerLte,omitempty"`
+	FooterGt           *string  `json:"footerGT,omitempty"`
+	FooterGte          *string  `json:"footerGTE,omitempty"`
+	FooterLt           *string  `json:"footerLT,omitempty"`
+	FooterLte          *string  `json:"footerLTE,omitempty"`
 	FooterContains     *string  `json:"footerContains,omitempty"`
 	FooterHasPrefix    *string  `json:"footerHasPrefix,omitempty"`
 	FooterHasSuffix    *string  `json:"footerHasSuffix,omitempty"`
@@ -1051,13 +1051,13 @@ type ChatbotWhereInput struct {
 	FooterContainsFold *string  `json:"footerContainsFold,omitempty"`
 	// theme field predicates
 	Theme             *string  `json:"theme,omitempty"`
-	ThemeNeq          *string  `json:"themeNeq,omitempty"`
+	ThemeNeq          *string  `json:"themeNEQ,omitempty"`
 	ThemeIn           []string `json:"themeIn,omitempty"`
 	ThemeNotIn        []string `json:"themeNotIn,omitempty"`
-	ThemeGt           *string  `json:"themeGt,omitempty"`
-	ThemeGte          *string  `json:"themeGte,omitempty"`
-	ThemeLt           *string  `json:"themeLt,omitempty"`
-	ThemeLte          *string  `json:"themeLte,omitempty"`
+	ThemeGt           *string  `json:"themeGT,omitempty"`
+	ThemeGte          *string  `json:"themeGTE,omitempty"`
+	ThemeLt           *string  `json:"themeLT,omitempty"`
+	ThemeLte          *string  `json:"themeLTE,omitempty"`
 	ThemeContains     *string  `json:"themeContains,omitempty"`
 	ThemeHasPrefix    *string  `json:"themeHasPrefix,omitempty"`
 	ThemeHasSuffix    *string  `json:"themeHasSuffix,omitempty"`
@@ -1067,107 +1067,107 @@ type ChatbotWhereInput struct {
 	ThemeContainsFold *string  `json:"themeContainsFold,omitempty"`
 	// auto_show_popup_after field predicates
 	AutoShowPopupAfter       *int  `json:"autoShowPopupAfter,omitempty"`
-	AutoShowPopupAfterNeq    *int  `json:"autoShowPopupAfterNeq,omitempty"`
+	AutoShowPopupAfterNeq    *int  `json:"autoShowPopupAfterNEQ,omitempty"`
 	AutoShowPopupAfterIn     []int `json:"autoShowPopupAfterIn,omitempty"`
 	AutoShowPopupAfterNotIn  []int `json:"autoShowPopupAfterNotIn,omitempty"`
-	AutoShowPopupAfterGt     *int  `json:"autoShowPopupAfterGt,omitempty"`
-	AutoShowPopupAfterGte    *int  `json:"autoShowPopupAfterGte,omitempty"`
-	AutoShowPopupAfterLt     *int  `json:"autoShowPopupAfterLt,omitempty"`
-	AutoShowPopupAfterLte    *int  `json:"autoShowPopupAfterLte,omitempty"`
+	AutoShowPopupAfterGt     *int  `json:"autoShowPopupAfterGT,omitempty"`
+	AutoShowPopupAfterGte    *int  `json:"autoShowPopupAfterGTE,omitempty"`
+	AutoShowPopupAfterLt     *int  `json:"autoShowPopupAfterLT,omitempty"`
+	AutoShowPopupAfterLte    *int  `json:"autoShowPopupAfterLTE,omitempty"`
 	AutoShowPopupAfterIsNil  *bool `json:"autoShowPopupAfterIsNil,omitempty"`
 	AutoShowPopupAfterNotNil *bool `json:"autoShowPopupAfterNotNil,omitempty"`
 	// ai_model_id field predicates
 	AiModelID             *string  `json:"aiModelID,omitempty"`
-	AiModelIdneq          *string  `json:"aiModelIdneq,omitempty"`
-	AiModelIdin           []string `json:"aiModelIdin,omitempty"`
-	AiModelIdnotIn        []string `json:"aiModelIdnotIn,omitempty"`
-	AiModelIdgt           *string  `json:"aiModelIdgt,omitempty"`
-	AiModelIdgte          *string  `json:"aiModelIdgte,omitempty"`
-	AiModelIdlt           *string  `json:"aiModelIdlt,omitempty"`
-	AiModelIdlte          *string  `json:"aiModelIdlte,omitempty"`
-	AiModelIdcontains     *string  `json:"aiModelIdcontains,omitempty"`
-	AiModelIdhasPrefix    *string  `json:"aiModelIdhasPrefix,omitempty"`
-	AiModelIdhasSuffix    *string  `json:"aiModelIdhasSuffix,omitempty"`
-	AiModelIdisNil        *bool    `json:"aiModelIdisNil,omitempty"`
-	AiModelIdnotNil       *bool    `json:"aiModelIdnotNil,omitempty"`
-	AiModelIdequalFold    *string  `json:"aiModelIdequalFold,omitempty"`
-	AiModelIdcontainsFold *string  `json:"aiModelIdcontainsFold,omitempty"`
+	AiModelIdneq          *string  `json:"aiModelIDNEQ,omitempty"`
+	AiModelIdin           []string `json:"aiModelIDIn,omitempty"`
+	AiModelIdnotIn        []string `json:"aiModelIDNotIn,omitempty"`
+	AiModelIdgt           *string  `json:"aiModelIDGT,omitempty"`
+	AiModelIdgte          *string  `json:"aiModelIDGTE,omitempty"`
+	AiModelIdlt           *string  `json:"aiModelIDLT,omitempty"`
+	AiModelIdlte          *string  `json:"aiModelIDLTE,omitempty"`
+	AiModelIdcontains     *string  `json:"aiModelIDContains,omitempty"`
+	AiModelIdhasPrefix    *string  `json:"aiModelIDHasPrefix,omitempty"`
+	AiModelIdhasSuffix    *string  `json:"aiModelIDHasSuffix,omitempty"`
+	AiModelIdisNil        *bool    `json:"aiModelIDIsNil,omitempty"`
+	AiModelIdnotNil       *bool    `json:"aiModelIDNotNil,omitempty"`
+	AiModelIdequalFold    *string  `json:"aiModelIDEqualFold,omitempty"`
+	AiModelIdcontainsFold *string  `json:"aiModelIDContainsFold,omitempty"`
 	// sbyte_user_id field predicates
 	SbyteUserID             *string  `json:"sbyteUserID,omitempty"`
-	SbyteUserIdneq          *string  `json:"sbyteUserIdneq,omitempty"`
-	SbyteUserIdin           []string `json:"sbyteUserIdin,omitempty"`
-	SbyteUserIdnotIn        []string `json:"sbyteUserIdnotIn,omitempty"`
-	SbyteUserIdgt           *string  `json:"sbyteUserIdgt,omitempty"`
-	SbyteUserIdgte          *string  `json:"sbyteUserIdgte,omitempty"`
-	SbyteUserIdlt           *string  `json:"sbyteUserIdlt,omitempty"`
-	SbyteUserIdlte          *string  `json:"sbyteUserIdlte,omitempty"`
-	SbyteUserIdcontains     *string  `json:"sbyteUserIdcontains,omitempty"`
-	SbyteUserIdhasPrefix    *string  `json:"sbyteUserIdhasPrefix,omitempty"`
-	SbyteUserIdhasSuffix    *string  `json:"sbyteUserIdhasSuffix,omitempty"`
-	SbyteUserIdisNil        *bool    `json:"sbyteUserIdisNil,omitempty"`
-	SbyteUserIdnotNil       *bool    `json:"sbyteUserIdnotNil,omitempty"`
-	SbyteUserIdequalFold    *string  `json:"sbyteUserIdequalFold,omitempty"`
-	SbyteUserIdcontainsFold *string  `json:"sbyteUserIdcontainsFold,omitempty"`
+	SbyteUserIdneq          *string  `json:"sbyteUserIDNEQ,omitempty"`
+	SbyteUserIdin           []string `json:"sbyteUserIDIn,omitempty"`
+	SbyteUserIdnotIn        []string `json:"sbyteUserIDNotIn,omitempty"`
+	SbyteUserIdgt           *string  `json:"sbyteUserIDGT,omitempty"`
+	SbyteUserIdgte          *string  `json:"sbyteUserIDGTE,omitempty"`
+	SbyteUserIdlt           *string  `json:"sbyteUserIDLT,omitempty"`
+	SbyteUserIdlte          *string  `json:"sbyteUserIDLTE,omitempty"`
+	SbyteUserIdcontains     *string  `json:"sbyteUserIDContains,omitempty"`
+	SbyteUserIdhasPrefix    *string  `json:"sbyteUserIDHasPrefix,omitempty"`
+	SbyteUserIdhasSuffix    *string  `json:"sbyteUserIDHasSuffix,omitempty"`
+	SbyteUserIdisNil        *bool    `json:"sbyteUserIDIsNil,omitempty"`
+	SbyteUserIdnotNil       *bool    `json:"sbyteUserIDNotNil,omitempty"`
+	SbyteUserIdequalFold    *string  `json:"sbyteUserIDEqualFold,omitempty"`
+	SbyteUserIdcontainsFold *string  `json:"sbyteUserIDContainsFold,omitempty"`
 	// ai_user_id field predicates
 	AiUserID             *string  `json:"aiUserID,omitempty"`
-	AiUserIdneq          *string  `json:"aiUserIdneq,omitempty"`
-	AiUserIdin           []string `json:"aiUserIdin,omitempty"`
-	AiUserIdnotIn        []string `json:"aiUserIdnotIn,omitempty"`
-	AiUserIdgt           *string  `json:"aiUserIdgt,omitempty"`
-	AiUserIdgte          *string  `json:"aiUserIdgte,omitempty"`
-	AiUserIdlt           *string  `json:"aiUserIdlt,omitempty"`
-	AiUserIdlte          *string  `json:"aiUserIdlte,omitempty"`
-	AiUserIdcontains     *string  `json:"aiUserIdcontains,omitempty"`
-	AiUserIdhasPrefix    *string  `json:"aiUserIdhasPrefix,omitempty"`
-	AiUserIdhasSuffix    *string  `json:"aiUserIdhasSuffix,omitempty"`
-	AiUserIdisNil        *bool    `json:"aiUserIdisNil,omitempty"`
-	AiUserIdnotNil       *bool    `json:"aiUserIdnotNil,omitempty"`
-	AiUserIdequalFold    *string  `json:"aiUserIdequalFold,omitempty"`
-	AiUserIdcontainsFold *string  `json:"aiUserIdcontainsFold,omitempty"`
+	AiUserIdneq          *string  `json:"aiUserIDNEQ,omitempty"`
+	AiUserIdin           []string `json:"aiUserIDIn,omitempty"`
+	AiUserIdnotIn        []string `json:"aiUserIDNotIn,omitempty"`
+	AiUserIdgt           *string  `json:"aiUserIDGT,omitempty"`
+	AiUserIdgte          *string  `json:"aiUserIDGTE,omitempty"`
+	AiUserIdlt           *string  `json:"aiUserIDLT,omitempty"`
+	AiUserIdlte          *string  `json:"aiUserIDLTE,omitempty"`
+	AiUserIdcontains     *string  `json:"aiUserIDContains,omitempty"`
+	AiUserIdhasPrefix    *string  `json:"aiUserIDHasPrefix,omitempty"`
+	AiUserIdhasSuffix    *string  `json:"aiUserIDHasSuffix,omitempty"`
+	AiUserIdisNil        *bool    `json:"aiUserIDIsNil,omitempty"`
+	AiUserIdnotNil       *bool    `json:"aiUserIDNotNil,omitempty"`
+	AiUserIdequalFold    *string  `json:"aiUserIDEqualFold,omitempty"`
+	AiUserIdcontainsFold *string  `json:"aiUserIDContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// is_favorite field predicates
 	IsFavorite       *bool `json:"isFavorite,omitempty"`
-	IsFavoriteNeq    *bool `json:"isFavoriteNeq,omitempty"`
+	IsFavoriteNeq    *bool `json:"isFavoriteNEQ,omitempty"`
 	IsFavoriteIsNil  *bool `json:"isFavoriteIsNil,omitempty"`
 	IsFavoriteNotNil *bool `json:"isFavoriteNotNil,omitempty"`
 	// is_debug field predicates
 	IsDebug       *bool `json:"isDebug,omitempty"`
-	IsDebugNeq    *bool `json:"isDebugNeq,omitempty"`
+	IsDebugNeq    *bool `json:"isDebugNEQ,omitempty"`
 	IsDebugIsNil  *bool `json:"isDebugIsNil,omitempty"`
 	IsDebugNotNil *bool `json:"isDebugNotNil,omitempty"`
 	// cache_disabled field predicates
 	CacheDisabled       *bool `json:"cacheDisabled,omitempty"`
-	CacheDisabledNeq    *bool `json:"cacheDisabledNeq,omitempty"`
+	CacheDisabledNeq    *bool `json:"cacheDisabledNEQ,omitempty"`
 	CacheDisabledIsNil  *bool `json:"cacheDisabledIsNil,omitempty"`
 	CacheDisabledNotNil *bool `json:"cacheDisabledNotNil,omitempty"`
 	// lead_name_enabled field predicates
 	LeadNameEnabled       *bool `json:"leadNameEnabled,omitempty"`
-	LeadNameEnabledNeq    *bool `json:"leadNameEnabledNeq,omitempty"`
+	LeadNameEnabledNeq    *bool `json:"leadNameEnabledNEQ,omitempty"`
 	LeadNameEnabledIsNil  *bool `json:"leadNameEnabledIsNil,omitempty"`
 	LeadNameEnabledNotNil *bool `json:"leadNameEnabledNotNil,omitempty"`
 	// lead_email_enabled field predicates
 	LeadEmailEnabled       *bool `json:"leadEmailEnabled,omitempty"`
-	LeadEmailEnabledNeq    *bool `json:"leadEmailEnabledNeq,omitempty"`
+	LeadEmailEnabledNeq    *bool `json:"leadEmailEnabledNEQ,omitempty"`
 	LeadEmailEnabledIsNil  *bool `json:"leadEmailEnabledIsNil,omitempty"`
 	LeadEmailEnabledNotNil *bool `json:"leadEmailEnabledNotNil,omitempty"`
 	// lead_phone_enabled field predicates
 	LeadPhoneEnabled       *bool `json:"leadPhoneEnabled,omitempty"`
-	LeadPhoneEnabledNeq    *bool `json:"leadPhoneEnabledNeq,omitempty"`
+	LeadPhoneEnabledNeq    *bool `json:"leadPhoneEnabledNEQ,omitempty"`
 	LeadPhoneEnabledIsNil  *bool `json:"leadPhoneEnabledIsNil,omitempty"`
 	LeadPhoneEnabledNotNil *bool `json:"leadPhoneEnabledNotNil,omitempty"`
 	// users edge predicates
@@ -1215,7 +1215,7 @@ type CrawlExtractFieldLocationInput struct {
 
 // CrawlExtractInput represents the GraphQL type CrawlExtractInput
 type CrawlExtractInput struct {
-	HTTPRequestOptions *HttpRequestOptions          `json:"hTTPRequestOptions,omitempty"`
+	HTTPRequestOptions *HttpRequestOptions          `json:"httpRequestOptions,omitempty"`
 	Schema             *CrawlExtractCollectionInput `json:"schema,omitempty"`
 	Save               *bool                        `json:"save,omitempty"`
 }
@@ -1228,15 +1228,15 @@ type CreateAiModelInput struct {
 	ProviderName string            `json:"providerName"`
 	ModelID      string            `json:"modelID"`
 	BaseURL      *string           `json:"baseURL,omitempty"`
-	APIKey       *scalars.Password `json:"aPIKey,omitempty"`
+	APIKey       *scalars.Password `json:"apiKey,omitempty"`
 	OrgID        *string           `json:"orgID,omitempty"`
 	Descr        *string           `json:"descr,omitempty"`
 	Status       *bool             `json:"status,omitempty"`
 	MaxDims      *int              `json:"maxDims,omitempty"`
 	MaxTokens    *int              `json:"maxTokens,omitempty"`
-	ChatbotIds   []string          `json:"chatbotIds,omitempty"`
-	FuncToolIds  []string          `json:"funcToolIds,omitempty"`
-	ItemGroupIds []string          `json:"itemGroupIds,omitempty"`
+	ChatbotIds   []string          `json:"chatbotIDs,omitempty"`
+	FuncToolIds  []string          `json:"funcToolIDs,omitempty"`
+	ItemGroupIds []string          `json:"itemGroupIDs,omitempty"`
 }
 
 // CreateChannelInput CreateChannelInput is used for create Channel object.
@@ -1246,8 +1246,8 @@ type CreateChannelInput struct {
 	Name       *string  `json:"name,omitempty"`
 	IsPublic   *bool    `json:"isPublic,omitempty"`
 	GuestID    *string  `json:"guestID,omitempty"`
-	MessageIds []string `json:"messageIds,omitempty"`
-	UserIds    []string `json:"userIds,omitempty"`
+	MessageIds []string `json:"messageIDs,omitempty"`
+	UserIds    []string `json:"userIDs,omitempty"`
 	OwnerID    *string  `json:"ownerID,omitempty"`
 	ChatbotID  *string  `json:"chatbotID,omitempty"`
 	FolderID   *string  `json:"folderID,omitempty"`
@@ -1292,10 +1292,10 @@ type CreateChatbotInput struct {
 	LeadNameEnabled    *bool    `json:"leadNameEnabled,omitempty"`
 	LeadEmailEnabled   *bool    `json:"leadEmailEnabled,omitempty"`
 	LeadPhoneEnabled   *bool    `json:"leadPhoneEnabled,omitempty"`
-	UserIds            []string `json:"userIds,omitempty"`
-	ChannelIds         []string `json:"channelIds,omitempty"`
-	FolderIds          []string `json:"folderIds,omitempty"`
-	FuncToolIds        []string `json:"funcToolIds,omitempty"`
+	UserIds            []string `json:"userIDs,omitempty"`
+	ChannelIds         []string `json:"channelIDs,omitempty"`
+	FolderIds          []string `json:"folderIDs,omitempty"`
+	FuncToolIds        []string `json:"funcToolIDs,omitempty"`
 	AiModelID          *string  `json:"aiModelID,omitempty"`
 }
 
@@ -1329,8 +1329,8 @@ type CreateCredentialInput struct {
 	Username       *string           `json:"username,omitempty"`
 	Password       *scalars.Password `json:"password,omitempty"`
 	Secret         *scalars.Password `json:"secret,omitempty"`
-	APIKey         *scalars.Password `json:"aPIKey,omitempty"`
-	FuncToolIds    []string          `json:"funcToolIds,omitempty"`
+	APIKey         *scalars.Password `json:"apiKey,omitempty"`
+	FuncToolIds    []string          `json:"funcToolIDs,omitempty"`
 }
 
 // CreateFolderInput CreateFolderInput is used for create Folder object.
@@ -1339,7 +1339,7 @@ type CreateCredentialInput struct {
 type CreateFolderInput struct {
 	Name       string   `json:"name"`
 	Position   *int     `json:"position,omitempty"`
-	ChannelIds []string `json:"channelIds,omitempty"`
+	ChannelIds []string `json:"channelIDs,omitempty"`
 	ChatbotID  *string  `json:"chatbotID,omitempty"`
 	OwnerID    *string  `json:"ownerID,omitempty"`
 }
@@ -1357,9 +1357,9 @@ type CreateFuncToolInput struct {
 	MaxTokens      *int             `json:"maxTokens,omitempty"`
 	Temperature    *float64         `json:"temperature,omitempty"`
 	Limit          *int             `json:"limit,omitempty"`
-	ChatbotIds     []string         `json:"chatbotIds,omitempty"`
+	ChatbotIds     []string         `json:"chatbotIDs,omitempty"`
 	CredentialID   *string          `json:"credentialID,omitempty"`
-	FuncToolLogIds []string         `json:"funcToolLogIds,omitempty"`
+	FuncToolLogIds []string         `json:"funcToolLogIDs,omitempty"`
 	AiModelID      *string          `json:"aiModelID,omitempty"`
 	ItemGroupID    *string          `json:"itemGroupID,omitempty"`
 }
@@ -1387,7 +1387,7 @@ type CreateGuestInput struct {
 	FirstName *string `json:"firstName,omitempty"`
 	LastName  *string `json:"lastName,omitempty"`
 	Email     *string `json:"email,omitempty"`
-	IP        *string `json:"iP,omitempty"`
+	IP        *string `json:"ip,omitempty"`
 	ChatbotID *string `json:"chatbotID,omitempty"`
 }
 
@@ -1399,8 +1399,8 @@ type CreateItemGroupInput struct {
 	ShortDescr         *string  `json:"shortDescr,omitempty"`
 	Dims               *int     `json:"dims,omitempty"`
 	HasPendingItems    *bool    `json:"hasPendingItems,omitempty"`
-	ItemGroupSourceIds []string `json:"itemGroupSourceIds,omitempty"`
-	FuncToolIds        []string `json:"funcToolIds,omitempty"`
+	ItemGroupSourceIds []string `json:"itemGroupSourceIDs,omitempty"`
+	FuncToolIds        []string `json:"funcToolIDs,omitempty"`
 	AiModelID          *string  `json:"aiModelID,omitempty"`
 }
 
@@ -1428,12 +1428,12 @@ type CreateUserInput struct {
 	FirstName    *string           `json:"firstName,omitempty"`
 	LastName     *string           `json:"lastName,omitempty"`
 	Email        *string           `json:"email,omitempty"`
-	IP           *string           `json:"iP,omitempty"`
-	MyChannelIds []string          `json:"myChannelIds,omitempty"`
-	ChannelIds   []string          `json:"channelIds,omitempty"`
-	MessageIds   []string          `json:"messageIds,omitempty"`
-	ChatbotIds   []string          `json:"chatbotIds,omitempty"`
-	FolderIds    []string          `json:"folderIds,omitempty"`
+	IP           *string           `json:"ip,omitempty"`
+	MyChannelIds []string          `json:"myChannelIDs,omitempty"`
+	ChannelIds   []string          `json:"channelIDs,omitempty"`
+	MessageIds   []string          `json:"messageIDs,omitempty"`
+	ChatbotIds   []string          `json:"chatbotIDs,omitempty"`
+	FolderIds    []string          `json:"folderIDs,omitempty"`
 }
 
 // CredentialOrder Ordering options for Credential connections
@@ -1453,47 +1453,47 @@ type CredentialWhereInput struct {
 	And []CredentialWhereInput `json:"and,omitempty"`
 	Or  []CredentialWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -1503,13 +1503,13 @@ type CredentialWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// credential_type field predicates
 	CredentialType             *string  `json:"credentialType,omitempty"`
-	CredentialTypeNeq          *string  `json:"credentialTypeNeq,omitempty"`
+	CredentialTypeNeq          *string  `json:"credentialTypeNEQ,omitempty"`
 	CredentialTypeIn           []string `json:"credentialTypeIn,omitempty"`
 	CredentialTypeNotIn        []string `json:"credentialTypeNotIn,omitempty"`
-	CredentialTypeGt           *string  `json:"credentialTypeGt,omitempty"`
-	CredentialTypeGte          *string  `json:"credentialTypeGte,omitempty"`
-	CredentialTypeLt           *string  `json:"credentialTypeLt,omitempty"`
-	CredentialTypeLte          *string  `json:"credentialTypeLte,omitempty"`
+	CredentialTypeGt           *string  `json:"credentialTypeGT,omitempty"`
+	CredentialTypeGte          *string  `json:"credentialTypeGTE,omitempty"`
+	CredentialTypeLt           *string  `json:"credentialTypeLT,omitempty"`
+	CredentialTypeLte          *string  `json:"credentialTypeLTE,omitempty"`
 	CredentialTypeContains     *string  `json:"credentialTypeContains,omitempty"`
 	CredentialTypeHasPrefix    *string  `json:"credentialTypeHasPrefix,omitempty"`
 	CredentialTypeHasSuffix    *string  `json:"credentialTypeHasSuffix,omitempty"`
@@ -1519,18 +1519,18 @@ type CredentialWhereInput struct {
 	CredentialTypeContainsFold *string  `json:"credentialTypeContainsFold,omitempty"`
 	// active field predicates
 	Active       *bool `json:"active,omitempty"`
-	ActiveNeq    *bool `json:"activeNeq,omitempty"`
+	ActiveNeq    *bool `json:"activeNEQ,omitempty"`
 	ActiveIsNil  *bool `json:"activeIsNil,omitempty"`
 	ActiveNotNil *bool `json:"activeNotNil,omitempty"`
 	// db_type field predicates
 	DbType             *string  `json:"dbType,omitempty"`
-	DbTypeNeq          *string  `json:"dbTypeNeq,omitempty"`
+	DbTypeNeq          *string  `json:"dbTypeNEQ,omitempty"`
 	DbTypeIn           []string `json:"dbTypeIn,omitempty"`
 	DbTypeNotIn        []string `json:"dbTypeNotIn,omitempty"`
-	DbTypeGt           *string  `json:"dbTypeGt,omitempty"`
-	DbTypeGte          *string  `json:"dbTypeGte,omitempty"`
-	DbTypeLt           *string  `json:"dbTypeLt,omitempty"`
-	DbTypeLte          *string  `json:"dbTypeLte,omitempty"`
+	DbTypeGt           *string  `json:"dbTypeGT,omitempty"`
+	DbTypeGte          *string  `json:"dbTypeGTE,omitempty"`
+	DbTypeLt           *string  `json:"dbTypeLT,omitempty"`
+	DbTypeLte          *string  `json:"dbTypeLTE,omitempty"`
 	DbTypeContains     *string  `json:"dbTypeContains,omitempty"`
 	DbTypeHasPrefix    *string  `json:"dbTypeHasPrefix,omitempty"`
 	DbTypeHasSuffix    *string  `json:"dbTypeHasSuffix,omitempty"`
@@ -1540,13 +1540,13 @@ type CredentialWhereInput struct {
 	DbTypeContainsFold *string  `json:"dbTypeContainsFold,omitempty"`
 	// db_name field predicates
 	DbName             *string  `json:"dbName,omitempty"`
-	DbNameNeq          *string  `json:"dbNameNeq,omitempty"`
+	DbNameNeq          *string  `json:"dbNameNEQ,omitempty"`
 	DbNameIn           []string `json:"dbNameIn,omitempty"`
 	DbNameNotIn        []string `json:"dbNameNotIn,omitempty"`
-	DbNameGt           *string  `json:"dbNameGt,omitempty"`
-	DbNameGte          *string  `json:"dbNameGte,omitempty"`
-	DbNameLt           *string  `json:"dbNameLt,omitempty"`
-	DbNameLte          *string  `json:"dbNameLte,omitempty"`
+	DbNameGt           *string  `json:"dbNameGT,omitempty"`
+	DbNameGte          *string  `json:"dbNameGTE,omitempty"`
+	DbNameLt           *string  `json:"dbNameLT,omitempty"`
+	DbNameLte          *string  `json:"dbNameLTE,omitempty"`
 	DbNameContains     *string  `json:"dbNameContains,omitempty"`
 	DbNameHasPrefix    *string  `json:"dbNameHasPrefix,omitempty"`
 	DbNameHasSuffix    *string  `json:"dbNameHasSuffix,omitempty"`
@@ -1556,13 +1556,13 @@ type CredentialWhereInput struct {
 	DbNameContainsFold *string  `json:"dbNameContainsFold,omitempty"`
 	// host field predicates
 	Host             *string  `json:"host,omitempty"`
-	HostNeq          *string  `json:"hostNeq,omitempty"`
+	HostNeq          *string  `json:"hostNEQ,omitempty"`
 	HostIn           []string `json:"hostIn,omitempty"`
 	HostNotIn        []string `json:"hostNotIn,omitempty"`
-	HostGt           *string  `json:"hostGt,omitempty"`
-	HostGte          *string  `json:"hostGte,omitempty"`
-	HostLt           *string  `json:"hostLt,omitempty"`
-	HostLte          *string  `json:"hostLte,omitempty"`
+	HostGt           *string  `json:"hostGT,omitempty"`
+	HostGte          *string  `json:"hostGTE,omitempty"`
+	HostLt           *string  `json:"hostLT,omitempty"`
+	HostLte          *string  `json:"hostLTE,omitempty"`
 	HostContains     *string  `json:"hostContains,omitempty"`
 	HostHasPrefix    *string  `json:"hostHasPrefix,omitempty"`
 	HostHasSuffix    *string  `json:"hostHasSuffix,omitempty"`
@@ -1572,24 +1572,24 @@ type CredentialWhereInput struct {
 	HostContainsFold *string  `json:"hostContainsFold,omitempty"`
 	// port field predicates
 	Port       *uint  `json:"port,omitempty"`
-	PortNeq    *uint  `json:"portNeq,omitempty"`
+	PortNeq    *uint  `json:"portNEQ,omitempty"`
 	PortIn     []uint `json:"portIn,omitempty"`
 	PortNotIn  []uint `json:"portNotIn,omitempty"`
-	PortGt     *uint  `json:"portGt,omitempty"`
-	PortGte    *uint  `json:"portGte,omitempty"`
-	PortLt     *uint  `json:"portLt,omitempty"`
-	PortLte    *uint  `json:"portLte,omitempty"`
+	PortGt     *uint  `json:"portGT,omitempty"`
+	PortGte    *uint  `json:"portGTE,omitempty"`
+	PortLt     *uint  `json:"portLT,omitempty"`
+	PortLte    *uint  `json:"portLTE,omitempty"`
 	PortIsNil  *bool  `json:"portIsNil,omitempty"`
 	PortNotNil *bool  `json:"portNotNil,omitempty"`
 	// username field predicates
 	Username             *string  `json:"username,omitempty"`
-	UsernameNeq          *string  `json:"usernameNeq,omitempty"`
+	UsernameNeq          *string  `json:"usernameNEQ,omitempty"`
 	UsernameIn           []string `json:"usernameIn,omitempty"`
 	UsernameNotIn        []string `json:"usernameNotIn,omitempty"`
-	UsernameGt           *string  `json:"usernameGt,omitempty"`
-	UsernameGte          *string  `json:"usernameGte,omitempty"`
-	UsernameLt           *string  `json:"usernameLt,omitempty"`
-	UsernameLte          *string  `json:"usernameLte,omitempty"`
+	UsernameGt           *string  `json:"usernameGT,omitempty"`
+	UsernameGte          *string  `json:"usernameGTE,omitempty"`
+	UsernameLt           *string  `json:"usernameLT,omitempty"`
+	UsernameLte          *string  `json:"usernameLTE,omitempty"`
 	UsernameContains     *string  `json:"usernameContains,omitempty"`
 	UsernameHasPrefix    *string  `json:"usernameHasPrefix,omitempty"`
 	UsernameHasSuffix    *string  `json:"usernameHasSuffix,omitempty"`
@@ -1599,13 +1599,13 @@ type CredentialWhereInput struct {
 	UsernameContainsFold *string  `json:"usernameContainsFold,omitempty"`
 	// password field predicates
 	Password             *scalars.Password  `json:"password,omitempty"`
-	PasswordNeq          *scalars.Password  `json:"passwordNeq,omitempty"`
+	PasswordNeq          *scalars.Password  `json:"passwordNEQ,omitempty"`
 	PasswordIn           []scalars.Password `json:"passwordIn,omitempty"`
 	PasswordNotIn        []scalars.Password `json:"passwordNotIn,omitempty"`
-	PasswordGt           *scalars.Password  `json:"passwordGt,omitempty"`
-	PasswordGte          *scalars.Password  `json:"passwordGte,omitempty"`
-	PasswordLt           *scalars.Password  `json:"passwordLt,omitempty"`
-	PasswordLte          *scalars.Password  `json:"passwordLte,omitempty"`
+	PasswordGt           *scalars.Password  `json:"passwordGT,omitempty"`
+	PasswordGte          *scalars.Password  `json:"passwordGTE,omitempty"`
+	PasswordLt           *scalars.Password  `json:"passwordLT,omitempty"`
+	PasswordLte          *scalars.Password  `json:"passwordLTE,omitempty"`
 	PasswordContains     *scalars.Password  `json:"passwordContains,omitempty"`
 	PasswordHasPrefix    *scalars.Password  `json:"passwordHasPrefix,omitempty"`
 	PasswordHasSuffix    *scalars.Password  `json:"passwordHasSuffix,omitempty"`
@@ -1615,13 +1615,13 @@ type CredentialWhereInput struct {
 	PasswordContainsFold *scalars.Password  `json:"passwordContainsFold,omitempty"`
 	// secret field predicates
 	Secret             *scalars.Password  `json:"secret,omitempty"`
-	SecretNeq          *scalars.Password  `json:"secretNeq,omitempty"`
+	SecretNeq          *scalars.Password  `json:"secretNEQ,omitempty"`
 	SecretIn           []scalars.Password `json:"secretIn,omitempty"`
 	SecretNotIn        []scalars.Password `json:"secretNotIn,omitempty"`
-	SecretGt           *scalars.Password  `json:"secretGt,omitempty"`
-	SecretGte          *scalars.Password  `json:"secretGte,omitempty"`
-	SecretLt           *scalars.Password  `json:"secretLt,omitempty"`
-	SecretLte          *scalars.Password  `json:"secretLte,omitempty"`
+	SecretGt           *scalars.Password  `json:"secretGT,omitempty"`
+	SecretGte          *scalars.Password  `json:"secretGTE,omitempty"`
+	SecretLt           *scalars.Password  `json:"secretLT,omitempty"`
+	SecretLte          *scalars.Password  `json:"secretLTE,omitempty"`
 	SecretContains     *scalars.Password  `json:"secretContains,omitempty"`
 	SecretHasPrefix    *scalars.Password  `json:"secretHasPrefix,omitempty"`
 	SecretHasSuffix    *scalars.Password  `json:"secretHasSuffix,omitempty"`
@@ -1630,37 +1630,37 @@ type CredentialWhereInput struct {
 	SecretEqualFold    *scalars.Password  `json:"secretEqualFold,omitempty"`
 	SecretContainsFold *scalars.Password  `json:"secretContainsFold,omitempty"`
 	// api_key field predicates
-	APIKey             *scalars.Password  `json:"aPIKey,omitempty"`
-	APIKeyNeq          *scalars.Password  `json:"aPIKeyNeq,omitempty"`
-	APIKeyIn           []scalars.Password `json:"aPIKeyIn,omitempty"`
-	APIKeyNotIn        []scalars.Password `json:"aPIKeyNotIn,omitempty"`
-	APIKeyGt           *scalars.Password  `json:"aPIKeyGt,omitempty"`
-	APIKeyGte          *scalars.Password  `json:"aPIKeyGte,omitempty"`
-	APIKeyLt           *scalars.Password  `json:"aPIKeyLt,omitempty"`
-	APIKeyLte          *scalars.Password  `json:"aPIKeyLte,omitempty"`
-	APIKeyContains     *scalars.Password  `json:"aPIKeyContains,omitempty"`
-	APIKeyHasPrefix    *scalars.Password  `json:"aPIKeyHasPrefix,omitempty"`
-	APIKeyHasSuffix    *scalars.Password  `json:"aPIKeyHasSuffix,omitempty"`
-	APIKeyIsNil        *bool              `json:"aPIKeyIsNil,omitempty"`
-	APIKeyNotNil       *bool              `json:"aPIKeyNotNil,omitempty"`
-	APIKeyEqualFold    *scalars.Password  `json:"aPIKeyEqualFold,omitempty"`
-	APIKeyContainsFold *scalars.Password  `json:"aPIKeyContainsFold,omitempty"`
+	APIKey             *scalars.Password  `json:"apiKey,omitempty"`
+	APIKeyNeq          *scalars.Password  `json:"apiKeyNEQ,omitempty"`
+	APIKeyIn           []scalars.Password `json:"apiKeyIn,omitempty"`
+	APIKeyNotIn        []scalars.Password `json:"apiKeyNotIn,omitempty"`
+	APIKeyGt           *scalars.Password  `json:"apiKeyGT,omitempty"`
+	APIKeyGte          *scalars.Password  `json:"apiKeyGTE,omitempty"`
+	APIKeyLt           *scalars.Password  `json:"apiKeyLT,omitempty"`
+	APIKeyLte          *scalars.Password  `json:"apiKeyLTE,omitempty"`
+	APIKeyContains     *scalars.Password  `json:"apiKeyContains,omitempty"`
+	APIKeyHasPrefix    *scalars.Password  `json:"apiKeyHasPrefix,omitempty"`
+	APIKeyHasSuffix    *scalars.Password  `json:"apiKeyHasSuffix,omitempty"`
+	APIKeyIsNil        *bool              `json:"apiKeyIsNil,omitempty"`
+	APIKeyNotNil       *bool              `json:"apiKeyNotNil,omitempty"`
+	APIKeyEqualFold    *scalars.Password  `json:"apiKeyEqualFold,omitempty"`
+	APIKeyContainsFold *scalars.Password  `json:"apiKeyContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// func_tools edge predicates
 	HasFuncTools     *bool                `json:"hasFuncTools,omitempty"`
 	HasFuncToolsWith []FuncToolWhereInput `json:"hasFuncToolsWith,omitempty"`
@@ -1669,7 +1669,7 @@ type CredentialWhereInput struct {
 // FolderCreateInput represents the GraphQL type FolderCreateInput
 type FolderCreateInput struct {
 	Name      string `json:"name"`
-	ChatbotID string `json:"chatbotID"`
+	ChatbotID string `json:"chatbotId"`
 }
 
 // FolderOrder Ordering options for Folder connections
@@ -1683,7 +1683,7 @@ type FolderOrder struct {
 
 // FolderRenameInput represents the GraphQL type FolderRenameInput
 type FolderRenameInput struct {
-	ID   string `json:"iD"`
+	ID   string `json:"id"`
 	Name string `json:"name"`
 }
 
@@ -1695,47 +1695,47 @@ type FolderWhereInput struct {
 	And []FolderWhereInput `json:"and,omitempty"`
 	Or  []FolderWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -1743,45 +1743,45 @@ type FolderWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// chatbot_id field predicates
 	ChatbotID             *string  `json:"chatbotID,omitempty"`
-	ChatbotIdneq          *string  `json:"chatbotIdneq,omitempty"`
-	ChatbotIdin           []string `json:"chatbotIdin,omitempty"`
-	ChatbotIdnotIn        []string `json:"chatbotIdnotIn,omitempty"`
-	ChatbotIdgt           *string  `json:"chatbotIdgt,omitempty"`
-	ChatbotIdgte          *string  `json:"chatbotIdgte,omitempty"`
-	ChatbotIdlt           *string  `json:"chatbotIdlt,omitempty"`
-	ChatbotIdlte          *string  `json:"chatbotIdlte,omitempty"`
-	ChatbotIdcontains     *string  `json:"chatbotIdcontains,omitempty"`
-	ChatbotIdhasPrefix    *string  `json:"chatbotIdhasPrefix,omitempty"`
-	ChatbotIdhasSuffix    *string  `json:"chatbotIdhasSuffix,omitempty"`
-	ChatbotIdisNil        *bool    `json:"chatbotIdisNil,omitempty"`
-	ChatbotIdnotNil       *bool    `json:"chatbotIdnotNil,omitempty"`
-	ChatbotIdequalFold    *string  `json:"chatbotIdequalFold,omitempty"`
-	ChatbotIdcontainsFold *string  `json:"chatbotIdcontainsFold,omitempty"`
+	ChatbotIdneq          *string  `json:"chatbotIDNEQ,omitempty"`
+	ChatbotIdin           []string `json:"chatbotIDIn,omitempty"`
+	ChatbotIdnotIn        []string `json:"chatbotIDNotIn,omitempty"`
+	ChatbotIdgt           *string  `json:"chatbotIDGT,omitempty"`
+	ChatbotIdgte          *string  `json:"chatbotIDGTE,omitempty"`
+	ChatbotIdlt           *string  `json:"chatbotIDLT,omitempty"`
+	ChatbotIdlte          *string  `json:"chatbotIDLTE,omitempty"`
+	ChatbotIdcontains     *string  `json:"chatbotIDContains,omitempty"`
+	ChatbotIdhasPrefix    *string  `json:"chatbotIDHasPrefix,omitempty"`
+	ChatbotIdhasSuffix    *string  `json:"chatbotIDHasSuffix,omitempty"`
+	ChatbotIdisNil        *bool    `json:"chatbotIDIsNil,omitempty"`
+	ChatbotIdnotNil       *bool    `json:"chatbotIDNotNil,omitempty"`
+	ChatbotIdequalFold    *string  `json:"chatbotIDEqualFold,omitempty"`
+	ChatbotIdcontainsFold *string  `json:"chatbotIDContainsFold,omitempty"`
 	// owner_id field predicates
 	OwnerID             *string  `json:"ownerID,omitempty"`
-	OwnerIdneq          *string  `json:"ownerIdneq,omitempty"`
-	OwnerIdin           []string `json:"ownerIdin,omitempty"`
-	OwnerIdnotIn        []string `json:"ownerIdnotIn,omitempty"`
-	OwnerIdgt           *string  `json:"ownerIdgt,omitempty"`
-	OwnerIdgte          *string  `json:"ownerIdgte,omitempty"`
-	OwnerIdlt           *string  `json:"ownerIdlt,omitempty"`
-	OwnerIdlte          *string  `json:"ownerIdlte,omitempty"`
-	OwnerIdcontains     *string  `json:"ownerIdcontains,omitempty"`
-	OwnerIdhasPrefix    *string  `json:"ownerIdhasPrefix,omitempty"`
-	OwnerIdhasSuffix    *string  `json:"ownerIdhasSuffix,omitempty"`
-	OwnerIdisNil        *bool    `json:"ownerIdisNil,omitempty"`
-	OwnerIdnotNil       *bool    `json:"ownerIdnotNil,omitempty"`
-	OwnerIdequalFold    *string  `json:"ownerIdequalFold,omitempty"`
-	OwnerIdcontainsFold *string  `json:"ownerIdcontainsFold,omitempty"`
+	OwnerIdneq          *string  `json:"ownerIDNEQ,omitempty"`
+	OwnerIdin           []string `json:"ownerIDIn,omitempty"`
+	OwnerIdnotIn        []string `json:"ownerIDNotIn,omitempty"`
+	OwnerIdgt           *string  `json:"ownerIDGT,omitempty"`
+	OwnerIdgte          *string  `json:"ownerIDGTE,omitempty"`
+	OwnerIdlt           *string  `json:"ownerIDLT,omitempty"`
+	OwnerIdlte          *string  `json:"ownerIDLTE,omitempty"`
+	OwnerIdcontains     *string  `json:"ownerIDContains,omitempty"`
+	OwnerIdhasPrefix    *string  `json:"ownerIDHasPrefix,omitempty"`
+	OwnerIdhasSuffix    *string  `json:"ownerIDHasSuffix,omitempty"`
+	OwnerIdisNil        *bool    `json:"ownerIDIsNil,omitempty"`
+	OwnerIdnotNil       *bool    `json:"ownerIDNotNil,omitempty"`
+	OwnerIdequalFold    *string  `json:"ownerIDEqualFold,omitempty"`
+	OwnerIdcontainsFold *string  `json:"ownerIDContainsFold,omitempty"`
 	// position field predicates
 	Position      *int  `json:"position,omitempty"`
-	PositionNeq   *int  `json:"positionNeq,omitempty"`
+	PositionNeq   *int  `json:"positionNEQ,omitempty"`
 	PositionIn    []int `json:"positionIn,omitempty"`
 	PositionNotIn []int `json:"positionNotIn,omitempty"`
-	PositionGt    *int  `json:"positionGt,omitempty"`
-	PositionGte   *int  `json:"positionGte,omitempty"`
-	PositionLt    *int  `json:"positionLt,omitempty"`
-	PositionLte   *int  `json:"positionLte,omitempty"`
+	PositionGt    *int  `json:"positionGT,omitempty"`
+	PositionGte   *int  `json:"positionGTE,omitempty"`
+	PositionLt    *int  `json:"positionLT,omitempty"`
+	PositionLte   *int  `json:"positionLTE,omitempty"`
 	// channels edge predicates
 	HasChannels     *bool               `json:"hasChannels,omitempty"`
 	HasChannelsWith []ChannelWhereInput `json:"hasChannelsWith,omitempty"`
@@ -1810,63 +1810,63 @@ type FuncToolLogWhereInput struct {
 	And []FuncToolLogWhereInput `json:"and,omitempty"`
 	Or  []FuncToolLogWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// tool_call_id field predicates
 	ToolCallID             *string  `json:"toolCallID,omitempty"`
-	ToolCallIdneq          *string  `json:"toolCallIdneq,omitempty"`
-	ToolCallIdin           []string `json:"toolCallIdin,omitempty"`
-	ToolCallIdnotIn        []string `json:"toolCallIdnotIn,omitempty"`
-	ToolCallIdgt           *string  `json:"toolCallIdgt,omitempty"`
-	ToolCallIdgte          *string  `json:"toolCallIdgte,omitempty"`
-	ToolCallIdlt           *string  `json:"toolCallIdlt,omitempty"`
-	ToolCallIdlte          *string  `json:"toolCallIdlte,omitempty"`
-	ToolCallIdcontains     *string  `json:"toolCallIdcontains,omitempty"`
-	ToolCallIdhasPrefix    *string  `json:"toolCallIdhasPrefix,omitempty"`
-	ToolCallIdhasSuffix    *string  `json:"toolCallIdhasSuffix,omitempty"`
-	ToolCallIdisNil        *bool    `json:"toolCallIdisNil,omitempty"`
-	ToolCallIdnotNil       *bool    `json:"toolCallIdnotNil,omitempty"`
-	ToolCallIdequalFold    *string  `json:"toolCallIdequalFold,omitempty"`
-	ToolCallIdcontainsFold *string  `json:"toolCallIdcontainsFold,omitempty"`
+	ToolCallIdneq          *string  `json:"toolCallIDNEQ,omitempty"`
+	ToolCallIdin           []string `json:"toolCallIDIn,omitempty"`
+	ToolCallIdnotIn        []string `json:"toolCallIDNotIn,omitempty"`
+	ToolCallIdgt           *string  `json:"toolCallIDGT,omitempty"`
+	ToolCallIdgte          *string  `json:"toolCallIDGTE,omitempty"`
+	ToolCallIdlt           *string  `json:"toolCallIDLT,omitempty"`
+	ToolCallIdlte          *string  `json:"toolCallIDLTE,omitempty"`
+	ToolCallIdcontains     *string  `json:"toolCallIDContains,omitempty"`
+	ToolCallIdhasPrefix    *string  `json:"toolCallIDHasPrefix,omitempty"`
+	ToolCallIdhasSuffix    *string  `json:"toolCallIDHasSuffix,omitempty"`
+	ToolCallIdisNil        *bool    `json:"toolCallIDIsNil,omitempty"`
+	ToolCallIdnotNil       *bool    `json:"toolCallIDNotNil,omitempty"`
+	ToolCallIdequalFold    *string  `json:"toolCallIDEqualFold,omitempty"`
+	ToolCallIdcontainsFold *string  `json:"toolCallIDContainsFold,omitempty"`
 	// log_type field predicates
 	LogType             *string  `json:"logType,omitempty"`
-	LogTypeNeq          *string  `json:"logTypeNeq,omitempty"`
+	LogTypeNeq          *string  `json:"logTypeNEQ,omitempty"`
 	LogTypeIn           []string `json:"logTypeIn,omitempty"`
 	LogTypeNotIn        []string `json:"logTypeNotIn,omitempty"`
-	LogTypeGt           *string  `json:"logTypeGt,omitempty"`
-	LogTypeGte          *string  `json:"logTypeGte,omitempty"`
-	LogTypeLt           *string  `json:"logTypeLt,omitempty"`
-	LogTypeLte          *string  `json:"logTypeLte,omitempty"`
+	LogTypeGt           *string  `json:"logTypeGT,omitempty"`
+	LogTypeGte          *string  `json:"logTypeGTE,omitempty"`
+	LogTypeLt           *string  `json:"logTypeLT,omitempty"`
+	LogTypeLte          *string  `json:"logTypeLTE,omitempty"`
 	LogTypeContains     *string  `json:"logTypeContains,omitempty"`
 	LogTypeHasPrefix    *string  `json:"logTypeHasPrefix,omitempty"`
 	LogTypeHasSuffix    *string  `json:"logTypeHasSuffix,omitempty"`
@@ -1876,13 +1876,13 @@ type FuncToolLogWhereInput struct {
 	LogTypeContainsFold *string  `json:"logTypeContainsFold,omitempty"`
 	// msg field predicates
 	Msg             *string  `json:"msg,omitempty"`
-	MsgNeq          *string  `json:"msgNeq,omitempty"`
+	MsgNeq          *string  `json:"msgNEQ,omitempty"`
 	MsgIn           []string `json:"msgIn,omitempty"`
 	MsgNotIn        []string `json:"msgNotIn,omitempty"`
-	MsgGt           *string  `json:"msgGt,omitempty"`
-	MsgGte          *string  `json:"msgGte,omitempty"`
-	MsgLt           *string  `json:"msgLt,omitempty"`
-	MsgLte          *string  `json:"msgLte,omitempty"`
+	MsgGt           *string  `json:"msgGT,omitempty"`
+	MsgGte          *string  `json:"msgGTE,omitempty"`
+	MsgLt           *string  `json:"msgLT,omitempty"`
+	MsgLte          *string  `json:"msgLTE,omitempty"`
 	MsgContains     *string  `json:"msgContains,omitempty"`
 	MsgHasPrefix    *string  `json:"msgHasPrefix,omitempty"`
 	MsgHasSuffix    *string  `json:"msgHasSuffix,omitempty"`
@@ -1892,84 +1892,84 @@ type FuncToolLogWhereInput struct {
 	MsgContainsFold *string  `json:"msgContainsFold,omitempty"`
 	// func_tool_id field predicates
 	FuncToolID             *string  `json:"funcToolID,omitempty"`
-	FuncToolIdneq          *string  `json:"funcToolIdneq,omitempty"`
-	FuncToolIdin           []string `json:"funcToolIdin,omitempty"`
-	FuncToolIdnotIn        []string `json:"funcToolIdnotIn,omitempty"`
-	FuncToolIdgt           *string  `json:"funcToolIdgt,omitempty"`
-	FuncToolIdgte          *string  `json:"funcToolIdgte,omitempty"`
-	FuncToolIdlt           *string  `json:"funcToolIdlt,omitempty"`
-	FuncToolIdlte          *string  `json:"funcToolIdlte,omitempty"`
-	FuncToolIdcontains     *string  `json:"funcToolIdcontains,omitempty"`
-	FuncToolIdhasPrefix    *string  `json:"funcToolIdhasPrefix,omitempty"`
-	FuncToolIdhasSuffix    *string  `json:"funcToolIdhasSuffix,omitempty"`
-	FuncToolIdisNil        *bool    `json:"funcToolIdisNil,omitempty"`
-	FuncToolIdnotNil       *bool    `json:"funcToolIdnotNil,omitempty"`
-	FuncToolIdequalFold    *string  `json:"funcToolIdequalFold,omitempty"`
-	FuncToolIdcontainsFold *string  `json:"funcToolIdcontainsFold,omitempty"`
+	FuncToolIdneq          *string  `json:"funcToolIDNEQ,omitempty"`
+	FuncToolIdin           []string `json:"funcToolIDIn,omitempty"`
+	FuncToolIdnotIn        []string `json:"funcToolIDNotIn,omitempty"`
+	FuncToolIdgt           *string  `json:"funcToolIDGT,omitempty"`
+	FuncToolIdgte          *string  `json:"funcToolIDGTE,omitempty"`
+	FuncToolIdlt           *string  `json:"funcToolIDLT,omitempty"`
+	FuncToolIdlte          *string  `json:"funcToolIDLTE,omitempty"`
+	FuncToolIdcontains     *string  `json:"funcToolIDContains,omitempty"`
+	FuncToolIdhasPrefix    *string  `json:"funcToolIDHasPrefix,omitempty"`
+	FuncToolIdhasSuffix    *string  `json:"funcToolIDHasSuffix,omitempty"`
+	FuncToolIdisNil        *bool    `json:"funcToolIDIsNil,omitempty"`
+	FuncToolIdnotNil       *bool    `json:"funcToolIDNotNil,omitempty"`
+	FuncToolIdequalFold    *string  `json:"funcToolIDEqualFold,omitempty"`
+	FuncToolIdcontainsFold *string  `json:"funcToolIDContainsFold,omitempty"`
 	// channel_id field predicates
 	ChannelID             *string  `json:"channelID,omitempty"`
-	ChannelIdneq          *string  `json:"channelIdneq,omitempty"`
-	ChannelIdin           []string `json:"channelIdin,omitempty"`
-	ChannelIdnotIn        []string `json:"channelIdnotIn,omitempty"`
-	ChannelIdgt           *string  `json:"channelIdgt,omitempty"`
-	ChannelIdgte          *string  `json:"channelIdgte,omitempty"`
-	ChannelIdlt           *string  `json:"channelIdlt,omitempty"`
-	ChannelIdlte          *string  `json:"channelIdlte,omitempty"`
-	ChannelIdcontains     *string  `json:"channelIdcontains,omitempty"`
-	ChannelIdhasPrefix    *string  `json:"channelIdhasPrefix,omitempty"`
-	ChannelIdhasSuffix    *string  `json:"channelIdhasSuffix,omitempty"`
-	ChannelIdisNil        *bool    `json:"channelIdisNil,omitempty"`
-	ChannelIdnotNil       *bool    `json:"channelIdnotNil,omitempty"`
-	ChannelIdequalFold    *string  `json:"channelIdequalFold,omitempty"`
-	ChannelIdcontainsFold *string  `json:"channelIdcontainsFold,omitempty"`
+	ChannelIdneq          *string  `json:"channelIDNEQ,omitempty"`
+	ChannelIdin           []string `json:"channelIDIn,omitempty"`
+	ChannelIdnotIn        []string `json:"channelIDNotIn,omitempty"`
+	ChannelIdgt           *string  `json:"channelIDGT,omitempty"`
+	ChannelIdgte          *string  `json:"channelIDGTE,omitempty"`
+	ChannelIdlt           *string  `json:"channelIDLT,omitempty"`
+	ChannelIdlte          *string  `json:"channelIDLTE,omitempty"`
+	ChannelIdcontains     *string  `json:"channelIDContains,omitempty"`
+	ChannelIdhasPrefix    *string  `json:"channelIDHasPrefix,omitempty"`
+	ChannelIdhasSuffix    *string  `json:"channelIDHasSuffix,omitempty"`
+	ChannelIdisNil        *bool    `json:"channelIDIsNil,omitempty"`
+	ChannelIdnotNil       *bool    `json:"channelIDNotNil,omitempty"`
+	ChannelIdequalFold    *string  `json:"channelIDEqualFold,omitempty"`
+	ChannelIdcontainsFold *string  `json:"channelIDContainsFold,omitempty"`
 	// user_id field predicates
 	UserID             *string  `json:"userID,omitempty"`
-	UserIdneq          *string  `json:"userIdneq,omitempty"`
-	UserIdin           []string `json:"userIdin,omitempty"`
-	UserIdnotIn        []string `json:"userIdnotIn,omitempty"`
-	UserIdgt           *string  `json:"userIdgt,omitempty"`
-	UserIdgte          *string  `json:"userIdgte,omitempty"`
-	UserIdlt           *string  `json:"userIdlt,omitempty"`
-	UserIdlte          *string  `json:"userIdlte,omitempty"`
-	UserIdcontains     *string  `json:"userIdcontains,omitempty"`
-	UserIdhasPrefix    *string  `json:"userIdhasPrefix,omitempty"`
-	UserIdhasSuffix    *string  `json:"userIdhasSuffix,omitempty"`
-	UserIdisNil        *bool    `json:"userIdisNil,omitempty"`
-	UserIdnotNil       *bool    `json:"userIdnotNil,omitempty"`
-	UserIdequalFold    *string  `json:"userIdequalFold,omitempty"`
-	UserIdcontainsFold *string  `json:"userIdcontainsFold,omitempty"`
+	UserIdneq          *string  `json:"userIDNEQ,omitempty"`
+	UserIdin           []string `json:"userIDIn,omitempty"`
+	UserIdnotIn        []string `json:"userIDNotIn,omitempty"`
+	UserIdgt           *string  `json:"userIDGT,omitempty"`
+	UserIdgte          *string  `json:"userIDGTE,omitempty"`
+	UserIdlt           *string  `json:"userIDLT,omitempty"`
+	UserIdlte          *string  `json:"userIDLTE,omitempty"`
+	UserIdcontains     *string  `json:"userIDContains,omitempty"`
+	UserIdhasPrefix    *string  `json:"userIDHasPrefix,omitempty"`
+	UserIdhasSuffix    *string  `json:"userIDHasSuffix,omitempty"`
+	UserIdisNil        *bool    `json:"userIDIsNil,omitempty"`
+	UserIdnotNil       *bool    `json:"userIDNotNil,omitempty"`
+	UserIdequalFold    *string  `json:"userIDEqualFold,omitempty"`
+	UserIdcontainsFold *string  `json:"userIDContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// chatbot_id field predicates
 	ChatbotID             *string  `json:"chatbotID,omitempty"`
-	ChatbotIdneq          *string  `json:"chatbotIdneq,omitempty"`
-	ChatbotIdin           []string `json:"chatbotIdin,omitempty"`
-	ChatbotIdnotIn        []string `json:"chatbotIdnotIn,omitempty"`
-	ChatbotIdgt           *string  `json:"chatbotIdgt,omitempty"`
-	ChatbotIdgte          *string  `json:"chatbotIdgte,omitempty"`
-	ChatbotIdlt           *string  `json:"chatbotIdlt,omitempty"`
-	ChatbotIdlte          *string  `json:"chatbotIdlte,omitempty"`
-	ChatbotIdcontains     *string  `json:"chatbotIdcontains,omitempty"`
-	ChatbotIdhasPrefix    *string  `json:"chatbotIdhasPrefix,omitempty"`
-	ChatbotIdhasSuffix    *string  `json:"chatbotIdhasSuffix,omitempty"`
-	ChatbotIdisNil        *bool    `json:"chatbotIdisNil,omitempty"`
-	ChatbotIdnotNil       *bool    `json:"chatbotIdnotNil,omitempty"`
-	ChatbotIdequalFold    *string  `json:"chatbotIdequalFold,omitempty"`
-	ChatbotIdcontainsFold *string  `json:"chatbotIdcontainsFold,omitempty"`
+	ChatbotIdneq          *string  `json:"chatbotIDNEQ,omitempty"`
+	ChatbotIdin           []string `json:"chatbotIDIn,omitempty"`
+	ChatbotIdnotIn        []string `json:"chatbotIDNotIn,omitempty"`
+	ChatbotIdgt           *string  `json:"chatbotIDGT,omitempty"`
+	ChatbotIdgte          *string  `json:"chatbotIDGTE,omitempty"`
+	ChatbotIdlt           *string  `json:"chatbotIDLT,omitempty"`
+	ChatbotIdlte          *string  `json:"chatbotIDLTE,omitempty"`
+	ChatbotIdcontains     *string  `json:"chatbotIDContains,omitempty"`
+	ChatbotIdhasPrefix    *string  `json:"chatbotIDHasPrefix,omitempty"`
+	ChatbotIdhasSuffix    *string  `json:"chatbotIDHasSuffix,omitempty"`
+	ChatbotIdisNil        *bool    `json:"chatbotIDIsNil,omitempty"`
+	ChatbotIdnotNil       *bool    `json:"chatbotIDNotNil,omitempty"`
+	ChatbotIdequalFold    *string  `json:"chatbotIDEqualFold,omitempty"`
+	ChatbotIdcontainsFold *string  `json:"chatbotIDContainsFold,omitempty"`
 	// func_tool edge predicates
 	HasFuncTool     *bool                `json:"hasFuncTool,omitempty"`
 	HasFuncToolWith []FuncToolWhereInput `json:"hasFuncToolWith,omitempty"`
@@ -1992,47 +1992,47 @@ type FuncToolWhereInput struct {
 	And []FuncToolWhereInput `json:"and,omitempty"`
 	Or  []FuncToolWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -2042,13 +2042,13 @@ type FuncToolWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// func_tool_type field predicates
 	FuncToolType             *string  `json:"funcToolType,omitempty"`
-	FuncToolTypeNeq          *string  `json:"funcToolTypeNeq,omitempty"`
+	FuncToolTypeNeq          *string  `json:"funcToolTypeNEQ,omitempty"`
 	FuncToolTypeIn           []string `json:"funcToolTypeIn,omitempty"`
 	FuncToolTypeNotIn        []string `json:"funcToolTypeNotIn,omitempty"`
-	FuncToolTypeGt           *string  `json:"funcToolTypeGt,omitempty"`
-	FuncToolTypeGte          *string  `json:"funcToolTypeGte,omitempty"`
-	FuncToolTypeLt           *string  `json:"funcToolTypeLt,omitempty"`
-	FuncToolTypeLte          *string  `json:"funcToolTypeLte,omitempty"`
+	FuncToolTypeGt           *string  `json:"funcToolTypeGT,omitempty"`
+	FuncToolTypeGte          *string  `json:"funcToolTypeGTE,omitempty"`
+	FuncToolTypeLt           *string  `json:"funcToolTypeLT,omitempty"`
+	FuncToolTypeLte          *string  `json:"funcToolTypeLTE,omitempty"`
 	FuncToolTypeContains     *string  `json:"funcToolTypeContains,omitempty"`
 	FuncToolTypeHasPrefix    *string  `json:"funcToolTypeHasPrefix,omitempty"`
 	FuncToolTypeHasSuffix    *string  `json:"funcToolTypeHasSuffix,omitempty"`
@@ -2058,18 +2058,18 @@ type FuncToolWhereInput struct {
 	FuncToolTypeContainsFold *string  `json:"funcToolTypeContainsFold,omitempty"`
 	// active field predicates
 	Active       *bool `json:"active,omitempty"`
-	ActiveNeq    *bool `json:"activeNeq,omitempty"`
+	ActiveNeq    *bool `json:"activeNEQ,omitempty"`
 	ActiveIsNil  *bool `json:"activeIsNil,omitempty"`
 	ActiveNotNil *bool `json:"activeNotNil,omitempty"`
 	// description field predicates
 	Description             *string  `json:"description,omitempty"`
-	DescriptionNeq          *string  `json:"descriptionNeq,omitempty"`
+	DescriptionNeq          *string  `json:"descriptionNEQ,omitempty"`
 	DescriptionIn           []string `json:"descriptionIn,omitempty"`
 	DescriptionNotIn        []string `json:"descriptionNotIn,omitempty"`
-	DescriptionGt           *string  `json:"descriptionGt,omitempty"`
-	DescriptionGte          *string  `json:"descriptionGte,omitempty"`
-	DescriptionLt           *string  `json:"descriptionLt,omitempty"`
-	DescriptionLte          *string  `json:"descriptionLte,omitempty"`
+	DescriptionGt           *string  `json:"descriptionGT,omitempty"`
+	DescriptionGte          *string  `json:"descriptionGTE,omitempty"`
+	DescriptionLt           *string  `json:"descriptionLT,omitempty"`
+	DescriptionLte          *string  `json:"descriptionLTE,omitempty"`
 	DescriptionContains     *string  `json:"descriptionContains,omitempty"`
 	DescriptionHasPrefix    *string  `json:"descriptionHasPrefix,omitempty"`
 	DescriptionHasSuffix    *string  `json:"descriptionHasSuffix,omitempty"`
@@ -2079,13 +2079,13 @@ type FuncToolWhereInput struct {
 	DescriptionContainsFold *string  `json:"descriptionContainsFold,omitempty"`
 	// system_prompt field predicates
 	SystemPrompt             *string  `json:"systemPrompt,omitempty"`
-	SystemPromptNeq          *string  `json:"systemPromptNeq,omitempty"`
+	SystemPromptNeq          *string  `json:"systemPromptNEQ,omitempty"`
 	SystemPromptIn           []string `json:"systemPromptIn,omitempty"`
 	SystemPromptNotIn        []string `json:"systemPromptNotIn,omitempty"`
-	SystemPromptGt           *string  `json:"systemPromptGt,omitempty"`
-	SystemPromptGte          *string  `json:"systemPromptGte,omitempty"`
-	SystemPromptLt           *string  `json:"systemPromptLt,omitempty"`
-	SystemPromptLte          *string  `json:"systemPromptLte,omitempty"`
+	SystemPromptGt           *string  `json:"systemPromptGT,omitempty"`
+	SystemPromptGte          *string  `json:"systemPromptGTE,omitempty"`
+	SystemPromptLt           *string  `json:"systemPromptLT,omitempty"`
+	SystemPromptLte          *string  `json:"systemPromptLTE,omitempty"`
 	SystemPromptContains     *string  `json:"systemPromptContains,omitempty"`
 	SystemPromptHasPrefix    *string  `json:"systemPromptHasPrefix,omitempty"`
 	SystemPromptHasSuffix    *string  `json:"systemPromptHasSuffix,omitempty"`
@@ -2095,101 +2095,101 @@ type FuncToolWhereInput struct {
 	SystemPromptContainsFold *string  `json:"systemPromptContainsFold,omitempty"`
 	// credential_id field predicates
 	CredentialID             *string  `json:"credentialID,omitempty"`
-	CredentialIdneq          *string  `json:"credentialIdneq,omitempty"`
-	CredentialIdin           []string `json:"credentialIdin,omitempty"`
-	CredentialIdnotIn        []string `json:"credentialIdnotIn,omitempty"`
-	CredentialIdgt           *string  `json:"credentialIdgt,omitempty"`
-	CredentialIdgte          *string  `json:"credentialIdgte,omitempty"`
-	CredentialIdlt           *string  `json:"credentialIdlt,omitempty"`
-	CredentialIdlte          *string  `json:"credentialIdlte,omitempty"`
-	CredentialIdcontains     *string  `json:"credentialIdcontains,omitempty"`
-	CredentialIdhasPrefix    *string  `json:"credentialIdhasPrefix,omitempty"`
-	CredentialIdhasSuffix    *string  `json:"credentialIdhasSuffix,omitempty"`
-	CredentialIdisNil        *bool    `json:"credentialIdisNil,omitempty"`
-	CredentialIdnotNil       *bool    `json:"credentialIdnotNil,omitempty"`
-	CredentialIdequalFold    *string  `json:"credentialIdequalFold,omitempty"`
-	CredentialIdcontainsFold *string  `json:"credentialIdcontainsFold,omitempty"`
+	CredentialIdneq          *string  `json:"credentialIDNEQ,omitempty"`
+	CredentialIdin           []string `json:"credentialIDIn,omitempty"`
+	CredentialIdnotIn        []string `json:"credentialIDNotIn,omitempty"`
+	CredentialIdgt           *string  `json:"credentialIDGT,omitempty"`
+	CredentialIdgte          *string  `json:"credentialIDGTE,omitempty"`
+	CredentialIdlt           *string  `json:"credentialIDLT,omitempty"`
+	CredentialIdlte          *string  `json:"credentialIDLTE,omitempty"`
+	CredentialIdcontains     *string  `json:"credentialIDContains,omitempty"`
+	CredentialIdhasPrefix    *string  `json:"credentialIDHasPrefix,omitempty"`
+	CredentialIdhasSuffix    *string  `json:"credentialIDHasSuffix,omitempty"`
+	CredentialIdisNil        *bool    `json:"credentialIDIsNil,omitempty"`
+	CredentialIdnotNil       *bool    `json:"credentialIDNotNil,omitempty"`
+	CredentialIdequalFold    *string  `json:"credentialIDEqualFold,omitempty"`
+	CredentialIdcontainsFold *string  `json:"credentialIDContainsFold,omitempty"`
 	// ai_model_id field predicates
 	AiModelID             *string  `json:"aiModelID,omitempty"`
-	AiModelIdneq          *string  `json:"aiModelIdneq,omitempty"`
-	AiModelIdin           []string `json:"aiModelIdin,omitempty"`
-	AiModelIdnotIn        []string `json:"aiModelIdnotIn,omitempty"`
-	AiModelIdgt           *string  `json:"aiModelIdgt,omitempty"`
-	AiModelIdgte          *string  `json:"aiModelIdgte,omitempty"`
-	AiModelIdlt           *string  `json:"aiModelIdlt,omitempty"`
-	AiModelIdlte          *string  `json:"aiModelIdlte,omitempty"`
-	AiModelIdcontains     *string  `json:"aiModelIdcontains,omitempty"`
-	AiModelIdhasPrefix    *string  `json:"aiModelIdhasPrefix,omitempty"`
-	AiModelIdhasSuffix    *string  `json:"aiModelIdhasSuffix,omitempty"`
-	AiModelIdisNil        *bool    `json:"aiModelIdisNil,omitempty"`
-	AiModelIdnotNil       *bool    `json:"aiModelIdnotNil,omitempty"`
-	AiModelIdequalFold    *string  `json:"aiModelIdequalFold,omitempty"`
-	AiModelIdcontainsFold *string  `json:"aiModelIdcontainsFold,omitempty"`
+	AiModelIdneq          *string  `json:"aiModelIDNEQ,omitempty"`
+	AiModelIdin           []string `json:"aiModelIDIn,omitempty"`
+	AiModelIdnotIn        []string `json:"aiModelIDNotIn,omitempty"`
+	AiModelIdgt           *string  `json:"aiModelIDGT,omitempty"`
+	AiModelIdgte          *string  `json:"aiModelIDGTE,omitempty"`
+	AiModelIdlt           *string  `json:"aiModelIDLT,omitempty"`
+	AiModelIdlte          *string  `json:"aiModelIDLTE,omitempty"`
+	AiModelIdcontains     *string  `json:"aiModelIDContains,omitempty"`
+	AiModelIdhasPrefix    *string  `json:"aiModelIDHasPrefix,omitempty"`
+	AiModelIdhasSuffix    *string  `json:"aiModelIDHasSuffix,omitempty"`
+	AiModelIdisNil        *bool    `json:"aiModelIDIsNil,omitempty"`
+	AiModelIdnotNil       *bool    `json:"aiModelIDNotNil,omitempty"`
+	AiModelIdequalFold    *string  `json:"aiModelIDEqualFold,omitempty"`
+	AiModelIdcontainsFold *string  `json:"aiModelIDContainsFold,omitempty"`
 	// max_tokens field predicates
 	MaxTokens       *int  `json:"maxTokens,omitempty"`
-	MaxTokensNeq    *int  `json:"maxTokensNeq,omitempty"`
+	MaxTokensNeq    *int  `json:"maxTokensNEQ,omitempty"`
 	MaxTokensIn     []int `json:"maxTokensIn,omitempty"`
 	MaxTokensNotIn  []int `json:"maxTokensNotIn,omitempty"`
-	MaxTokensGt     *int  `json:"maxTokensGt,omitempty"`
-	MaxTokensGte    *int  `json:"maxTokensGte,omitempty"`
-	MaxTokensLt     *int  `json:"maxTokensLt,omitempty"`
-	MaxTokensLte    *int  `json:"maxTokensLte,omitempty"`
+	MaxTokensGt     *int  `json:"maxTokensGT,omitempty"`
+	MaxTokensGte    *int  `json:"maxTokensGTE,omitempty"`
+	MaxTokensLt     *int  `json:"maxTokensLT,omitempty"`
+	MaxTokensLte    *int  `json:"maxTokensLTE,omitempty"`
 	MaxTokensIsNil  *bool `json:"maxTokensIsNil,omitempty"`
 	MaxTokensNotNil *bool `json:"maxTokensNotNil,omitempty"`
 	// temperature field predicates
 	Temperature       *float64  `json:"temperature,omitempty"`
-	TemperatureNeq    *float64  `json:"temperatureNeq,omitempty"`
+	TemperatureNeq    *float64  `json:"temperatureNEQ,omitempty"`
 	TemperatureIn     []float64 `json:"temperatureIn,omitempty"`
 	TemperatureNotIn  []float64 `json:"temperatureNotIn,omitempty"`
-	TemperatureGt     *float64  `json:"temperatureGt,omitempty"`
-	TemperatureGte    *float64  `json:"temperatureGte,omitempty"`
-	TemperatureLt     *float64  `json:"temperatureLt,omitempty"`
-	TemperatureLte    *float64  `json:"temperatureLte,omitempty"`
+	TemperatureGt     *float64  `json:"temperatureGT,omitempty"`
+	TemperatureGte    *float64  `json:"temperatureGTE,omitempty"`
+	TemperatureLt     *float64  `json:"temperatureLT,omitempty"`
+	TemperatureLte    *float64  `json:"temperatureLTE,omitempty"`
 	TemperatureIsNil  *bool     `json:"temperatureIsNil,omitempty"`
 	TemperatureNotNil *bool     `json:"temperatureNotNil,omitempty"`
 	// item_group_id field predicates
 	ItemGroupID             *string  `json:"itemGroupID,omitempty"`
-	ItemGroupIdneq          *string  `json:"itemGroupIdneq,omitempty"`
-	ItemGroupIdin           []string `json:"itemGroupIdin,omitempty"`
-	ItemGroupIdnotIn        []string `json:"itemGroupIdnotIn,omitempty"`
-	ItemGroupIdgt           *string  `json:"itemGroupIdgt,omitempty"`
-	ItemGroupIdgte          *string  `json:"itemGroupIdgte,omitempty"`
-	ItemGroupIdlt           *string  `json:"itemGroupIdlt,omitempty"`
-	ItemGroupIdlte          *string  `json:"itemGroupIdlte,omitempty"`
-	ItemGroupIdcontains     *string  `json:"itemGroupIdcontains,omitempty"`
-	ItemGroupIdhasPrefix    *string  `json:"itemGroupIdhasPrefix,omitempty"`
-	ItemGroupIdhasSuffix    *string  `json:"itemGroupIdhasSuffix,omitempty"`
-	ItemGroupIdisNil        *bool    `json:"itemGroupIdisNil,omitempty"`
-	ItemGroupIdnotNil       *bool    `json:"itemGroupIdnotNil,omitempty"`
-	ItemGroupIdequalFold    *string  `json:"itemGroupIdequalFold,omitempty"`
-	ItemGroupIdcontainsFold *string  `json:"itemGroupIdcontainsFold,omitempty"`
+	ItemGroupIdneq          *string  `json:"itemGroupIDNEQ,omitempty"`
+	ItemGroupIdin           []string `json:"itemGroupIDIn,omitempty"`
+	ItemGroupIdnotIn        []string `json:"itemGroupIDNotIn,omitempty"`
+	ItemGroupIdgt           *string  `json:"itemGroupIDGT,omitempty"`
+	ItemGroupIdgte          *string  `json:"itemGroupIDGTE,omitempty"`
+	ItemGroupIdlt           *string  `json:"itemGroupIDLT,omitempty"`
+	ItemGroupIdlte          *string  `json:"itemGroupIDLTE,omitempty"`
+	ItemGroupIdcontains     *string  `json:"itemGroupIDContains,omitempty"`
+	ItemGroupIdhasPrefix    *string  `json:"itemGroupIDHasPrefix,omitempty"`
+	ItemGroupIdhasSuffix    *string  `json:"itemGroupIDHasSuffix,omitempty"`
+	ItemGroupIdisNil        *bool    `json:"itemGroupIDIsNil,omitempty"`
+	ItemGroupIdnotNil       *bool    `json:"itemGroupIDNotNil,omitempty"`
+	ItemGroupIdequalFold    *string  `json:"itemGroupIDEqualFold,omitempty"`
+	ItemGroupIdcontainsFold *string  `json:"itemGroupIDContainsFold,omitempty"`
 	// limit field predicates
 	Limit       *int  `json:"limit,omitempty"`
-	LimitNeq    *int  `json:"limitNeq,omitempty"`
+	LimitNeq    *int  `json:"limitNEQ,omitempty"`
 	LimitIn     []int `json:"limitIn,omitempty"`
 	LimitNotIn  []int `json:"limitNotIn,omitempty"`
-	LimitGt     *int  `json:"limitGt,omitempty"`
-	LimitGte    *int  `json:"limitGte,omitempty"`
-	LimitLt     *int  `json:"limitLt,omitempty"`
-	LimitLte    *int  `json:"limitLte,omitempty"`
+	LimitGt     *int  `json:"limitGT,omitempty"`
+	LimitGte    *int  `json:"limitGTE,omitempty"`
+	LimitLt     *int  `json:"limitLT,omitempty"`
+	LimitLte    *int  `json:"limitLTE,omitempty"`
 	LimitIsNil  *bool `json:"limitIsNil,omitempty"`
 	LimitNotNil *bool `json:"limitNotNil,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// chatbots edge predicates
 	HasChatbots     *bool               `json:"hasChatbots,omitempty"`
 	HasChatbotsWith []ChatbotWhereInput `json:"hasChatbotsWith,omitempty"`
@@ -2227,63 +2227,63 @@ type GuestWhereInput struct {
 	And []GuestWhereInput `json:"and,omitempty"`
 	Or  []GuestWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// ext_user_id field predicates
 	ExtUserID             *string  `json:"extUserID,omitempty"`
-	ExtUserIdneq          *string  `json:"extUserIdneq,omitempty"`
-	ExtUserIdin           []string `json:"extUserIdin,omitempty"`
-	ExtUserIdnotIn        []string `json:"extUserIdnotIn,omitempty"`
-	ExtUserIdgt           *string  `json:"extUserIdgt,omitempty"`
-	ExtUserIdgte          *string  `json:"extUserIdgte,omitempty"`
-	ExtUserIdlt           *string  `json:"extUserIdlt,omitempty"`
-	ExtUserIdlte          *string  `json:"extUserIdlte,omitempty"`
-	ExtUserIdcontains     *string  `json:"extUserIdcontains,omitempty"`
-	ExtUserIdhasPrefix    *string  `json:"extUserIdhasPrefix,omitempty"`
-	ExtUserIdhasSuffix    *string  `json:"extUserIdhasSuffix,omitempty"`
-	ExtUserIdisNil        *bool    `json:"extUserIdisNil,omitempty"`
-	ExtUserIdnotNil       *bool    `json:"extUserIdnotNil,omitempty"`
-	ExtUserIdequalFold    *string  `json:"extUserIdequalFold,omitempty"`
-	ExtUserIdcontainsFold *string  `json:"extUserIdcontainsFold,omitempty"`
+	ExtUserIdneq          *string  `json:"extUserIDNEQ,omitempty"`
+	ExtUserIdin           []string `json:"extUserIDIn,omitempty"`
+	ExtUserIdnotIn        []string `json:"extUserIDNotIn,omitempty"`
+	ExtUserIdgt           *string  `json:"extUserIDGT,omitempty"`
+	ExtUserIdgte          *string  `json:"extUserIDGTE,omitempty"`
+	ExtUserIdlt           *string  `json:"extUserIDLT,omitempty"`
+	ExtUserIdlte          *string  `json:"extUserIDLTE,omitempty"`
+	ExtUserIdcontains     *string  `json:"extUserIDContains,omitempty"`
+	ExtUserIdhasPrefix    *string  `json:"extUserIDHasPrefix,omitempty"`
+	ExtUserIdhasSuffix    *string  `json:"extUserIDHasSuffix,omitempty"`
+	ExtUserIdisNil        *bool    `json:"extUserIDIsNil,omitempty"`
+	ExtUserIdnotNil       *bool    `json:"extUserIDNotNil,omitempty"`
+	ExtUserIdequalFold    *string  `json:"extUserIDEqualFold,omitempty"`
+	ExtUserIdcontainsFold *string  `json:"extUserIDContainsFold,omitempty"`
 	// first_name field predicates
 	FirstName             *string  `json:"firstName,omitempty"`
-	FirstNameNeq          *string  `json:"firstNameNeq,omitempty"`
+	FirstNameNeq          *string  `json:"firstNameNEQ,omitempty"`
 	FirstNameIn           []string `json:"firstNameIn,omitempty"`
 	FirstNameNotIn        []string `json:"firstNameNotIn,omitempty"`
-	FirstNameGt           *string  `json:"firstNameGt,omitempty"`
-	FirstNameGte          *string  `json:"firstNameGte,omitempty"`
-	FirstNameLt           *string  `json:"firstNameLt,omitempty"`
-	FirstNameLte          *string  `json:"firstNameLte,omitempty"`
+	FirstNameGt           *string  `json:"firstNameGT,omitempty"`
+	FirstNameGte          *string  `json:"firstNameGTE,omitempty"`
+	FirstNameLt           *string  `json:"firstNameLT,omitempty"`
+	FirstNameLte          *string  `json:"firstNameLTE,omitempty"`
 	FirstNameContains     *string  `json:"firstNameContains,omitempty"`
 	FirstNameHasPrefix    *string  `json:"firstNameHasPrefix,omitempty"`
 	FirstNameHasSuffix    *string  `json:"firstNameHasSuffix,omitempty"`
@@ -2293,13 +2293,13 @@ type GuestWhereInput struct {
 	FirstNameContainsFold *string  `json:"firstNameContainsFold,omitempty"`
 	// last_name field predicates
 	LastName             *string  `json:"lastName,omitempty"`
-	LastNameNeq          *string  `json:"lastNameNeq,omitempty"`
+	LastNameNeq          *string  `json:"lastNameNEQ,omitempty"`
 	LastNameIn           []string `json:"lastNameIn,omitempty"`
 	LastNameNotIn        []string `json:"lastNameNotIn,omitempty"`
-	LastNameGt           *string  `json:"lastNameGt,omitempty"`
-	LastNameGte          *string  `json:"lastNameGte,omitempty"`
-	LastNameLt           *string  `json:"lastNameLt,omitempty"`
-	LastNameLte          *string  `json:"lastNameLte,omitempty"`
+	LastNameGt           *string  `json:"lastNameGT,omitempty"`
+	LastNameGte          *string  `json:"lastNameGTE,omitempty"`
+	LastNameLt           *string  `json:"lastNameLT,omitempty"`
+	LastNameLte          *string  `json:"lastNameLTE,omitempty"`
 	LastNameContains     *string  `json:"lastNameContains,omitempty"`
 	LastNameHasPrefix    *string  `json:"lastNameHasPrefix,omitempty"`
 	LastNameHasSuffix    *string  `json:"lastNameHasSuffix,omitempty"`
@@ -2309,13 +2309,13 @@ type GuestWhereInput struct {
 	LastNameContainsFold *string  `json:"lastNameContainsFold,omitempty"`
 	// email field predicates
 	Email             *string  `json:"email,omitempty"`
-	EmailNeq          *string  `json:"emailNeq,omitempty"`
+	EmailNeq          *string  `json:"emailNEQ,omitempty"`
 	EmailIn           []string `json:"emailIn,omitempty"`
 	EmailNotIn        []string `json:"emailNotIn,omitempty"`
-	EmailGt           *string  `json:"emailGt,omitempty"`
-	EmailGte          *string  `json:"emailGte,omitempty"`
-	EmailLt           *string  `json:"emailLt,omitempty"`
-	EmailLte          *string  `json:"emailLte,omitempty"`
+	EmailGt           *string  `json:"emailGT,omitempty"`
+	EmailGte          *string  `json:"emailGTE,omitempty"`
+	EmailLt           *string  `json:"emailLT,omitempty"`
+	EmailLte          *string  `json:"emailLTE,omitempty"`
 	EmailContains     *string  `json:"emailContains,omitempty"`
 	EmailHasPrefix    *string  `json:"emailHasPrefix,omitempty"`
 	EmailHasSuffix    *string  `json:"emailHasSuffix,omitempty"`
@@ -2324,53 +2324,53 @@ type GuestWhereInput struct {
 	EmailEqualFold    *string  `json:"emailEqualFold,omitempty"`
 	EmailContainsFold *string  `json:"emailContainsFold,omitempty"`
 	// ip field predicates
-	IP             *string  `json:"iP,omitempty"`
-	IPNeq          *string  `json:"iPNeq,omitempty"`
-	IPIn           []string `json:"iPIn,omitempty"`
-	IPNotIn        []string `json:"iPNotIn,omitempty"`
-	IPGt           *string  `json:"iPGt,omitempty"`
-	IPGte          *string  `json:"iPGte,omitempty"`
-	IPLt           *string  `json:"iPLt,omitempty"`
-	IPLte          *string  `json:"iPLte,omitempty"`
-	IPContains     *string  `json:"iPContains,omitempty"`
-	IPHasPrefix    *string  `json:"iPHasPrefix,omitempty"`
-	IPHasSuffix    *string  `json:"iPHasSuffix,omitempty"`
-	IPIsNil        *bool    `json:"iPIsNil,omitempty"`
-	IPNotNil       *bool    `json:"iPNotNil,omitempty"`
-	IPEqualFold    *string  `json:"iPEqualFold,omitempty"`
-	IPContainsFold *string  `json:"iPContainsFold,omitempty"`
+	IP             *string  `json:"ip,omitempty"`
+	IPNeq          *string  `json:"ipNEQ,omitempty"`
+	IPIn           []string `json:"ipIn,omitempty"`
+	IPNotIn        []string `json:"ipNotIn,omitempty"`
+	IPGt           *string  `json:"ipGT,omitempty"`
+	IPGte          *string  `json:"ipGTE,omitempty"`
+	IPLt           *string  `json:"ipLT,omitempty"`
+	IPLte          *string  `json:"ipLTE,omitempty"`
+	IPContains     *string  `json:"ipContains,omitempty"`
+	IPHasPrefix    *string  `json:"ipHasPrefix,omitempty"`
+	IPHasSuffix    *string  `json:"ipHasSuffix,omitempty"`
+	IPIsNil        *bool    `json:"ipIsNil,omitempty"`
+	IPNotNil       *bool    `json:"ipNotNil,omitempty"`
+	IPEqualFold    *string  `json:"ipEqualFold,omitempty"`
+	IPContainsFold *string  `json:"ipContainsFold,omitempty"`
 	// chatbot_id field predicates
 	ChatbotID             *string  `json:"chatbotID,omitempty"`
-	ChatbotIdneq          *string  `json:"chatbotIdneq,omitempty"`
-	ChatbotIdin           []string `json:"chatbotIdin,omitempty"`
-	ChatbotIdnotIn        []string `json:"chatbotIdnotIn,omitempty"`
-	ChatbotIdgt           *string  `json:"chatbotIdgt,omitempty"`
-	ChatbotIdgte          *string  `json:"chatbotIdgte,omitempty"`
-	ChatbotIdlt           *string  `json:"chatbotIdlt,omitempty"`
-	ChatbotIdlte          *string  `json:"chatbotIdlte,omitempty"`
-	ChatbotIdcontains     *string  `json:"chatbotIdcontains,omitempty"`
-	ChatbotIdhasPrefix    *string  `json:"chatbotIdhasPrefix,omitempty"`
-	ChatbotIdhasSuffix    *string  `json:"chatbotIdhasSuffix,omitempty"`
-	ChatbotIdisNil        *bool    `json:"chatbotIdisNil,omitempty"`
-	ChatbotIdnotNil       *bool    `json:"chatbotIdnotNil,omitempty"`
-	ChatbotIdequalFold    *string  `json:"chatbotIdequalFold,omitempty"`
-	ChatbotIdcontainsFold *string  `json:"chatbotIdcontainsFold,omitempty"`
+	ChatbotIdneq          *string  `json:"chatbotIDNEQ,omitempty"`
+	ChatbotIdin           []string `json:"chatbotIDIn,omitempty"`
+	ChatbotIdnotIn        []string `json:"chatbotIDNotIn,omitempty"`
+	ChatbotIdgt           *string  `json:"chatbotIDGT,omitempty"`
+	ChatbotIdgte          *string  `json:"chatbotIDGTE,omitempty"`
+	ChatbotIdlt           *string  `json:"chatbotIDLT,omitempty"`
+	ChatbotIdlte          *string  `json:"chatbotIDLTE,omitempty"`
+	ChatbotIdcontains     *string  `json:"chatbotIDContains,omitempty"`
+	ChatbotIdhasPrefix    *string  `json:"chatbotIDHasPrefix,omitempty"`
+	ChatbotIdhasSuffix    *string  `json:"chatbotIDHasSuffix,omitempty"`
+	ChatbotIdisNil        *bool    `json:"chatbotIDIsNil,omitempty"`
+	ChatbotIdnotNil       *bool    `json:"chatbotIDNotNil,omitempty"`
+	ChatbotIdequalFold    *string  `json:"chatbotIDEqualFold,omitempty"`
+	ChatbotIdcontainsFold *string  `json:"chatbotIDContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 }
 
 // Header represents the GraphQL type Header
@@ -2381,20 +2381,20 @@ type Header struct {
 
 // HtmlToMarkdownInput represents the GraphQL type HtmlToMarkdownInput
 type HtmlToMarkdownInput struct {
-	HTML            string `json:"hTML"`
+	HTML            string `json:"html"`
 	Encoded         *bool  `json:"encoded,omitempty"`
 	ReturnAsEncoded *bool  `json:"returnAsEncoded,omitempty"`
 }
 
 // HttpRequestOptions represents the GraphQL type HttpRequestOptions
 type HttpRequestOptions struct {
-	URL     string   `json:"uRL"`
+	URL     string   `json:"url"`
 	Headers []Header `json:"headers,omitempty"`
 }
 
 // IChannelGetOrCreateInput represents the GraphQL type IChannelGetOrCreateInput
 type IChannelGetOrCreateInput struct {
-	ID        string  `json:"iD"`
+	ID        string  `json:"id"`
 	AiUserID  string  `json:"aiUserID"`
 	ChatbotID string  `json:"chatbotID"`
 	Name      string  `json:"name"`
@@ -2445,63 +2445,63 @@ type ItemGroupSourceWhereInput struct {
 	And []ItemGroupSourceWhereInput `json:"and,omitempty"`
 	Or  []ItemGroupSourceWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// item_group_id field predicates
 	ItemGroupID             *string  `json:"itemGroupID,omitempty"`
-	ItemGroupIdneq          *string  `json:"itemGroupIdneq,omitempty"`
-	ItemGroupIdin           []string `json:"itemGroupIdin,omitempty"`
-	ItemGroupIdnotIn        []string `json:"itemGroupIdnotIn,omitempty"`
-	ItemGroupIdgt           *string  `json:"itemGroupIdgt,omitempty"`
-	ItemGroupIdgte          *string  `json:"itemGroupIdgte,omitempty"`
-	ItemGroupIdlt           *string  `json:"itemGroupIdlt,omitempty"`
-	ItemGroupIdlte          *string  `json:"itemGroupIdlte,omitempty"`
-	ItemGroupIdcontains     *string  `json:"itemGroupIdcontains,omitempty"`
-	ItemGroupIdhasPrefix    *string  `json:"itemGroupIdhasPrefix,omitempty"`
-	ItemGroupIdhasSuffix    *string  `json:"itemGroupIdhasSuffix,omitempty"`
-	ItemGroupIdisNil        *bool    `json:"itemGroupIdisNil,omitempty"`
-	ItemGroupIdnotNil       *bool    `json:"itemGroupIdnotNil,omitempty"`
-	ItemGroupIdequalFold    *string  `json:"itemGroupIdequalFold,omitempty"`
-	ItemGroupIdcontainsFold *string  `json:"itemGroupIdcontainsFold,omitempty"`
+	ItemGroupIdneq          *string  `json:"itemGroupIDNEQ,omitempty"`
+	ItemGroupIdin           []string `json:"itemGroupIDIn,omitempty"`
+	ItemGroupIdnotIn        []string `json:"itemGroupIDNotIn,omitempty"`
+	ItemGroupIdgt           *string  `json:"itemGroupIDGT,omitempty"`
+	ItemGroupIdgte          *string  `json:"itemGroupIDGTE,omitempty"`
+	ItemGroupIdlt           *string  `json:"itemGroupIDLT,omitempty"`
+	ItemGroupIdlte          *string  `json:"itemGroupIDLTE,omitempty"`
+	ItemGroupIdcontains     *string  `json:"itemGroupIDContains,omitempty"`
+	ItemGroupIdhasPrefix    *string  `json:"itemGroupIDHasPrefix,omitempty"`
+	ItemGroupIdhasSuffix    *string  `json:"itemGroupIDHasSuffix,omitempty"`
+	ItemGroupIdisNil        *bool    `json:"itemGroupIDIsNil,omitempty"`
+	ItemGroupIdnotNil       *bool    `json:"itemGroupIDNotNil,omitempty"`
+	ItemGroupIdequalFold    *string  `json:"itemGroupIDEqualFold,omitempty"`
+	ItemGroupIdcontainsFold *string  `json:"itemGroupIDContainsFold,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -2511,13 +2511,13 @@ type ItemGroupSourceWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// type field predicates
 	Type             *scalars.ItemGroupSourceType  `json:"type,omitempty"`
-	TypeNeq          *scalars.ItemGroupSourceType  `json:"typeNeq,omitempty"`
+	TypeNeq          *scalars.ItemGroupSourceType  `json:"typeNEQ,omitempty"`
 	TypeIn           []scalars.ItemGroupSourceType `json:"typeIn,omitempty"`
 	TypeNotIn        []scalars.ItemGroupSourceType `json:"typeNotIn,omitempty"`
-	TypeGt           *scalars.ItemGroupSourceType  `json:"typeGt,omitempty"`
-	TypeGte          *scalars.ItemGroupSourceType  `json:"typeGte,omitempty"`
-	TypeLt           *scalars.ItemGroupSourceType  `json:"typeLt,omitempty"`
-	TypeLte          *scalars.ItemGroupSourceType  `json:"typeLte,omitempty"`
+	TypeGt           *scalars.ItemGroupSourceType  `json:"typeGT,omitempty"`
+	TypeGte          *scalars.ItemGroupSourceType  `json:"typeGTE,omitempty"`
+	TypeLt           *scalars.ItemGroupSourceType  `json:"typeLT,omitempty"`
+	TypeLte          *scalars.ItemGroupSourceType  `json:"typeLTE,omitempty"`
 	TypeContains     *scalars.ItemGroupSourceType  `json:"typeContains,omitempty"`
 	TypeHasPrefix    *scalars.ItemGroupSourceType  `json:"typeHasPrefix,omitempty"`
 	TypeHasSuffix    *scalars.ItemGroupSourceType  `json:"typeHasSuffix,omitempty"`
@@ -2526,46 +2526,46 @@ type ItemGroupSourceWhereInput struct {
 	TypeEqualFold    *scalars.ItemGroupSourceType  `json:"typeEqualFold,omitempty"`
 	TypeContainsFold *scalars.ItemGroupSourceType  `json:"typeContainsFold,omitempty"`
 	// url field predicates
-	URL             *string  `json:"uRL,omitempty"`
-	URLNeq          *string  `json:"uRLNeq,omitempty"`
-	URLIn           []string `json:"uRLIn,omitempty"`
-	URLNotIn        []string `json:"uRLNotIn,omitempty"`
-	URLGt           *string  `json:"uRLGt,omitempty"`
-	URLGte          *string  `json:"uRLGte,omitempty"`
-	URLLt           *string  `json:"uRLLt,omitempty"`
-	URLLte          *string  `json:"uRLLte,omitempty"`
-	URLContains     *string  `json:"uRLContains,omitempty"`
-	URLHasPrefix    *string  `json:"uRLHasPrefix,omitempty"`
-	URLHasSuffix    *string  `json:"uRLHasSuffix,omitempty"`
-	URLIsNil        *bool    `json:"uRLIsNil,omitempty"`
-	URLNotNil       *bool    `json:"uRLNotNil,omitempty"`
-	URLEqualFold    *string  `json:"uRLEqualFold,omitempty"`
-	URLContainsFold *string  `json:"uRLContainsFold,omitempty"`
+	URL             *string  `json:"url,omitempty"`
+	URLNeq          *string  `json:"urlNEQ,omitempty"`
+	URLIn           []string `json:"urlIn,omitempty"`
+	URLNotIn        []string `json:"urlNotIn,omitempty"`
+	URLGt           *string  `json:"urlGT,omitempty"`
+	URLGte          *string  `json:"urlGTE,omitempty"`
+	URLLt           *string  `json:"urlLT,omitempty"`
+	URLLte          *string  `json:"urlLTE,omitempty"`
+	URLContains     *string  `json:"urlContains,omitempty"`
+	URLHasPrefix    *string  `json:"urlHasPrefix,omitempty"`
+	URLHasSuffix    *string  `json:"urlHasSuffix,omitempty"`
+	URLIsNil        *bool    `json:"urlIsNil,omitempty"`
+	URLNotNil       *bool    `json:"urlNotNil,omitempty"`
+	URLEqualFold    *string  `json:"urlEqualFold,omitempty"`
+	URLContainsFold *string  `json:"urlContainsFold,omitempty"`
 	// file_id field predicates
 	FileID             *string  `json:"fileID,omitempty"`
-	FileIdneq          *string  `json:"fileIdneq,omitempty"`
-	FileIdin           []string `json:"fileIdin,omitempty"`
-	FileIdnotIn        []string `json:"fileIdnotIn,omitempty"`
-	FileIdgt           *string  `json:"fileIdgt,omitempty"`
-	FileIdgte          *string  `json:"fileIdgte,omitempty"`
-	FileIdlt           *string  `json:"fileIdlt,omitempty"`
-	FileIdlte          *string  `json:"fileIdlte,omitempty"`
-	FileIdcontains     *string  `json:"fileIdcontains,omitempty"`
-	FileIdhasPrefix    *string  `json:"fileIdhasPrefix,omitempty"`
-	FileIdhasSuffix    *string  `json:"fileIdhasSuffix,omitempty"`
-	FileIdisNil        *bool    `json:"fileIdisNil,omitempty"`
-	FileIdnotNil       *bool    `json:"fileIdnotNil,omitempty"`
-	FileIdequalFold    *string  `json:"fileIdequalFold,omitempty"`
-	FileIdcontainsFold *string  `json:"fileIdcontainsFold,omitempty"`
+	FileIdneq          *string  `json:"fileIDNEQ,omitempty"`
+	FileIdin           []string `json:"fileIDIn,omitempty"`
+	FileIdnotIn        []string `json:"fileIDNotIn,omitempty"`
+	FileIdgt           *string  `json:"fileIDGT,omitempty"`
+	FileIdgte          *string  `json:"fileIDGTE,omitempty"`
+	FileIdlt           *string  `json:"fileIDLT,omitempty"`
+	FileIdlte          *string  `json:"fileIDLTE,omitempty"`
+	FileIdcontains     *string  `json:"fileIDContains,omitempty"`
+	FileIdhasPrefix    *string  `json:"fileIDHasPrefix,omitempty"`
+	FileIdhasSuffix    *string  `json:"fileIDHasSuffix,omitempty"`
+	FileIdisNil        *bool    `json:"fileIDIsNil,omitempty"`
+	FileIdnotNil       *bool    `json:"fileIDNotNil,omitempty"`
+	FileIdequalFold    *string  `json:"fileIDEqualFold,omitempty"`
+	FileIdcontainsFold *string  `json:"fileIDContainsFold,omitempty"`
 	// original_file_name field predicates
 	OriginalFileName             *string  `json:"originalFileName,omitempty"`
-	OriginalFileNameNeq          *string  `json:"originalFileNameNeq,omitempty"`
+	OriginalFileNameNeq          *string  `json:"originalFileNameNEQ,omitempty"`
 	OriginalFileNameIn           []string `json:"originalFileNameIn,omitempty"`
 	OriginalFileNameNotIn        []string `json:"originalFileNameNotIn,omitempty"`
-	OriginalFileNameGt           *string  `json:"originalFileNameGt,omitempty"`
-	OriginalFileNameGte          *string  `json:"originalFileNameGte,omitempty"`
-	OriginalFileNameLt           *string  `json:"originalFileNameLt,omitempty"`
-	OriginalFileNameLte          *string  `json:"originalFileNameLte,omitempty"`
+	OriginalFileNameGt           *string  `json:"originalFileNameGT,omitempty"`
+	OriginalFileNameGte          *string  `json:"originalFileNameGTE,omitempty"`
+	OriginalFileNameLt           *string  `json:"originalFileNameLT,omitempty"`
+	OriginalFileNameLte          *string  `json:"originalFileNameLTE,omitempty"`
 	OriginalFileNameContains     *string  `json:"originalFileNameContains,omitempty"`
 	OriginalFileNameHasPrefix    *string  `json:"originalFileNameHasPrefix,omitempty"`
 	OriginalFileNameHasSuffix    *string  `json:"originalFileNameHasSuffix,omitempty"`
@@ -2575,13 +2575,13 @@ type ItemGroupSourceWhereInput struct {
 	OriginalFileNameContainsFold *string  `json:"originalFileNameContainsFold,omitempty"`
 	// file_name field predicates
 	FileName             *string  `json:"fileName,omitempty"`
-	FileNameNeq          *string  `json:"fileNameNeq,omitempty"`
+	FileNameNeq          *string  `json:"fileNameNEQ,omitempty"`
 	FileNameIn           []string `json:"fileNameIn,omitempty"`
 	FileNameNotIn        []string `json:"fileNameNotIn,omitempty"`
-	FileNameGt           *string  `json:"fileNameGt,omitempty"`
-	FileNameGte          *string  `json:"fileNameGte,omitempty"`
-	FileNameLt           *string  `json:"fileNameLt,omitempty"`
-	FileNameLte          *string  `json:"fileNameLte,omitempty"`
+	FileNameGt           *string  `json:"fileNameGT,omitempty"`
+	FileNameGte          *string  `json:"fileNameGTE,omitempty"`
+	FileNameLt           *string  `json:"fileNameLT,omitempty"`
+	FileNameLte          *string  `json:"fileNameLTE,omitempty"`
 	FileNameContains     *string  `json:"fileNameContains,omitempty"`
 	FileNameHasPrefix    *string  `json:"fileNameHasPrefix,omitempty"`
 	FileNameHasSuffix    *string  `json:"fileNameHasSuffix,omitempty"`
@@ -2591,34 +2591,34 @@ type ItemGroupSourceWhereInput struct {
 	FileNameContainsFold *string  `json:"fileNameContainsFold,omitempty"`
 	// file_size field predicates
 	FileSize       *int  `json:"fileSize,omitempty"`
-	FileSizeNeq    *int  `json:"fileSizeNeq,omitempty"`
+	FileSizeNeq    *int  `json:"fileSizeNEQ,omitempty"`
 	FileSizeIn     []int `json:"fileSizeIn,omitempty"`
 	FileSizeNotIn  []int `json:"fileSizeNotIn,omitempty"`
-	FileSizeGt     *int  `json:"fileSizeGt,omitempty"`
-	FileSizeGte    *int  `json:"fileSizeGte,omitempty"`
-	FileSizeLt     *int  `json:"fileSizeLt,omitempty"`
-	FileSizeLte    *int  `json:"fileSizeLte,omitempty"`
+	FileSizeGt     *int  `json:"fileSizeGT,omitempty"`
+	FileSizeGte    *int  `json:"fileSizeGTE,omitempty"`
+	FileSizeLt     *int  `json:"fileSizeLT,omitempty"`
+	FileSizeLte    *int  `json:"fileSizeLTE,omitempty"`
 	FileSizeIsNil  *bool `json:"fileSizeIsNil,omitempty"`
 	FileSizeNotNil *bool `json:"fileSizeNotNil,omitempty"`
 	// is_queued field predicates
 	IsQueued       *bool `json:"isQueued,omitempty"`
-	IsQueuedNeq    *bool `json:"isQueuedNeq,omitempty"`
+	IsQueuedNeq    *bool `json:"isQueuedNEQ,omitempty"`
 	IsQueuedIsNil  *bool `json:"isQueuedIsNil,omitempty"`
 	IsQueuedNotNil *bool `json:"isQueuedNotNil,omitempty"`
 	// queue_id field predicates
 	QueueID       *bool `json:"queueID,omitempty"`
-	QueueIdneq    *bool `json:"queueIdneq,omitempty"`
-	QueueIdisNil  *bool `json:"queueIdisNil,omitempty"`
-	QueueIdnotNil *bool `json:"queueIdnotNil,omitempty"`
+	QueueIdneq    *bool `json:"queueIDNEQ,omitempty"`
+	QueueIdisNil  *bool `json:"queueIDIsNil,omitempty"`
+	QueueIdnotNil *bool `json:"queueIDNotNil,omitempty"`
 	// training_status field predicates
 	TrainingStatus             *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatus,omitempty"`
-	TrainingStatusNeq          *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusNeq,omitempty"`
+	TrainingStatusNeq          *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusNEQ,omitempty"`
 	TrainingStatusIn           []scalars.ItemGroupSourceTrainingStatus `json:"trainingStatusIn,omitempty"`
 	TrainingStatusNotIn        []scalars.ItemGroupSourceTrainingStatus `json:"trainingStatusNotIn,omitempty"`
-	TrainingStatusGt           *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusGt,omitempty"`
-	TrainingStatusGte          *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusGte,omitempty"`
-	TrainingStatusLt           *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusLt,omitempty"`
-	TrainingStatusLte          *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusLte,omitempty"`
+	TrainingStatusGt           *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusGT,omitempty"`
+	TrainingStatusGte          *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusGTE,omitempty"`
+	TrainingStatusLt           *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusLT,omitempty"`
+	TrainingStatusLte          *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusLTE,omitempty"`
 	TrainingStatusContains     *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusContains,omitempty"`
 	TrainingStatusHasPrefix    *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusHasPrefix,omitempty"`
 	TrainingStatusHasSuffix    *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusHasSuffix,omitempty"`
@@ -2628,13 +2628,13 @@ type ItemGroupSourceWhereInput struct {
 	TrainingStatusContainsFold *scalars.ItemGroupSourceTrainingStatus  `json:"trainingStatusContainsFold,omitempty"`
 	// training_msg field predicates
 	TrainingMsg             *string  `json:"trainingMsg,omitempty"`
-	TrainingMsgNeq          *string  `json:"trainingMsgNeq,omitempty"`
+	TrainingMsgNeq          *string  `json:"trainingMsgNEQ,omitempty"`
 	TrainingMsgIn           []string `json:"trainingMsgIn,omitempty"`
 	TrainingMsgNotIn        []string `json:"trainingMsgNotIn,omitempty"`
-	TrainingMsgGt           *string  `json:"trainingMsgGt,omitempty"`
-	TrainingMsgGte          *string  `json:"trainingMsgGte,omitempty"`
-	TrainingMsgLt           *string  `json:"trainingMsgLt,omitempty"`
-	TrainingMsgLte          *string  `json:"trainingMsgLte,omitempty"`
+	TrainingMsgGt           *string  `json:"trainingMsgGT,omitempty"`
+	TrainingMsgGte          *string  `json:"trainingMsgGTE,omitempty"`
+	TrainingMsgLt           *string  `json:"trainingMsgLT,omitempty"`
+	TrainingMsgLte          *string  `json:"trainingMsgLTE,omitempty"`
 	TrainingMsgContains     *string  `json:"trainingMsgContains,omitempty"`
 	TrainingMsgHasPrefix    *string  `json:"trainingMsgHasPrefix,omitempty"`
 	TrainingMsgHasSuffix    *string  `json:"trainingMsgHasSuffix,omitempty"`
@@ -2644,67 +2644,67 @@ type ItemGroupSourceWhereInput struct {
 	TrainingMsgContainsFold *string  `json:"trainingMsgContainsFold,omitempty"`
 	// chars field predicates
 	Chars       *int  `json:"chars,omitempty"`
-	CharsNeq    *int  `json:"charsNeq,omitempty"`
+	CharsNeq    *int  `json:"charsNEQ,omitempty"`
 	CharsIn     []int `json:"charsIn,omitempty"`
 	CharsNotIn  []int `json:"charsNotIn,omitempty"`
-	CharsGt     *int  `json:"charsGt,omitempty"`
-	CharsGte    *int  `json:"charsGte,omitempty"`
-	CharsLt     *int  `json:"charsLt,omitempty"`
-	CharsLte    *int  `json:"charsLte,omitempty"`
+	CharsGt     *int  `json:"charsGT,omitempty"`
+	CharsGte    *int  `json:"charsGTE,omitempty"`
+	CharsLt     *int  `json:"charsLT,omitempty"`
+	CharsLte    *int  `json:"charsLTE,omitempty"`
 	CharsIsNil  *bool `json:"charsIsNil,omitempty"`
 	CharsNotNil *bool `json:"charsNotNil,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// ext_id field predicates
 	ExtID             *string  `json:"extID,omitempty"`
-	ExtIdneq          *string  `json:"extIdneq,omitempty"`
-	ExtIdin           []string `json:"extIdin,omitempty"`
-	ExtIdnotIn        []string `json:"extIdnotIn,omitempty"`
-	ExtIdgt           *string  `json:"extIdgt,omitempty"`
-	ExtIdgte          *string  `json:"extIdgte,omitempty"`
-	ExtIdlt           *string  `json:"extIdlt,omitempty"`
-	ExtIdlte          *string  `json:"extIdlte,omitempty"`
-	ExtIdcontains     *string  `json:"extIdcontains,omitempty"`
-	ExtIdhasPrefix    *string  `json:"extIdhasPrefix,omitempty"`
-	ExtIdhasSuffix    *string  `json:"extIdhasSuffix,omitempty"`
-	ExtIdisNil        *bool    `json:"extIdisNil,omitempty"`
-	ExtIdnotNil       *bool    `json:"extIdnotNil,omitempty"`
-	ExtIdequalFold    *string  `json:"extIdequalFold,omitempty"`
-	ExtIdcontainsFold *string  `json:"extIdcontainsFold,omitempty"`
+	ExtIdneq          *string  `json:"extIDNEQ,omitempty"`
+	ExtIdin           []string `json:"extIDIn,omitempty"`
+	ExtIdnotIn        []string `json:"extIDNotIn,omitempty"`
+	ExtIdgt           *string  `json:"extIDGT,omitempty"`
+	ExtIdgte          *string  `json:"extIDGTE,omitempty"`
+	ExtIdlt           *string  `json:"extIDLT,omitempty"`
+	ExtIdlte          *string  `json:"extIDLTE,omitempty"`
+	ExtIdcontains     *string  `json:"extIDContains,omitempty"`
+	ExtIdhasPrefix    *string  `json:"extIDHasPrefix,omitempty"`
+	ExtIdhasSuffix    *string  `json:"extIDHasSuffix,omitempty"`
+	ExtIdisNil        *bool    `json:"extIDIsNil,omitempty"`
+	ExtIdnotNil       *bool    `json:"extIDNotNil,omitempty"`
+	ExtIdequalFold    *string  `json:"extIDEqualFold,omitempty"`
+	ExtIdcontainsFold *string  `json:"extIDContainsFold,omitempty"`
 	// deleted_at field predicates
 	DeletedAt       *time.Time  `json:"deletedAt,omitempty"`
-	DeletedAtNeq    *time.Time  `json:"deletedAtNeq,omitempty"`
+	DeletedAtNeq    *time.Time  `json:"deletedAtNEQ,omitempty"`
 	DeletedAtIn     []time.Time `json:"deletedAtIn,omitempty"`
 	DeletedAtNotIn  []time.Time `json:"deletedAtNotIn,omitempty"`
-	DeletedAtGt     *time.Time  `json:"deletedAtGt,omitempty"`
-	DeletedAtGte    *time.Time  `json:"deletedAtGte,omitempty"`
-	DeletedAtLt     *time.Time  `json:"deletedAtLt,omitempty"`
-	DeletedAtLte    *time.Time  `json:"deletedAtLte,omitempty"`
+	DeletedAtGt     *time.Time  `json:"deletedAtGT,omitempty"`
+	DeletedAtGte    *time.Time  `json:"deletedAtGTE,omitempty"`
+	DeletedAtLt     *time.Time  `json:"deletedAtLT,omitempty"`
+	DeletedAtLte    *time.Time  `json:"deletedAtLTE,omitempty"`
 	DeletedAtIsNil  *bool       `json:"deletedAtIsNil,omitempty"`
 	DeletedAtNotNil *bool       `json:"deletedAtNotNil,omitempty"`
 	// body field predicates
 	Body             *string  `json:"body,omitempty"`
-	BodyNeq          *string  `json:"bodyNeq,omitempty"`
+	BodyNeq          *string  `json:"bodyNEQ,omitempty"`
 	BodyIn           []string `json:"bodyIn,omitempty"`
 	BodyNotIn        []string `json:"bodyNotIn,omitempty"`
-	BodyGt           *string  `json:"bodyGt,omitempty"`
-	BodyGte          *string  `json:"bodyGte,omitempty"`
-	BodyLt           *string  `json:"bodyLt,omitempty"`
-	BodyLte          *string  `json:"bodyLte,omitempty"`
+	BodyGt           *string  `json:"bodyGT,omitempty"`
+	BodyGte          *string  `json:"bodyGTE,omitempty"`
+	BodyLt           *string  `json:"bodyLT,omitempty"`
+	BodyLte          *string  `json:"bodyLTE,omitempty"`
 	BodyContains     *string  `json:"bodyContains,omitempty"`
 	BodyHasPrefix    *string  `json:"bodyHasPrefix,omitempty"`
 	BodyHasSuffix    *string  `json:"bodyHasSuffix,omitempty"`
@@ -2714,46 +2714,46 @@ type ItemGroupSourceWhereInput struct {
 	BodyContainsFold *string  `json:"bodyContainsFold,omitempty"`
 	// total_items field predicates
 	TotalItems       *int  `json:"totalItems,omitempty"`
-	TotalItemsNeq    *int  `json:"totalItemsNeq,omitempty"`
+	TotalItemsNeq    *int  `json:"totalItemsNEQ,omitempty"`
 	TotalItemsIn     []int `json:"totalItemsIn,omitempty"`
 	TotalItemsNotIn  []int `json:"totalItemsNotIn,omitempty"`
-	TotalItemsGt     *int  `json:"totalItemsGt,omitempty"`
-	TotalItemsGte    *int  `json:"totalItemsGte,omitempty"`
-	TotalItemsLt     *int  `json:"totalItemsLt,omitempty"`
-	TotalItemsLte    *int  `json:"totalItemsLte,omitempty"`
+	TotalItemsGt     *int  `json:"totalItemsGT,omitempty"`
+	TotalItemsGte    *int  `json:"totalItemsGTE,omitempty"`
+	TotalItemsLt     *int  `json:"totalItemsLT,omitempty"`
+	TotalItemsLte    *int  `json:"totalItemsLTE,omitempty"`
 	TotalItemsIsNil  *bool `json:"totalItemsIsNil,omitempty"`
 	TotalItemsNotNil *bool `json:"totalItemsNotNil,omitempty"`
 	// total_items_pending field predicates
 	TotalItemsPending       *int  `json:"totalItemsPending,omitempty"`
-	TotalItemsPendingNeq    *int  `json:"totalItemsPendingNeq,omitempty"`
+	TotalItemsPendingNeq    *int  `json:"totalItemsPendingNEQ,omitempty"`
 	TotalItemsPendingIn     []int `json:"totalItemsPendingIn,omitempty"`
 	TotalItemsPendingNotIn  []int `json:"totalItemsPendingNotIn,omitempty"`
-	TotalItemsPendingGt     *int  `json:"totalItemsPendingGt,omitempty"`
-	TotalItemsPendingGte    *int  `json:"totalItemsPendingGte,omitempty"`
-	TotalItemsPendingLt     *int  `json:"totalItemsPendingLt,omitempty"`
-	TotalItemsPendingLte    *int  `json:"totalItemsPendingLte,omitempty"`
+	TotalItemsPendingGt     *int  `json:"totalItemsPendingGT,omitempty"`
+	TotalItemsPendingGte    *int  `json:"totalItemsPendingGTE,omitempty"`
+	TotalItemsPendingLt     *int  `json:"totalItemsPendingLT,omitempty"`
+	TotalItemsPendingLte    *int  `json:"totalItemsPendingLTE,omitempty"`
 	TotalItemsPendingIsNil  *bool `json:"totalItemsPendingIsNil,omitempty"`
 	TotalItemsPendingNotNil *bool `json:"totalItemsPendingNotNil,omitempty"`
 	// total_items_error field predicates
 	TotalItemsError       *int  `json:"totalItemsError,omitempty"`
-	TotalItemsErrorNeq    *int  `json:"totalItemsErrorNeq,omitempty"`
+	TotalItemsErrorNeq    *int  `json:"totalItemsErrorNEQ,omitempty"`
 	TotalItemsErrorIn     []int `json:"totalItemsErrorIn,omitempty"`
 	TotalItemsErrorNotIn  []int `json:"totalItemsErrorNotIn,omitempty"`
-	TotalItemsErrorGt     *int  `json:"totalItemsErrorGt,omitempty"`
-	TotalItemsErrorGte    *int  `json:"totalItemsErrorGte,omitempty"`
-	TotalItemsErrorLt     *int  `json:"totalItemsErrorLt,omitempty"`
-	TotalItemsErrorLte    *int  `json:"totalItemsErrorLte,omitempty"`
+	TotalItemsErrorGt     *int  `json:"totalItemsErrorGT,omitempty"`
+	TotalItemsErrorGte    *int  `json:"totalItemsErrorGTE,omitempty"`
+	TotalItemsErrorLt     *int  `json:"totalItemsErrorLT,omitempty"`
+	TotalItemsErrorLte    *int  `json:"totalItemsErrorLTE,omitempty"`
 	TotalItemsErrorIsNil  *bool `json:"totalItemsErrorIsNil,omitempty"`
 	TotalItemsErrorNotNil *bool `json:"totalItemsErrorNotNil,omitempty"`
 	// total_items_completed field predicates
 	TotalItemsCompleted       *int  `json:"totalItemsCompleted,omitempty"`
-	TotalItemsCompletedNeq    *int  `json:"totalItemsCompletedNeq,omitempty"`
+	TotalItemsCompletedNeq    *int  `json:"totalItemsCompletedNEQ,omitempty"`
 	TotalItemsCompletedIn     []int `json:"totalItemsCompletedIn,omitempty"`
 	TotalItemsCompletedNotIn  []int `json:"totalItemsCompletedNotIn,omitempty"`
-	TotalItemsCompletedGt     *int  `json:"totalItemsCompletedGt,omitempty"`
-	TotalItemsCompletedGte    *int  `json:"totalItemsCompletedGte,omitempty"`
-	TotalItemsCompletedLt     *int  `json:"totalItemsCompletedLt,omitempty"`
-	TotalItemsCompletedLte    *int  `json:"totalItemsCompletedLte,omitempty"`
+	TotalItemsCompletedGt     *int  `json:"totalItemsCompletedGT,omitempty"`
+	TotalItemsCompletedGte    *int  `json:"totalItemsCompletedGTE,omitempty"`
+	TotalItemsCompletedLt     *int  `json:"totalItemsCompletedLT,omitempty"`
+	TotalItemsCompletedLte    *int  `json:"totalItemsCompletedLTE,omitempty"`
 	TotalItemsCompletedIsNil  *bool `json:"totalItemsCompletedIsNil,omitempty"`
 	TotalItemsCompletedNotNil *bool `json:"totalItemsCompletedNotNil,omitempty"`
 	// item_group edge predicates
@@ -2769,47 +2769,47 @@ type ItemGroupWhereInput struct {
 	And []ItemGroupWhereInput `json:"and,omitempty"`
 	Or  []ItemGroupWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -2819,13 +2819,13 @@ type ItemGroupWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// short_descr field predicates
 	ShortDescr             *string  `json:"shortDescr,omitempty"`
-	ShortDescrNeq          *string  `json:"shortDescrNeq,omitempty"`
+	ShortDescrNeq          *string  `json:"shortDescrNEQ,omitempty"`
 	ShortDescrIn           []string `json:"shortDescrIn,omitempty"`
 	ShortDescrNotIn        []string `json:"shortDescrNotIn,omitempty"`
-	ShortDescrGt           *string  `json:"shortDescrGt,omitempty"`
-	ShortDescrGte          *string  `json:"shortDescrGte,omitempty"`
-	ShortDescrLt           *string  `json:"shortDescrLt,omitempty"`
-	ShortDescrLte          *string  `json:"shortDescrLte,omitempty"`
+	ShortDescrGt           *string  `json:"shortDescrGT,omitempty"`
+	ShortDescrGte          *string  `json:"shortDescrGTE,omitempty"`
+	ShortDescrLt           *string  `json:"shortDescrLT,omitempty"`
+	ShortDescrLte          *string  `json:"shortDescrLTE,omitempty"`
 	ShortDescrContains     *string  `json:"shortDescrContains,omitempty"`
 	ShortDescrHasPrefix    *string  `json:"shortDescrHasPrefix,omitempty"`
 	ShortDescrHasSuffix    *string  `json:"shortDescrHasSuffix,omitempty"`
@@ -2835,57 +2835,57 @@ type ItemGroupWhereInput struct {
 	ShortDescrContainsFold *string  `json:"shortDescrContainsFold,omitempty"`
 	// ai_model_id field predicates
 	AiModelID             *string  `json:"aiModelID,omitempty"`
-	AiModelIdneq          *string  `json:"aiModelIdneq,omitempty"`
-	AiModelIdin           []string `json:"aiModelIdin,omitempty"`
-	AiModelIdnotIn        []string `json:"aiModelIdnotIn,omitempty"`
-	AiModelIdgt           *string  `json:"aiModelIdgt,omitempty"`
-	AiModelIdgte          *string  `json:"aiModelIdgte,omitempty"`
-	AiModelIdlt           *string  `json:"aiModelIdlt,omitempty"`
-	AiModelIdlte          *string  `json:"aiModelIdlte,omitempty"`
-	AiModelIdcontains     *string  `json:"aiModelIdcontains,omitempty"`
-	AiModelIdhasPrefix    *string  `json:"aiModelIdhasPrefix,omitempty"`
-	AiModelIdhasSuffix    *string  `json:"aiModelIdhasSuffix,omitempty"`
-	AiModelIdisNil        *bool    `json:"aiModelIdisNil,omitempty"`
-	AiModelIdnotNil       *bool    `json:"aiModelIdnotNil,omitempty"`
-	AiModelIdequalFold    *string  `json:"aiModelIdequalFold,omitempty"`
-	AiModelIdcontainsFold *string  `json:"aiModelIdcontainsFold,omitempty"`
+	AiModelIdneq          *string  `json:"aiModelIDNEQ,omitempty"`
+	AiModelIdin           []string `json:"aiModelIDIn,omitempty"`
+	AiModelIdnotIn        []string `json:"aiModelIDNotIn,omitempty"`
+	AiModelIdgt           *string  `json:"aiModelIDGT,omitempty"`
+	AiModelIdgte          *string  `json:"aiModelIDGTE,omitempty"`
+	AiModelIdlt           *string  `json:"aiModelIDLT,omitempty"`
+	AiModelIdlte          *string  `json:"aiModelIDLTE,omitempty"`
+	AiModelIdcontains     *string  `json:"aiModelIDContains,omitempty"`
+	AiModelIdhasPrefix    *string  `json:"aiModelIDHasPrefix,omitempty"`
+	AiModelIdhasSuffix    *string  `json:"aiModelIDHasSuffix,omitempty"`
+	AiModelIdisNil        *bool    `json:"aiModelIDIsNil,omitempty"`
+	AiModelIdnotNil       *bool    `json:"aiModelIDNotNil,omitempty"`
+	AiModelIdequalFold    *string  `json:"aiModelIDEqualFold,omitempty"`
+	AiModelIdcontainsFold *string  `json:"aiModelIDContainsFold,omitempty"`
 	// dims field predicates
 	Dims       *int  `json:"dims,omitempty"`
-	DimsNeq    *int  `json:"dimsNeq,omitempty"`
+	DimsNeq    *int  `json:"dimsNEQ,omitempty"`
 	DimsIn     []int `json:"dimsIn,omitempty"`
 	DimsNotIn  []int `json:"dimsNotIn,omitempty"`
-	DimsGt     *int  `json:"dimsGt,omitempty"`
-	DimsGte    *int  `json:"dimsGte,omitempty"`
-	DimsLt     *int  `json:"dimsLt,omitempty"`
-	DimsLte    *int  `json:"dimsLte,omitempty"`
+	DimsGt     *int  `json:"dimsGT,omitempty"`
+	DimsGte    *int  `json:"dimsGTE,omitempty"`
+	DimsLt     *int  `json:"dimsLT,omitempty"`
+	DimsLte    *int  `json:"dimsLTE,omitempty"`
 	DimsIsNil  *bool `json:"dimsIsNil,omitempty"`
 	DimsNotNil *bool `json:"dimsNotNil,omitempty"`
 	// has_pending_items field predicates
 	HasPendingItems       *bool `json:"hasPendingItems,omitempty"`
-	HasPendingItemsNeq    *bool `json:"hasPendingItemsNeq,omitempty"`
+	HasPendingItemsNeq    *bool `json:"hasPendingItemsNEQ,omitempty"`
 	HasPendingItemsIsNil  *bool `json:"hasPendingItemsIsNil,omitempty"`
 	HasPendingItemsNotNil *bool `json:"hasPendingItemsNotNil,omitempty"`
 	// locked field predicates
 	Locked       *bool `json:"locked,omitempty"`
-	LockedNeq    *bool `json:"lockedNeq,omitempty"`
+	LockedNeq    *bool `json:"lockedNEQ,omitempty"`
 	LockedIsNil  *bool `json:"lockedIsNil,omitempty"`
 	LockedNotNil *bool `json:"lockedNotNil,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// item_group_sources edge predicates
 	HasItemGroupSources     *bool                       `json:"hasItemGroupSources,omitempty"`
 	HasItemGroupSourcesWith []ItemGroupSourceWhereInput `json:"hasItemGroupSourcesWith,omitempty"`
@@ -2914,47 +2914,47 @@ type ItemWhereInput struct {
 	And []ItemWhereInput `json:"and,omitempty"`
 	Or  []ItemWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -2964,13 +2964,13 @@ type ItemWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// embedding_status field predicates
 	EmbeddingStatus             *scalars.ItemEmbeddingStatus  `json:"embeddingStatus,omitempty"`
-	EmbeddingStatusNeq          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusNeq,omitempty"`
+	EmbeddingStatusNeq          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusNEQ,omitempty"`
 	EmbeddingStatusIn           []scalars.ItemEmbeddingStatus `json:"embeddingStatusIn,omitempty"`
 	EmbeddingStatusNotIn        []scalars.ItemEmbeddingStatus `json:"embeddingStatusNotIn,omitempty"`
-	EmbeddingStatusGt           *scalars.ItemEmbeddingStatus  `json:"embeddingStatusGt,omitempty"`
-	EmbeddingStatusGte          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusGte,omitempty"`
-	EmbeddingStatusLt           *scalars.ItemEmbeddingStatus  `json:"embeddingStatusLt,omitempty"`
-	EmbeddingStatusLte          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusLte,omitempty"`
+	EmbeddingStatusGt           *scalars.ItemEmbeddingStatus  `json:"embeddingStatusGT,omitempty"`
+	EmbeddingStatusGte          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusGTE,omitempty"`
+	EmbeddingStatusLt           *scalars.ItemEmbeddingStatus  `json:"embeddingStatusLT,omitempty"`
+	EmbeddingStatusLte          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusLTE,omitempty"`
 	EmbeddingStatusContains     *scalars.ItemEmbeddingStatus  `json:"embeddingStatusContains,omitempty"`
 	EmbeddingStatusHasPrefix    *scalars.ItemEmbeddingStatus  `json:"embeddingStatusHasPrefix,omitempty"`
 	EmbeddingStatusHasSuffix    *scalars.ItemEmbeddingStatus  `json:"embeddingStatusHasSuffix,omitempty"`
@@ -2980,13 +2980,13 @@ type ItemWhereInput struct {
 	EmbeddingStatusContainsFold *scalars.ItemEmbeddingStatus  `json:"embeddingStatusContainsFold,omitempty"`
 	// embedding_msg field predicates
 	EmbeddingMsg             *string  `json:"embeddingMsg,omitempty"`
-	EmbeddingMsgNeq          *string  `json:"embeddingMsgNeq,omitempty"`
+	EmbeddingMsgNeq          *string  `json:"embeddingMsgNEQ,omitempty"`
 	EmbeddingMsgIn           []string `json:"embeddingMsgIn,omitempty"`
 	EmbeddingMsgNotIn        []string `json:"embeddingMsgNotIn,omitempty"`
-	EmbeddingMsgGt           *string  `json:"embeddingMsgGt,omitempty"`
-	EmbeddingMsgGte          *string  `json:"embeddingMsgGte,omitempty"`
-	EmbeddingMsgLt           *string  `json:"embeddingMsgLt,omitempty"`
-	EmbeddingMsgLte          *string  `json:"embeddingMsgLte,omitempty"`
+	EmbeddingMsgGt           *string  `json:"embeddingMsgGT,omitempty"`
+	EmbeddingMsgGte          *string  `json:"embeddingMsgGTE,omitempty"`
+	EmbeddingMsgLt           *string  `json:"embeddingMsgLT,omitempty"`
+	EmbeddingMsgLte          *string  `json:"embeddingMsgLTE,omitempty"`
 	EmbeddingMsgContains     *string  `json:"embeddingMsgContains,omitempty"`
 	EmbeddingMsgHasPrefix    *string  `json:"embeddingMsgHasPrefix,omitempty"`
 	EmbeddingMsgHasSuffix    *string  `json:"embeddingMsgHasSuffix,omitempty"`
@@ -2996,13 +2996,13 @@ type ItemWhereInput struct {
 	EmbeddingMsgContainsFold *string  `json:"embeddingMsgContainsFold,omitempty"`
 	// content field predicates
 	Content             *string  `json:"content,omitempty"`
-	ContentNeq          *string  `json:"contentNeq,omitempty"`
+	ContentNeq          *string  `json:"contentNEQ,omitempty"`
 	ContentIn           []string `json:"contentIn,omitempty"`
 	ContentNotIn        []string `json:"contentNotIn,omitempty"`
-	ContentGt           *string  `json:"contentGt,omitempty"`
-	ContentGte          *string  `json:"contentGte,omitempty"`
-	ContentLt           *string  `json:"contentLt,omitempty"`
-	ContentLte          *string  `json:"contentLte,omitempty"`
+	ContentGt           *string  `json:"contentGT,omitempty"`
+	ContentGte          *string  `json:"contentGTE,omitempty"`
+	ContentLt           *string  `json:"contentLT,omitempty"`
+	ContentLte          *string  `json:"contentLTE,omitempty"`
 	ContentContains     *string  `json:"contentContains,omitempty"`
 	ContentHasPrefix    *string  `json:"contentHasPrefix,omitempty"`
 	ContentHasSuffix    *string  `json:"contentHasSuffix,omitempty"`
@@ -3012,13 +3012,13 @@ type ItemWhereInput struct {
 	ContentContainsFold *string  `json:"contentContainsFold,omitempty"`
 	// filename field predicates
 	Filename             *string  `json:"filename,omitempty"`
-	FilenameNeq          *string  `json:"filenameNeq,omitempty"`
+	FilenameNeq          *string  `json:"filenameNEQ,omitempty"`
 	FilenameIn           []string `json:"filenameIn,omitempty"`
 	FilenameNotIn        []string `json:"filenameNotIn,omitempty"`
-	FilenameGt           *string  `json:"filenameGt,omitempty"`
-	FilenameGte          *string  `json:"filenameGte,omitempty"`
-	FilenameLt           *string  `json:"filenameLt,omitempty"`
-	FilenameLte          *string  `json:"filenameLte,omitempty"`
+	FilenameGt           *string  `json:"filenameGT,omitempty"`
+	FilenameGte          *string  `json:"filenameGTE,omitempty"`
+	FilenameLt           *string  `json:"filenameLT,omitempty"`
+	FilenameLte          *string  `json:"filenameLTE,omitempty"`
 	FilenameContains     *string  `json:"filenameContains,omitempty"`
 	FilenameHasPrefix    *string  `json:"filenameHasPrefix,omitempty"`
 	FilenameHasSuffix    *string  `json:"filenameHasSuffix,omitempty"`
@@ -3028,62 +3028,62 @@ type ItemWhereInput struct {
 	FilenameContainsFold *string  `json:"filenameContainsFold,omitempty"`
 	// content_chars field predicates
 	ContentChars       *int  `json:"contentChars,omitempty"`
-	ContentCharsNeq    *int  `json:"contentCharsNeq,omitempty"`
+	ContentCharsNeq    *int  `json:"contentCharsNEQ,omitempty"`
 	ContentCharsIn     []int `json:"contentCharsIn,omitempty"`
 	ContentCharsNotIn  []int `json:"contentCharsNotIn,omitempty"`
-	ContentCharsGt     *int  `json:"contentCharsGt,omitempty"`
-	ContentCharsGte    *int  `json:"contentCharsGte,omitempty"`
-	ContentCharsLt     *int  `json:"contentCharsLt,omitempty"`
-	ContentCharsLte    *int  `json:"contentCharsLte,omitempty"`
+	ContentCharsGt     *int  `json:"contentCharsGT,omitempty"`
+	ContentCharsGte    *int  `json:"contentCharsGTE,omitempty"`
+	ContentCharsLt     *int  `json:"contentCharsLT,omitempty"`
+	ContentCharsLte    *int  `json:"contentCharsLTE,omitempty"`
 	ContentCharsIsNil  *bool `json:"contentCharsIsNil,omitempty"`
 	ContentCharsNotNil *bool `json:"contentCharsNotNil,omitempty"`
 	// ai_model_id field predicates
 	AiModelID             *string  `json:"aiModelID,omitempty"`
-	AiModelIdneq          *string  `json:"aiModelIdneq,omitempty"`
-	AiModelIdin           []string `json:"aiModelIdin,omitempty"`
-	AiModelIdnotIn        []string `json:"aiModelIdnotIn,omitempty"`
-	AiModelIdgt           *string  `json:"aiModelIdgt,omitempty"`
-	AiModelIdgte          *string  `json:"aiModelIdgte,omitempty"`
-	AiModelIdlt           *string  `json:"aiModelIdlt,omitempty"`
-	AiModelIdlte          *string  `json:"aiModelIdlte,omitempty"`
-	AiModelIdcontains     *string  `json:"aiModelIdcontains,omitempty"`
-	AiModelIdhasPrefix    *string  `json:"aiModelIdhasPrefix,omitempty"`
-	AiModelIdhasSuffix    *string  `json:"aiModelIdhasSuffix,omitempty"`
-	AiModelIdisNil        *bool    `json:"aiModelIdisNil,omitempty"`
-	AiModelIdnotNil       *bool    `json:"aiModelIdnotNil,omitempty"`
-	AiModelIdequalFold    *string  `json:"aiModelIdequalFold,omitempty"`
-	AiModelIdcontainsFold *string  `json:"aiModelIdcontainsFold,omitempty"`
+	AiModelIdneq          *string  `json:"aiModelIDNEQ,omitempty"`
+	AiModelIdin           []string `json:"aiModelIDIn,omitempty"`
+	AiModelIdnotIn        []string `json:"aiModelIDNotIn,omitempty"`
+	AiModelIdgt           *string  `json:"aiModelIDGT,omitempty"`
+	AiModelIdgte          *string  `json:"aiModelIDGTE,omitempty"`
+	AiModelIdlt           *string  `json:"aiModelIDLT,omitempty"`
+	AiModelIdlte          *string  `json:"aiModelIDLTE,omitempty"`
+	AiModelIdcontains     *string  `json:"aiModelIDContains,omitempty"`
+	AiModelIdhasPrefix    *string  `json:"aiModelIDHasPrefix,omitempty"`
+	AiModelIdhasSuffix    *string  `json:"aiModelIDHasSuffix,omitempty"`
+	AiModelIdisNil        *bool    `json:"aiModelIDIsNil,omitempty"`
+	AiModelIdnotNil       *bool    `json:"aiModelIDNotNil,omitempty"`
+	AiModelIdequalFold    *string  `json:"aiModelIDEqualFold,omitempty"`
+	AiModelIdcontainsFold *string  `json:"aiModelIDContainsFold,omitempty"`
 	// vec_dims field predicates
 	VecDims       *int  `json:"vecDims,omitempty"`
-	VecDimsNeq    *int  `json:"vecDimsNeq,omitempty"`
+	VecDimsNeq    *int  `json:"vecDimsNEQ,omitempty"`
 	VecDimsIn     []int `json:"vecDimsIn,omitempty"`
 	VecDimsNotIn  []int `json:"vecDimsNotIn,omitempty"`
-	VecDimsGt     *int  `json:"vecDimsGt,omitempty"`
-	VecDimsGte    *int  `json:"vecDimsGte,omitempty"`
-	VecDimsLt     *int  `json:"vecDimsLt,omitempty"`
-	VecDimsLte    *int  `json:"vecDimsLte,omitempty"`
+	VecDimsGt     *int  `json:"vecDimsGT,omitempty"`
+	VecDimsGte    *int  `json:"vecDimsGTE,omitempty"`
+	VecDimsLt     *int  `json:"vecDimsLT,omitempty"`
+	VecDimsLte    *int  `json:"vecDimsLTE,omitempty"`
 	VecDimsIsNil  *bool `json:"vecDimsIsNil,omitempty"`
 	VecDimsNotNil *bool `json:"vecDimsNotNil,omitempty"`
 	// total_tokens field predicates
 	TotalTokens       *int  `json:"totalTokens,omitempty"`
-	TotalTokensNeq    *int  `json:"totalTokensNeq,omitempty"`
+	TotalTokensNeq    *int  `json:"totalTokensNEQ,omitempty"`
 	TotalTokensIn     []int `json:"totalTokensIn,omitempty"`
 	TotalTokensNotIn  []int `json:"totalTokensNotIn,omitempty"`
-	TotalTokensGt     *int  `json:"totalTokensGt,omitempty"`
-	TotalTokensGte    *int  `json:"totalTokensGte,omitempty"`
-	TotalTokensLt     *int  `json:"totalTokensLt,omitempty"`
-	TotalTokensLte    *int  `json:"totalTokensLte,omitempty"`
+	TotalTokensGt     *int  `json:"totalTokensGT,omitempty"`
+	TotalTokensGte    *int  `json:"totalTokensGTE,omitempty"`
+	TotalTokensLt     *int  `json:"totalTokensLT,omitempty"`
+	TotalTokensLte    *int  `json:"totalTokensLTE,omitempty"`
 	TotalTokensIsNil  *bool `json:"totalTokensIsNil,omitempty"`
 	TotalTokensNotNil *bool `json:"totalTokensNotNil,omitempty"`
 	// ext_ref field predicates
 	ExtRef             *string  `json:"extRef,omitempty"`
-	ExtRefNeq          *string  `json:"extRefNeq,omitempty"`
+	ExtRefNeq          *string  `json:"extRefNEQ,omitempty"`
 	ExtRefIn           []string `json:"extRefIn,omitempty"`
 	ExtRefNotIn        []string `json:"extRefNotIn,omitempty"`
-	ExtRefGt           *string  `json:"extRefGt,omitempty"`
-	ExtRefGte          *string  `json:"extRefGte,omitempty"`
-	ExtRefLt           *string  `json:"extRefLt,omitempty"`
-	ExtRefLte          *string  `json:"extRefLte,omitempty"`
+	ExtRefGt           *string  `json:"extRefGT,omitempty"`
+	ExtRefGte          *string  `json:"extRefGTE,omitempty"`
+	ExtRefLt           *string  `json:"extRefLT,omitempty"`
+	ExtRefLte          *string  `json:"extRefLTE,omitempty"`
 	ExtRefContains     *string  `json:"extRefContains,omitempty"`
 	ExtRefHasPrefix    *string  `json:"extRefHasPrefix,omitempty"`
 	ExtRefHasSuffix    *string  `json:"extRefHasSuffix,omitempty"`
@@ -3093,84 +3093,84 @@ type ItemWhereInput struct {
 	ExtRefContainsFold *string  `json:"extRefContainsFold,omitempty"`
 	// ext_id field predicates
 	ExtID             *string  `json:"extID,omitempty"`
-	ExtIdneq          *string  `json:"extIdneq,omitempty"`
-	ExtIdin           []string `json:"extIdin,omitempty"`
-	ExtIdnotIn        []string `json:"extIdnotIn,omitempty"`
-	ExtIdgt           *string  `json:"extIdgt,omitempty"`
-	ExtIdgte          *string  `json:"extIdgte,omitempty"`
-	ExtIdlt           *string  `json:"extIdlt,omitempty"`
-	ExtIdlte          *string  `json:"extIdlte,omitempty"`
-	ExtIdcontains     *string  `json:"extIdcontains,omitempty"`
-	ExtIdhasPrefix    *string  `json:"extIdhasPrefix,omitempty"`
-	ExtIdhasSuffix    *string  `json:"extIdhasSuffix,omitempty"`
-	ExtIdisNil        *bool    `json:"extIdisNil,omitempty"`
-	ExtIdnotNil       *bool    `json:"extIdnotNil,omitempty"`
-	ExtIdequalFold    *string  `json:"extIdequalFold,omitempty"`
-	ExtIdcontainsFold *string  `json:"extIdcontainsFold,omitempty"`
+	ExtIdneq          *string  `json:"extIDNEQ,omitempty"`
+	ExtIdin           []string `json:"extIDIn,omitempty"`
+	ExtIdnotIn        []string `json:"extIDNotIn,omitempty"`
+	ExtIdgt           *string  `json:"extIDGT,omitempty"`
+	ExtIdgte          *string  `json:"extIDGTE,omitempty"`
+	ExtIdlt           *string  `json:"extIDLT,omitempty"`
+	ExtIdlte          *string  `json:"extIDLTE,omitempty"`
+	ExtIdcontains     *string  `json:"extIDContains,omitempty"`
+	ExtIdhasPrefix    *string  `json:"extIDHasPrefix,omitempty"`
+	ExtIdhasSuffix    *string  `json:"extIDHasSuffix,omitempty"`
+	ExtIdisNil        *bool    `json:"extIDIsNil,omitempty"`
+	ExtIdnotNil       *bool    `json:"extIDNotNil,omitempty"`
+	ExtIdequalFold    *string  `json:"extIDEqualFold,omitempty"`
+	ExtIdcontainsFold *string  `json:"extIDContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// chatbot_id field predicates
 	ChatbotID             *string  `json:"chatbotID,omitempty"`
-	ChatbotIdneq          *string  `json:"chatbotIdneq,omitempty"`
-	ChatbotIdin           []string `json:"chatbotIdin,omitempty"`
-	ChatbotIdnotIn        []string `json:"chatbotIdnotIn,omitempty"`
-	ChatbotIdgt           *string  `json:"chatbotIdgt,omitempty"`
-	ChatbotIdgte          *string  `json:"chatbotIdgte,omitempty"`
-	ChatbotIdlt           *string  `json:"chatbotIdlt,omitempty"`
-	ChatbotIdlte          *string  `json:"chatbotIdlte,omitempty"`
-	ChatbotIdcontains     *string  `json:"chatbotIdcontains,omitempty"`
-	ChatbotIdhasPrefix    *string  `json:"chatbotIdhasPrefix,omitempty"`
-	ChatbotIdhasSuffix    *string  `json:"chatbotIdhasSuffix,omitempty"`
-	ChatbotIdisNil        *bool    `json:"chatbotIdisNil,omitempty"`
-	ChatbotIdnotNil       *bool    `json:"chatbotIdnotNil,omitempty"`
-	ChatbotIdequalFold    *string  `json:"chatbotIdequalFold,omitempty"`
-	ChatbotIdcontainsFold *string  `json:"chatbotIdcontainsFold,omitempty"`
+	ChatbotIdneq          *string  `json:"chatbotIDNEQ,omitempty"`
+	ChatbotIdin           []string `json:"chatbotIDIn,omitempty"`
+	ChatbotIdnotIn        []string `json:"chatbotIDNotIn,omitempty"`
+	ChatbotIdgt           *string  `json:"chatbotIDGT,omitempty"`
+	ChatbotIdgte          *string  `json:"chatbotIDGTE,omitempty"`
+	ChatbotIdlt           *string  `json:"chatbotIDLT,omitempty"`
+	ChatbotIdlte          *string  `json:"chatbotIDLTE,omitempty"`
+	ChatbotIdcontains     *string  `json:"chatbotIDContains,omitempty"`
+	ChatbotIdhasPrefix    *string  `json:"chatbotIDHasPrefix,omitempty"`
+	ChatbotIdhasSuffix    *string  `json:"chatbotIDHasSuffix,omitempty"`
+	ChatbotIdisNil        *bool    `json:"chatbotIDIsNil,omitempty"`
+	ChatbotIdnotNil       *bool    `json:"chatbotIDNotNil,omitempty"`
+	ChatbotIdequalFold    *string  `json:"chatbotIDEqualFold,omitempty"`
+	ChatbotIdcontainsFold *string  `json:"chatbotIDContainsFold,omitempty"`
 	// item_group_source_id field predicates
 	ItemGroupSourceID             *string  `json:"itemGroupSourceID,omitempty"`
-	ItemGroupSourceIdneq          *string  `json:"itemGroupSourceIdneq,omitempty"`
-	ItemGroupSourceIdin           []string `json:"itemGroupSourceIdin,omitempty"`
-	ItemGroupSourceIdnotIn        []string `json:"itemGroupSourceIdnotIn,omitempty"`
-	ItemGroupSourceIdgt           *string  `json:"itemGroupSourceIdgt,omitempty"`
-	ItemGroupSourceIdgte          *string  `json:"itemGroupSourceIdgte,omitempty"`
-	ItemGroupSourceIdlt           *string  `json:"itemGroupSourceIdlt,omitempty"`
-	ItemGroupSourceIdlte          *string  `json:"itemGroupSourceIdlte,omitempty"`
-	ItemGroupSourceIdcontains     *string  `json:"itemGroupSourceIdcontains,omitempty"`
-	ItemGroupSourceIdhasPrefix    *string  `json:"itemGroupSourceIdhasPrefix,omitempty"`
-	ItemGroupSourceIdhasSuffix    *string  `json:"itemGroupSourceIdhasSuffix,omitempty"`
-	ItemGroupSourceIdisNil        *bool    `json:"itemGroupSourceIdisNil,omitempty"`
-	ItemGroupSourceIdnotNil       *bool    `json:"itemGroupSourceIdnotNil,omitempty"`
-	ItemGroupSourceIdequalFold    *string  `json:"itemGroupSourceIdequalFold,omitempty"`
-	ItemGroupSourceIdcontainsFold *string  `json:"itemGroupSourceIdcontainsFold,omitempty"`
+	ItemGroupSourceIdneq          *string  `json:"itemGroupSourceIDNEQ,omitempty"`
+	ItemGroupSourceIdin           []string `json:"itemGroupSourceIDIn,omitempty"`
+	ItemGroupSourceIdnotIn        []string `json:"itemGroupSourceIDNotIn,omitempty"`
+	ItemGroupSourceIdgt           *string  `json:"itemGroupSourceIDGT,omitempty"`
+	ItemGroupSourceIdgte          *string  `json:"itemGroupSourceIDGTE,omitempty"`
+	ItemGroupSourceIdlt           *string  `json:"itemGroupSourceIDLT,omitempty"`
+	ItemGroupSourceIdlte          *string  `json:"itemGroupSourceIDLTE,omitempty"`
+	ItemGroupSourceIdcontains     *string  `json:"itemGroupSourceIDContains,omitempty"`
+	ItemGroupSourceIdhasPrefix    *string  `json:"itemGroupSourceIDHasPrefix,omitempty"`
+	ItemGroupSourceIdhasSuffix    *string  `json:"itemGroupSourceIDHasSuffix,omitempty"`
+	ItemGroupSourceIdisNil        *bool    `json:"itemGroupSourceIDIsNil,omitempty"`
+	ItemGroupSourceIdnotNil       *bool    `json:"itemGroupSourceIDNotNil,omitempty"`
+	ItemGroupSourceIdequalFold    *string  `json:"itemGroupSourceIDEqualFold,omitempty"`
+	ItemGroupSourceIdcontainsFold *string  `json:"itemGroupSourceIDContainsFold,omitempty"`
 	// item_group_id field predicates
 	ItemGroupID             *string  `json:"itemGroupID,omitempty"`
-	ItemGroupIdneq          *string  `json:"itemGroupIdneq,omitempty"`
-	ItemGroupIdin           []string `json:"itemGroupIdin,omitempty"`
-	ItemGroupIdnotIn        []string `json:"itemGroupIdnotIn,omitempty"`
-	ItemGroupIdgt           *string  `json:"itemGroupIdgt,omitempty"`
-	ItemGroupIdgte          *string  `json:"itemGroupIdgte,omitempty"`
-	ItemGroupIdlt           *string  `json:"itemGroupIdlt,omitempty"`
-	ItemGroupIdlte          *string  `json:"itemGroupIdlte,omitempty"`
-	ItemGroupIdcontains     *string  `json:"itemGroupIdcontains,omitempty"`
-	ItemGroupIdhasPrefix    *string  `json:"itemGroupIdhasPrefix,omitempty"`
-	ItemGroupIdhasSuffix    *string  `json:"itemGroupIdhasSuffix,omitempty"`
-	ItemGroupIdisNil        *bool    `json:"itemGroupIdisNil,omitempty"`
-	ItemGroupIdnotNil       *bool    `json:"itemGroupIdnotNil,omitempty"`
-	ItemGroupIdequalFold    *string  `json:"itemGroupIdequalFold,omitempty"`
-	ItemGroupIdcontainsFold *string  `json:"itemGroupIdcontainsFold,omitempty"`
+	ItemGroupIdneq          *string  `json:"itemGroupIDNEQ,omitempty"`
+	ItemGroupIdin           []string `json:"itemGroupIDIn,omitempty"`
+	ItemGroupIdnotIn        []string `json:"itemGroupIDNotIn,omitempty"`
+	ItemGroupIdgt           *string  `json:"itemGroupIDGT,omitempty"`
+	ItemGroupIdgte          *string  `json:"itemGroupIDGTE,omitempty"`
+	ItemGroupIdlt           *string  `json:"itemGroupIDLT,omitempty"`
+	ItemGroupIdlte          *string  `json:"itemGroupIDLTE,omitempty"`
+	ItemGroupIdcontains     *string  `json:"itemGroupIDContains,omitempty"`
+	ItemGroupIdhasPrefix    *string  `json:"itemGroupIDHasPrefix,omitempty"`
+	ItemGroupIdhasSuffix    *string  `json:"itemGroupIDHasSuffix,omitempty"`
+	ItemGroupIdisNil        *bool    `json:"itemGroupIDIsNil,omitempty"`
+	ItemGroupIdnotNil       *bool    `json:"itemGroupIDNotNil,omitempty"`
+	ItemGroupIdequalFold    *string  `json:"itemGroupIDEqualFold,omitempty"`
+	ItemGroupIdcontainsFold *string  `json:"itemGroupIDContainsFold,omitempty"`
 }
 
 // LeadOrder Ordering options for Lead connections
@@ -3190,47 +3190,47 @@ type LeadWhereInput struct {
 	And []LeadWhereInput `json:"and,omitempty"`
 	Or  []LeadWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// name field predicates
 	Name             *string  `json:"name,omitempty"`
-	NameNeq          *string  `json:"nameNeq,omitempty"`
+	NameNeq          *string  `json:"nameNEQ,omitempty"`
 	NameIn           []string `json:"nameIn,omitempty"`
 	NameNotIn        []string `json:"nameNotIn,omitempty"`
-	NameGt           *string  `json:"nameGt,omitempty"`
-	NameGte          *string  `json:"nameGte,omitempty"`
-	NameLt           *string  `json:"nameLt,omitempty"`
-	NameLte          *string  `json:"nameLte,omitempty"`
+	NameGt           *string  `json:"nameGT,omitempty"`
+	NameGte          *string  `json:"nameGTE,omitempty"`
+	NameLt           *string  `json:"nameLT,omitempty"`
+	NameLte          *string  `json:"nameLTE,omitempty"`
 	NameContains     *string  `json:"nameContains,omitempty"`
 	NameHasPrefix    *string  `json:"nameHasPrefix,omitempty"`
 	NameHasSuffix    *string  `json:"nameHasSuffix,omitempty"`
@@ -3240,13 +3240,13 @@ type LeadWhereInput struct {
 	NameContainsFold *string  `json:"nameContainsFold,omitempty"`
 	// email field predicates
 	Email             *string  `json:"email,omitempty"`
-	EmailNeq          *string  `json:"emailNeq,omitempty"`
+	EmailNeq          *string  `json:"emailNEQ,omitempty"`
 	EmailIn           []string `json:"emailIn,omitempty"`
 	EmailNotIn        []string `json:"emailNotIn,omitempty"`
-	EmailGt           *string  `json:"emailGt,omitempty"`
-	EmailGte          *string  `json:"emailGte,omitempty"`
-	EmailLt           *string  `json:"emailLt,omitempty"`
-	EmailLte          *string  `json:"emailLte,omitempty"`
+	EmailGt           *string  `json:"emailGT,omitempty"`
+	EmailGte          *string  `json:"emailGTE,omitempty"`
+	EmailLt           *string  `json:"emailLT,omitempty"`
+	EmailLte          *string  `json:"emailLTE,omitempty"`
 	EmailContains     *string  `json:"emailContains,omitempty"`
 	EmailHasPrefix    *string  `json:"emailHasPrefix,omitempty"`
 	EmailHasSuffix    *string  `json:"emailHasSuffix,omitempty"`
@@ -3256,13 +3256,13 @@ type LeadWhereInput struct {
 	EmailContainsFold *string  `json:"emailContainsFold,omitempty"`
 	// phone field predicates
 	Phone             *string  `json:"phone,omitempty"`
-	PhoneNeq          *string  `json:"phoneNeq,omitempty"`
+	PhoneNeq          *string  `json:"phoneNEQ,omitempty"`
 	PhoneIn           []string `json:"phoneIn,omitempty"`
 	PhoneNotIn        []string `json:"phoneNotIn,omitempty"`
-	PhoneGt           *string  `json:"phoneGt,omitempty"`
-	PhoneGte          *string  `json:"phoneGte,omitempty"`
-	PhoneLt           *string  `json:"phoneLt,omitempty"`
-	PhoneLte          *string  `json:"phoneLte,omitempty"`
+	PhoneGt           *string  `json:"phoneGT,omitempty"`
+	PhoneGte          *string  `json:"phoneGTE,omitempty"`
+	PhoneLt           *string  `json:"phoneLT,omitempty"`
+	PhoneLte          *string  `json:"phoneLTE,omitempty"`
 	PhoneContains     *string  `json:"phoneContains,omitempty"`
 	PhoneHasPrefix    *string  `json:"phoneHasPrefix,omitempty"`
 	PhoneHasSuffix    *string  `json:"phoneHasSuffix,omitempty"`
@@ -3272,13 +3272,13 @@ type LeadWhereInput struct {
 	PhoneContainsFold *string  `json:"phoneContainsFold,omitempty"`
 	// company field predicates
 	Company             *string  `json:"company,omitempty"`
-	CompanyNeq          *string  `json:"companyNeq,omitempty"`
+	CompanyNeq          *string  `json:"companyNEQ,omitempty"`
 	CompanyIn           []string `json:"companyIn,omitempty"`
 	CompanyNotIn        []string `json:"companyNotIn,omitempty"`
-	CompanyGt           *string  `json:"companyGt,omitempty"`
-	CompanyGte          *string  `json:"companyGte,omitempty"`
-	CompanyLt           *string  `json:"companyLt,omitempty"`
-	CompanyLte          *string  `json:"companyLte,omitempty"`
+	CompanyGt           *string  `json:"companyGT,omitempty"`
+	CompanyGte          *string  `json:"companyGTE,omitempty"`
+	CompanyLt           *string  `json:"companyLT,omitempty"`
+	CompanyLte          *string  `json:"companyLTE,omitempty"`
 	CompanyContains     *string  `json:"companyContains,omitempty"`
 	CompanyHasPrefix    *string  `json:"companyHasPrefix,omitempty"`
 	CompanyHasSuffix    *string  `json:"companyHasSuffix,omitempty"`
@@ -3287,69 +3287,69 @@ type LeadWhereInput struct {
 	CompanyEqualFold    *string  `json:"companyEqualFold,omitempty"`
 	CompanyContainsFold *string  `json:"companyContainsFold,omitempty"`
 	// ip field predicates
-	IP             *string  `json:"iP,omitempty"`
-	IPNeq          *string  `json:"iPNeq,omitempty"`
-	IPIn           []string `json:"iPIn,omitempty"`
-	IPNotIn        []string `json:"iPNotIn,omitempty"`
-	IPGt           *string  `json:"iPGt,omitempty"`
-	IPGte          *string  `json:"iPGte,omitempty"`
-	IPLt           *string  `json:"iPLt,omitempty"`
-	IPLte          *string  `json:"iPLte,omitempty"`
-	IPContains     *string  `json:"iPContains,omitempty"`
-	IPHasPrefix    *string  `json:"iPHasPrefix,omitempty"`
-	IPHasSuffix    *string  `json:"iPHasSuffix,omitempty"`
-	IPIsNil        *bool    `json:"iPIsNil,omitempty"`
-	IPNotNil       *bool    `json:"iPNotNil,omitempty"`
-	IPEqualFold    *string  `json:"iPEqualFold,omitempty"`
-	IPContainsFold *string  `json:"iPContainsFold,omitempty"`
+	IP             *string  `json:"ip,omitempty"`
+	IPNeq          *string  `json:"ipNEQ,omitempty"`
+	IPIn           []string `json:"ipIn,omitempty"`
+	IPNotIn        []string `json:"ipNotIn,omitempty"`
+	IPGt           *string  `json:"ipGT,omitempty"`
+	IPGte          *string  `json:"ipGTE,omitempty"`
+	IPLt           *string  `json:"ipLT,omitempty"`
+	IPLte          *string  `json:"ipLTE,omitempty"`
+	IPContains     *string  `json:"ipContains,omitempty"`
+	IPHasPrefix    *string  `json:"ipHasPrefix,omitempty"`
+	IPHasSuffix    *string  `json:"ipHasSuffix,omitempty"`
+	IPIsNil        *bool    `json:"ipIsNil,omitempty"`
+	IPNotNil       *bool    `json:"ipNotNil,omitempty"`
+	IPEqualFold    *string  `json:"ipEqualFold,omitempty"`
+	IPContainsFold *string  `json:"ipContainsFold,omitempty"`
 	// guest_user_id field predicates
 	GuestUserID             *string  `json:"guestUserID,omitempty"`
-	GuestUserIdneq          *string  `json:"guestUserIdneq,omitempty"`
-	GuestUserIdin           []string `json:"guestUserIdin,omitempty"`
-	GuestUserIdnotIn        []string `json:"guestUserIdnotIn,omitempty"`
-	GuestUserIdgt           *string  `json:"guestUserIdgt,omitempty"`
-	GuestUserIdgte          *string  `json:"guestUserIdgte,omitempty"`
-	GuestUserIdlt           *string  `json:"guestUserIdlt,omitempty"`
-	GuestUserIdlte          *string  `json:"guestUserIdlte,omitempty"`
-	GuestUserIdcontains     *string  `json:"guestUserIdcontains,omitempty"`
-	GuestUserIdhasPrefix    *string  `json:"guestUserIdhasPrefix,omitempty"`
-	GuestUserIdhasSuffix    *string  `json:"guestUserIdhasSuffix,omitempty"`
-	GuestUserIdisNil        *bool    `json:"guestUserIdisNil,omitempty"`
-	GuestUserIdnotNil       *bool    `json:"guestUserIdnotNil,omitempty"`
-	GuestUserIdequalFold    *string  `json:"guestUserIdequalFold,omitempty"`
-	GuestUserIdcontainsFold *string  `json:"guestUserIdcontainsFold,omitempty"`
+	GuestUserIdneq          *string  `json:"guestUserIDNEQ,omitempty"`
+	GuestUserIdin           []string `json:"guestUserIDIn,omitempty"`
+	GuestUserIdnotIn        []string `json:"guestUserIDNotIn,omitempty"`
+	GuestUserIdgt           *string  `json:"guestUserIDGT,omitempty"`
+	GuestUserIdgte          *string  `json:"guestUserIDGTE,omitempty"`
+	GuestUserIdlt           *string  `json:"guestUserIDLT,omitempty"`
+	GuestUserIdlte          *string  `json:"guestUserIDLTE,omitempty"`
+	GuestUserIdcontains     *string  `json:"guestUserIDContains,omitempty"`
+	GuestUserIdhasPrefix    *string  `json:"guestUserIDHasPrefix,omitempty"`
+	GuestUserIdhasSuffix    *string  `json:"guestUserIDHasSuffix,omitempty"`
+	GuestUserIdisNil        *bool    `json:"guestUserIDIsNil,omitempty"`
+	GuestUserIdnotNil       *bool    `json:"guestUserIDNotNil,omitempty"`
+	GuestUserIdequalFold    *string  `json:"guestUserIDEqualFold,omitempty"`
+	GuestUserIdcontainsFold *string  `json:"guestUserIDContainsFold,omitempty"`
 	// chatbot_id field predicates
 	ChatbotID             *string  `json:"chatbotID,omitempty"`
-	ChatbotIdneq          *string  `json:"chatbotIdneq,omitempty"`
-	ChatbotIdin           []string `json:"chatbotIdin,omitempty"`
-	ChatbotIdnotIn        []string `json:"chatbotIdnotIn,omitempty"`
-	ChatbotIdgt           *string  `json:"chatbotIdgt,omitempty"`
-	ChatbotIdgte          *string  `json:"chatbotIdgte,omitempty"`
-	ChatbotIdlt           *string  `json:"chatbotIdlt,omitempty"`
-	ChatbotIdlte          *string  `json:"chatbotIdlte,omitempty"`
-	ChatbotIdcontains     *string  `json:"chatbotIdcontains,omitempty"`
-	ChatbotIdhasPrefix    *string  `json:"chatbotIdhasPrefix,omitempty"`
-	ChatbotIdhasSuffix    *string  `json:"chatbotIdhasSuffix,omitempty"`
-	ChatbotIdisNil        *bool    `json:"chatbotIdisNil,omitempty"`
-	ChatbotIdnotNil       *bool    `json:"chatbotIdnotNil,omitempty"`
-	ChatbotIdequalFold    *string  `json:"chatbotIdequalFold,omitempty"`
-	ChatbotIdcontainsFold *string  `json:"chatbotIdcontainsFold,omitempty"`
+	ChatbotIdneq          *string  `json:"chatbotIDNEQ,omitempty"`
+	ChatbotIdin           []string `json:"chatbotIDIn,omitempty"`
+	ChatbotIdnotIn        []string `json:"chatbotIDNotIn,omitempty"`
+	ChatbotIdgt           *string  `json:"chatbotIDGT,omitempty"`
+	ChatbotIdgte          *string  `json:"chatbotIDGTE,omitempty"`
+	ChatbotIdlt           *string  `json:"chatbotIDLT,omitempty"`
+	ChatbotIdlte          *string  `json:"chatbotIDLTE,omitempty"`
+	ChatbotIdcontains     *string  `json:"chatbotIDContains,omitempty"`
+	ChatbotIdhasPrefix    *string  `json:"chatbotIDHasPrefix,omitempty"`
+	ChatbotIdhasSuffix    *string  `json:"chatbotIDHasSuffix,omitempty"`
+	ChatbotIdisNil        *bool    `json:"chatbotIDIsNil,omitempty"`
+	ChatbotIdnotNil       *bool    `json:"chatbotIDNotNil,omitempty"`
+	ChatbotIdequalFold    *string  `json:"chatbotIDEqualFold,omitempty"`
+	ChatbotIdcontainsFold *string  `json:"chatbotIDContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 }
 
 // MessageOrder Ordering options for Message connections
@@ -3369,47 +3369,47 @@ type MessageWhereInput struct {
 	And []MessageWhereInput `json:"and,omitempty"`
 	Or  []MessageWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// role field predicates
 	Role             *string  `json:"role,omitempty"`
-	RoleNeq          *string  `json:"roleNeq,omitempty"`
+	RoleNeq          *string  `json:"roleNEQ,omitempty"`
 	RoleIn           []string `json:"roleIn,omitempty"`
 	RoleNotIn        []string `json:"roleNotIn,omitempty"`
-	RoleGt           *string  `json:"roleGt,omitempty"`
-	RoleGte          *string  `json:"roleGte,omitempty"`
-	RoleLt           *string  `json:"roleLt,omitempty"`
-	RoleLte          *string  `json:"roleLte,omitempty"`
+	RoleGt           *string  `json:"roleGT,omitempty"`
+	RoleGte          *string  `json:"roleGTE,omitempty"`
+	RoleLt           *string  `json:"roleLT,omitempty"`
+	RoleLte          *string  `json:"roleLTE,omitempty"`
 	RoleContains     *string  `json:"roleContains,omitempty"`
 	RoleHasPrefix    *string  `json:"roleHasPrefix,omitempty"`
 	RoleHasSuffix    *string  `json:"roleHasSuffix,omitempty"`
@@ -3419,13 +3419,13 @@ type MessageWhereInput struct {
 	RoleContainsFold *string  `json:"roleContainsFold,omitempty"`
 	// msgid field predicates
 	Msgid             *string  `json:"msgid,omitempty"`
-	MsgidNeq          *string  `json:"msgidNeq,omitempty"`
+	MsgidNeq          *string  `json:"msgidNEQ,omitempty"`
 	MsgidIn           []string `json:"msgidIn,omitempty"`
 	MsgidNotIn        []string `json:"msgidNotIn,omitempty"`
-	MsgidGt           *string  `json:"msgidGt,omitempty"`
-	MsgidGte          *string  `json:"msgidGte,omitempty"`
-	MsgidLt           *string  `json:"msgidLt,omitempty"`
-	MsgidLte          *string  `json:"msgidLte,omitempty"`
+	MsgidGt           *string  `json:"msgidGT,omitempty"`
+	MsgidGte          *string  `json:"msgidGTE,omitempty"`
+	MsgidLt           *string  `json:"msgidLT,omitempty"`
+	MsgidLte          *string  `json:"msgidLTE,omitempty"`
 	MsgidContains     *string  `json:"msgidContains,omitempty"`
 	MsgidHasPrefix    *string  `json:"msgidHasPrefix,omitempty"`
 	MsgidHasSuffix    *string  `json:"msgidHasSuffix,omitempty"`
@@ -3435,101 +3435,101 @@ type MessageWhereInput struct {
 	MsgidContainsFold *string  `json:"msgidContainsFold,omitempty"`
 	// prompt_tokens field predicates
 	PromptTokens       *int  `json:"promptTokens,omitempty"`
-	PromptTokensNeq    *int  `json:"promptTokensNeq,omitempty"`
+	PromptTokensNeq    *int  `json:"promptTokensNEQ,omitempty"`
 	PromptTokensIn     []int `json:"promptTokensIn,omitempty"`
 	PromptTokensNotIn  []int `json:"promptTokensNotIn,omitempty"`
-	PromptTokensGt     *int  `json:"promptTokensGt,omitempty"`
-	PromptTokensGte    *int  `json:"promptTokensGte,omitempty"`
-	PromptTokensLt     *int  `json:"promptTokensLt,omitempty"`
-	PromptTokensLte    *int  `json:"promptTokensLte,omitempty"`
+	PromptTokensGt     *int  `json:"promptTokensGT,omitempty"`
+	PromptTokensGte    *int  `json:"promptTokensGTE,omitempty"`
+	PromptTokensLt     *int  `json:"promptTokensLT,omitempty"`
+	PromptTokensLte    *int  `json:"promptTokensLTE,omitempty"`
 	PromptTokensIsNil  *bool `json:"promptTokensIsNil,omitempty"`
 	PromptTokensNotNil *bool `json:"promptTokensNotNil,omitempty"`
 	// completion_tokens field predicates
 	CompletionTokens       *int  `json:"completionTokens,omitempty"`
-	CompletionTokensNeq    *int  `json:"completionTokensNeq,omitempty"`
+	CompletionTokensNeq    *int  `json:"completionTokensNEQ,omitempty"`
 	CompletionTokensIn     []int `json:"completionTokensIn,omitempty"`
 	CompletionTokensNotIn  []int `json:"completionTokensNotIn,omitempty"`
-	CompletionTokensGt     *int  `json:"completionTokensGt,omitempty"`
-	CompletionTokensGte    *int  `json:"completionTokensGte,omitempty"`
-	CompletionTokensLt     *int  `json:"completionTokensLt,omitempty"`
-	CompletionTokensLte    *int  `json:"completionTokensLte,omitempty"`
+	CompletionTokensGt     *int  `json:"completionTokensGT,omitempty"`
+	CompletionTokensGte    *int  `json:"completionTokensGTE,omitempty"`
+	CompletionTokensLt     *int  `json:"completionTokensLT,omitempty"`
+	CompletionTokensLte    *int  `json:"completionTokensLTE,omitempty"`
 	CompletionTokensIsNil  *bool `json:"completionTokensIsNil,omitempty"`
 	CompletionTokensNotNil *bool `json:"completionTokensNotNil,omitempty"`
 	// total_tokens field predicates
 	TotalTokens       *int  `json:"totalTokens,omitempty"`
-	TotalTokensNeq    *int  `json:"totalTokensNeq,omitempty"`
+	TotalTokensNeq    *int  `json:"totalTokensNEQ,omitempty"`
 	TotalTokensIn     []int `json:"totalTokensIn,omitempty"`
 	TotalTokensNotIn  []int `json:"totalTokensNotIn,omitempty"`
-	TotalTokensGt     *int  `json:"totalTokensGt,omitempty"`
-	TotalTokensGte    *int  `json:"totalTokensGte,omitempty"`
-	TotalTokensLt     *int  `json:"totalTokensLt,omitempty"`
-	TotalTokensLte    *int  `json:"totalTokensLte,omitempty"`
+	TotalTokensGt     *int  `json:"totalTokensGT,omitempty"`
+	TotalTokensGte    *int  `json:"totalTokensGTE,omitempty"`
+	TotalTokensLt     *int  `json:"totalTokensLT,omitempty"`
+	TotalTokensLte    *int  `json:"totalTokensLTE,omitempty"`
 	TotalTokensIsNil  *bool `json:"totalTokensIsNil,omitempty"`
 	TotalTokensNotNil *bool `json:"totalTokensNotNil,omitempty"`
 	// user_id field predicates
 	UserID             *string  `json:"userID,omitempty"`
-	UserIdneq          *string  `json:"userIdneq,omitempty"`
-	UserIdin           []string `json:"userIdin,omitempty"`
-	UserIdnotIn        []string `json:"userIdnotIn,omitempty"`
-	UserIdgt           *string  `json:"userIdgt,omitempty"`
-	UserIdgte          *string  `json:"userIdgte,omitempty"`
-	UserIdlt           *string  `json:"userIdlt,omitempty"`
-	UserIdlte          *string  `json:"userIdlte,omitempty"`
-	UserIdcontains     *string  `json:"userIdcontains,omitempty"`
-	UserIdhasPrefix    *string  `json:"userIdhasPrefix,omitempty"`
-	UserIdhasSuffix    *string  `json:"userIdhasSuffix,omitempty"`
-	UserIdisNil        *bool    `json:"userIdisNil,omitempty"`
-	UserIdnotNil       *bool    `json:"userIdnotNil,omitempty"`
-	UserIdequalFold    *string  `json:"userIdequalFold,omitempty"`
-	UserIdcontainsFold *string  `json:"userIdcontainsFold,omitempty"`
+	UserIdneq          *string  `json:"userIDNEQ,omitempty"`
+	UserIdin           []string `json:"userIDIn,omitempty"`
+	UserIdnotIn        []string `json:"userIDNotIn,omitempty"`
+	UserIdgt           *string  `json:"userIDGT,omitempty"`
+	UserIdgte          *string  `json:"userIDGTE,omitempty"`
+	UserIdlt           *string  `json:"userIDLT,omitempty"`
+	UserIdlte          *string  `json:"userIDLTE,omitempty"`
+	UserIdcontains     *string  `json:"userIDContains,omitempty"`
+	UserIdhasPrefix    *string  `json:"userIDHasPrefix,omitempty"`
+	UserIdhasSuffix    *string  `json:"userIDHasSuffix,omitempty"`
+	UserIdisNil        *bool    `json:"userIDIsNil,omitempty"`
+	UserIdnotNil       *bool    `json:"userIDNotNil,omitempty"`
+	UserIdequalFold    *string  `json:"userIDEqualFold,omitempty"`
+	UserIdcontainsFold *string  `json:"userIDContainsFold,omitempty"`
 	// channel_id field predicates
 	ChannelID             *string  `json:"channelID,omitempty"`
-	ChannelIdneq          *string  `json:"channelIdneq,omitempty"`
-	ChannelIdin           []string `json:"channelIdin,omitempty"`
-	ChannelIdnotIn        []string `json:"channelIdnotIn,omitempty"`
-	ChannelIdgt           *string  `json:"channelIdgt,omitempty"`
-	ChannelIdgte          *string  `json:"channelIdgte,omitempty"`
-	ChannelIdlt           *string  `json:"channelIdlt,omitempty"`
-	ChannelIdlte          *string  `json:"channelIdlte,omitempty"`
-	ChannelIdcontains     *string  `json:"channelIdcontains,omitempty"`
-	ChannelIdhasPrefix    *string  `json:"channelIdhasPrefix,omitempty"`
-	ChannelIdhasSuffix    *string  `json:"channelIdhasSuffix,omitempty"`
-	ChannelIdisNil        *bool    `json:"channelIdisNil,omitempty"`
-	ChannelIdnotNil       *bool    `json:"channelIdnotNil,omitempty"`
-	ChannelIdequalFold    *string  `json:"channelIdequalFold,omitempty"`
-	ChannelIdcontainsFold *string  `json:"channelIdcontainsFold,omitempty"`
+	ChannelIdneq          *string  `json:"channelIDNEQ,omitempty"`
+	ChannelIdin           []string `json:"channelIDIn,omitempty"`
+	ChannelIdnotIn        []string `json:"channelIDNotIn,omitempty"`
+	ChannelIdgt           *string  `json:"channelIDGT,omitempty"`
+	ChannelIdgte          *string  `json:"channelIDGTE,omitempty"`
+	ChannelIdlt           *string  `json:"channelIDLT,omitempty"`
+	ChannelIdlte          *string  `json:"channelIDLTE,omitempty"`
+	ChannelIdcontains     *string  `json:"channelIDContains,omitempty"`
+	ChannelIdhasPrefix    *string  `json:"channelIDHasPrefix,omitempty"`
+	ChannelIdhasSuffix    *string  `json:"channelIDHasSuffix,omitempty"`
+	ChannelIdisNil        *bool    `json:"channelIDIsNil,omitempty"`
+	ChannelIdnotNil       *bool    `json:"channelIDNotNil,omitempty"`
+	ChannelIdequalFold    *string  `json:"channelIDEqualFold,omitempty"`
+	ChannelIdcontainsFold *string  `json:"channelIDContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// chatbot_id field predicates
 	ChatbotID             *string  `json:"chatbotID,omitempty"`
-	ChatbotIdneq          *string  `json:"chatbotIdneq,omitempty"`
-	ChatbotIdin           []string `json:"chatbotIdin,omitempty"`
-	ChatbotIdnotIn        []string `json:"chatbotIdnotIn,omitempty"`
-	ChatbotIdgt           *string  `json:"chatbotIdgt,omitempty"`
-	ChatbotIdgte          *string  `json:"chatbotIdgte,omitempty"`
-	ChatbotIdlt           *string  `json:"chatbotIdlt,omitempty"`
-	ChatbotIdlte          *string  `json:"chatbotIdlte,omitempty"`
-	ChatbotIdcontains     *string  `json:"chatbotIdcontains,omitempty"`
-	ChatbotIdhasPrefix    *string  `json:"chatbotIdhasPrefix,omitempty"`
-	ChatbotIdhasSuffix    *string  `json:"chatbotIdhasSuffix,omitempty"`
-	ChatbotIdisNil        *bool    `json:"chatbotIdisNil,omitempty"`
-	ChatbotIdnotNil       *bool    `json:"chatbotIdnotNil,omitempty"`
-	ChatbotIdequalFold    *string  `json:"chatbotIdequalFold,omitempty"`
-	ChatbotIdcontainsFold *string  `json:"chatbotIdcontainsFold,omitempty"`
+	ChatbotIdneq          *string  `json:"chatbotIDNEQ,omitempty"`
+	ChatbotIdin           []string `json:"chatbotIDIn,omitempty"`
+	ChatbotIdnotIn        []string `json:"chatbotIDNotIn,omitempty"`
+	ChatbotIdgt           *string  `json:"chatbotIDGT,omitempty"`
+	ChatbotIdgte          *string  `json:"chatbotIDGTE,omitempty"`
+	ChatbotIdlt           *string  `json:"chatbotIDLT,omitempty"`
+	ChatbotIdlte          *string  `json:"chatbotIDLTE,omitempty"`
+	ChatbotIdcontains     *string  `json:"chatbotIDContains,omitempty"`
+	ChatbotIdhasPrefix    *string  `json:"chatbotIDHasPrefix,omitempty"`
+	ChatbotIdhasSuffix    *string  `json:"chatbotIDHasSuffix,omitempty"`
+	ChatbotIdisNil        *bool    `json:"chatbotIDIsNil,omitempty"`
+	ChatbotIdnotNil       *bool    `json:"chatbotIDNotNil,omitempty"`
+	ChatbotIdequalFold    *string  `json:"chatbotIDEqualFold,omitempty"`
+	ChatbotIdcontainsFold *string  `json:"chatbotIDContainsFold,omitempty"`
 	// channel edge predicates
 	HasChannel     *bool               `json:"hasChannel,omitempty"`
 	HasChannelWith []ChannelWhereInput `json:"hasChannelWith,omitempty"`
@@ -3555,79 +3555,79 @@ type TmpItemWhereInput struct {
 	And []TmpItemWhereInput `json:"and,omitempty"`
 	Or  []TmpItemWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// item_id field predicates
 	ItemID             *string  `json:"itemID,omitempty"`
-	ItemIdneq          *string  `json:"itemIdneq,omitempty"`
-	ItemIdin           []string `json:"itemIdin,omitempty"`
-	ItemIdnotIn        []string `json:"itemIdnotIn,omitempty"`
-	ItemIdgt           *string  `json:"itemIdgt,omitempty"`
-	ItemIdgte          *string  `json:"itemIdgte,omitempty"`
-	ItemIdlt           *string  `json:"itemIdlt,omitempty"`
-	ItemIdlte          *string  `json:"itemIdlte,omitempty"`
-	ItemIdcontains     *string  `json:"itemIdcontains,omitempty"`
-	ItemIdhasPrefix    *string  `json:"itemIdhasPrefix,omitempty"`
-	ItemIdhasSuffix    *string  `json:"itemIdhasSuffix,omitempty"`
-	ItemIdisNil        *bool    `json:"itemIdisNil,omitempty"`
-	ItemIdnotNil       *bool    `json:"itemIdnotNil,omitempty"`
-	ItemIdequalFold    *string  `json:"itemIdequalFold,omitempty"`
-	ItemIdcontainsFold *string  `json:"itemIdcontainsFold,omitempty"`
+	ItemIdneq          *string  `json:"itemIDNEQ,omitempty"`
+	ItemIdin           []string `json:"itemIDIn,omitempty"`
+	ItemIdnotIn        []string `json:"itemIDNotIn,omitempty"`
+	ItemIdgt           *string  `json:"itemIDGT,omitempty"`
+	ItemIdgte          *string  `json:"itemIDGTE,omitempty"`
+	ItemIdlt           *string  `json:"itemIDLT,omitempty"`
+	ItemIdlte          *string  `json:"itemIDLTE,omitempty"`
+	ItemIdcontains     *string  `json:"itemIDContains,omitempty"`
+	ItemIdhasPrefix    *string  `json:"itemIDHasPrefix,omitempty"`
+	ItemIdhasSuffix    *string  `json:"itemIDHasSuffix,omitempty"`
+	ItemIdisNil        *bool    `json:"itemIDIsNil,omitempty"`
+	ItemIdnotNil       *bool    `json:"itemIDNotNil,omitempty"`
+	ItemIdequalFold    *string  `json:"itemIDEqualFold,omitempty"`
+	ItemIdcontainsFold *string  `json:"itemIDContainsFold,omitempty"`
 	// batch_id field predicates
 	BatchID             *string  `json:"batchID,omitempty"`
-	BatchIdneq          *string  `json:"batchIdneq,omitempty"`
-	BatchIdin           []string `json:"batchIdin,omitempty"`
-	BatchIdnotIn        []string `json:"batchIdnotIn,omitempty"`
-	BatchIdgt           *string  `json:"batchIdgt,omitempty"`
-	BatchIdgte          *string  `json:"batchIdgte,omitempty"`
-	BatchIdlt           *string  `json:"batchIdlt,omitempty"`
-	BatchIdlte          *string  `json:"batchIdlte,omitempty"`
-	BatchIdcontains     *string  `json:"batchIdcontains,omitempty"`
-	BatchIdhasPrefix    *string  `json:"batchIdhasPrefix,omitempty"`
-	BatchIdhasSuffix    *string  `json:"batchIdhasSuffix,omitempty"`
-	BatchIdisNil        *bool    `json:"batchIdisNil,omitempty"`
-	BatchIdnotNil       *bool    `json:"batchIdnotNil,omitempty"`
-	BatchIdequalFold    *string  `json:"batchIdequalFold,omitempty"`
-	BatchIdcontainsFold *string  `json:"batchIdcontainsFold,omitempty"`
+	BatchIdneq          *string  `json:"batchIDNEQ,omitempty"`
+	BatchIdin           []string `json:"batchIDIn,omitempty"`
+	BatchIdnotIn        []string `json:"batchIDNotIn,omitempty"`
+	BatchIdgt           *string  `json:"batchIDGT,omitempty"`
+	BatchIdgte          *string  `json:"batchIDGTE,omitempty"`
+	BatchIdlt           *string  `json:"batchIDLT,omitempty"`
+	BatchIdlte          *string  `json:"batchIDLTE,omitempty"`
+	BatchIdcontains     *string  `json:"batchIDContains,omitempty"`
+	BatchIdhasPrefix    *string  `json:"batchIDHasPrefix,omitempty"`
+	BatchIdhasSuffix    *string  `json:"batchIDHasSuffix,omitempty"`
+	BatchIdisNil        *bool    `json:"batchIDIsNil,omitempty"`
+	BatchIdnotNil       *bool    `json:"batchIDNotNil,omitempty"`
+	BatchIdequalFold    *string  `json:"batchIDEqualFold,omitempty"`
+	BatchIdcontainsFold *string  `json:"batchIDContainsFold,omitempty"`
 	// embedding_status field predicates
 	EmbeddingStatus             *scalars.ItemEmbeddingStatus  `json:"embeddingStatus,omitempty"`
-	EmbeddingStatusNeq          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusNeq,omitempty"`
+	EmbeddingStatusNeq          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusNEQ,omitempty"`
 	EmbeddingStatusIn           []scalars.ItemEmbeddingStatus `json:"embeddingStatusIn,omitempty"`
 	EmbeddingStatusNotIn        []scalars.ItemEmbeddingStatus `json:"embeddingStatusNotIn,omitempty"`
-	EmbeddingStatusGt           *scalars.ItemEmbeddingStatus  `json:"embeddingStatusGt,omitempty"`
-	EmbeddingStatusGte          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusGte,omitempty"`
-	EmbeddingStatusLt           *scalars.ItemEmbeddingStatus  `json:"embeddingStatusLt,omitempty"`
-	EmbeddingStatusLte          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusLte,omitempty"`
+	EmbeddingStatusGt           *scalars.ItemEmbeddingStatus  `json:"embeddingStatusGT,omitempty"`
+	EmbeddingStatusGte          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusGTE,omitempty"`
+	EmbeddingStatusLt           *scalars.ItemEmbeddingStatus  `json:"embeddingStatusLT,omitempty"`
+	EmbeddingStatusLte          *scalars.ItemEmbeddingStatus  `json:"embeddingStatusLTE,omitempty"`
 	EmbeddingStatusContains     *scalars.ItemEmbeddingStatus  `json:"embeddingStatusContains,omitempty"`
 	EmbeddingStatusHasPrefix    *scalars.ItemEmbeddingStatus  `json:"embeddingStatusHasPrefix,omitempty"`
 	EmbeddingStatusHasSuffix    *scalars.ItemEmbeddingStatus  `json:"embeddingStatusHasSuffix,omitempty"`
@@ -3637,13 +3637,13 @@ type TmpItemWhereInput struct {
 	EmbeddingStatusContainsFold *scalars.ItemEmbeddingStatus  `json:"embeddingStatusContainsFold,omitempty"`
 	// embedding_msg field predicates
 	EmbeddingMsg             *string  `json:"embeddingMsg,omitempty"`
-	EmbeddingMsgNeq          *string  `json:"embeddingMsgNeq,omitempty"`
+	EmbeddingMsgNeq          *string  `json:"embeddingMsgNEQ,omitempty"`
 	EmbeddingMsgIn           []string `json:"embeddingMsgIn,omitempty"`
 	EmbeddingMsgNotIn        []string `json:"embeddingMsgNotIn,omitempty"`
-	EmbeddingMsgGt           *string  `json:"embeddingMsgGt,omitempty"`
-	EmbeddingMsgGte          *string  `json:"embeddingMsgGte,omitempty"`
-	EmbeddingMsgLt           *string  `json:"embeddingMsgLt,omitempty"`
-	EmbeddingMsgLte          *string  `json:"embeddingMsgLte,omitempty"`
+	EmbeddingMsgGt           *string  `json:"embeddingMsgGT,omitempty"`
+	EmbeddingMsgGte          *string  `json:"embeddingMsgGTE,omitempty"`
+	EmbeddingMsgLt           *string  `json:"embeddingMsgLT,omitempty"`
+	EmbeddingMsgLte          *string  `json:"embeddingMsgLTE,omitempty"`
 	EmbeddingMsgContains     *string  `json:"embeddingMsgContains,omitempty"`
 	EmbeddingMsgHasPrefix    *string  `json:"embeddingMsgHasPrefix,omitempty"`
 	EmbeddingMsgHasSuffix    *string  `json:"embeddingMsgHasSuffix,omitempty"`
@@ -3653,50 +3653,50 @@ type TmpItemWhereInput struct {
 	EmbeddingMsgContainsFold *string  `json:"embeddingMsgContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// item_group_id field predicates
 	ItemGroupID             *string  `json:"itemGroupID,omitempty"`
-	ItemGroupIdneq          *string  `json:"itemGroupIdneq,omitempty"`
-	ItemGroupIdin           []string `json:"itemGroupIdin,omitempty"`
-	ItemGroupIdnotIn        []string `json:"itemGroupIdnotIn,omitempty"`
-	ItemGroupIdgt           *string  `json:"itemGroupIdgt,omitempty"`
-	ItemGroupIdgte          *string  `json:"itemGroupIdgte,omitempty"`
-	ItemGroupIdlt           *string  `json:"itemGroupIdlt,omitempty"`
-	ItemGroupIdlte          *string  `json:"itemGroupIdlte,omitempty"`
-	ItemGroupIdcontains     *string  `json:"itemGroupIdcontains,omitempty"`
-	ItemGroupIdhasPrefix    *string  `json:"itemGroupIdhasPrefix,omitempty"`
-	ItemGroupIdhasSuffix    *string  `json:"itemGroupIdhasSuffix,omitempty"`
-	ItemGroupIdisNil        *bool    `json:"itemGroupIdisNil,omitempty"`
-	ItemGroupIdnotNil       *bool    `json:"itemGroupIdnotNil,omitempty"`
-	ItemGroupIdequalFold    *string  `json:"itemGroupIdequalFold,omitempty"`
-	ItemGroupIdcontainsFold *string  `json:"itemGroupIdcontainsFold,omitempty"`
+	ItemGroupIdneq          *string  `json:"itemGroupIDNEQ,omitempty"`
+	ItemGroupIdin           []string `json:"itemGroupIDIn,omitempty"`
+	ItemGroupIdnotIn        []string `json:"itemGroupIDNotIn,omitempty"`
+	ItemGroupIdgt           *string  `json:"itemGroupIDGT,omitempty"`
+	ItemGroupIdgte          *string  `json:"itemGroupIDGTE,omitempty"`
+	ItemGroupIdlt           *string  `json:"itemGroupIDLT,omitempty"`
+	ItemGroupIdlte          *string  `json:"itemGroupIDLTE,omitempty"`
+	ItemGroupIdcontains     *string  `json:"itemGroupIDContains,omitempty"`
+	ItemGroupIdhasPrefix    *string  `json:"itemGroupIDHasPrefix,omitempty"`
+	ItemGroupIdhasSuffix    *string  `json:"itemGroupIDHasSuffix,omitempty"`
+	ItemGroupIdisNil        *bool    `json:"itemGroupIDIsNil,omitempty"`
+	ItemGroupIdnotNil       *bool    `json:"itemGroupIDNotNil,omitempty"`
+	ItemGroupIdequalFold    *string  `json:"itemGroupIDEqualFold,omitempty"`
+	ItemGroupIdcontainsFold *string  `json:"itemGroupIDContainsFold,omitempty"`
 	// item_group_source_id field predicates
 	ItemGroupSourceID             *string  `json:"itemGroupSourceID,omitempty"`
-	ItemGroupSourceIdneq          *string  `json:"itemGroupSourceIdneq,omitempty"`
-	ItemGroupSourceIdin           []string `json:"itemGroupSourceIdin,omitempty"`
-	ItemGroupSourceIdnotIn        []string `json:"itemGroupSourceIdnotIn,omitempty"`
-	ItemGroupSourceIdgt           *string  `json:"itemGroupSourceIdgt,omitempty"`
-	ItemGroupSourceIdgte          *string  `json:"itemGroupSourceIdgte,omitempty"`
-	ItemGroupSourceIdlt           *string  `json:"itemGroupSourceIdlt,omitempty"`
-	ItemGroupSourceIdlte          *string  `json:"itemGroupSourceIdlte,omitempty"`
-	ItemGroupSourceIdcontains     *string  `json:"itemGroupSourceIdcontains,omitempty"`
-	ItemGroupSourceIdhasPrefix    *string  `json:"itemGroupSourceIdhasPrefix,omitempty"`
-	ItemGroupSourceIdhasSuffix    *string  `json:"itemGroupSourceIdhasSuffix,omitempty"`
-	ItemGroupSourceIdisNil        *bool    `json:"itemGroupSourceIdisNil,omitempty"`
-	ItemGroupSourceIdnotNil       *bool    `json:"itemGroupSourceIdnotNil,omitempty"`
-	ItemGroupSourceIdequalFold    *string  `json:"itemGroupSourceIdequalFold,omitempty"`
-	ItemGroupSourceIdcontainsFold *string  `json:"itemGroupSourceIdcontainsFold,omitempty"`
+	ItemGroupSourceIdneq          *string  `json:"itemGroupSourceIDNEQ,omitempty"`
+	ItemGroupSourceIdin           []string `json:"itemGroupSourceIDIn,omitempty"`
+	ItemGroupSourceIdnotIn        []string `json:"itemGroupSourceIDNotIn,omitempty"`
+	ItemGroupSourceIdgt           *string  `json:"itemGroupSourceIDGT,omitempty"`
+	ItemGroupSourceIdgte          *string  `json:"itemGroupSourceIDGTE,omitempty"`
+	ItemGroupSourceIdlt           *string  `json:"itemGroupSourceIDLT,omitempty"`
+	ItemGroupSourceIdlte          *string  `json:"itemGroupSourceIDLTE,omitempty"`
+	ItemGroupSourceIdcontains     *string  `json:"itemGroupSourceIDContains,omitempty"`
+	ItemGroupSourceIdhasPrefix    *string  `json:"itemGroupSourceIDHasPrefix,omitempty"`
+	ItemGroupSourceIdhasSuffix    *string  `json:"itemGroupSourceIDHasSuffix,omitempty"`
+	ItemGroupSourceIdisNil        *bool    `json:"itemGroupSourceIDIsNil,omitempty"`
+	ItemGroupSourceIdnotNil       *bool    `json:"itemGroupSourceIDNotNil,omitempty"`
+	ItemGroupSourceIdequalFold    *string  `json:"itemGroupSourceIDEqualFold,omitempty"`
+	ItemGroupSourceIdcontainsFold *string  `json:"itemGroupSourceIDContainsFold,omitempty"`
 }
 
 // UpdateAiModelInput UpdateAiModelInput is used for update AiModel object.
@@ -3709,8 +3709,8 @@ type UpdateAiModelInput struct {
 	ModelID            *string           `json:"modelID,omitempty"`
 	BaseURL            *string           `json:"baseURL,omitempty"`
 	ClearBaseURL       *bool             `json:"clearBaseURL,omitempty"`
-	APIKey             *scalars.Password `json:"aPIKey,omitempty"`
-	ClearApikey        *bool             `json:"clearApikey,omitempty"`
+	APIKey             *scalars.Password `json:"apiKey,omitempty"`
+	ClearApikey        *bool             `json:"clearAPIKey,omitempty"`
 	OrgID              *string           `json:"orgID,omitempty"`
 	ClearOrgID         *bool             `json:"clearOrgID,omitempty"`
 	Descr              *string           `json:"descr,omitempty"`
@@ -3721,14 +3721,14 @@ type UpdateAiModelInput struct {
 	ClearMaxDims       *bool             `json:"clearMaxDims,omitempty"`
 	MaxTokens          *int              `json:"maxTokens,omitempty"`
 	ClearMaxTokens     *bool             `json:"clearMaxTokens,omitempty"`
-	AddChatbotIds      []string          `json:"addChatbotIds,omitempty"`
-	RemoveChatbotIds   []string          `json:"removeChatbotIds,omitempty"`
+	AddChatbotIds      []string          `json:"addChatbotIDs,omitempty"`
+	RemoveChatbotIds   []string          `json:"removeChatbotIDs,omitempty"`
 	ClearChatbots      *bool             `json:"clearChatbots,omitempty"`
-	AddFuncToolIds     []string          `json:"addFuncToolIds,omitempty"`
-	RemoveFuncToolIds  []string          `json:"removeFuncToolIds,omitempty"`
+	AddFuncToolIds     []string          `json:"addFuncToolIDs,omitempty"`
+	RemoveFuncToolIds  []string          `json:"removeFuncToolIDs,omitempty"`
 	ClearFuncTools     *bool             `json:"clearFuncTools,omitempty"`
-	AddItemGroupIds    []string          `json:"addItemGroupIds,omitempty"`
-	RemoveItemGroupIds []string          `json:"removeItemGroupIds,omitempty"`
+	AddItemGroupIds    []string          `json:"addItemGroupIDs,omitempty"`
+	RemoveItemGroupIds []string          `json:"removeItemGroupIDs,omitempty"`
 	ClearItemGroups    *bool             `json:"clearItemGroups,omitempty"`
 }
 
@@ -3742,11 +3742,11 @@ type UpdateChannelInput struct {
 	ClearIsPublic    *bool    `json:"clearIsPublic,omitempty"`
 	GuestID          *string  `json:"guestID,omitempty"`
 	ClearGuestID     *bool    `json:"clearGuestID,omitempty"`
-	AddMessageIds    []string `json:"addMessageIds,omitempty"`
-	RemoveMessageIds []string `json:"removeMessageIds,omitempty"`
+	AddMessageIds    []string `json:"addMessageIDs,omitempty"`
+	RemoveMessageIds []string `json:"removeMessageIDs,omitempty"`
 	ClearMessages    *bool    `json:"clearMessages,omitempty"`
-	AddUserIds       []string `json:"addUserIds,omitempty"`
-	RemoveUserIds    []string `json:"removeUserIds,omitempty"`
+	AddUserIds       []string `json:"addUserIDs,omitempty"`
+	RemoveUserIds    []string `json:"removeUserIDs,omitempty"`
 	ClearUsers       *bool    `json:"clearUsers,omitempty"`
 	OwnerID          *string  `json:"ownerID,omitempty"`
 	ClearOwner       *bool    `json:"clearOwner,omitempty"`
@@ -3822,17 +3822,17 @@ type UpdateChatbotInput struct {
 	ClearLeadEmailEnabled   *bool    `json:"clearLeadEmailEnabled,omitempty"`
 	LeadPhoneEnabled        *bool    `json:"leadPhoneEnabled,omitempty"`
 	ClearLeadPhoneEnabled   *bool    `json:"clearLeadPhoneEnabled,omitempty"`
-	AddUserIds              []string `json:"addUserIds,omitempty"`
-	RemoveUserIds           []string `json:"removeUserIds,omitempty"`
+	AddUserIds              []string `json:"addUserIDs,omitempty"`
+	RemoveUserIds           []string `json:"removeUserIDs,omitempty"`
 	ClearUsers              *bool    `json:"clearUsers,omitempty"`
-	AddChannelIds           []string `json:"addChannelIds,omitempty"`
-	RemoveChannelIds        []string `json:"removeChannelIds,omitempty"`
+	AddChannelIds           []string `json:"addChannelIDs,omitempty"`
+	RemoveChannelIds        []string `json:"removeChannelIDs,omitempty"`
 	ClearChannels           *bool    `json:"clearChannels,omitempty"`
-	AddFolderIds            []string `json:"addFolderIds,omitempty"`
-	RemoveFolderIds         []string `json:"removeFolderIds,omitempty"`
+	AddFolderIds            []string `json:"addFolderIDs,omitempty"`
+	RemoveFolderIds         []string `json:"removeFolderIDs,omitempty"`
 	ClearFolders            *bool    `json:"clearFolders,omitempty"`
-	AddFuncToolIds          []string `json:"addFuncToolIds,omitempty"`
-	RemoveFuncToolIds       []string `json:"removeFuncToolIds,omitempty"`
+	AddFuncToolIds          []string `json:"addFuncToolIDs,omitempty"`
+	RemoveFuncToolIds       []string `json:"removeFuncToolIDs,omitempty"`
 	ClearFuncTools          *bool    `json:"clearFuncTools,omitempty"`
 	AiModelID               *string  `json:"aiModelID,omitempty"`
 	ClearAiModel            *bool    `json:"clearAiModel,omitempty"`
@@ -3878,10 +3878,10 @@ type UpdateCredentialInput struct {
 	ClearPassword       *bool             `json:"clearPassword,omitempty"`
 	Secret              *scalars.Password `json:"secret,omitempty"`
 	ClearSecret         *bool             `json:"clearSecret,omitempty"`
-	APIKey              *scalars.Password `json:"aPIKey,omitempty"`
-	ClearApikey         *bool             `json:"clearApikey,omitempty"`
-	AddFuncToolIds      []string          `json:"addFuncToolIds,omitempty"`
-	RemoveFuncToolIds   []string          `json:"removeFuncToolIds,omitempty"`
+	APIKey              *scalars.Password `json:"apiKey,omitempty"`
+	ClearApikey         *bool             `json:"clearAPIKey,omitempty"`
+	AddFuncToolIds      []string          `json:"addFuncToolIDs,omitempty"`
+	RemoveFuncToolIds   []string          `json:"removeFuncToolIDs,omitempty"`
 	ClearFuncTools      *bool             `json:"clearFuncTools,omitempty"`
 }
 
@@ -3891,8 +3891,8 @@ type UpdateCredentialInput struct {
 type UpdateFolderInput struct {
 	Name             *string  `json:"name,omitempty"`
 	Position         *int     `json:"position,omitempty"`
-	AddChannelIds    []string `json:"addChannelIds,omitempty"`
-	RemoveChannelIds []string `json:"removeChannelIds,omitempty"`
+	AddChannelIds    []string `json:"addChannelIDs,omitempty"`
+	RemoveChannelIds []string `json:"removeChannelIDs,omitempty"`
 	ClearChannels    *bool    `json:"clearChannels,omitempty"`
 	ChatbotID        *string  `json:"chatbotID,omitempty"`
 	ClearChatbot     *bool    `json:"clearChatbot,omitempty"`
@@ -3922,13 +3922,13 @@ type UpdateFuncToolInput struct {
 	ClearTemperature     *bool            `json:"clearTemperature,omitempty"`
 	Limit                *int             `json:"limit,omitempty"`
 	ClearLimit           *bool            `json:"clearLimit,omitempty"`
-	AddChatbotIds        []string         `json:"addChatbotIds,omitempty"`
-	RemoveChatbotIds     []string         `json:"removeChatbotIds,omitempty"`
+	AddChatbotIds        []string         `json:"addChatbotIDs,omitempty"`
+	RemoveChatbotIds     []string         `json:"removeChatbotIDs,omitempty"`
 	ClearChatbots        *bool            `json:"clearChatbots,omitempty"`
 	CredentialID         *string          `json:"credentialID,omitempty"`
 	ClearCredential      *bool            `json:"clearCredential,omitempty"`
-	AddFuncToolLogIds    []string         `json:"addFuncToolLogIds,omitempty"`
-	RemoveFuncToolLogIds []string         `json:"removeFuncToolLogIds,omitempty"`
+	AddFuncToolLogIds    []string         `json:"addFuncToolLogIDs,omitempty"`
+	RemoveFuncToolLogIds []string         `json:"removeFuncToolLogIDs,omitempty"`
 	ClearFuncToolLogs    *bool            `json:"clearFuncToolLogs,omitempty"`
 	AiModelID            *string          `json:"aiModelID,omitempty"`
 	ClearAiModel         *bool            `json:"clearAiModel,omitempty"`
@@ -3948,7 +3948,7 @@ type UpdateGuestInput struct {
 	ClearLastName  *bool   `json:"clearLastName,omitempty"`
 	Email          *string `json:"email,omitempty"`
 	ClearEmail     *bool   `json:"clearEmail,omitempty"`
-	IP             *string `json:"iP,omitempty"`
+	IP             *string `json:"ip,omitempty"`
 	ClearIP        *bool   `json:"clearIP,omitempty"`
 	ChatbotID      *string `json:"chatbotID,omitempty"`
 	ClearChatbotID *bool   `json:"clearChatbotID,omitempty"`
@@ -3966,11 +3966,11 @@ type UpdateItemGroupInput struct {
 	ClearDims                *bool    `json:"clearDims,omitempty"`
 	HasPendingItems          *bool    `json:"hasPendingItems,omitempty"`
 	ClearHasPendingItems     *bool    `json:"clearHasPendingItems,omitempty"`
-	AddItemGroupSourceIds    []string `json:"addItemGroupSourceIds,omitempty"`
-	RemoveItemGroupSourceIds []string `json:"removeItemGroupSourceIds,omitempty"`
+	AddItemGroupSourceIds    []string `json:"addItemGroupSourceIDs,omitempty"`
+	RemoveItemGroupSourceIds []string `json:"removeItemGroupSourceIDs,omitempty"`
 	ClearItemGroupSources    *bool    `json:"clearItemGroupSources,omitempty"`
-	AddFuncToolIds           []string `json:"addFuncToolIds,omitempty"`
-	RemoveFuncToolIds        []string `json:"removeFuncToolIds,omitempty"`
+	AddFuncToolIds           []string `json:"addFuncToolIDs,omitempty"`
+	RemoveFuncToolIds        []string `json:"removeFuncToolIDs,omitempty"`
 	ClearFuncTools           *bool    `json:"clearFuncTools,omitempty"`
 	AiModelID                *string  `json:"aiModelID,omitempty"`
 	ClearAiModel             *bool    `json:"clearAiModel,omitempty"`
@@ -4015,34 +4015,34 @@ type UpdateUserInput struct {
 	ClearLastName      *bool             `json:"clearLastName,omitempty"`
 	Email              *string           `json:"email,omitempty"`
 	ClearEmail         *bool             `json:"clearEmail,omitempty"`
-	IP                 *string           `json:"iP,omitempty"`
+	IP                 *string           `json:"ip,omitempty"`
 	ClearIP            *bool             `json:"clearIP,omitempty"`
-	AddMyChannelIds    []string          `json:"addMyChannelIds,omitempty"`
-	RemoveMyChannelIds []string          `json:"removeMyChannelIds,omitempty"`
+	AddMyChannelIds    []string          `json:"addMyChannelIDs,omitempty"`
+	RemoveMyChannelIds []string          `json:"removeMyChannelIDs,omitempty"`
 	ClearMyChannels    *bool             `json:"clearMyChannels,omitempty"`
-	AddChannelIds      []string          `json:"addChannelIds,omitempty"`
-	RemoveChannelIds   []string          `json:"removeChannelIds,omitempty"`
+	AddChannelIds      []string          `json:"addChannelIDs,omitempty"`
+	RemoveChannelIds   []string          `json:"removeChannelIDs,omitempty"`
 	ClearChannels      *bool             `json:"clearChannels,omitempty"`
-	AddMessageIds      []string          `json:"addMessageIds,omitempty"`
-	RemoveMessageIds   []string          `json:"removeMessageIds,omitempty"`
+	AddMessageIds      []string          `json:"addMessageIDs,omitempty"`
+	RemoveMessageIds   []string          `json:"removeMessageIDs,omitempty"`
 	ClearMessages      *bool             `json:"clearMessages,omitempty"`
-	AddChatbotIds      []string          `json:"addChatbotIds,omitempty"`
-	RemoveChatbotIds   []string          `json:"removeChatbotIds,omitempty"`
+	AddChatbotIds      []string          `json:"addChatbotIDs,omitempty"`
+	RemoveChatbotIds   []string          `json:"removeChatbotIDs,omitempty"`
 	ClearChatbots      *bool             `json:"clearChatbots,omitempty"`
-	AddFolderIds       []string          `json:"addFolderIds,omitempty"`
-	RemoveFolderIds    []string          `json:"removeFolderIds,omitempty"`
+	AddFolderIds       []string          `json:"addFolderIDs,omitempty"`
+	RemoveFolderIds    []string          `json:"removeFolderIDs,omitempty"`
 	ClearFolders       *bool             `json:"clearFolders,omitempty"`
 }
 
 // UrlToHtmlInput represents the GraphQL type UrlToHtmlInput
 type UrlToHtmlInput struct {
-	URL             string `json:"uRL"`
+	URL             string `json:"url"`
 	ReturnAsEncoded *bool  `json:"returnAsEncoded,omitempty"`
 }
 
 // UrlToMarkdownInput represents the GraphQL type UrlToMarkdownInput
 type UrlToMarkdownInput struct {
-	URL             string `json:"uRL"`
+	URL             string `json:"url"`
 	ReturnAsEncoded *bool  `json:"returnAsEncoded,omitempty"`
 }
 
@@ -4063,47 +4063,47 @@ type UserWhereInput struct {
 	And []UserWhereInput `json:"and,omitempty"`
 	Or  []UserWhereInput `json:"or,omitempty"`
 	// id field predicates
-	ID             *string  `json:"iD,omitempty"`
-	IDNeq          *string  `json:"iDNeq,omitempty"`
-	IDIn           []string `json:"iDIn,omitempty"`
-	IDNotIn        []string `json:"iDNotIn,omitempty"`
-	IDGt           *string  `json:"iDGt,omitempty"`
-	IDGte          *string  `json:"iDGte,omitempty"`
-	IDLt           *string  `json:"iDLt,omitempty"`
-	IDLte          *string  `json:"iDLte,omitempty"`
-	IDEqualFold    *string  `json:"iDEqualFold,omitempty"`
-	IDContainsFold *string  `json:"iDContainsFold,omitempty"`
+	ID             *string  `json:"id,omitempty"`
+	IDNeq          *string  `json:"idNEQ,omitempty"`
+	IDIn           []string `json:"idIn,omitempty"`
+	IDNotIn        []string `json:"idNotIn,omitempty"`
+	IDGt           *string  `json:"idGT,omitempty"`
+	IDGte          *string  `json:"idGTE,omitempty"`
+	IDLt           *string  `json:"idLT,omitempty"`
+	IDLte          *string  `json:"idLTE,omitempty"`
+	IDEqualFold    *string  `json:"idEqualFold,omitempty"`
+	IDContainsFold *string  `json:"idContainsFold,omitempty"`
 	// created_at field predicates
 	CreatedAt       *time.Time  `json:"createdAt,omitempty"`
-	CreatedAtNeq    *time.Time  `json:"createdAtNeq,omitempty"`
+	CreatedAtNeq    *time.Time  `json:"createdAtNEQ,omitempty"`
 	CreatedAtIn     []time.Time `json:"createdAtIn,omitempty"`
 	CreatedAtNotIn  []time.Time `json:"createdAtNotIn,omitempty"`
-	CreatedAtGt     *time.Time  `json:"createdAtGt,omitempty"`
-	CreatedAtGte    *time.Time  `json:"createdAtGte,omitempty"`
-	CreatedAtLt     *time.Time  `json:"createdAtLt,omitempty"`
-	CreatedAtLte    *time.Time  `json:"createdAtLte,omitempty"`
+	CreatedAtGt     *time.Time  `json:"createdAtGT,omitempty"`
+	CreatedAtGte    *time.Time  `json:"createdAtGTE,omitempty"`
+	CreatedAtLt     *time.Time  `json:"createdAtLT,omitempty"`
+	CreatedAtLte    *time.Time  `json:"createdAtLTE,omitempty"`
 	CreatedAtIsNil  *bool       `json:"createdAtIsNil,omitempty"`
 	CreatedAtNotNil *bool       `json:"createdAtNotNil,omitempty"`
 	// updated_at field predicates
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
-	UpdatedAtNeq    *time.Time  `json:"updatedAtNeq,omitempty"`
+	UpdatedAtNeq    *time.Time  `json:"updatedAtNEQ,omitempty"`
 	UpdatedAtIn     []time.Time `json:"updatedAtIn,omitempty"`
 	UpdatedAtNotIn  []time.Time `json:"updatedAtNotIn,omitempty"`
-	UpdatedAtGt     *time.Time  `json:"updatedAtGt,omitempty"`
-	UpdatedAtGte    *time.Time  `json:"updatedAtGte,omitempty"`
-	UpdatedAtLt     *time.Time  `json:"updatedAtLt,omitempty"`
-	UpdatedAtLte    *time.Time  `json:"updatedAtLte,omitempty"`
+	UpdatedAtGt     *time.Time  `json:"updatedAtGT,omitempty"`
+	UpdatedAtGte    *time.Time  `json:"updatedAtGTE,omitempty"`
+	UpdatedAtLt     *time.Time  `json:"updatedAtLT,omitempty"`
+	UpdatedAtLte    *time.Time  `json:"updatedAtLTE,omitempty"`
 	UpdatedAtIsNil  *bool       `json:"updatedAtIsNil,omitempty"`
 	UpdatedAtNotNil *bool       `json:"updatedAtNotNil,omitempty"`
 	// type field predicates
 	Type             *scalars.UserType  `json:"type,omitempty"`
-	TypeNeq          *scalars.UserType  `json:"typeNeq,omitempty"`
+	TypeNeq          *scalars.UserType  `json:"typeNEQ,omitempty"`
 	TypeIn           []scalars.UserType `json:"typeIn,omitempty"`
 	TypeNotIn        []scalars.UserType `json:"typeNotIn,omitempty"`
-	TypeGt           *scalars.UserType  `json:"typeGt,omitempty"`
-	TypeGte          *scalars.UserType  `json:"typeGte,omitempty"`
-	TypeLt           *scalars.UserType  `json:"typeLt,omitempty"`
-	TypeLte          *scalars.UserType  `json:"typeLte,omitempty"`
+	TypeGt           *scalars.UserType  `json:"typeGT,omitempty"`
+	TypeGte          *scalars.UserType  `json:"typeGTE,omitempty"`
+	TypeLt           *scalars.UserType  `json:"typeLT,omitempty"`
+	TypeLte          *scalars.UserType  `json:"typeLTE,omitempty"`
 	TypeContains     *scalars.UserType  `json:"typeContains,omitempty"`
 	TypeHasPrefix    *scalars.UserType  `json:"typeHasPrefix,omitempty"`
 	TypeHasSuffix    *scalars.UserType  `json:"typeHasSuffix,omitempty"`
@@ -4113,29 +4113,29 @@ type UserWhereInput struct {
 	TypeContainsFold *scalars.UserType  `json:"typeContainsFold,omitempty"`
 	// ext_user_id field predicates
 	ExtUserID             *string  `json:"extUserID,omitempty"`
-	ExtUserIdneq          *string  `json:"extUserIdneq,omitempty"`
-	ExtUserIdin           []string `json:"extUserIdin,omitempty"`
-	ExtUserIdnotIn        []string `json:"extUserIdnotIn,omitempty"`
-	ExtUserIdgt           *string  `json:"extUserIdgt,omitempty"`
-	ExtUserIdgte          *string  `json:"extUserIdgte,omitempty"`
-	ExtUserIdlt           *string  `json:"extUserIdlt,omitempty"`
-	ExtUserIdlte          *string  `json:"extUserIdlte,omitempty"`
-	ExtUserIdcontains     *string  `json:"extUserIdcontains,omitempty"`
-	ExtUserIdhasPrefix    *string  `json:"extUserIdhasPrefix,omitempty"`
-	ExtUserIdhasSuffix    *string  `json:"extUserIdhasSuffix,omitempty"`
-	ExtUserIdisNil        *bool    `json:"extUserIdisNil,omitempty"`
-	ExtUserIdnotNil       *bool    `json:"extUserIdnotNil,omitempty"`
-	ExtUserIdequalFold    *string  `json:"extUserIdequalFold,omitempty"`
-	ExtUserIdcontainsFold *string  `json:"extUserIdcontainsFold,omitempty"`
+	ExtUserIdneq          *string  `json:"extUserIDNEQ,omitempty"`
+	ExtUserIdin           []string `json:"extUserIDIn,omitempty"`
+	ExtUserIdnotIn        []string `json:"extUserIDNotIn,omitempty"`
+	ExtUserIdgt           *string  `json:"extUserIDGT,omitempty"`
+	ExtUserIdgte          *string  `json:"extUserIDGTE,omitempty"`
+	ExtUserIdlt           *string  `json:"extUserIDLT,omitempty"`
+	ExtUserIdlte          *string  `json:"extUserIDLTE,omitempty"`
+	ExtUserIdcontains     *string  `json:"extUserIDContains,omitempty"`
+	ExtUserIdhasPrefix    *string  `json:"extUserIDHasPrefix,omitempty"`
+	ExtUserIdhasSuffix    *string  `json:"extUserIDHasSuffix,omitempty"`
+	ExtUserIdisNil        *bool    `json:"extUserIDIsNil,omitempty"`
+	ExtUserIdnotNil       *bool    `json:"extUserIDNotNil,omitempty"`
+	ExtUserIdequalFold    *string  `json:"extUserIDEqualFold,omitempty"`
+	ExtUserIdcontainsFold *string  `json:"extUserIDContainsFold,omitempty"`
 	// first_name field predicates
 	FirstName             *string  `json:"firstName,omitempty"`
-	FirstNameNeq          *string  `json:"firstNameNeq,omitempty"`
+	FirstNameNeq          *string  `json:"firstNameNEQ,omitempty"`
 	FirstNameIn           []string `json:"firstNameIn,omitempty"`
 	FirstNameNotIn        []string `json:"firstNameNotIn,omitempty"`
-	FirstNameGt           *string  `json:"firstNameGt,omitempty"`
-	FirstNameGte          *string  `json:"firstNameGte,omitempty"`
-	FirstNameLt           *string  `json:"firstNameLt,omitempty"`
-	FirstNameLte          *string  `json:"firstNameLte,omitempty"`
+	FirstNameGt           *string  `json:"firstNameGT,omitempty"`
+	FirstNameGte          *string  `json:"firstNameGTE,omitempty"`
+	FirstNameLt           *string  `json:"firstNameLT,omitempty"`
+	FirstNameLte          *string  `json:"firstNameLTE,omitempty"`
 	FirstNameContains     *string  `json:"firstNameContains,omitempty"`
 	FirstNameHasPrefix    *string  `json:"firstNameHasPrefix,omitempty"`
 	FirstNameHasSuffix    *string  `json:"firstNameHasSuffix,omitempty"`
@@ -4145,13 +4145,13 @@ type UserWhereInput struct {
 	FirstNameContainsFold *string  `json:"firstNameContainsFold,omitempty"`
 	// last_name field predicates
 	LastName             *string  `json:"lastName,omitempty"`
-	LastNameNeq          *string  `json:"lastNameNeq,omitempty"`
+	LastNameNeq          *string  `json:"lastNameNEQ,omitempty"`
 	LastNameIn           []string `json:"lastNameIn,omitempty"`
 	LastNameNotIn        []string `json:"lastNameNotIn,omitempty"`
-	LastNameGt           *string  `json:"lastNameGt,omitempty"`
-	LastNameGte          *string  `json:"lastNameGte,omitempty"`
-	LastNameLt           *string  `json:"lastNameLt,omitempty"`
-	LastNameLte          *string  `json:"lastNameLte,omitempty"`
+	LastNameGt           *string  `json:"lastNameGT,omitempty"`
+	LastNameGte          *string  `json:"lastNameGTE,omitempty"`
+	LastNameLt           *string  `json:"lastNameLT,omitempty"`
+	LastNameLte          *string  `json:"lastNameLTE,omitempty"`
 	LastNameContains     *string  `json:"lastNameContains,omitempty"`
 	LastNameHasPrefix    *string  `json:"lastNameHasPrefix,omitempty"`
 	LastNameHasSuffix    *string  `json:"lastNameHasSuffix,omitempty"`
@@ -4161,13 +4161,13 @@ type UserWhereInput struct {
 	LastNameContainsFold *string  `json:"lastNameContainsFold,omitempty"`
 	// email field predicates
 	Email             *string  `json:"email,omitempty"`
-	EmailNeq          *string  `json:"emailNeq,omitempty"`
+	EmailNeq          *string  `json:"emailNEQ,omitempty"`
 	EmailIn           []string `json:"emailIn,omitempty"`
 	EmailNotIn        []string `json:"emailNotIn,omitempty"`
-	EmailGt           *string  `json:"emailGt,omitempty"`
-	EmailGte          *string  `json:"emailGte,omitempty"`
-	EmailLt           *string  `json:"emailLt,omitempty"`
-	EmailLte          *string  `json:"emailLte,omitempty"`
+	EmailGt           *string  `json:"emailGT,omitempty"`
+	EmailGte          *string  `json:"emailGTE,omitempty"`
+	EmailLt           *string  `json:"emailLT,omitempty"`
+	EmailLte          *string  `json:"emailLTE,omitempty"`
 	EmailContains     *string  `json:"emailContains,omitempty"`
 	EmailHasPrefix    *string  `json:"emailHasPrefix,omitempty"`
 	EmailHasSuffix    *string  `json:"emailHasSuffix,omitempty"`
@@ -4176,37 +4176,37 @@ type UserWhereInput struct {
 	EmailEqualFold    *string  `json:"emailEqualFold,omitempty"`
 	EmailContainsFold *string  `json:"emailContainsFold,omitempty"`
 	// ip field predicates
-	IP             *string  `json:"iP,omitempty"`
-	IPNeq          *string  `json:"iPNeq,omitempty"`
-	IPIn           []string `json:"iPIn,omitempty"`
-	IPNotIn        []string `json:"iPNotIn,omitempty"`
-	IPGt           *string  `json:"iPGt,omitempty"`
-	IPGte          *string  `json:"iPGte,omitempty"`
-	IPLt           *string  `json:"iPLt,omitempty"`
-	IPLte          *string  `json:"iPLte,omitempty"`
-	IPContains     *string  `json:"iPContains,omitempty"`
-	IPHasPrefix    *string  `json:"iPHasPrefix,omitempty"`
-	IPHasSuffix    *string  `json:"iPHasSuffix,omitempty"`
-	IPIsNil        *bool    `json:"iPIsNil,omitempty"`
-	IPNotNil       *bool    `json:"iPNotNil,omitempty"`
-	IPEqualFold    *string  `json:"iPEqualFold,omitempty"`
-	IPContainsFold *string  `json:"iPContainsFold,omitempty"`
+	IP             *string  `json:"ip,omitempty"`
+	IPNeq          *string  `json:"ipNEQ,omitempty"`
+	IPIn           []string `json:"ipIn,omitempty"`
+	IPNotIn        []string `json:"ipNotIn,omitempty"`
+	IPGt           *string  `json:"ipGT,omitempty"`
+	IPGte          *string  `json:"ipGTE,omitempty"`
+	IPLt           *string  `json:"ipLT,omitempty"`
+	IPLte          *string  `json:"ipLTE,omitempty"`
+	IPContains     *string  `json:"ipContains,omitempty"`
+	IPHasPrefix    *string  `json:"ipHasPrefix,omitempty"`
+	IPHasSuffix    *string  `json:"ipHasSuffix,omitempty"`
+	IPIsNil        *bool    `json:"ipIsNil,omitempty"`
+	IPNotNil       *bool    `json:"ipNotNil,omitempty"`
+	IPEqualFold    *string  `json:"ipEqualFold,omitempty"`
+	IPContainsFold *string  `json:"ipContainsFold,omitempty"`
 	// workspace_id field predicates
 	WorkspaceID             *string  `json:"workspaceID,omitempty"`
-	WorkspaceIdneq          *string  `json:"workspaceIdneq,omitempty"`
-	WorkspaceIdin           []string `json:"workspaceIdin,omitempty"`
-	WorkspaceIdnotIn        []string `json:"workspaceIdnotIn,omitempty"`
-	WorkspaceIdgt           *string  `json:"workspaceIdgt,omitempty"`
-	WorkspaceIdgte          *string  `json:"workspaceIdgte,omitempty"`
-	WorkspaceIdlt           *string  `json:"workspaceIdlt,omitempty"`
-	WorkspaceIdlte          *string  `json:"workspaceIdlte,omitempty"`
-	WorkspaceIdcontains     *string  `json:"workspaceIdcontains,omitempty"`
-	WorkspaceIdhasPrefix    *string  `json:"workspaceIdhasPrefix,omitempty"`
-	WorkspaceIdhasSuffix    *string  `json:"workspaceIdhasSuffix,omitempty"`
-	WorkspaceIdisNil        *bool    `json:"workspaceIdisNil,omitempty"`
-	WorkspaceIdnotNil       *bool    `json:"workspaceIdnotNil,omitempty"`
-	WorkspaceIdequalFold    *string  `json:"workspaceIdequalFold,omitempty"`
-	WorkspaceIdcontainsFold *string  `json:"workspaceIdcontainsFold,omitempty"`
+	WorkspaceIdneq          *string  `json:"workspaceIDNEQ,omitempty"`
+	WorkspaceIdin           []string `json:"workspaceIDIn,omitempty"`
+	WorkspaceIdnotIn        []string `json:"workspaceIDNotIn,omitempty"`
+	WorkspaceIdgt           *string  `json:"workspaceIDGT,omitempty"`
+	WorkspaceIdgte          *string  `json:"workspaceIDGTE,omitempty"`
+	WorkspaceIdlt           *string  `json:"workspaceIDLT,omitempty"`
+	WorkspaceIdlte          *string  `json:"workspaceIDLTE,omitempty"`
+	WorkspaceIdcontains     *string  `json:"workspaceIDContains,omitempty"`
+	WorkspaceIdhasPrefix    *string  `json:"workspaceIDHasPrefix,omitempty"`
+	WorkspaceIdhasSuffix    *string  `json:"workspaceIDHasSuffix,omitempty"`
+	WorkspaceIdisNil        *bool    `json:"workspaceIDIsNil,omitempty"`
+	WorkspaceIdnotNil       *bool    `json:"workspaceIDNotNil,omitempty"`
+	WorkspaceIdequalFold    *string  `json:"workspaceIDEqualFold,omitempty"`
+	WorkspaceIdcontainsFold *string  `json:"workspaceIDContainsFold,omitempty"`
 	// my_channels edge predicates
 	HasMyChannels     *bool               `json:"hasMyChannels,omitempty"`
 	HasMyChannelsWith []ChannelWhereInput `json:"hasMyChannelsWith,omitempty"`
