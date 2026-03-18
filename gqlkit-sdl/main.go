@@ -94,7 +94,7 @@ Examples:
 	}
 
 	cmd.Flags().StringVar(&url, "url", "", "GraphQL endpoint URL (required)")
-	cmd.Flags().StringVar(&output, "output", "schema.graphql", "Output file path")
+	cmd.Flags().StringVarP(&output, "output", "o", "schema.graphql", "Output file path")
 	cmd.Flags().StringArrayVarP(&headers, "header", "H", nil, `HTTP header in "Key:Value" format (repeatable)`)
 	cmd.Flags().BoolVar(&debug, "debug", false, "Print the curl command for debugging")
 	cmd.MarkFlagRequired("url")

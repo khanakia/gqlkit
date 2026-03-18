@@ -44,8 +44,7 @@ var generateTSCmd = &cobra.Command{
 func init() {
 	generateTSCmd.Flags().StringVarP(&tsSchemaPath, "schema", "s", "", "Path to GraphQL SDL file (required)")
 	generateTSCmd.Flags().StringVarP(&tsOutputDir, "output", "o", "./sdk", "Output directory for generated SDK")
-	generateTSCmd.Flags().StringVarP(&tsConfigPath, "config", "c", "", "Path to config.jsonc file (required)")
+	generateTSCmd.Flags().StringVarP(&tsConfigPath, "config", "c", "", "Path to config.jsonc file (optional)")
 
 	generateTSCmd.MarkFlagRequired("schema")
-	generateTSCmd.MarkFlagRequired("config")
 }

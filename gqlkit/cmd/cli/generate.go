@@ -9,10 +9,11 @@ import (
 
 // CLI flag variables bound to the generate command's flags.
 var (
-	schemaPath  string
-	outputDir   string
+	schemaPath string
+	outputDir  string
 	packageName string
 	modulePath  string
+	configPath  string
 )
 
 // generateCmd is the "generate" subcommand that produces a Go client SDK from
@@ -31,6 +32,7 @@ var generateCmd = &cobra.Command{
 			OutputDir:   outputDir,
 			PackageName: packageName,
 			ModulePath:  modulePath,
+			ConfigPath:  configPath,
 		}
 
 		gen, err := clientgen.New(config)
@@ -52,6 +54,7 @@ func init() {
 	generateCmd.Flags().StringVarP(&outputDir, "output", "o", "./sdk", "Output directory for generated SDK")
 	generateCmd.Flags().StringVarP(&packageName, "package", "p", "sdk", "Go package name for generated SDK")
 	generateCmd.Flags().StringVarP(&modulePath, "module", "m", "", "Go module path for generated SDK (e.g., github.com/user/myapi)")
+	generateCmd.Flags().StringVarP(&configPath, "config", "c", "", "Path to config.jsonc file (optional)")
 
 	generateCmd.MarkFlagRequired("schema")
 }

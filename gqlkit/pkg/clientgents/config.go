@@ -33,16 +33,20 @@ func (c *Config) Validate() error {
 	if c.OutputDir == "" {
 		c.OutputDir = "./sdk"
 	}
-	if c.ConfigPath == "" {
-		return ErrConfigPathRequired
-	}
 	return nil
 }
 
 // loadClientConfig reads and parses a JSONC config file into a ClientConfig.
+// If path is empty or the file does not exist, returns an empty config.
 func loadClientConfig(path string) (*ClientConfig, error) {
+	if path == "" {
+		return &ClientConfig{}, nil
+	}
 	content, err := os.ReadFile(path)
 	if err != nil {
+		if os.IsNotExist(err) {
+			return &ClientConfig{}, nil
+		}
 		return nil, fmt.Errorf("failed to read config file: %w", err)
 	}
 	var config ClientConfig
