@@ -101,8 +101,7 @@ Use the `gqlkit` CLI for a quick, no-code setup:
 gqlkit generate \
   --schema schema.graphql \
   --output ./sdk \
-  --package sdk \
-  --module github.com/yourorg/yourproject/sdk
+  --package myproject/sdk
 ```
 
 **CLI flags:**
@@ -111,9 +110,40 @@ gqlkit generate \
 |------|-------|---------|-------------|
 | `--schema` | `-s` | *(required)* | Path to `.graphql` schema file |
 | `--output` | `-o` | `./sdk` | Output directory for generated SDK |
-| `--package` | `-p` | `sdk` | Go package name |
-| `--module` | `-m` | | Go module path (e.g., `github.com/user/myapi`) |
+| `--package` | `-p` | `sdk` | Go import path for the generated SDK |
 | `--config` | `-c` | | Path to `config.jsonc` file (optional) |
+
+#### Understanding `--package`
+
+The `--package` flag tells the generator the Go import path of the generated SDK. This is the path that generated files use to import each other (e.g., `import "myproject/sdk/builder"`).
+
+**Pass the full import path** — your module name + the output directory:
+
+```bash
+# If your go.mod says: module github.com/yourorg/myapi
+gqlkit generate \
+  --schema schema.graphql \
+  --output ./sdk \
+  --package github.com/yourorg/myapi/sdk
+
+# If your go.mod says: module myproject
+gqlkit generate \
+  --schema schema.graphql \
+  --output ./sdk \
+  --package myproject/sdk
+```
+
+**Or just pass a simple name** and let gqlkit auto-detect from your `go.mod`:
+
+```bash
+# Reads "module myproject" from go.mod, combines with --output to get "myproject/sdk"
+gqlkit generate \
+  --schema schema.graphql \
+  --output ./sdk \
+  --package sdk
+```
+
+> **Note:** Auto-detection only works when a `go.mod` file exists in the current directory. If there's no `go.mod`, always pass the full import path.
 
 ### Option B — Go script (for more control)
 
