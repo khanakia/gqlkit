@@ -43,6 +43,17 @@ func (c *Config) Validate() error {
 	if c.PackageName == "" {
 		c.PackageName = "sdk"
 	}
+
+	// If --package was given as an import path (contains "/"),
+	// use it as the Package import path and extract the package name.
+	if c.Package == "" && strings.Contains(c.PackageName, "/") {
+		c.Package = c.PackageName
+		if idx := strings.LastIndex(c.Package, "/"); idx >= 0 {
+			c.PackageName = c.Package[idx+1:]
+		}
+	}
+
+	// Auto-detect from go.mod if still empty
 	if c.Package == "" {
 		c.Package = detectPackagePath(c.OutputDir)
 	}
