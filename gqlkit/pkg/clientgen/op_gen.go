@@ -3,7 +3,7 @@ package clientgen
 import (
 	"bytes"
 	"fmt"
-	"gqlkit/pkg/util"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/util"
 	"sort"
 	"strings"
 
@@ -319,7 +319,7 @@ func (g *Generator) generateQueryRootFile() error {
 	if rootPkg != "" {
 		fmt.Fprintf(&sb, "import %q\n\n", rootPkg+"/builder")
 	} else {
-		sb.WriteString("import \"gqlkit/sdk/builder\"\n\n")
+		sb.WriteString("import \"github.com/khanakia/gqlkit/gqlkit/sdk/builder\"\n\n")
 	}
 
 	sb.WriteString("// QueryRoot is the entry point for queries\n")
@@ -367,7 +367,7 @@ func (g *Generator) generateMutationRootFile() error {
 	if rootPkg != "" {
 		fmt.Fprintf(&sb, "import %q\n\n", rootPkg+"/builder")
 	} else {
-		sb.WriteString("import \"gqlkit/sdk/builder\"\n\n")
+		sb.WriteString("import \"github.com/khanakia/gqlkit/gqlkit/sdk/builder\"\n\n")
 	}
 
 	sb.WriteString("// MutationRoot is the entry point for mutations\n")

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"gqlkit/pkg/clientgents"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/clientgents"
 )
 
 func main() {

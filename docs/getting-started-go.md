@@ -113,8 +113,15 @@ gqlkit generate \
 | `--output` | `-o` | `./sdk` | Output directory for generated SDK |
 | `--package` | `-p` | `sdk` | Go package name |
 | `--module` | `-m` | | Go module path (e.g., `github.com/user/myapi`) |
+| `--config` | `-c` | | Path to `config.jsonc` file (optional) |
 
 ### Option B — Go script (for more control)
+
+Install the generator library:
+
+```bash
+go get github.com/khanakia/gqlkit/gqlkit/pkg/clientgen
+```
 
 Create a Go file (e.g., `cmd/generate/main.go`) to invoke the generator programmatically:
 
@@ -124,7 +131,7 @@ package main
 import (
     "fmt"
 
-    "gqlkit/pkg/clientgen"
+    "github.com/khanakia/gqlkit/gqlkit/pkg/clientgen"
 )
 
 func main() {
@@ -164,29 +171,22 @@ Either option creates the `sdk/` directory with the following packages:
 
 ```
 sdk/
-├── builder/     # Runtime builder types (included in SDK, no extra dependency needed)
-├── enums/       # GraphQL enums as Go types
-├── fields/      # Field selector types (one per GraphQL type)
-├── inputs/      # Input type structs
-├── mutations/   # Mutation builders + MutationRoot
-├── queries/     # Query builders + QueryRoot
-├── scalars/     # Custom scalar type aliases
-└── types/       # Go struct definitions for GraphQL types
+├── builder/         # Runtime builder types
+├── graphqlclient/   # HTTP client (NewClient, WithAuthToken, etc.)
+├── enums/           # GraphQL enums as Go types
+├── fields/          # Field selector types (one per GraphQL type)
+├── inputs/          # Input type structs
+├── mutations/       # Mutation builders + MutationRoot
+├── queries/         # Query builders + QueryRoot
+├── scalars/         # Custom scalar type aliases
+└── types/           # Go struct definitions for GraphQL types
 ```
 
 ---
 
 ## Step 5: Use the generated SDK
 
-Add the `gqlkit` runtime dependency:
-
-```bash
-go get gqlkit/pkg/graphqlclient
-```
-
-> **Note:** The `builder` package is already copied into your generated `sdk/builder/` directory — no need to install it separately.
-
-Then use the SDK in your code:
+The generated SDK is fully self-contained — no external dependencies needed. The `builder` and `graphqlclient` packages are included in the generated output.
 
 ```go
 package main
@@ -196,7 +196,7 @@ import (
     "fmt"
     "log"
 
-    "gqlkit/pkg/graphqlclient"
+    "yourmodule/sdk/graphqlclient"
 
     "yourmodule/sdk/fields"
     "yourmodule/sdk/inputs"
@@ -350,7 +350,7 @@ results, err := builder.Execute(ctx)
 ```go
 import (
     "errors"
-    "gqlkit/pkg/graphqlclient"
+    "yourmodule/sdk/graphqlclient"
 )
 
 result, err := qr.Todos().Select(/* ... */).Execute(ctx)

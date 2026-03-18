@@ -3,7 +3,7 @@ package clientgen
 import (
 	"bytes"
 	"fmt"
-	"gqlkit/pkg/util"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/util"
 	"sort"
 	"strings"
 
@@ -12,13 +12,13 @@ import (
 
 // defaultBuilderPkg is the fallback import path for the builder package when
 // the config does not specify a root SDK package.
-const defaultBuilderPkg = "gqlkit/sdk/builder"
+const defaultBuilderPkg = "github.com/khanakia/gqlkit/gqlkit/sdk/builder"
 
 // FieldSelectorData is the template data for generating a type-safe field
 // selector struct. Each GraphQL object type gets its own selector that wraps
 // builder.FieldSelection with typed methods for each field.
 type FieldSelectorData struct {
-	BuilderPkgImport string // full import path, e.g. "gqlkit/pkg/builder"
+	BuilderPkgImport string // full import path, e.g. "github.com/khanakia/gqlkit/gqlkit/pkg/builder"
 	BuilderPkgName   string // package identifier in code, e.g. "builder"
 	TypeName         string
 	SelectorName     string

@@ -3,9 +3,9 @@
 package scalars
 
 import (
-	"time"
-
 	"encoding/json"
+
+	"time"
 )
 
 type (

@@ -2,7 +2,7 @@ module example-ts
 
 go 1.25.5
 
-require gqlkit v0.0.0
+require github.com/khanakia/gqlkit/gqlkit v0.0.0
 
 require (
 	github.com/agnivade/levenshtein v1.2.1 // indirect
@@ -13,4 +13,4 @@ require (
 	github.com/vektah/gqlparser/v2 v2.5.32 // indirect
 )
 
-replace gqlkit => ../gqlkit
+replace github.com/khanakia/gqlkit/gqlkit => ../gqlkit

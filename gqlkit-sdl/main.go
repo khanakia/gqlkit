@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"gqlkit-sdl/schema"
+	"github.com/khanakia/gqlkit/gqlkit-sdl/schema"
 
 	"github.com/spf13/cobra"
 )

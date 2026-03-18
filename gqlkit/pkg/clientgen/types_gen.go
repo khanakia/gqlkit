@@ -3,7 +3,7 @@ package clientgen
 import (
 	"bytes"
 	"fmt"
-	"gqlkit/pkg/util"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/util"
 	"sort"
 	"strings"
 

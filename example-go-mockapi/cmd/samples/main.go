@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"log"
 
-	"gqlkit/pkg/graphqlclient"
+	"example-go-mockapi/sdk/graphqlclient"
 
 	sdkbuilder "example-go-mockapi/sdk/builder"
 	"example-go-mockapi/sdk/fields"

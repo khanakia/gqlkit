@@ -8,11 +8,11 @@ package clientgen
 import (
 	"bytes"
 	"fmt"
-	"gqlkit/pkg/schemagql"
-	"gqlkit/pkg/templater"
-	"gqlkit/pkg/typegql"
-	"gqlkit/pkg/util"
-	"gqlkit/pkg/writer"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/schemagql"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/templater"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/typegql"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/util"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/writer"
 	"sort"
 	"strings"
 
@@ -133,6 +133,12 @@ func (g *Generator) Generate() error {
 	}
 	fmt.Println("Generated: builder.go")
 
+	// Generate graphqlclient package
+	if err := g.generateGraphQLClientFiles(); err != nil {
+		return fmt.Errorf("failed to generate graphqlclient files: %w", err)
+	}
+	fmt.Println("Generated: graphqlclient/graphqlclient.go")
+
 	// Generate field selection files (one per type in fields/)
 	if err := g.generateFieldSelectionFiles(); err != nil {
 		return fmt.Errorf("failed to generate field selection files: %w", err)
@@ -179,6 +185,20 @@ func (g *Generator) generateBuilderFiles() error {
 	}
 	content := b.String()
 	return g.writer.WriteFile("builder/builder.go", content)
+}
+
+// generateGraphQLClientFiles renders graphqlclient/graphqlclient.go into the
+// generated SDK so users don't need an external dependency for the HTTP client.
+func (g *Generator) generateGraphQLClientFiles() error {
+	b := bytes.NewBuffer(nil)
+	err := g.templates.ExecuteTemplate(b, "graphqlclient", map[string]interface{}{
+		"Config":      g.config,
+		"PackageName": "graphqlclient",
+	})
+	if err != nil {
+		return fmt.Errorf("failed to execute template: %w", err)
+	}
+	return g.writer.WriteFile("graphqlclient/graphqlclient.go", b.String())
 }
 
 // generateScalars builds scalar type aliases (e.g. type DateTime = time.Time)

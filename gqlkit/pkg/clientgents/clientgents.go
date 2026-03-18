@@ -8,7 +8,7 @@ package clientgents
 import (
 	"embed"
 	"fmt"
-	"gqlkit/pkg/schemagql"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/schemagql"
 	"sort"
 	"strings"
 	"text/template"

@@ -1,4 +1,4 @@
-module gqlkit
+module github.com/khanakia/gqlkit/gqlkit
 
 go 1.25.5
 

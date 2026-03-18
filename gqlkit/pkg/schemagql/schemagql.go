@@ -6,7 +6,7 @@ package schemagql
 
 import (
 	"fmt"
-	"gqlkit/pkg/util"
+	"github.com/khanakia/gqlkit/gqlkit/pkg/util"
 	"os"
 	"path"
 	"path/filepath"
