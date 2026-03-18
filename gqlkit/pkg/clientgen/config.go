@@ -1,9 +1,12 @@
 package clientgen
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"github.com/tidwall/jsonc"
 )
@@ -29,6 +32,7 @@ type Config struct {
 
 // Validate checks that required fields are set and applies defaults for
 // optional fields (OutputDir defaults to "./sdk", PackageName defaults to "sdk").
+// When Package is empty, it is auto-detected from go.mod + OutputDir.
 func (c *Config) Validate() error {
 	if c.SchemaPath == "" {
 		return ErrSchemaPathRequired
@@ -39,7 +43,40 @@ func (c *Config) Validate() error {
 	if c.PackageName == "" {
 		c.PackageName = "sdk"
 	}
+	if c.Package == "" {
+		c.Package = detectPackagePath(c.OutputDir)
+	}
 	return nil
+}
+
+// detectPackagePath reads the module path from go.mod in the current directory
+// and appends the output directory name to form the full import path for the
+// generated SDK (e.g., "github.com/user/myproject/sdk").
+func detectPackagePath(outputDir string) string {
+	mod := readModulePath("go.mod")
+	if mod == "" {
+		return ""
+	}
+	// Clean the output dir: "./sdk" -> "sdk", "foo/bar" -> "foo/bar"
+	rel := strings.TrimPrefix(filepath.ToSlash(outputDir), "./")
+	return mod + "/" + rel
+}
+
+// readModulePath reads the "module" line from a go.mod file.
+func readModulePath(path string) string {
+	f, err := os.Open(path)
+	if err != nil {
+		return ""
+	}
+	defer f.Close()
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		if strings.HasPrefix(line, "module ") {
+			return strings.TrimSpace(strings.TrimPrefix(line, "module"))
+		}
+	}
+	return ""
 }
 
 // loadClientConfig reads and parses a JSONC config file (supports comments)

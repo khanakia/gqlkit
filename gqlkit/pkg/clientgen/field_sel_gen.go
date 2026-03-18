@@ -10,9 +10,6 @@ import (
 	"github.com/vektah/gqlparser/v2/ast"
 )
 
-// defaultBuilderPkg is the fallback import path for the builder package when
-// the config does not specify a root SDK package.
-const defaultBuilderPkg = "github.com/khanakia/gqlkit/gqlkit/sdk/builder"
 
 // FieldSelectorData is the template data for generating a type-safe field
 // selector struct. Each GraphQL object type gets its own selector that wraps
@@ -102,8 +99,6 @@ func (g *Generator) buildFieldSelectorData(def *ast.Definition) FieldSelectorDat
 	rootPkg := strings.TrimSuffix(g.config.Package, "/")
 	if rootPkg != "" {
 		data.BuilderPkgImport = rootPkg + "/builder"
-	} else {
-		data.BuilderPkgImport = defaultBuilderPkg
 	}
 	data.BuilderPkgName = "builder"
 	if idx := strings.LastIndex(data.BuilderPkgImport, "/"); idx >= 0 && idx < len(data.BuilderPkgImport)-1 {
