@@ -12,13 +12,13 @@ export class ServerInfoBuilder {
   }
 
   /** Execute runs the query and returns the result */
-  async execute(): Promise<any> {
+  async execute(): Promise<JSON> {
     const query = this.builder.buildQuery();
     const variables = this.builder.getVariables();
 
     const response = await this.builder
       .getClient()
-      .execute<{ serverInfo: any }>(query, variables);
+      .execute<{ serverInfo: JSON }>(query, variables);
 
     return response.serverInfo;
   }

@@ -5,9 +5,11 @@
     "Time": "string",
     // Relay cursor — just an opaque string
     "Cursor": "string",
-    // ISO-8601 date-time string
-    "DateTime": "string"
-    // JSON and Metadata are intentionally NOT mapped here.
-    // They will fall back to `any` in the generated TypeScript SDK.
+    // Import DateTime type directly from the luxon npm package
+    "DateTime": { "type": "DateTime", "import": "luxon" },
+    // Import JsonValue from type-fest and alias it as JSON
+    "JSON": { "type": "JsonValue", "import": "type-fest" }
+    // Metadata is intentionally NOT mapped here.
+    // It will fall back to `any` in the generated TypeScript SDK.
   }
 }

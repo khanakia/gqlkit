@@ -12,8 +12,10 @@ import (
 // TSScalar holds the metadata for a single TypeScript type alias generated from
 // a GraphQL scalar (e.g. "export type DateTime = string;").
 type TSScalar struct {
-	Name   string
-	TSType string
+	Name       string
+	TSType     string
+	Import     string // npm package to import from (empty = inline alias)
+	ImportType string // type name to import from the package
 }
 
 // generateScalars collects all custom (non-built-in) scalars from the schema,
@@ -37,10 +39,18 @@ func (g *Generator) generateScalars() error {
 			name = "GqlString"
 		}
 
-		scalars = append(scalars, TSScalar{
+		scalar := TSScalar{
 			Name:   name,
 			TSType: tsType,
-		})
+		}
+
+		// If the binding has an external import, carry that through
+		if binding, ok := g.clientConfig.Bindings[def.Name]; ok && binding.Import != "" {
+			scalar.Import = binding.Import
+			scalar.ImportType = binding.Type
+		}
+
+		scalars = append(scalars, scalar)
 	}
 
 	sort.Slice(scalars, func(i, j int) bool {

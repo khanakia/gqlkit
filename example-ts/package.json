@@ -9,9 +9,12 @@
     "samples": "tsx cmd/samples/main.ts"
   },
   "dependencies": {
-    "gqlkit-ts": "file:../gqlkit-ts"
+    "gqlkit-ts": "file:../gqlkit-ts",
+    "luxon": "^3.5.0",
+    "type-fest": "^4.26.0"
   },
   "devDependencies": {
+    "@types/luxon": "^3.4.0",
     "@types/node": "^25.5.0",
     "tsx": "^4.7.0",
     "typescript": "^5.4.0"

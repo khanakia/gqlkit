@@ -2,7 +2,7 @@
 
 import { FieldSelection } from "../builder";
 import { UserFields } from "./user";
-import type { Metadata } from "../scalars";
+import type { DateTime, Metadata } from "../scalars";
 
 /** TodoFields provides type-safe field selection for Todo */
 export class TodoFields<T extends object = {}> {
@@ -44,7 +44,7 @@ export class TodoFields<T extends object = {}> {
     return this as any;
   }
 
-  createdAt(): TodoFields<T & { createdAt: string }> {
+  createdAt(): TodoFields<T & { createdAt: DateTime }> {
     this.selection.addField("createdAt");
     return this as any;
   }

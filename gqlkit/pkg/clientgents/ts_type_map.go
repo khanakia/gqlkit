@@ -1,6 +1,7 @@
 package clientgents
 
 import (
+	"encoding/json"
 	"strings"
 
 	"github.com/vektah/gqlparser/v2/ast"
@@ -30,14 +31,45 @@ func BuiltInTSTypes() TSTypeMap {
 	}
 }
 
+// TSBinding describes how a GraphQL scalar maps to a TypeScript type.
+// When Import is set, the type is imported from that npm package instead
+// of being defined as an inline type alias.
+type TSBinding struct {
+	Type   string `json:"type"`             // TypeScript type name (e.g. "DateTime", "JsonValue")
+	Import string `json:"import,omitempty"` // npm package or path (e.g. "luxon", "type-fest")
+}
+
+// UnmarshalJSON allows a binding to be either a plain string ("string") or
+// an object ({"type": "DateTime", "import": "luxon"}) for backward compat.
+func (b *TSBinding) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err == nil {
+		b.Type = s
+		return nil
+	}
+	type raw TSBinding
+	var r raw
+	if err := json.Unmarshal(data, &r); err != nil {
+		return err
+	}
+	*b = TSBinding(r)
+	return nil
+}
+
 // ConfigTSBindings holds custom scalar-to-TypeScript type overrides loaded
 // from the config.jsonc file.
-type ConfigTSBindings map[string]string
+type ConfigTSBindings map[string]TSBinding
 
-// Merge merges config bindings into the type map.
+// Merge merges config bindings into the type map. For bindings with an
+// external import, the map value is set to the scalar name (the key) because
+// scalars/index.ts re-exports the imported type under that name.
 func (m TSTypeMap) Merge(bindings ConfigTSBindings) TSTypeMap {
 	for k, v := range bindings {
-		m[k] = v
+		if v.Import != "" {
+			m[k] = k // other files import by scalar name from ../scalars
+		} else {
+			m[k] = v.Type
+		}
 	}
 	return m
 }

@@ -2,10 +2,10 @@
 
 export type Boolean = boolean;
 export type Cursor = string;
-export type DateTime = string;
+export type { DateTime } from "luxon";
 export type Float = number;
 export type GqlString = string;
 export type ID = string;
 export type Int = number;
-export type JSON = any;
+export type { JsonValue as JSON } from "type-fest";
 export type Metadata = any;

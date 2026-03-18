@@ -2,7 +2,7 @@
 
 import type { Role } from "../enums";
 
-import type { Metadata } from "../scalars";
+import type { DateTime, Metadata } from "../scalars";
 
 
 export interface Node {
@@ -23,7 +23,7 @@ export interface Todo {
   priority?: number;
   tags: string[];
   user: User;
-  createdAt: string;
+  createdAt: DateTime;
   metadata?: Metadata;
 }
 
