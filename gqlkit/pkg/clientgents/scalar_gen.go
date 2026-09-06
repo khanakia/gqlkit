@@ -117,9 +117,20 @@ func (g *Generator) collectScalarRefs(t *ast.Type, seen map[string]bool) {
 	}
 }
 
-// isSimpleTSType returns true for basic TS types that don't need imports
+// isSimpleTSType returns true for TS types that don't need imports: the
+// primitive keywords, plus any structurally-inline type expression (e.g.
+// "Record<string, unknown>", "string[]", "{ [k: string]: unknown }").
+// Mapped scalars render their tsTypeMap value VERBATIM at every use site,
+// so a mapping that isn't a bare identifier can never require an import —
+// without this check, a scalar like Map (→ Record<string, unknown>) was
+// still added to the "../scalars" import list and produced an unused
+// type-import in every generated operation that carried a Map argument.
 func isSimpleTSType(t string) bool {
-	return t == "string" || t == "number" || t == "boolean" || t == "any"
+	switch t {
+	case "string", "number", "boolean", "any", "unknown", "null", "undefined":
+		return true
+	}
+	return strings.ContainsAny(t, "<>{}[]| ")
 }
 
 // collectEnumImportNames returns enum type names referenced by the given
